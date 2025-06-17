@@ -1,0 +1,136 @@
+[
+    {
+        "name": "ppt_create_presentation",
+        "description": "Create a new PowerPoint presentation.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to save the presentation.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "ppt_delete_slide",
+        "description": "Delete a slide from the PowerPoint presentation.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the PowerPoint presentation.",
+                    "type": "string"
+                },
+                "slide_index": {
+                    "description": "The index of the slide to delete.",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "file_path",
+                "slide_index"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "ppt_add_slide",
+        "description": "Add a text slide to the PowerPoint presentation.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the PowerPoint presentation.",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "The title of the slide.",
+                    "type": "string"
+                },
+                "content": {
+                    "description": "The content of the slide.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path",
+                "title",
+                "content"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "ppt_edit_slide",
+        "description": "Edit a slide in the PowerPoint presentation.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the PowerPoint presentation.",
+                    "type": "string"
+                },
+                "slide_index": {
+                    "description": "The index of the slide to edit.",
+                    "type": "integer"
+                },
+                "title": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "The new title for the slide. If None, the title will not be changed."
+                },
+                "content": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "The new content for the slide. If None, the content will not be changed."
+                }
+            },
+            "required": [
+                "file_path",
+                "slide_index"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "ppt_add_picture",
+        "description": "Add a picture to a slide in the PowerPoint presentation.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the PowerPoint presentation.",
+                    "type": "string"
+                },
+                "slide_index": {
+                    "description": "The index of the slide to add the picture to.",
+                    "type": "integer"
+                },
+                "picture_path": {
+                    "description": "The path to the picture file.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path",
+                "slide_index",
+                "picture_path"
+            ],
+            "type": "object"
+        }
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "name": "get_stock_data",
+        "description": "A tool that provides real-time access to market data, including opening price, closing price,\nmaximum price, bottom price, volume, turnover, change.",
+        "parameters": {
+            "properties": {
+                "ts_code": {
+                    "description": "The stock code. e.g. \"000001.SZ\" for the Shanghai Stock Exchange.",
+                    "type": "string"
+                },
+                "trade_date": {
+                    "description": "The date of the market data, e.g. \"2023-02-07\".",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ts_code",
+                "trade_date"
+            ],
+            "type": "object"
+        }
+    }
+]

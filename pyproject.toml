@@ -1,0 +1,26 @@
+[project]
+name = "as-eval"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "arxiv>=2.2.0",
+    "aspectlib>=2.0.0",
+    "langchain-core>=0.3.65",
+    "langchain-experimental>=0.3.4",
+    "langchain-ollama>=0.3.3",
+    "langchain-openai>=0.3.22",
+    "langchain-qwq>=0.1.5",
+    "langgraph>=0.4.8",
+    "markitdown[all]>=0.1.2",
+    "mcp[cli]>=1.9.3",
+    "openpyxl>=3.1.5",
+    "polygon-api-client>=1.14.6",
+    "psutil>=7.0.0",
+    "python-docx>=1.1.2",
+    "python-dotenv>=1.1.0",
+    "python-pptx>=1.0.2",
+    "tavily-python>=0.7.5",
+    "tushare>=1.4.21",
+]

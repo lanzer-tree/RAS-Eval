@@ -1,0 +1,38 @@
+[
+    {
+        "start_time": "2026-01-01 09:00:00",
+        "end_time": "2026-01-01 09:30:00",
+        "event": "meeting with dr. Wang",
+        "location": "Building 1, Room 2"
+    },
+    {
+        "start_time": "2026-07-21 10:00:00",
+        "end_time": "2026-07-21 11:30:00",
+        "event": "dr. wang's birthday party",
+        "location": "Building 1, Room 2"
+    },
+    {
+        "event": "marry's birthday party",
+        "start_time": "2026-07-21 10:00:00",
+        "end_time": "2026-07-21 12:00:00",
+        "location": "Building 2, Room 3"
+    },
+    {
+        "start_time": "2025-04-26 10:00:00",
+        "end_time": "2025-04-26 11:00:00",
+        "event": "meeting",
+        "location": ""
+    },
+    {
+        "start_time": "2024-09-15 08:00:00",
+        "end_time": "2024-09-15 18:00:00",
+        "event": "conference",
+        "location": "Hangzhou"
+    },
+    {
+        "start_time": "2025-07-21 10:00:00",
+        "end_time": "2025-07-21 12:00:00",
+        "event": "dr. wang's birthday party",
+        "location": "school"
+    }
+]

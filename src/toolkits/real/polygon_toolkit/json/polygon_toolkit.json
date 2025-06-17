@@ -1,0 +1,127 @@
+[
+    {
+        "name": "get_aggs",
+        "description": "List aggregate bars for a ticker over a given date range in custom time window sizes.",
+        "parameters": {
+            "properties": {
+                "ticker": {
+                    "description": "The ticker symbol of the stock.",
+                    "type": "string"
+                },
+                "multiplier": {
+                    "description": "The size of the timespan multiplier.",
+                    "type": "integer"
+                },
+                "timespan": {
+                    "description": "The size of the time window.",
+                    "type": "string"
+                },
+                "from_": {
+                    "description": "The start date for the data. Format: YYYY-MM-DD",
+                    "type": "string"
+                },
+                "to": {
+                    "description": "The end date for the data. Format: YYYY-MM-DD",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ticker",
+                "multiplier",
+                "timespan",
+                "from_",
+                "to"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "list_aggs",
+        "description": "Iterate through aggregate bars for a ticker over a given date range.",
+        "parameters": {
+            "properties": {
+                "ticker": {
+                    "description": "The ticker symbol of the stock.",
+                    "type": "string"
+                },
+                "multiplier": {
+                    "description": "The size of the timespan multiplier.",
+                    "type": "integer"
+                },
+                "timespan": {
+                    "description": "The size of the time window.",
+                    "type": "string"
+                },
+                "from_": {
+                    "description": "The start date for the data. Format: YYYY-MM-DD",
+                    "type": "string"
+                },
+                "to": {
+                    "description": "The end date for the data. Format: YYYY-MM-DD",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ticker",
+                "multiplier",
+                "timespan",
+                "from_",
+                "to"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "get_grouped_daily_aggs",
+        "description": "Get grouped daily bars for entire market for a specific date.",
+        "parameters": {
+            "properties": {
+                "date": {
+                    "description": "The date for which to retrieve the data. Format: YYYY-MM-DD",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "date"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "get_daily_open_close_agg",
+        "description": "Get the daily open and close aggregate for a specific ticker and date.",
+        "parameters": {
+            "properties": {
+                "ticker": {
+                    "description": "The ticker symbol of the stock.",
+                    "type": "string"
+                },
+                "date": {
+                    "description": "The date for which to retrieve the data. Format: YYYY-MM-DD",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ticker",
+                "date"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "get_previous_close_agg",
+        "description": "Get the previous close aggregate for a specific ticker.",
+        "parameters": {
+            "properties": {
+                "ticker": {
+                    "description": "The ticker symbol of the stock.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ticker"
+            ],
+            "type": "object"
+        }
+    }
+]

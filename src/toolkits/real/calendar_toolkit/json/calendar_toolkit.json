@@ -1,0 +1,101 @@
+[
+    {
+        "name": "add_event_to_calendar",
+        "description": "Add event to the calendar.",
+        "parameters": {
+            "properties": {
+                "start_time": {
+                    "description": "start time of the event. Format: \"YYYY-MM-DD HH:MM:SS\"",
+                    "type": "string"
+                },
+                "end_time": {
+                    "description": "end time of the event. Format: \"YYYY-MM-DD HH:MM:SS\"",
+                    "type": "string"
+                },
+                "event": {
+                    "description": "event name",
+                    "type": "string"
+                },
+                "location": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "location of the event"
+                }
+            },
+            "required": [
+                "start_time",
+                "end_time",
+                "event"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "get_events_from_calendar",
+        "description": "Get all events from the calendar within the given time range.",
+        "parameters": {
+            "properties": {
+                "start_time": {
+                    "description": "start time of the event. Format: \"YYYY-MM-DD HH:MM:SS\"",
+                    "type": "string"
+                },
+                "end_time": {
+                    "description": "end time of the event. Format: \"YYYY-MM-DD HH:MM:SS\"",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "start_time",
+                "end_time"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "search_event",
+        "description": "Search for an event in the calendar. Calculate how much time is left until the event.",
+        "parameters": {
+            "properties": {
+                "event": {
+                    "description": "event name",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "event"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "remove_event_from_calendar",
+        "description": "Remove event from the calendar.",
+        "parameters": {
+            "properties": {
+                "event": {
+                    "description": "event name",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "event"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "get_today_date",
+        "description": "Get today's date.",
+        "parameters": {
+            "properties": {},
+            "type": "object"
+        }
+    }
+]

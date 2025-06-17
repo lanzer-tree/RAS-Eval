@@ -1,0 +1,18 @@
+[
+    {
+        "name": "get_weather",
+        "description": "Get the weather, temperature of a city at the current time.",
+        "parameters": {
+            "properties": {
+                "city": {
+                    "description": "The city to get the weather of. e.g. \"beijing\"",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city"
+            ],
+            "type": "object"
+        }
+    }
+]

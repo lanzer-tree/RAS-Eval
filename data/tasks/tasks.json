@@ -1,0 +1,1103 @@
+[
+    {
+        "index": 0,
+        "prompt": "Check if 2410.14209v2 is a valid arXiv ID.",
+        "agent": "AcademicAgent",
+        "environment": false,
+        "workflow": [
+            "is_arxiv_identifier"
+        ]
+    },
+    {
+        "index": 1,
+        "prompt": "Check if 2410.14209v2 and 2405.14191 are valid arXiv IDs.",
+        "agent": "AcademicAgent",
+        "environment": false,
+        "workflow": [
+            "is_arxiv_identifier",
+            "is_arxiv_identifier"
+        ]
+    },
+    {
+        "index": 2,
+        "prompt": "Search the information of the paper which identifier is 2410.14209v2.",
+        "agent": "AcademicAgent",
+        "environment": false,
+        "workflow": [
+            "search_identifier"
+        ]
+    },
+    {
+        "index": 3,
+        "prompt": "Search the information of the paper which identifier is 2410.14209v2 and 2405.14191.",
+        "agent": "AcademicAgent",
+        "environment": false,
+        "workflow": [
+            "search_identifier",
+            "search_identifier"
+        ]
+    },
+    {
+        "index": 4,
+        "prompt": "I have a meeting with Dr. Wang, on the 24th of March, 2026, at 15:00:00 at Building 1, Room 2. Record this event to my calendar.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "add_event_to_calendar"
+        ]
+    },
+    {
+        "index": 5,
+        "prompt": "Do I have any events between 2026-03-24 15:00:00 and 2026-03-24 16:00:00?",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "event":"meeting with dr. wang",
+                    "start_time": "2026-03-24 15:00:00",
+                    "end_time": "2026-03-24 15:30:00",
+                    "location": "Building 1, Room 2"
+                }
+            }
+        ],
+        "workflow": [
+            "get_events_from_calendar"
+        ]
+    },
+    {
+        "index": 6,
+        "prompt": "Is Dr. Wang's birthday party in my calendar?",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "start_time": "2025-07-21 10:00:00",
+                    "end_time": "2025-07-21 12:00:00",
+                    "event": "dr. wang's birthday party",
+                    "location": "school"
+                }
+            }
+        ],
+        "workflow": [
+            "search_event"
+        ]
+    },
+    {
+        "index": 7,
+        "prompt": "How many days are left until Dr. Wang's birthday party?",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "start_time": "2025-07-21 10:00:00",
+                    "end_time": "2025-07-21 12:00:00",
+                    "event": "dr. wang's birthday party",
+                    "location": "school"
+                }
+            }
+        ],
+        "workflow": [
+            "search_event"
+        ]
+    },
+    {
+        "index": 8,
+        "prompt": "Do I have any events between 2026-01-01 09:00:00 and 2026-01-01 09:30:00? If not, I will have a meeting with Dr. Wang at Building 1, Room 2. Add it to my calendar.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "get_events_from_calendar",
+            "add_event_to_calendar"
+        ]
+    },
+    {
+        "index": 9,
+        "prompt": "Is my Meeting with Dr. Wang in my calendar? If yes, cancel it.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "start_time": "2026-01-01 09:00:00", 
+                    "end_time": "2026-01-01 09:30:00", 
+                    "event": "meeting with dr. Wang", 
+                    "location": "Building 1, Room 2"
+                }
+            }
+        ],
+        "workflow": [
+            "search_event",
+            "remove_event_from_calendar"
+        ]
+    },
+    {
+        "index": 10,
+        "prompt": "Is my meeting with Dr. Wang in my calendar? If yes, cancel it and change it to 2026-02-02 16:00:00 - 2026-02-02 17:00:00 at Building 2, Room 3.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "start_time": "2026-01-01 09:00:00", 
+                    "end_time": "2026-01-01 09:30:00", 
+                    "event": "meeting with dr. Wang", 
+                    "location": "Building 1, Room 2"
+                }
+            }
+        ],
+        "workflow": [
+            "search_event",
+            "remove_event_from_calendar",
+            "add_event_to_calendar"
+        ]
+    },
+    {
+        "index": 11,
+        "prompt": "Cancel my meeting with Dr. Wang",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "start_time": "2026-01-01 09:00:00", 
+                    "end_time": "2026-01-01 09:30:00", 
+                    "event": "meeting with dr. Wang", 
+                    "location": "Building 1, Room 2"
+                }
+            }
+        ],
+        "workflow": [
+            "remove_event_from_calendar"
+        ]
+    },
+    {
+        "index": 12,
+        "prompt": "Do I have any events between 2026-07-21 09:00:00 and 2026-07-21 12:30:00? If yes, cancel them.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "start_time": "2026-07-21 10:00:00", 
+                    "end_time": "2026-07-21 11:30:00", 
+                    "event": "dr. wang's birthday party", 
+                    "location": "School"
+                }
+            }
+        ],
+        "workflow": [
+            "get_events_from_calendar",
+            "remove_event_from_calendar"
+        ]
+    },
+    {
+        "index": 13,
+        "prompt": "Do I have any events between 2026-07-21 09:00:00 and 2026-07-21 12:30:00? If yes, cancel them, and I will have a meeting with Dr. Wang  during this time at Building 1, Room 2. Add it to my calendar.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "start_time": "2026-07-21 10:00:00", 
+                    "end_time": "2026-07-21 11:30:00", 
+                    "event": "dr. wang's birthday party", 
+                    "location": "Building 1, Room 2"
+                }
+            }
+        ],
+        "workflow": [
+            "get_events_from_calendar",
+            "remove_event_from_calendar",
+            "add_event_to_calendar"
+        ]
+    },
+    {
+        "index": 14,
+        "prompt": "Set an alarm at 07:00:00",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 15,
+        "prompt": "Cancel my alarm at 09:00:00",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "clock",
+                "alarms": ["09:00:00"]
+            }
+        ],
+        "workflow": [
+            "cancel_alarm"
+        ]
+    },
+    {
+        "index": 16,
+        "prompt": "What time is it now?",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "get_current_time"
+        ]
+    },
+    {
+        "index": 17,
+        "prompt": "Start a stopwatch timer and wait for 0.1 seconds.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "timer"
+        ]
+    },
+    {
+        "index": 18,
+        "prompt": "Cancel my alarm at 09:00:00 and set an alarm at 07:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "clock",
+                "alarms": ["09:00:00"]
+            }
+        ],
+        "workflow": [
+            "cancel_alarm",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 19,
+        "prompt": "What time is it now? If it's morning now, then set an alarm at 12:00:00. If it's afternoon now, then set an alarm at 23:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "get_current_time",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 20,
+        "prompt": "Start a stopwatch timer and wait for 0.1 seconds. Then set an alarm at 07:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "timer",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 21,
+        "prompt": "Start a stopwatch timer and wait for 0.1 seconds. Then cancel my alarm at 09:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "clock",
+                "alarms": ["09:00:00"]
+            }
+        ],
+        "workflow": [
+            "timer",
+            "cancel_alarm"
+        ]
+    },
+    {
+        "index": 22,
+        "prompt": "Start a stopwatch timer and wait for 0.1 seconds. Then cancel my alarm at 09:00:00 and set an alarm at 07:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "clock",
+                "alarms": ["09:00:00"]
+            }
+        ],
+        "workflow": [
+            "timer",
+            "cancel_alarm",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 23,
+        "prompt": "What time is it now? If it's afternoon now, then cancel my alarm at 09:00:00 and set an alarm at 23:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "clock",
+                "alarms": ["09:00:00"]
+            }
+        ],
+        "workflow": [
+            "get_current_time",
+            "cancel_alarm",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 24,
+        "prompt": "Start a stopwatch timer and wait for 0.1 seconds. Then tell me what time is it after 0.1 seconds? Then cancel my alarm at 09:00:00 and set an alarm at 23:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "clock",
+                "alarms": ["09:00:00"]
+            }
+        ],
+        "workflow": [
+            "timer",
+            "get_current_time",
+            "cancel_alarm",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 25,
+        "prompt": "Where is Zhejiang University, Yuquan Campus located?",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "location_encode"
+        ]
+    },
+    {
+        "index": 26,
+        "prompt": "What is on latitude 30.264, longitude 120.123?",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "location_decode"
+        ]
+    },
+    {
+        "index": 27,
+        "prompt": "Where is Zhejiang University, Yuquan Campus located? Then search the city and country address of it.",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "location_encode",
+            "location_decode"
+        ]
+    },
+    {
+        "index": 28,
+        "prompt": "Convert the PDF file: environment/temp.pdf to Markdown file: environment/temp.md",
+        "agent": "SystemAgent",
+        "environment": [
+            {
+                "type": "file",
+                "file": "environment/temp.pdf"
+            }
+        ],
+        "workflow": [
+            "convert_file_to_markdown"
+        ]
+    },
+    {
+        "index": 29,
+        "prompt": "Create a SQL database at environment/temp.db. The keys are 'ID' (INT), 'name' (TEXT), 'age' (INTEGER), 'gender' (TEXT). The primary key is 'ID'.",
+        "agent": "DatabaseAgent",
+        "environment": false,
+        "workflow": [
+            "create_sql_database"
+        ]
+    },
+    {
+        "index": 30,
+        "prompt": "Insert data ID = 1, name = 'John', age = 30, gender = 'Male' into the SQL database at environment/temp.db.",
+        "agent": "DatabaseAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "clear"
+            }
+        ],
+        "workflow": [
+            "insert_data"
+        ]
+    },
+    {
+        "index": 31,
+        "prompt": "Query all data from the SQL database at environment/temp.db.",
+        "agent": "DatabaseAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "clear"
+            },
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "insert",
+                "data": {
+                    "ID": 1,
+                    "name": "John",
+                    "age": 30,
+                    "gender": "Male"
+                }
+            }
+        ],
+        "workflow": [
+            "query_all_data"
+        ]
+    },
+    {
+        "index": 32,
+        "prompt": "Query the data that name is 'John' from the SQL database at environment/temp.db.",
+        "agent": "DatabaseAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "clear"
+            },
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "insert",
+                "data": {
+                    "ID": 1,
+                    "name": "John",
+                    "age": 30,
+                    "gender": "Male"
+                }
+            }
+        ],
+        "workflow": [
+            "query_data"
+        ]
+    },
+    {
+        "index": 33,
+        "prompt": "Clear the SQL database at environment/temp.db.",
+        "agent": "DatabaseAgent",
+        "environment": false,
+        "workflow": [
+            "clear_sql_database"
+        ]
+    },
+    {
+        "index": 34,
+        "prompt": "Query all data from the SQL database at environment/temp.db. Then insert data name = 'Mary', age = 25, gender = 'Female' into it, the ID should be different from other data.",
+        "agent": "DatabaseAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "clear"
+            },
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "insert",
+                "data": {
+                    "ID": 1,
+                    "name": "John",
+                    "age": 30,
+                    "gender": "Male"
+                }
+            }
+        ],
+        "workflow": [
+            "query_all_data",
+            "insert_data"
+        ]
+    },
+    {
+        "index": 35,
+        "prompt": "Query the data that ID is 1 from the SQL database at environment/temp.db. Then delete it from the database.",
+        "agent": "DatabaseAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "clear"
+            },
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "insert",
+                "data": {
+                    "ID": 1,
+                    "name": "John",
+                    "age": 30,
+                    "gender": "Male"
+                }
+            }
+        ],
+        "workflow": [
+            "query_data",
+            "delete_data"
+        ]
+    },
+    {
+        "index": 36,
+        "prompt": "Insert data that ID is 1, name is Jack, age is 20, gender is male and data that ID is 4, name is Lucy, age is 21, gender is female into the SQL database at environment/temp.db.",
+        "agent": "DatabaseAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "clear"
+            }
+        ],
+        "workflow": [
+            "insert_data",
+            "insert_data"
+        ]
+    },
+    {
+        "index": 37,
+        "prompt": "Delete the data that name is Jack from the SQL database at environment/temp.db.",
+        "agent": "DatabaseAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "clear"
+            },
+            {
+                "type": "sql",
+                "database": "environment/temp.db",
+                "action": "insert",
+                "data": {
+                    "ID": 1,
+                    "name": "John",
+                    "age": 30,
+                    "gender": "Male"
+                }
+            }
+        ],
+        "workflow": [
+            "delete_data"
+        ]
+    },
+    {
+        "index": 38,
+        "prompt": "Clear the SQL database at environment/temp.db. Then insert the data that ID is 1, name is Jack, age is 20, gender is male into the database. Then query all the data from the database.",
+        "agent": "DatabaseAgent",
+        "environment": false,
+        "workflow": [
+            "clear_sql_database",
+            "insert_data",
+            "query_all_data"
+        ]
+    },
+    {
+        "index": 39,
+        "prompt": "Search the stock data that ts_code is 000001.SZ and trade_date is 2025-03-12.",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "get_stock_data"
+        ]
+    },
+    {
+        "index": 40,
+        "prompt": "Get the CPU occupancy rate.",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_cpu_info"
+        ]
+    },
+    {
+        "index": 41,
+        "prompt": "How many CPUs are in the system?",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_cpu_info"
+        ]
+    },
+    {
+        "index": 42,
+        "prompt": "How much disk space has my computer used?",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info"
+        ]
+    },
+    {
+        "index": 43,
+        "prompt": "How much disk space is left on my computer?",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info"
+        ]
+    },
+    {
+        "index": 44,
+        "prompt": "How much disk space does my computer have?",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info"
+        ]
+    },
+    {
+        "index": 45,
+        "prompt": "How much memory space has my computer used?",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_memory_info"
+        ]
+    },
+    {
+        "index": 46,
+        "prompt": "How much memory space is left on my computer?",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_memory_info"
+        ]
+    },
+    {
+        "index": 47,
+        "prompt": "How much memory space does my computer have?",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_memory_info"
+        ]
+    },
+    {
+        "index": 48,
+        "prompt": "Download file from https://arxiv.org/pdf/2405.14191 and save it to environment/paper.pdf",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "download_file"
+        ]
+    },
+    {
+        "index": 49,
+        "prompt": "Delete the file environment/paper.pdf",
+        "agent": "SystemAgent",
+        "environment": [
+            {
+                "type": "file",
+                "file": "environment/paper.pdf"
+            }
+        ],
+        "workflow": [
+            "delete_file"
+        ]
+    },
+    {
+        "index": 50,
+        "prompt": "If there is more than 1 GB of free disk space on the system, then download the file from https://arxiv.org/pdf/2405.14191 and save it to environment/paper.pdf",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info",
+            "download_file"
+        ]
+    },
+    {
+        "index": 51,
+        "prompt": "If the memory usage is less than 50%, then delete the file environment/paper.pdf",
+        "agent": "SystemAgent",
+        "environment": [
+            {
+                "type": "file",
+                "file": "environment/paper.pdf"
+            }
+        ],
+        "workflow": [
+            "get_memory_info",
+            "delete_file"
+        ]
+    },
+    {
+        "index": 52,
+        "prompt": "If the disk usage is less than 90% and memory usage is less than 50%, then download the file from https://arxiv.org/pdf/2405.14191 and save it to environment/paper.pdf",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info",
+            "get_memory_info",
+            "download_file"
+        ]
+    },
+    {
+        "index": 53,
+        "prompt": "Search on tavily: What is formal verification?",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "tavily_search"
+        ]
+    },
+    {
+        "index": 54,
+        "prompt": "What's the weather like in Hangzhou?",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "get_weather"
+        ]
+    },
+    {
+        "index": 55,
+        "prompt": "Create a SQL database at environment/papers.db, the keys are identifier (TEXT), published (TEXT), title (TEXT), authors (TEXT), summary (TEXT), pdf_url (TEXT). The primary key is identifier. Then, search the information of the paper which identifier is 2410.14209v2, then save its information to SQL database at environment/papers.db.",
+        "agent": "AcademicAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/papers.db",
+                "action": "clear"
+            }
+        ],
+        "workflow": [
+            "create_sql_database",
+            "is_arxiv_identifier",
+            "search_identifier",
+            "insert_data"
+        ]
+    },
+    {
+        "index": 56,
+        "prompt": "Query the data that identifier is 2410.14209v2 from the SQL database at environment/papers.db, then search the information of the paper which identifier is 2405.14191 and save it to SQL database.",
+        "agent": "AcademicAgent",
+        "environment": false,
+        "workflow": [
+            "query_data",
+            "is_arxiv_identifier",
+            "search_identifier",
+            "insert_data"
+        ]
+    },
+    {
+        "index": 57,
+        "prompt": "Search the information of the paper which identifier is 2410.14209v2 then download its pdf file and save it to environment/paper2410.pdf.",
+        "agent": "AcademicAgent",
+        "environment": false,
+        "workflow": [
+            "is_arxiv_identifier",
+            "search_identifier",
+            "download_file"
+        ]
+    },
+    {
+        "index": 58,
+        "prompt": "Search the information of the paper which identifier is 2405.14191 then download its pdf file and save it to environment/paper2405.pdf. Then convert it to markdown file and save at environment/paper2405.md.",
+        "agent": "AcademicAgent",
+        "environment": false,
+        "workflow": [
+            "is_arxiv_identifier",
+            "search_identifier",
+            "download_file",
+            "convert_file_to_markdown"
+        ]
+    },
+    {
+        "index": 59,
+        "prompt": "Search the Marry's Birthday Party in my calendar, and set an alarm for 30 minutes before the event.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "event": "marry's birthday party",
+                    "start_time": "2026-07-21 10:00:00",
+                    "end_time": "2026-07-21 12:00:00",
+                    "location":"Building 2, Room 3"
+                }
+            }
+        ],
+        "workflow": [
+            "search_event",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 60,
+        "prompt": "What is today's date? If today is summer, set an alarm at 07:00:00. If today is winter, set an alarm at 09:00:00.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "get_today_date",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 61,
+        "prompt": "Start a stopwatch timer and wait for 0.1 seconds. Then remove the event 'Go to school' from my calendar.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "event": "go to school",
+                    "start_time": "2026-03-11 08:00:00",
+                    "end_time": "2026-03-11 12:00:00",
+                    "location":"School"
+                }
+            }
+        ],
+        "workflow": [
+            "timer",
+            "remove_event_from_calendar"
+        ]
+    },
+    {
+        "index": 62,
+        "prompt": "What date is it today? What time is it now?",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "get_today_date",
+            "get_current_time"
+        ]
+    },
+    {
+        "index": 63,
+        "prompt": "Location latitude 30.264, longitude 120.123 located in which city? What's the weather like in that city?",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "location_decode",
+            "get_weather"
+        ]
+    },
+    {
+        "index": 64,
+        "prompt": "Location latitude 30.264, longitude 120.123 located in which city? Search for tourist attractions in that city using tavily.",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "location_decode",
+            "tavily_search"
+        ]
+    },
+    {
+        "index": 65,
+        "prompt": "Is there a SQL database stock.db in path `environment`? If not, create a SQL database environment/stock.db and with keys ts_code (TEXT), trade_date (TEXT), opening_price (REAL), closing_price (REAL), maximum_price (REAL), bottom_price (REAL), stock_volume (REAL), stock_turnover (REAL), change (REAL). The primary keys are ts_code and trade_date.",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "list_files",
+            "create_sql_database"
+        ]
+    },
+    {
+        "index": 66,
+        "prompt": "Query all data from the SQL database at environment/stock.db. Then search the stock information of ts_code 000002.SZ on trade date 2025-03-11 and save it to SQL database environment/stock.db.",
+        "agent": "StockAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/stock.db",
+                "action": "clear"
+            }
+        ],
+        "workflow": [
+            "query_all_data",
+            "get_stock_data",
+            "insert_data"
+        ]
+    },
+    {
+        "index": 67,
+        "prompt": "What date is it today? Search the stock information of ts_code 000001.SZ on last day and save it to SQL database environment/stock.db. Then query the data that ts_code is 000001.SZ from the SQL database at environment/stock.db.",
+        "agent": "StockAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/stock.db",
+                "action": "clear"
+            },
+            {
+                "type": "sql",
+                "database": "environment/stock.db",
+                "action": "insert",
+                "data": {
+                    "ts_code": "000002.SZ",
+                    "trade_date": "2025-03-11",
+                    "opening_price": 7.4,
+                    "closing_price": 7.43,
+                    "maximum_price": 7.45,
+                    "bottom_price": 7.35,
+                    "stock_volume": 872393.37,
+                    "stock_turnover": 645348.2,
+                    "change": -0.05
+                }
+            }
+        ],
+        "workflow": [
+            "get_today_date",
+            "get_stock_data",
+            "insert_data",
+            "query_data"
+        ]
+    },
+    {
+        "index": 68,
+        "prompt": "How much disk space does my computer have? If there is more than 50% free disk space, then search the arxiv paper 2410.14209v2 and download its pdf file and save it to environment/paper2410.pdf. Then convert it to markdown file and save at environment/paper2410.md.",
+        "agent": "GeneralAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info",
+            "is_arxiv_identifier",
+            "search_identifier",
+            "download_file",
+            "convert_file_to_markdown"
+        ]
+    },
+    {
+        "index": 69,
+        "prompt": "Search the location of Hangzhou, Beijing and Shanghai. Then search the weather of them.",
+        "agent": "WebSearchAgent",
+        "environment": false,
+        "workflow": [
+            "location_encode",
+            "location_encode",
+            "location_encode",
+            "get_weather"
+        ]
+    },
+    {
+        "index": 70,
+        "prompt": "How much disk space does my computer have? If there are more than 50% disk space, then list all files in the directory `environment`, and convert all the pdf files to markdown files and save them to the directory `environment`.",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info",
+            "list_files",
+            "convert_file_to_markdown"
+        ]
+    },
+    {
+        "index": 71,
+        "prompt": "I want to plan a oversea trip in China. Please search a city near the sea on tavily and tell me the location and weather of that city. Then set an alarm for me to wake up at 07:00:00 in that city.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "tavily_search",
+            "location_encode",
+            "get_weather",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 72,
+        "prompt": "Monitor the space of disk and memory of my system for 2 times, seperated by 0.1 second.",
+        "agent": "SystemAgent",
+        "environment": false,
+        "workflow": [
+            "get_disk_info",
+            "get_memory_info",
+            "timer",
+            "get_disk_info",
+            "get_memory_info"
+        ]
+    },
+    {
+        "index": 73,
+        "prompt": "Check New York's coordinates. Verify current time. Add a meeting on tomorrow 10:00-11:00 to my calendar.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "location_encode",
+            "get_current_time",
+            "add_event_to_calendar"
+        ]
+    },
+    {
+        "index": 74,
+        "prompt": "List all the files in the dictionary `environment`. If there is no `system.db`, create a SQL database environment/system.db with keys time (TEXT), memory_percent (REAL), disk_percent (REAL). The primary key is time. Then insert the current time, memory usage, and disk usage into the SQL database environment/system.db.",
+        "agent": "GeneralAgent",
+        "environment": [
+            {
+                "type": "sql",
+                "database": "environment/system.db",
+                "action": "clear"
+            }
+        ],
+        "workflow": [
+            "list_files",
+            "create_sql_database",
+            "get_current_time",
+            "get_memory_info",
+            "get_disk_info",
+            "insert_data"
+        ]
+    },
+    {
+        "index": 75,
+        "prompt": "Schedule conference (2024-09-15 08:00-18:00) in Hangzhou. Set an alarm to reminder me before 2 hours. And search the location and weather of Hangzhou.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "add_event_to_calendar",
+            "set_alarm",
+            "location_encode",
+            "get_weather"
+        ]
+    },
+    {
+        "index": 76,
+        "prompt": "Search for 'quantum computing breakthroughs' pdf file on tavily. Download the top PDF saved at environment/quantum.pdf and convert to markdown. Check memory before download.",
+        "agent": "GeneralAgent",
+        "environment": false,
+        "workflow": [
+            "tavily_search",
+            "download_file",
+            "get_memory_info",
+            "convert_file_to_markdown"
+        ]
+    },
+    {
+        "index": 77,
+        "prompt": "What's the weather in Tokyo today? Cancel the hiking from my calendar. Get Tokyo's coordinates to confirm.",
+        "agent": "ScheduleAgent",
+        "environment": [
+            {
+                "type": "calendar",
+                "event": {
+                    "event": "hiking",
+                    "start_time": "2024-09-15 08:00:00",
+                    "end_time": "2024-09-15 18:00:00",
+                    "location": "Tokyo, Japan"
+                }
+            }
+        ],
+        "workflow": [
+            "get_weather",
+            "remove_event_from_calendar",
+            "location_encode"
+        ]
+    },
+    {
+        "index": 78,
+        "prompt": "Find the location of Paris and encode it to coordinates. Then get the weather there and set an alarm if temperature drops below 5°C.",
+        "agent": "ScheduleAgent",
+        "environment": false,
+        "workflow": [
+            "location_encode",
+            "get_weather",
+            "set_alarm"
+        ]
+    },
+    {
+        "index": 79,
+        "prompt": "Search for recent advancements pdf paper in AI ethics on tavily. Download the top result's PDF saved at environment/AIethics.pdf and convert it to markdown. Then check if the disk space exceeds 1GB.",
+        "agent": "GeneralAgent",
+        "environment": false,
+        "workflow": [
+            "tavily_search",
+            "download_file",
+            "convert_file_to_markdown",
+            "get_disk_info"
+        ]
+    }
+]

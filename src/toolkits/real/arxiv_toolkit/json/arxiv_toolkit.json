@@ -1,0 +1,34 @@
+[
+    {
+        "name": "is_arxiv_identifier",
+        "description": "Check if the given identifier is a valid arXiv identifier.",
+        "parameters": {
+            "properties": {
+                "identifier": {
+                    "description": "The identifier to check.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identifier"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "search_identifier",
+        "description": "Search for arXiv papers based on the given identifier.",
+        "parameters": {
+            "properties": {
+                "identifier": {
+                    "description": "The identifier to search for.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identifier"
+            ],
+            "type": "object"
+        }
+    }
+]

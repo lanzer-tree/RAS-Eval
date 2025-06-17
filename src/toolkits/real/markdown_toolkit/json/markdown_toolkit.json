@@ -1,0 +1,23 @@
+[
+    {
+        "name": "convert_file_to_markdown",
+        "description": "Convert a file to markdown.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the file.",
+                    "type": "string"
+                },
+                "save_path": {
+                    "description": "The path to save the markdown file.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path",
+                "save_path"
+            ],
+            "type": "object"
+        }
+    }
+]

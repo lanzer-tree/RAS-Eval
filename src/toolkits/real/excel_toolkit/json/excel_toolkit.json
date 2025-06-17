@@ -1,0 +1,213 @@
+[
+    {
+        "name": "excel_create_workbook",
+        "description": "Create a new Excel workbook and save it to the specified file path.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to save the Excel workbook.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "excel_add_sheet",
+        "description": "Add a new sheet to an existing Excel workbook.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the Excel workbook.",
+                    "type": "string"
+                },
+                "sheet_name": {
+                    "description": "The name of the new sheet.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path",
+                "sheet_name"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "excel_delete_sheet",
+        "description": "Delete a sheet from an existing Excel workbook.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the Excel workbook.",
+                    "type": "string"
+                },
+                "sheet_name": {
+                    "description": "The name of the sheet to delete.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path",
+                "sheet_name"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "excel_write_cell",
+        "description": "Write a value to a specific cell in an existing Excel workbook.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the Excel workbook.",
+                    "type": "string"
+                },
+                "cell": {
+                    "description": "The cell to write to (e.g., \"A1\").",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "The value to write.",
+                    "type": "string"
+                },
+                "sheet_name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "Sheet",
+                    "description": "The name of the sheet."
+                }
+            },
+            "required": [
+                "file_path",
+                "cell",
+                "value"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "excel_read_cell",
+        "description": "Read a value from a specific cell in an existing Excel workbook.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the Excel workbook.",
+                    "type": "string"
+                },
+                "cell": {
+                    "description": "The cell to read from (e.g., \"A1\").",
+                    "type": "string"
+                },
+                "sheet_name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "Sheet",
+                    "description": "The name of the sheet."
+                }
+            },
+            "required": [
+                "file_path",
+                "cell"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "excel_format_cell",
+        "description": "Format a cell in an existing Excel workbook.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the Excel workbook.",
+                    "type": "string"
+                },
+                "cell": {
+                    "description": "The cell to format (e.g., \"A1\").",
+                    "type": "string"
+                },
+                "format": {
+                    "description": "The format to apply (e.g., \"0.00\").",
+                    "type": "string"
+                },
+                "sheet_name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "Sheet",
+                    "description": "The name of the sheet."
+                }
+            },
+            "required": [
+                "file_path",
+                "cell",
+                "format"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "excel_read_sheet",
+        "description": "Read the content of a specific sheet in an existing Excel workbook.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the Excel workbook.",
+                    "type": "string"
+                },
+                "sheet_name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "Sheet",
+                    "description": "The name of the sheet."
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "excel_list_sheets",
+        "description": "List all sheets in an existing Excel workbook.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path to the Excel workbook.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    }
+]

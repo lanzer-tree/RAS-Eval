@@ -1,0 +1,18 @@
+[
+    {
+        "name": "tavily_search",
+        "description": "Search Tavily for the given query and return the results.",
+        "parameters": {
+            "properties": {
+                "query": {
+                    "description": "The query to search for.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "query"
+            ],
+            "type": "object"
+        }
+    }
+]

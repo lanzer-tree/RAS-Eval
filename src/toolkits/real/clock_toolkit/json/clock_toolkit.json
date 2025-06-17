@@ -1,0 +1,58 @@
+[
+    {
+        "name": "set_alarm",
+        "description": "Set an alarm for a specific time.",
+        "parameters": {
+            "properties": {
+                "alarm_time": {
+                    "description": "The time to set the alarm for. Format: HH:MM:SS",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alarm_time"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "cancel_alarm",
+        "description": "Cancel the currently set alarm.",
+        "parameters": {
+            "properties": {
+                "alarm_time": {
+                    "description": "The time of the alarm to cancel. Format: HH:MM:SS",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alarm_time"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "get_current_time",
+        "description": "Get the current time.",
+        "parameters": {
+            "properties": {},
+            "type": "object"
+        }
+    },
+    {
+        "name": "timer",
+        "description": "Start a timer for a specific duration.",
+        "parameters": {
+            "properties": {
+                "duration": {
+                    "description": "The duration of the timer in seconds.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "duration"
+            ],
+            "type": "object"
+        }
+    }
+]

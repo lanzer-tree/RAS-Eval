@@ -1,0 +1,274 @@
+[
+    {
+        "name": "amap_geocode",
+        "description": "Get the latitude and longitude and administrative division of a address.",
+        "parameters": {
+            "properties": {
+                "address": {
+                    "description": "The address to get the latitude and longitude of.",
+                    "type": "string"
+                },
+                "city": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "The city of the address."
+                }
+            },
+            "required": [
+                "address"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_regeocode",
+        "description": "Get the address and administrative division of a latitude and longitude.",
+        "parameters": {
+            "properties": {
+                "location": {
+                    "description": "The langitude and latitude of the address, separated by a comma. e.g. \"120.123612,30.266521\".",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "location"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_direction_walking",
+        "description": "Get the walking route from origin to destination.",
+        "parameters": {
+            "properties": {
+                "origin": {
+                    "description": "The langitude and latitude of the origin, separated by a comma. e.g. \"120.123612,30.266521\".",
+                    "type": "string"
+                },
+                "destination": {
+                    "description": "The langitude and latitude of the destination, separated by a comma. e.g. \"120.123700,30.266501\".",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "origin",
+                "destination"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_direction_transit",
+        "description": "Get the transit route from origin to destination.",
+        "parameters": {
+            "properties": {
+                "origin": {
+                    "description": "The langitude and latitude of the origin, separated by a comma. e.g. \"120.123612,30.266521\".",
+                    "type": "string"
+                },
+                "destination": {
+                    "description": "The langitude and latitude of the destination, separated by a comma. e.g. \"120.123700,30.266501\".",
+                    "type": "string"
+                },
+                "city": {
+                    "description": "The city of the origin.",
+                    "type": "string"
+                },
+                "cityd": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "The city of the destination."
+                }
+            },
+            "required": [
+                "origin",
+                "destination",
+                "city"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_direction_driving",
+        "description": "Get the driving route from origin to destination.",
+        "parameters": {
+            "properties": {
+                "origin": {
+                    "description": "The langitude and latitude of the origin, separated by a comma. e.g. \"120.123612,30.266521\".",
+                    "type": "string"
+                },
+                "destination": {
+                    "description": "The langitude and latitude of the destination, separated by a comma. e.g. \"120.123700,30.266501\".",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "origin",
+                "destination"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_direction_bicycling",
+        "description": "Get the driving route from origin to destination.",
+        "parameters": {
+            "properties": {
+                "origin": {
+                    "description": "The langitude and latitude of the origin, separated by a comma. e.g. \"120.123612,30.266521\".",
+                    "type": "string"
+                },
+                "destination": {
+                    "description": "The langitude and latitude of the destination, separated by a comma. e.g. \"120.123700,30.266501\".",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "origin",
+                "destination"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_get_distance",
+        "description": "Get the distance between two points.",
+        "parameters": {
+            "properties": {
+                "origin": {
+                    "description": "The langitude and latitude of the origin, separated by a comma. e.g. \"120.123612,30.266521",
+                    "type": "string"
+                },
+                "destination": {
+                    "description": "The langitude and latitude of the destination, separated by a comma. e.g. \"120.123700,30.266501\".",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "origin",
+                "destination"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_ip_location",
+        "description": "Get the location of an IP address.",
+        "parameters": {
+            "properties": {
+                "ip": {
+                    "description": "The IP address to get the location of.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ip"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_transform_location",
+        "description": "Transform the location from one coordinate system to another.",
+        "parameters": {
+            "properties": {
+                "location": {
+                    "description": "The langitude and latitude of the origin, separated by a comma. e.g. \"120.123612,30.266521\".",
+                    "type": "string"
+                },
+                "coordtype": {
+                    "description": "The coordinate system of the location. e.g. \"gps\", \"baidu\".",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "location",
+                "coordtype"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_search_detail",
+        "description": "Get the detail information of a place.",
+        "parameters": {
+            "properties": {
+                "keywords": {
+                    "description": "The keywords to search for.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "keywords"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_around_search",
+        "description": "Get the surrounding places of a location.",
+        "parameters": {
+            "properties": {
+                "location": {
+                    "description": "The langitude and latitude of the location, separated by a comma. e.g. \"120.123612,30.266521\".",
+                    "type": "string"
+                },
+                "keywords": {
+                    "description": "The keywords to search for.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "location",
+                "keywords"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_get_weather",
+        "description": "Get the weather of a location.",
+        "parameters": {
+            "properties": {
+                "address_code": {
+                    "description": "The address code of the location.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "address_code"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "amap_get_weather_forecast",
+        "description": "Get the weather forecast of a location.",
+        "parameters": {
+            "properties": {
+                "address_code": {
+                    "description": "The address code of the location.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "address_code"
+            ],
+            "type": "object"
+        }
+    }
+]

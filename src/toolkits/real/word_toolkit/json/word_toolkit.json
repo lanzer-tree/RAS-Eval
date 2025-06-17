@@ -1,0 +1,409 @@
+[
+    {
+        "name": "word_create_document",
+        "description": "Create a new Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path where the document will be saved.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_add_heading",
+        "description": "Add a heading to the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "text": {
+                    "description": "The text of the heading.",
+                    "type": "string"
+                },
+                "level": {
+                    "default": 1,
+                    "description": "The level of the heading (1-9). Default is 1.",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "file_path",
+                "text"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_add_paragraph",
+        "description": "Add a paragraph to the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "text": {
+                    "description": "The text of the paragraph.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path",
+                "text"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_add_table",
+        "description": "Add a table to the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "rows": {
+                    "description": "The number of rows in the table.",
+                    "type": "integer"
+                },
+                "cols": {
+                    "description": "The number of columns in the table.",
+                    "type": "integer"
+                },
+                "data": {
+                    "description": "The data to fill the table. Each inner list represents a row.",
+                    "items": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "file_path",
+                "rows",
+                "cols",
+                "data"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_delete_paragraph",
+        "description": "Delete a paragraph from the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "paragraph_index": {
+                    "description": "The index of the paragraph to delete.",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "file_path",
+                "paragraph_index"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_add_picture",
+        "description": "Add a picture to the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "image_path": {
+                    "description": "The path of the image to add.",
+                    "type": "string"
+                },
+                "width": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "The width of the image in inches. Default is None."
+                },
+                "height": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "The height of the image in inches. Default is None."
+                }
+            },
+            "required": [
+                "file_path",
+                "image_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_add_page_break",
+        "description": "Add a page break to the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_search_and_replace",
+        "description": "Search and replace text in the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "search_text": {
+                    "description": "The text to search for.",
+                    "type": "string"
+                },
+                "replace_text": {
+                    "description": "The text to replace with.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path",
+                "search_text",
+                "replace_text"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_format_text",
+        "description": "Format text in the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "text": {
+                    "description": "The text to format.",
+                    "type": "string"
+                },
+                "font_name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "Times New Roman",
+                    "description": "The font name. Default is \"Times New Roman\"."
+                },
+                "font_size": {
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": 12,
+                    "description": "The font size. Default is 12."
+                },
+                "bold": {
+                    "anyOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Whether to make the text bold. Default is False."
+                },
+                "italic": {
+                    "anyOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Whether to make the text italic. Default is False."
+                },
+                "underline": {
+                    "anyOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": false,
+                    "description": "Whether to underline the text. Default is False."
+                },
+                "color": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "000000",
+                    "description": "The color of the text in hex format. Default is \"000000\"."
+                }
+            },
+            "required": [
+                "file_path",
+                "text"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_get_document_info",
+        "description": "Get information about the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_get_document_text",
+        "description": "Get the text content of the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_get_document_outline",
+        "description": "Get the outline of the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_get_document_paragraph",
+        "description": "Get a specific paragraph from the Word document.",
+        "parameters": {
+            "properties": {
+                "file_path": {
+                    "description": "The path of the Word document.",
+                    "type": "string"
+                },
+                "index": {
+                    "description": "The index of the paragraph.",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "file_path",
+                "index"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_copy_document",
+        "description": "Copy a Word document.",
+        "parameters": {
+            "properties": {
+                "source_file_path": {
+                    "description": "The path of the source Word document.",
+                    "type": "string"
+                },
+                "destination_file_path": {
+                    "description": "The path of the destination Word document.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "source_file_path",
+                "destination_file_path"
+            ],
+            "type": "object"
+        }
+    },
+    {
+        "name": "word_list_documents",
+        "description": "List all Word documents in a directory.",
+        "parameters": {
+            "properties": {
+                "directory": {
+                    "description": "The path of the directory.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "directory"
+            ],
+            "type": "object"
+        }
+    }
+]
