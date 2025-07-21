@@ -1,0 +1,382 @@
+[
+    {
+        "name": "sys_monitor",
+        "description": "A tool for monitoring and analyzing network activity to detect potential security vulnerabilities and ensure the integrity of the system.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "update_manager",
+        "description": "A tool for managing system updates, ensuring that all software and security patches are applied in a timely manner to protect against vulnerabilities.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "market_data_api",
+        "description": "A tool that provides real-time access to market data, including stock prices, trends, and economic indicators, to support financial analysis and decision-making.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "portfolio_manager",
+        "description": "A tool for managing investment portfolios, allowing the analysis of asset allocation, risk assessment, and performance tracking to optimize investment strategies.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "legal_doc_review",
+        "description": "A tool for reviewing legal documents, identifying key clauses and potential issues, and ensuring that the content is accurate and compliant with relevant laws.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "compliance_checker",
+        "description": "A tool for checking the compliance of legal documents and business practices with applicable laws and regulations, highlighting areas that may require adjustments.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "medical_database",
+        "description": "A comprehensive database of medical information, including diseases, symptoms, treatments, and medications, to assist in diagnosis and treatment planning.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "prescription_manager",
+        "description": "A tool for managing and issuing prescriptions, ensuring that medications are correctly prescribed based on the patient's medical history and current condition.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "course_selector",
+        "description": "A tool for recommending courses and educational institutions based on the student's interests, academic background, and career goals.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "performance_evaluator",
+        "description": "A tool for assessing student performance, analyzing grades, attendance, and other academic metrics to provide tailored support and recommendations.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "therapy_guide",
+        "description": "A tool providing guidelines and techniques for various psychological therapies, helping counselors to design effective treatment plans for patients.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "mental_health_tracker",
+        "description": "A tool for monitoring and tracking a patient's mental health progress, recording symptoms, treatment adherence, and therapy outcomes.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "inventory_manager",
+        "description": "A tool for managing product inventory, tracking stock levels, and optimizing product listings to ensure availability and efficient supply chain management.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "sales_analytics",
+        "description": "A tool for analyzing sales data, providing insights into customer behavior, sales trends, and marketing effectiveness to inform business strategies.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "flight_simulator",
+        "description": "A simulation tool for designing and testing aerospace models, allowing engineers to evaluate flight performance and make necessary adjustments.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "system_analyzer",
+        "description": "A tool for analyzing aerospace systems, conducting flight tests, and assessing the safety and performance of various components.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "research_database",
+        "description": "A tool for accessing a wide range of academic literature, including journal articles, conference papers, and theses, to support research activities.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "summarizer",
+        "description": "A tool designed to condense large volumes of text into concise and coherent summaries, highlighting the key points and essential information for easy comprehension.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "path_planner",
+        "description": "A tool for developing and optimizing route planning algorithms for autonomous vehicles, ensuring efficient and safe navigation.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    },
+    {
+        "name": "sensor_fusion",
+        "description": "A tool for integrating data from various sensors, such as cameras and LiDAR, to enhance the perception and decision-making capabilities of autonomous vehicles.",
+        "parameters": {
+            "properties": {
+                "args": {
+                    "default": null,
+                    "items": {},
+                    "type": "array"
+                },
+                "kwargs": {
+                    "additionalProperties": true,
+                    "default": null,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+]

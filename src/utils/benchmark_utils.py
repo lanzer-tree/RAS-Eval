@@ -10,7 +10,7 @@ parent_dir = os.path.dirname(os.path.dirname(current_dir))
 sys.path.append(parent_dir)
 
 
-def parse_toolkits(toolkit_paths: list[str]) -> dict[str, str]:
+def parse_toolkits(toolkit_paths: list[str], log_dir: str = "") -> dict[str, str]:
     count = {}
     import_commands = ""
     toolkits_import_commands = ""
@@ -38,7 +38,7 @@ def parse_toolkits(toolkit_paths: list[str]) -> dict[str, str]:
         for tool_tree in tools:
             tool_name = tool_tree.name
             framework_dependencies.append(ast.ImportFrom(
-                module=f"src.toolkits.real.{toolkit_name}.function.{toolkit_name}", 
+                module=f"{path.replace('/', '.')}.function.{toolkit_name}", 
                 names=[ast.alias(name=tool_name)], 
                 level=0
             ))
@@ -176,7 +176,7 @@ def parse_toolkits(toolkit_paths: list[str]) -> dict[str, str]:
         for tool_name in tool_names:
             try:
                 local_vars = {} 
-                exec(f"from src.toolkits.real.{toolkit_name}.langgraph.{toolkit_name} import _{tool_name}", globals(), local_vars) 
+                exec(f"from {path.replace('/', '.')}.langgraph.{toolkit_name} import _{tool_name}", globals(), local_vars) 
                 exec(f"tool = _{tool_name}", globals(), local_vars) 
                 tool = local_vars.get('tool') 
                 json_function = convert_to_openai_function(tool)
@@ -185,12 +185,12 @@ def parse_toolkits(toolkit_paths: list[str]) -> dict[str, str]:
             except Exception as e:
                 print(f'Error compiling tool {tool_name}: {e}')
             count[tool_name] = toolkit_name
-            import_commands += f"from src.toolkits.real.{toolkit_name}.function.{toolkit_name} import {tool_name}\n"
-            import_commands += f"from src.toolkits.real.{toolkit_name}.langgraph.{toolkit_name} import _{tool_name} as langgraph_{tool_name}\n"
-            import_commands += f"from src.toolkits.real.{toolkit_name}.mcp.{toolkit_name} import _{tool_name} as mcp_{tool_name}\n"
-            toolkits_import_commands += f"from src.toolkits.real.{toolkit_name}.{toolkit_name} import {tool_name}\n"
-            toolkits_import_commands += f"from src.toolkits.real.{toolkit_name}.{toolkit_name} import langgraph_{tool_name}\n"
-            toolkits_import_commands += f"from src.toolkits.real.{toolkit_name}.{toolkit_name} import mcp_{tool_name}\n"
+            import_commands += f"from {path.replace('/', '.')}.function.{toolkit_name} import {tool_name}\n"
+            import_commands += f"from {path.replace('/', '.')}.langgraph.{toolkit_name} import _{tool_name} as langgraph_{tool_name}\n"
+            import_commands += f"from {path.replace('/', '.')}.mcp.{toolkit_name} import _{tool_name} as mcp_{tool_name}\n"
+            toolkits_import_commands += f"from {path.replace('/', '.')}.{toolkit_name} import {tool_name}\n"
+            toolkits_import_commands += f"from {path.replace('/', '.')}.{toolkit_name} import langgraph_{tool_name}\n"
+            toolkits_import_commands += f"from {path.replace('/', '.')}.{toolkit_name} import mcp_{tool_name}\n"
 
         with open(f"{path}/json/{toolkit_name}.json", "w") as file:
             file.write(json.dumps(json_functions, indent=4))
@@ -214,7 +214,10 @@ def parse_toolkits(toolkit_paths: list[str]) -> dict[str, str]:
         #     exec(code)
     print(toolkits_import_commands)
     print(f"Compiled {len(count)} tools, {len(toolkit_paths)} toolkits")
-
+    if log_dir:
+        with open(f"{log_dir}", "w") as file:
+            file.write(toolkits_import_commands + "\n\n\n")
+            file.write(json.dumps(count, indent=4))
     return count
         
 
@@ -235,8 +238,10 @@ def main():
         "src/toolkits/real/system_toolkit",
         "src/toolkits/real/tavily_toolkit",
         "src/toolkits/real/weather_toolkit",
+        "src/toolkits/simulated/asb_attack_toolkit",
+        "src/toolkits/simulated/asb_normal_toolkit",
     ]
-    count = parse_toolkits(toolkit_paths)
+    count = parse_toolkits(toolkit_paths, "workspace/toolkit_compiler_log")
     print(json.dumps(count, indent=4))
 
 

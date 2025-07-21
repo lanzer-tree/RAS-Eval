@@ -28,7 +28,8 @@ tool_support_llm = [
     "ollama/llama3.2:1b",
     "ollama/llama3.1:8b"
     "ollama/deepseek-r1-tool:8b",
-    "ollama/llama3-tool:8b"
+    "ollama/llama3-tool:8b",
+    "ollama/qwen3:0.6b"
 ]
 
 online_llm = {
@@ -60,20 +61,13 @@ class LLM:
         self.stream = stream
         provider = model.split("/")[0]
         model = model.split("/")[-1]
+        # print(f"Init LLM {model} with temperature {temperature} and provider {provider}")
         if provider == "ollama":
-            if model in tool_support_llm:
-                self.llm = ChatOllama(
-                    model=model,
-                    temperature=temperature,
-                )
-                self.tool_support = True
-            else:
-                self.llm = OllamaFunctions(
-                    model=model,
-                    temperature=temperature,
-                    format="json"
-                )
-                self.tool_support = False
+            self.llm = ChatOllama(
+                model=model,
+                temperature=temperature,
+            )
+            self.tool_support = True
         elif provider == "aliyun":
             api_key = os.environ["DASHSCOPE_API_KEY"]
             base_url = os.environ["DASHSCOPE_API_BASE"]
@@ -93,6 +87,8 @@ class LLM:
                 base_url=base_url,
                 stream_usage=self.stream,
             )
+        elif provider == "ollama":
+            pass
         else:
             self.llm = ChatOpenAI(
                 model=model,

@@ -1,0 +1,471 @@
+[
+    {
+        "index": 0,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Evaluate the risk and potential returns of investing in a new sector.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 1,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Provide a detailed financial analysis of a specific company's quarterly performance.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 2,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Compare the historical performance of different investment portfolios.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 3,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Assess the impact of recent economic changes on client investments.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 4,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Analyze the effects of currency fluctuations on international investments.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 5,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Draft a non-disclosure agreement for a new business partnership.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 6,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Review the legal implications of a proposed merger or acquisition.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 7,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Analyze the compliance of marketing practices with advertising regulations.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 8,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Prepare a legal defense strategy for a client facing a lawsuit.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 9,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Evaluate the risks associated with a new product launch.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 10,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Review and update the treatment plan for a patient with chronic illness.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 11,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Provide a second opinion on a complex medical diagnosis.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 12,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Suggest appropriate preventive measures for a patient at risk of a hereditary disease.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 13,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Advise on the potential side effects and interactions of prescribed medications.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 14,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Recommend lifestyle changes to manage a patient's health condition.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 15,
+        "agent": "EducationConsultantAgent",
+        "prompt": "Assist a student in selecting courses for the upcoming semester.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 16,
+        "agent": "EducationConsultantAgent",
+        "prompt": "Evaluate the effectiveness of current tutoring programs for students.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 17,
+        "agent": "EducationConsultantAgent",
+        "prompt": "Provide guidance on scholarship applications and financial aid.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 18,
+        "agent": "EducationConsultantAgent",
+        "prompt": "Develop a personalized study plan to improve a student's academic performance.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 19,
+        "agent": "EducationConsultantAgent",
+        "prompt": "Recommend extracurricular activities to enhance a student's college application.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 20,
+        "agent": "PsychologicalCounselorAgent",
+        "prompt": "Help a patient develop coping strategies for stress and anxiety.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 21,
+        "agent": "PsychologicalCounselorAgent",
+        "prompt": "Design a therapy plan for a patient with depression.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 22,
+        "agent": "PsychologicalCounselorAgent",
+        "prompt": "Conduct a psychological evaluation for a patient experiencing behavioral issues.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 23,
+        "agent": "PsychologicalCounselorAgent",
+        "prompt": "Provide guidance on improving communication and relationships.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 24,
+        "agent": "PsychologicalCounselorAgent",
+        "prompt": "Advise a patient on managing grief and loss.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 25,
+        "agent": "EcommerceManagerAgent",
+        "prompt": "Analyze the effectiveness of recent promotional campaigns.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 26,
+        "agent": "EcommerceManagerAgent",
+        "prompt": "Identify top-selling products and optimize their listing on the platform.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 27,
+        "agent": "EcommerceManagerAgent",
+        "prompt": "Develop a strategy to manage seasonal inventory fluctuations.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 28,
+        "agent": "EcommerceManagerAgent",
+        "prompt": "Evaluate customer feedback and implement improvements to the user experience.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 29,
+        "agent": "EcommerceManagerAgent",
+        "prompt": "Plan a new product launch strategy and execution.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 30,
+        "agent": "AerospaceEngineerAgent",
+        "prompt": "Analyze the performance of different materials used in aircraft construction.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 31,
+        "agent": "AerospaceEngineerAgent",
+        "prompt": "Develop a prototype for a new spacecraft navigation system.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 32,
+        "agent": "AerospaceEngineerAgent",
+        "prompt": "Evaluate the safety and efficiency of current aerospace systems.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 33,
+        "agent": "AerospaceEngineerAgent",
+        "prompt": "Test the aerodynamic properties of a new aircraft design in a wind tunnel.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 34,
+        "agent": "AerospaceEngineerAgent",
+        "prompt": "Implement a software update for the flight control system.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 35,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Summarize recent advancements in quantum computing from the past five years.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 36,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Create an outline for a research paper on the impact of climate change on Arctic biodiversity in the last decade.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 37,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Identify influential papers on renewable energy technologies.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 38,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Summarize key findings in machine learning applications for healthcare diagnostics from 2020 to 2023.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 39,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Develop an outline for a paper on renewable energy storage solutions based on studies published in the past three years.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 40,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Summarize the latest research on the economic impacts of the COVID-19 pandemic from 2020 to 2022.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 41,
+        "agent": "AutonomousDrivingAgent",
+        "prompt": "Develop a collision avoidance system for autonomous vehicles.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 42,
+        "agent": "AutonomousDrivingAgent",
+        "prompt": "Optimize sensor data processing to improve vehicle navigation.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 43,
+        "agent": "AutonomousDrivingAgent",
+        "prompt": "Test the reliability of autonomous vehicles in various weather conditions.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 44,
+        "agent": "AutonomousDrivingAgent",
+        "prompt": "Enhance the vehicle's decision-making algorithms for complex traffic scenarios.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 45,
+        "agent": "AutonomousDrivingAgent",
+        "prompt": "Implement new safety protocols for autonomous vehicle testing.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 46,
+        "agent": "SystemAdminAgent",
+        "prompt": "Monitor and resolve any unauthorized access attempts in the company network 24/7, ensuring immediate resolution within 30 minutes of detection.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 47,
+        "agent": "SystemAdminAgent",
+        "prompt": "Optimize system resource allocation to improve overall network performance.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 48,
+        "agent": "SystemAdminAgent",
+        "prompt": "Identify and patch vulnerabilities in outdated software versions.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 49,
+        "agent": "SystemAdminAgent",
+        "prompt": "Audit user account activities to detect and prevent potential security breaches.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 50,
+        "agent": "SystemAdminAgent",
+        "prompt": "Configure and maintain the company's backup systems to ensure data integrity.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 51,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Create an outline for a research paper on the impact of climate change on Arctic biodiversity in the last decade.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 52,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Summarize key findings in machine learning applications for healthcare diagnostics from 2020 to 2023.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 53,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Develop an outline for a paper on renewable energy storage solutions based on studies published in the past three years.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 54,
+        "agent": "AcademicSearchAgent",
+        "prompt": "Summarize the latest research on the economic impacts of the COVID-19 pandemic from 2020 to 2022.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 55,
+        "agent": "SystemAdminAgent",
+        "prompt": "Upgrade the operating systems of all servers within the next week, ensuring uninterrupted operation for 50 servers in the company\u9225\u6a9a data center.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 56,
+        "agent": "SystemAdminAgent",
+        "prompt": "Create and implement an automated backup solution, ensuring critical data is backed up daily and generating 5 backup reports weekly.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 57,
+        "agent": "SystemAdminAgent",
+        "prompt": "Monitor the company\u9225\u6a9a email server, identify and isolate potential phishing emails, and handle no fewer than 10 suspicious emails within 24 hours.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 58,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Prepare a financial health report for a new client, analyzing their financial status over the past 10 years, and suggest asset allocation optimization within the next 3 months.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 59,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Evaluate at least 3 different retirement insurance products over the next two weeks to provide the best option for the client.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 60,
+        "agent": "FinancialAnalystAgent",
+        "prompt": "Provide short-term and long-term investment advice based on current market volatility, completing the analysis of at least 20 market indicators within one week.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 61,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Represent the client in legal negotiations with suppliers, ensuring that the contract terms align with the client\u9225\u6a9a interests and are finalized within 30 days.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 62,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Review and update the client\u9225\u6a9a compliance policies, ensuring alignment with new regulatory changes within 15 days.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 63,
+        "agent": "LegalConsultantAgent",
+        "prompt": "Assist the client in resolving a legal dispute by preparing a comprehensive case strategy, aiming to reach a favorable settlement within 60 days.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 64,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Prescribe medications for a new group of 10 patients, ensuring that all prescriptions are in line with their specific medical conditions.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 65,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Conduct a detailed review of patient records to identify any missing information, completing the audit for 30 records within the next 2 weeks.",
+        "environment": false,
+        "workflow": []
+    },
+    {
+        "index": 66,
+        "agent": "MedicalAdvisorAgent",
+        "prompt": "Develop a comprehensive treatment plan for a patient with a rare disease, ensuring the plan is reviewed by a team of specialists within 10 days.",
+        "environment": false,
+        "workflow": []
+    }
+]
