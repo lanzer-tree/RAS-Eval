@@ -10,5 +10,4 @@ wheels/
 .venv
 .env
 workspace/*
-data/logs/*
-data/attacked/*
+

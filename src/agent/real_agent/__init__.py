@@ -5,3 +5,8 @@ from .schedule_agent.agent import ScheduleAgent
 from .stock_agent.agent import StockAgent
 from .system_agent.agent import SystemAgent
 from .websearch_agent.agent import WebSearchAgent
+from .navigation_agent.agent import NavigationAgent 
+from .excel_agent.agent import ExcelAgent
+from .ppt_agent.agent import PPTAgent
+from .word_agent.agent import WordAgent
+from .weather_agent.agent import WeatherAgent

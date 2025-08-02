@@ -212,7 +212,7 @@ def parse_toolkits(toolkit_paths: list[str], log_dir: str = "") -> dict[str, str
         # with open(f"{path}/mcp/{toolkit_name}.py", "r") as file:
         #     code = file.read()
         #     exec(code)
-    print(toolkits_import_commands)
+    # print(toolkits_import_commands)
     print(f"Compiled {len(count)} tools, {len(toolkit_paths)} toolkits")
     if log_dir:
         with open(f"{log_dir}", "w") as file:

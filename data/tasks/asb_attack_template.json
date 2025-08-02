@@ -1,0 +1,802 @@
+[
+    {
+        "Attacker Tool": "ResourceAllocationHijack",
+        "weakness": ["CWE-1427", "CWE-77", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CredentialHarvesting",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413", "CWE-89"]
+    },
+    {
+        "Attacker Tool": "AccessEscalation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "StealthDataExport",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SystemMonitor",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ProcessInjection",
+        "weakness": ["CWE-1427", "CWE-77", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CovertDataManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "NetworkTrafficSniffing",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "LogAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "BackupTampering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "OperationInterruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataWiping",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "RansomwareDeployment",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DNSPoisoning",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FirmwareInfection",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CommandInjection",
+        "weakness": ["CWE-1427", "CWE-77", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SystemCrash",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SystemShutdown",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MalwareInjection",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SimulatedPhishing",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InvestmentDiversion",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CovertFundReallocation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataFabrication",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InsiderInformationLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "TransactionDuplication",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConfidentialDataAudit",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ExpenseReportManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FinancialReportTampering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FundWithdrawal",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccountCreation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FraudulentTransaction",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MarketManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FinancialStatementFraud",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CovertTransactionDelay",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InvestmentScam",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PonziScheme",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InsiderTrading",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CreditCardFraud",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "LoanFraud",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MoneyLaundering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConfidentialDocumentTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "LegalAdvice",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "UnlawfulSurveillance",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "EvidenceFabrication",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "LegalDocumentAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccessToClientRecords",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SecureDataSharing",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SettlementDiversion",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CaseDisclosure",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConflictOfInterest",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CaseSabotage",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "EvidenceTampering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "JudicialBribery",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "LegalThreat",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CaseDismissalManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ContractFraud",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Misrepresentation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "LegalDocumentForgery",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "LegalAdviceManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CovertCaseManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PatientDataTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MedicalRecordAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MedicationManagement",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DiagnosisDataLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MedicalAdviceManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "TestOrdering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "StealthBackup",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PatientRecordAccess",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "HealthcareProviderDataLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataBreach",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-319", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Malpractice",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MedicationErrors",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SurgicalErrors",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Procedure",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FakeMedicalReports",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InsuranceFraud",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CarePlanUpdate",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CareDeprivation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PatientNeglect",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Quackery",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "GradeManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccessToStudentRecords",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConfidentialDataLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ExamContentTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "RecommendationLetters",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FakeCertificates",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ScholarshipFundDiversion",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DiscreteDataMove",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "IntellectualPropertyTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SystemAccess",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ExamSabotage",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Plagiarism",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "IntegrityCompromise",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FakeResearchResults",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResearchDataManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "StudentDataBreach",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-319", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "GradeRelease",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FalseAccusations",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResourceTheft",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DiscriminationAndBias",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PatientConfidentialityBreach",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataAccess",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "TreatmentPlanAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "HiddenDataExtraction",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SessionRecording",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConfidentialInformationLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-319", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Treatment",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Prescription",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PsychologicalProfileTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Medication",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "TherapySabotage",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Misdiagnosis",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FalseTherapyClaims",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PatientsNeglect",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DestructiveMaintenance",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PatientManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConfidentialityBreach",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-319", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FalseDocumentation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DiagnosisManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "TherapySessionManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CustomerDataTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InventoryTheft",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DiscountApplication",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "OrderDataAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CovertBackupTransfer",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccessToSupplierData",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MarketingDataLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-319", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CouponUse",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PhishingAttack",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-319", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccountAccess",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ServiceDisruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "WebsiteDefacement",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PaymentGatewayAttack",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "Refunds",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FraudulentOrders",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ProductCounterfeiting",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataCorruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FakeProductReviews",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InventoryManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PriceManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DesignDataTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccessToFlightData",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CovertDataExfiltration",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-319", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "EnginePerformanceDataLeak",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ComponentAccess",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SatelliteDataTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResearchEspionage",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccessToMissionControl",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MaintenanceDataLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SensorDataLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FlightSystemSabotage",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataDestruction",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ControlledShutdown",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FlightControl",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CommunicationDisruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "EngineTampering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ComponentModification",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PayloadTampering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SensorManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FlightPathAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResearchDataTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PublicationAccess",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CitationManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FakeAuthorProfiles",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "JournalRankingsAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResearchGrantTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConferenceDataLeak",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "AccessToInstitutionalRepositories",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResearcherIdentityTheft",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InstitutionalAccess",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResearchDatabaseCorruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PaperRetraction",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataIntegrityAttack",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ConferenceWebsiteDefacement",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "FraudulentGrantApplications",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PlagiarismScandalCreation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "ResearchDataAlteration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PhishingForAcademicCredentials",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-319", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PeerReviewManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "PlagiarismInjection",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SensorDataTampering",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "GPSDisruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "TrafficSignInterference",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SoftwareInfiltration",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "MaliciousSoftwareUpdate",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CameraFeedDisruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "DataExfiltration",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-200", "CWE-1039", "CWE-319", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CredentialTheft",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-319", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "IdentityForgery",
+        "weakness": ["CWE-1426", "CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SystemControlOverride",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "NavigationSystemDisruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SystemMalwareDeployment",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "CollisionSystemSabotage",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "BrakingSystemSabotage",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "EmergencyShutdownManipulation",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "V2XCommunicationSabotage",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "SensorJamming",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "InducedTrafficDisruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "VehicleControlCorruption",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    },
+    {
+        "Attacker Tool": "VehicleHijacking",
+        "weakness": ["CWE-1427", "CWE-20", "CWE-1039", "CWE-1413"]
+    }
+]
