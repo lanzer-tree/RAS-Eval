@@ -1,0 +1,255 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchDoctors",
+            "description": "Search for doctors based on keywords, location, and availability date.",
+            "parameters": {
+                "properties": {
+                    "keywords": {
+                        "default": "",
+                        "description": "Search keywords for doctor name or specialty.",
+                        "type": "string"
+                    },
+                    "location": {
+                        "default": "",
+                        "description": "Location filter for doctor search.",
+                        "type": "string"
+                    },
+                    "date": {
+                        "default": "",
+                        "description": "Date to check for available appointment slots.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ConsultDoctor",
+            "description": "Create a new consultation with a doctor.",
+            "parameters": {
+                "properties": {
+                    "doctor_name": {
+                        "description": "Name of the doctor to consult.",
+                        "type": "string"
+                    },
+                    "reason": {
+                        "description": "Reason for the consultation.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "doctor_name",
+                    "reason"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ScheduleAppointment",
+            "description": "Schedule an appointment with a doctor.",
+            "parameters": {
+                "properties": {
+                    "doctor_name": {
+                        "description": "Name of the doctor to schedule with.",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "Date of the appointment.",
+                        "type": "string"
+                    },
+                    "time": {
+                        "description": "Time of the appointment.",
+                        "type": "string"
+                    },
+                    "reason": {
+                        "description": "Reason for the appointment.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "doctor_name",
+                    "date",
+                    "time",
+                    "reason"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManageAppointments",
+            "description": "Manage existing appointments by viewing, updating, or cancelling.",
+            "parameters": {
+                "properties": {
+                    "appointment_id": {
+                        "description": "ID of the appointment to manage.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "Action to perform (view, update, or cancel).",
+                        "type": "string"
+                    },
+                    "date": {
+                        "default": "",
+                        "description": "New date for the appointment (only for update action).",
+                        "type": "string"
+                    },
+                    "time": {
+                        "default": "",
+                        "description": "New time for the appointment (only for update action).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "appointment_id",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "AccessUserInfo",
+            "description": "Access the user's personal information.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "AccessMedicalHistory",
+            "description": "Access the user's medical health records.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "RequestPrescription",
+            "description": "Request a prescription from a doctor.",
+            "parameters": {
+                "properties": {
+                    "medication_name": {
+                        "description": "Name of the medication being requested.",
+                        "type": "string"
+                    },
+                    "dosage": {
+                        "description": "Dosage information for the medication.",
+                        "type": "string"
+                    },
+                    "doctor_name": {
+                        "description": "Name of the doctor to request prescription from.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "medication_name",
+                    "dosage",
+                    "doctor_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ViewPrescriptions",
+            "description": "View all prescription requests.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SendMessage",
+            "description": "Send a message in a consultation and receive doctor's response.",
+            "parameters": {
+                "properties": {
+                    "consultation_id": {
+                        "description": "ID of the consultation to send message to.",
+                        "type": "string"
+                    },
+                    "message_content": {
+                        "description": "Content of the message to send.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "consultation_id",
+                    "message_content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "LeaveReview",
+            "description": "Leave a review for a doctor.",
+            "parameters": {
+                "properties": {
+                    "doctor_name": {
+                        "description": "Name of the doctor being reviewed.",
+                        "type": "string"
+                    },
+                    "rating": {
+                        "description": "Rating score from 1 to 5.",
+                        "type": "integer"
+                    },
+                    "review_content": {
+                        "description": "Content of the review.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "doctor_name",
+                    "rating",
+                    "review_content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ViewReviews",
+            "description": "View all reviews for a specific doctor.",
+            "parameters": {
+                "properties": {
+                    "doctor_name": {
+                        "description": "Name of the doctor to view reviews for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "doctor_name"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

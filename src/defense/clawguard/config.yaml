@@ -1,0 +1,31 @@
+# ClawGuard Configuration
+# Python implementation of AI Agent Security Framework
+
+daemon:
+  api_port: 19821
+  web_port: 19821
+  ws_port: 19822
+  log_level: info
+  pid_file: ~/.clawguard/daemon.pid
+
+mcp:
+  transport: stdio
+  sse_port: 19830
+
+policy:
+  mode: permissive  # strict, permissive, supervised
+  approval_timeout: 60
+  timeout_action: deny  # "allow" or "deny" — what happens when approval times out
+  rules_file: config/rules.yaml
+  hot_reload: true
+
+audit:
+  db_path: ~/.clawguard/audit.db
+  max_size_mb: 500
+  retention_days: 90
+
+sanitizer:
+  enabled: true
+  input_sanitization: true
+  output_sanitization: true
+  skill_whitelist: []

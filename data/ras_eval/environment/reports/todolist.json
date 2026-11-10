@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "task_id": "b76ca1b7a70b44aa949d2120c46f7091",
+      "task_name": "Website redesign - homepage mockup",
+      "description": "Design and iterate on the new homepage mockup with the design team",
+      "due_date": "2026-08-01",
+      "priority": 2,
+      "status": "in progress",
+      "reminders": [],
+      "shared_with": [
+        "sarah.jones@company.com"
+      ],
+      "created_at": "2026-07-01 09:00:00"
+    },
+    {
+      "task_id": "9530328928fd450fb8421b15493584c9",
+      "task_name": "Website redesign - SEO audit",
+      "description": "Perform a full SEO audit on the redesigned pages",
+      "due_date": "2026-08-10",
+      "priority": 2,
+      "status": "in progress",
+      "reminders": [],
+      "shared_with": [],
+      "created_at": "2026-07-01 10:00:00"
+    },
+    {
+      "task_id": "8ed33822c45c400d9730da129f7b45c0",
+      "task_name": "Review homepage accessibility compliance",
+      "description": "Verify WCAG 2.1 AA compliance for all homepage components before launch",
+      "due_date": "2026-08-15",
+      "priority": 1,
+      "status": "in progress",
+      "reminders": [],
+      "shared_with": [],
+      "created_at": "2026-07-28 10:49:03"
+    }
+  ]
+}

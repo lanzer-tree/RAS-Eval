@@ -1,0 +1,323 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "search_products",
+            "description": "Search for products by keywords or filters. Then you can proceed directly to the next tool without thinking. If no products match the search query, return an empty list.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "Keywords or filters to search for products.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 5,
+                        "description": "Maximum number of results to return. Default is 5, maximum is 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_product_details",
+            "description": "Retrieve product details by the product ID. If user don't provide a valid product ID, search for products by keywords or filters firstly.",
+            "parameters": {
+                "properties": {
+                    "product_id": {
+                        "description": "Unique identifier of the product.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "product_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_product",
+            "description": "Create a new product with the specified information.",
+            "parameters": {
+                "properties": {
+                    "name": {
+                        "description": "Name of the product.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the product.",
+                        "type": "string"
+                    },
+                    "price": {
+                        "description": "Price of the product, in USD.",
+                        "type": "number"
+                    },
+                    "inventory": {
+                        "description": "Inventory of the product.",
+                        "type": "integer"
+                    },
+                    "extra_details": {
+                        "additionalProperties": true,
+                        "default": null,
+                        "description": "Extra details of the product.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "name",
+                    "description",
+                    "price",
+                    "inventory"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_product",
+            "description": "Update product information by the product ID. If user don't provide a valid product ID, search for products by keywords or filters firstly.",
+            "parameters": {
+                "properties": {
+                    "product_id": {
+                        "description": "Unique identifier of the product.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "default": null,
+                        "description": "New name of the product.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "default": null,
+                        "description": "New description of the product.",
+                        "type": "string"
+                    },
+                    "price": {
+                        "default": null,
+                        "description": "New price of the product, in USD.",
+                        "type": "number"
+                    },
+                    "inventory": {
+                        "default": null,
+                        "description": "New inventory of the product.",
+                        "type": "integer"
+                    },
+                    "extra_details": {
+                        "additionalProperties": true,
+                        "default": null,
+                        "description": "New extra details of the product.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "product_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_product",
+            "description": "Delete a product by the product ID. If user don't provide a valid product ID, search for products by keywords or filters firstly.",
+            "parameters": {
+                "properties": {
+                    "product_id": {
+                        "description": "Unique identifier of the product.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "product_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_orders",
+            "description": "Search for orders by keywords or filters. Then you can proceed directly to the next tool without thinking. If no orders match the search query, return an empty list.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "Keywords or filters to search for orders.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 5,
+                        "description": "Maximum number of results to return. Default is 5, maximum is 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_order_details",
+            "description": "Retrieve order details by the order ID. If user don't provide a valid product ID, search for products by keywords or filters firstly.",
+            "parameters": {
+                "properties": {
+                    "order_id": {
+                        "description": "Unique identifier of the order.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "order_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "draft_order",
+            "description": "Draft a new order for a customer to review before payment. The drafted order would be in the 'draft' status.",
+            "parameters": {
+                "properties": {
+                    "customer_username": {
+                        "description": "Username of the customer who will review the order.",
+                        "type": "string"
+                    },
+                    "items": {
+                        "description": "List of items in the order.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "total_price": {
+                        "description": "Total price of the order, in USD.",
+                        "type": "number"
+                    },
+                    "shipping_details": {
+                        "additionalProperties": true,
+                        "description": "Shipping details of the order.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "customer_username",
+                    "items",
+                    "total_price",
+                    "shipping_details"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "manage_order",
+            "description": "Manage an existing order by the order ID. If user don't provide a valid product ID, search for orders by keywords or filters firstly.",
+            "parameters": {
+                "properties": {
+                    "order_id": {
+                        "description": "Unique identifier of the order.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "The action to perform.",
+                        "type": "string"
+                    },
+                    "items": {
+                        "default": null,
+                        "description": "List of items in the order (for update).",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "total_price": {
+                        "default": null,
+                        "description": "New total price (for update).",
+                        "type": "number"
+                    },
+                    "shipping_details": {
+                        "additionalProperties": true,
+                        "default": null,
+                        "description": "New shipping details (for update).",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "order_id",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_customers",
+            "description": "Search for customers by keywords or filters. Then you can proceed directly to the next tool without thinking. If no customers match the search query, return an empty list.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "Keywords or filters to search for customers.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_store_analytics",
+            "description": "Retrieve store analytics data, such as revenue, orders, and traffic.",
+            "parameters": {
+                "properties": {
+                    "start_date": {
+                        "description": "Start date of the analytics data in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "description": "End date of the analytics data in YYYY-MM-DD format.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "start_date",
+                    "end_date"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

@@ -1,0 +1,61 @@
+{
+    "privacy_settings": {
+        "share_with_third_parties": false,
+        "allow_download": false
+    },
+    "third_party_apps": [
+        {
+            "app_id": "APP001",
+            "app_info": {
+                "name": "HealthApp",
+                "description": "Health tracking app"
+            }
+        },
+        {
+            "app_id": "APP002",
+            "app_info": {
+                "name": "MyFitnessApp",
+                "description": "Fitness tracking application"
+            }
+        },
+        {
+            "app_id": "APP003",
+            "app_info": {
+                "name": "HealthTracker",
+                "description": "Health monitoring application"
+            }
+        },
+        {
+            "app_id": "APP004",
+            "app_info": {
+                "name": "HealthTracker Pro",
+                "description": "Professional health tracking application"
+            }
+        },
+        {
+            "app_id": "APP005",
+            "app_info": {
+                "name": "GenomeStudy",
+                "description": "Genetic research application"
+            }
+        },
+        {
+            "app_id": "APP006",
+            "app_info": {
+                "name": "HealthTrack Pro",
+                "description": "Wellness tracking application"
+            }
+        }
+    ],
+    "shared_apps": [],
+    "genetic_data": {
+        "BRCA1": "negative",
+        "BRCA2": "negative",
+        "MTHFR C677T": "heterozygous",
+        "APOE": "E3/E3",
+        "HLA-B27": "negative",
+        "Type 2 Diabetes polygenic risk score": "elevated",
+        "Coronary Artery Disease polygenic risk score": "moderate",
+        "Lactose Intolerance": "lactase persistence (CC genotype at rs4988235)"
+    }
+}

@@ -1,0 +1,508 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "create_study_set",
+            "description": "Create a new study set (flashcards, knowledge points, or formulas).",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user creating the study set.",
+                        "type": "string"
+                    },
+                    "set_title": {
+                        "description": "The title of the study set.",
+                        "type": "string"
+                    },
+                    "study_items": {
+                        "description": "A list of study items, each containing 'term' (question/term) and 'definition' (answer/definition).",
+                        "items": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "set_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": "flashcard",
+                        "description": "The type of study set: 'flashcard', 'knowledge', or 'formula'. Default is 'flashcard'."
+                    },
+                    "tags": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "A list of tags for categorization."
+                    },
+                    "visibility": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": "private",
+                        "description": "The visibility setting: 'private', 'public', or 'group'. Default is 'private'."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "set_title",
+                    "study_items"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_study_set",
+            "description": "Query, update, or delete a study set.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "set_id": {
+                        "description": "The unique identifier of the study set.",
+                        "type": "string"
+                    },
+                    "operation_type": {
+                        "description": "The type of operation: 'query', 'update', or 'delete'.",
+                        "type": "string"
+                    },
+                    "update_data": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Update content including title, study_items, or tags. Required for 'update' operation."
+                    },
+                    "query_fields": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Specific fields to return in query results."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "set_id",
+                    "operation_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "generate_recite_plan",
+            "description": "Generate a personalized recitation plan based on the Ebbinghaus forgetting curve.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "set_id": {
+                        "description": "The unique identifier of the study set.",
+                        "type": "string"
+                    },
+                    "target_days": {
+                        "description": "The target number of days to complete the study set.",
+                        "type": "integer"
+                    },
+                    "daily_amount": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The daily learning amount. If not provided, it will be automatically calculated."
+                    },
+                    "recite_mode": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": "new_and_review",
+                        "description": "The recitation mode: 'new_and_review' or 'new_only'. Default is 'new_and_review'."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "set_id",
+                    "target_days"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "start_quiz_practice",
+            "description": "Start an online quiz practice session.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "set_id": {
+                        "description": "The unique identifier of the study set.",
+                        "type": "string"
+                    },
+                    "quiz_type": {
+                        "description": "The type of quiz: 'multiple_choice', 'fill_blank', or 'matching'.",
+                        "type": "string"
+                    },
+                    "question_count": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 10,
+                        "description": "The number of questions. Default is 10."
+                    },
+                    "difficulty": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": "random",
+                        "description": "The difficulty level: 'random', 'basic', or 'advanced'. Default is 'random'."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "set_id",
+                    "quiz_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "submit_quiz_answer",
+            "description": "Submit quiz answers and get grading results.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "task_id": {
+                        "description": "The unique identifier of the quiz task.",
+                        "type": "string"
+                    },
+                    "answers": {
+                        "description": "A list of answer dictionaries, each containing 'question_id' and 'user_answer'.",
+                        "items": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "notes": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional notes about the answers, such as reasons for mistakes."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "task_id",
+                    "answers"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "join_study_group",
+            "description": "Create or join a study group.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "operation_type": {
+                        "description": "The type of operation: 'create' or 'join'.",
+                        "type": "string"
+                    },
+                    "group_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The name of the group. Required for 'create' operation."
+                    },
+                    "group_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The unique identifier of the group. Required for 'join' operation."
+                    },
+                    "invite_user_ids": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "A list of user IDs to invite when creating a group."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "operation_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "share_study_set",
+            "description": "Share a study set with another user or group.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user sharing the set.",
+                        "type": "string"
+                    },
+                    "set_id": {
+                        "description": "The unique identifier of the study set to share.",
+                        "type": "string"
+                    },
+                    "share_target": {
+                        "description": "The target to share with (user ID or group ID).",
+                        "type": "string"
+                    },
+                    "share_permission": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": "view",
+                        "description": "The permission level: 'view' or 'edit'. Default is 'view'."
+                    },
+                    "expire_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The expiration time for the share (YYYY-MM-DD HH:MM:SS). Default is permanent."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "set_id",
+                    "share_target"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_learning_progress",
+            "description": "Query learning progress and statistics.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "query_target": {
+                        "description": "The target to query: 'study_set', 'recite_plan', or 'quiz_record'.",
+                        "type": "string"
+                    },
+                    "set_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The specific study set ID to query."
+                    },
+                    "time_range": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "A dictionary with 'start_date' and 'end_date' in YYYY-MM-DD format."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "query_target"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "review_mistake_notebook",
+            "description": "Review mistakes from the mistake notebook.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "set_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The specific study set ID to filter mistakes."
+                    },
+                    "review_mode": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": "by_time",
+                        "description": "The review mode: 'by_time' or 'by_type'. Default is 'by_time'."
+                    },
+                    "question_count": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 10,
+                        "description": "The number of questions to review. Default is 10."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

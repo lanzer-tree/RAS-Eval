@@ -1,0 +1,847 @@
+{
+  "destinations": [
+    {
+      "destination_id": "DEST-001",
+      "name": "Arashiyama Bamboo Grove",
+      "description": "A stunning bamboo forest in Kyoto, perfect for family walks and photography",
+      "rating": 4.7,
+      "open_hours": "24 hours",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure", "hiking"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "JR Sagano Line to Saga-Arashiyama Station"
+    },
+    {
+      "destination_id": "DEST-002",
+      "name": "Fushimi Inari Shrine",
+      "description": "Famous shrine with thousands of vermillion torii gates in Kyoto, great for family exploration",
+      "rating": 4.8,
+      "open_hours": "24 hours",
+      "ticket_price": 0,
+      "travel_types": ["family", "hiking", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "JR Nara Line to Inari Station"
+    },
+    {
+      "destination_id": "DEST-003",
+      "name": "Kinkaku-ji Golden Pavilion",
+      "description": "Iconic golden temple in Kyoto surrounded by beautiful gardens, a must-see for families",
+      "rating": 4.6,
+      "open_hours": "09:00 - 17:00",
+      "ticket_price": 400,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Kyoto City Bus 101 or 205 to Kinkakuji-michi"
+    },
+    {
+      "destination_id": "DEST-004",
+      "name": "Nijo Castle",
+      "description": "Historic castle in Kyoto with spacious grounds and nightingale floors, enjoyable for children",
+      "rating": 4.5,
+      "open_hours": "08:45 - 17:00",
+      "ticket_price": 1030,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Subway Tozai Line to Nijojo-mae Station"
+    },
+    {
+      "destination_id": "DEST-005",
+      "name": "Kyoto Railway Museum",
+      "description": "Interactive railway museum in Kyoto perfect for children and train enthusiasts",
+      "rating": 4.6,
+      "open_hours": "10:00 - 17:30",
+      "ticket_price": 1200,
+      "travel_types": ["family"],
+      "tags": ["popular"],
+      "transportation": "JR Sagano Line to Umekoji-Kyotonishi Station"
+    },
+    {
+      "destination_id": "DEST-006",
+      "name": "Gion District",
+      "description": "Historic geisha district in Kyoto with traditional architecture and cultural experiences",
+      "rating": 4.4,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Keihan Line to Gion-Shijo Station"
+    },
+    {
+      "destination_id": "DEST-007",
+      "name": "Arashiyama Monkey Park",
+      "description": "Hilltop park in Kyoto where families can observe wild Japanese macaques up close",
+      "rating": 4.3,
+      "open_hours": "09:00 - 16:30",
+      "ticket_price": 550,
+      "travel_types": ["family", "hiking"],
+      "tags": ["popular"],
+      "transportation": "Hankyu Line to Arashiyama Station, 15 min walk"
+    },
+    {
+      "destination_id": "DEST-008",
+      "name": "Nara Deer Park",
+      "description": "Famous park near Kyoto where friendly deer roam freely, a wonderful experience for families with children",
+      "rating": 4.7,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Kintetsu Line to Kintetsu-Nara Station"
+    },
+    {
+      "destination_id": "DEST-009",
+      "name": "Osaka Castle",
+      "description": "Majestic castle in Osaka near Kyoto with museum and observation deck, family-friendly",
+      "rating": 4.5,
+      "open_hours": "09:00 - 17:00",
+      "ticket_price": 600,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "JR Loop Line to Osakajokoen Station"
+    },
+    {
+      "destination_id": "DEST-010",
+      "name": "Kyoto Imperial Palace Garden",
+      "description": "Serene garden in Kyoto ideal for relaxed family strolls and nature appreciation",
+      "rating": 4.2,
+      "open_hours": "09:00 - 16:30",
+      "ticket_price": 500,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Kyoto City Bus to Karasuma-Oike"
+    },
+    {
+      "destination_id": "DEST-101",
+      "name": "Stone Forest (Shilin) - Kunming, Yunnan",
+      "description": "UNESCO World Heritage Site in Kunming, Yunnan province featuring towering limestone formations, a natural wonder perfect for family exploration",
+      "rating": 4.7,
+      "open_hours": "07:00 - 18:00",
+      "ticket_price": 130,
+      "travel_types": ["family", "leisure", "hiking"],
+      "tags": ["popular"],
+      "transportation": "Bus from Kunming East Bus Station, 1.5 hours"
+    },
+    {
+      "destination_id": "DEST-102",
+      "name": "Dianchi Lake - Kunming, Yunnan",
+      "description": "The largest freshwater lake in Yunnan, Kunming offers scenic lakeside walks and bird watching, ideal for families",
+      "rating": 4.4,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "City bus to Haigeng Park"
+    },
+    {
+      "destination_id": "DEST-103",
+      "name": "Dali Old Town - Yunnan",
+      "description": "Charming ancient town in Dali, Yunnan province with cobblestone streets, traditional Bai architecture, and family-friendly cafes",
+      "rating": 4.6,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Bus from Dali railway station, 30 minutes"
+    },
+    {
+      "destination_id": "DEST-104",
+      "name": "Erhai Lake - Dali, Yunnan",
+      "description": "Beautiful alpine lake in Dali, Yunnan with crystal-clear waters, perfect for family boat rides and cycling along the shore",
+      "rating": 4.8,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Bicycle rental from Dali Old Town, 20 minutes"
+    },
+    {
+      "destination_id": "DEST-105",
+      "name": "Lijiang Old Town - Yunnan",
+      "description": "UNESCO World Heritage Site in Lijiang, Yunnan featuring Naxi culture, ancient waterways, and traditional architecture, great for families",
+      "rating": 4.7,
+      "open_hours": "All day",
+      "ticket_price": 50,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Walking from Lijiang city center"
+    },
+    {
+      "destination_id": "DEST-106",
+      "name": "Jade Dragon Snow Mountain - Lijiang, Yunnan",
+      "description": "Majestic snow-capped mountain near Lijiang, Yunnan with cable car access, glaciers, and stunning views suitable for the whole family",
+      "rating": 4.6,
+      "open_hours": "07:00 - 18:00",
+      "ticket_price": 180,
+      "travel_types": ["family", "hiking", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Shuttle bus from Lijiang Old Town, 40 minutes"
+    },
+    {
+      "destination_id": "DEST-107",
+      "name": "Tropical Botanical Garden - Xishuangbanna, Yunnan",
+      "description": "China's largest botanical garden in Xishuangbanna, Yunnan with tropical plants and rainforest trails, a fascinating educational destination for families",
+      "rating": 4.5,
+      "open_hours": "08:00 - 18:00",
+      "ticket_price": 75,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Bus from Jinghong city center, 1 hour"
+    },
+    {
+      "destination_id": "DEST-108",
+      "name": "Elephant Valley - Xishuangbanna, Yunnan",
+      "description": "Wild elephant nature reserve in Xishuangbanna, Yunnan with cable car and observation platforms, a thrilling family experience",
+      "rating": 4.4,
+      "open_hours": "08:00 - 17:00",
+      "ticket_price": 60,
+      "travel_types": ["family"],
+      "tags": ["popular"],
+      "transportation": "Bus from Jinghong, 45 minutes"
+    },
+    {
+      "destination_id": "DEST-109",
+      "name": "Blue Moon Valley - Yunnan",
+      "description": "Stunning turquoise pools and waterfalls at the foot of Jade Dragon Snow Mountain in Yunnan, a relaxing spot for families",
+      "rating": 4.5,
+      "open_hours": "07:00 - 18:00",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Included in Jade Dragon Snow Mountain shuttle"
+    },
+    {
+      "destination_id": "DEST-110",
+      "name": "Shuhe Ancient Town - Lijiang, Yunnan",
+      "description": "A quieter ancient town near Lijiang, Yunnan with traditional Naxi buildings, craft workshops, and horse riding, ideal for relaxed family visits",
+      "rating": 4.3,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Taxi from Lijiang Old Town, 15 minutes"
+    },
+    {
+      "destination_id": "DEST-201",
+      "name": "Tokyo Tower",
+      "description": "Iconic Tokyo landmark with observation decks offering panoramic views of the city",
+      "rating": 4.5,
+      "open_hours": "09:00 - 23:00",
+      "ticket_price": 1200,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Toei Mita Line to Onarimon Station"
+    },
+    {
+      "destination_id": "DEST-202",
+      "name": "Senso-ji Temple",
+      "description": "Tokyo's oldest Buddhist temple in Asakusa with vibrant Nakamise shopping street",
+      "rating": 4.7,
+      "open_hours": "06:00 - 17:00",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Ginza Line to Asakusa Station"
+    },
+    {
+      "destination_id": "DEST-203",
+      "name": "Shibuya Crossing",
+      "description": "World-famous Tokyo scramble crossing and vibrant entertainment district",
+      "rating": 4.6,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["leisure", "family"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "JR Yamanote Line to Shibuya Station"
+    },
+    {
+      "destination_id": "DEST-204",
+      "name": "Meiji Shrine",
+      "description": "Serene Tokyo Shinto shrine surrounded by a lush forest in the heart of the city",
+      "rating": 4.6,
+      "open_hours": "05:00 - 18:00",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "JR Yamanote Line to Harajuku Station"
+    },
+    {
+      "destination_id": "DEST-205",
+      "name": "Shinjuku Gyoen National Garden",
+      "description": "Beautiful Tokyo park blending Japanese, French, and English garden styles",
+      "rating": 4.5,
+      "open_hours": "09:00 - 16:30",
+      "ticket_price": 500,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "JR Yamanote Line to Shinjuku Station"
+    },
+    {
+      "destination_id": "DEST-206",
+      "name": "Tsukiji Outer Market",
+      "description": "Famous Tokyo food market with fresh seafood, street food, and culinary experiences",
+      "rating": 4.5,
+      "open_hours": "05:00 - 14:00",
+      "ticket_price": 0,
+      "travel_types": ["family", "leisure", "food"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "Toei Oedo Line to Tsukijishijo Station"
+    },
+    {
+      "destination_id": "DEST-207",
+      "name": "Akihabara Electric Town",
+      "description": "Tokyo's electronics and anime district with colorful shops and gaming centers",
+      "rating": 4.4,
+      "open_hours": "All day",
+      "ticket_price": 0,
+      "travel_types": ["leisure", "family"],
+      "tags": ["free_entry", "popular"],
+      "transportation": "JR Yamanote Line to Akihabara Station"
+    },
+    {
+      "destination_id": "DEST-208",
+      "name": "Tokyo Skytree",
+      "description": "Japan's tallest structure with observation decks and a shopping complex in Tokyo",
+      "rating": 4.5,
+      "open_hours": "08:00 - 22:00",
+      "ticket_price": 2100,
+      "travel_types": ["family", "leisure"],
+      "tags": ["popular"],
+      "transportation": "Tobu Skytree Line to Tokyo Skytree Station"
+    }
+  ],
+  "accommodations": [
+    {
+      "accommodation_id": "ACC-001",
+      "name": "Kyoto Granbell Hotel",
+      "type": "hotel",
+      "location": "Kyoto",
+      "price_per_night": 15000,
+      "address": "27-5 Nishikikoji-cho, Higashiyama-ku, Kyoto",
+      "contact": "+81-75-531-5800",
+      "amenities": ["wifi", "breakfast", "parking"],
+      "check_in_info": "Check-in after 15:00, check-out by 11:00"
+    },
+    {
+      "accommodation_id": "ACC-002",
+      "name": "Kyoto Family Inn",
+      "type": "hotel",
+      "location": "Kyoto",
+      "price_per_night": 12000,
+      "address": "1-3 Shimogyo-ku, Kyoto",
+      "contact": "+81-75-361-2100",
+      "amenities": ["wifi", "breakfast", "parking"],
+      "check_in_info": "Check-in after 14:00, check-out by 10:00"
+    },
+    {
+      "accommodation_id": "ACC-003",
+      "name": "Kyoto Traditional Homestay",
+      "type": "homestay",
+      "location": "Kyoto",
+      "price_per_night": 8000,
+      "address": "5-12 Kamigyo-ku, Kyoto",
+      "contact": "+81-75-492-3300",
+      "amenities": ["wifi", "breakfast"],
+      "check_in_info": "Check-in after 16:00, check-out by 10:00"
+    },
+    {
+      "accommodation_id": "ACC-101",
+      "name": "Kunming Green Lake Hotel",
+      "type": "hotel",
+      "location": "Kunming, Yunnan",
+      "price_per_night": 680,
+      "address": "66 Cihu West Road, Kunming, Yunnan",
+      "contact": "+86-871-6516-8888",
+      "amenities": ["wifi", "breakfast", "parking"],
+      "check_in_info": "Check-in after 14:00, check-out by 12:00"
+    },
+    {
+      "accommodation_id": "ACC-102",
+      "name": "Dali Landscape Hotel",
+      "type": "hotel",
+      "location": "Dali, Yunnan",
+      "price_per_night": 580,
+      "address": "20 Boai Road, Dali Old Town, Yunnan",
+      "contact": "+86-872-266-8888",
+      "amenities": ["wifi", "breakfast", "parking"],
+      "check_in_info": "Check-in after 14:00, check-out by 12:00"
+    },
+    {
+      "accommodation_id": "ACC-103",
+      "name": "Lijiang Wangfu Hotel",
+      "type": "hotel",
+      "location": "Lijiang, Yunnan",
+      "price_per_night": 720,
+      "address": "88 Xinhua Street, Lijiang Old Town, Yunnan",
+      "contact": "+86-888-518-8888",
+      "amenities": ["wifi", "breakfast", "parking"],
+      "check_in_info": "Check-in after 14:00, check-out by 12:00"
+    },
+    {
+      "accommodation_id": "ACC-104",
+      "name": "Xishuangbanna Tropical Resort",
+      "type": "hotel",
+      "location": "Xishuangbanna, Yunnan",
+      "price_per_night": 650,
+      "address": "18 Menghai Road, Jinghong, Xishuangbanna, Yunnan",
+      "contact": "+86-691-212-8888",
+      "amenities": ["wifi", "breakfast", "parking", "pool"],
+      "check_in_info": "Check-in after 14:00, check-out by 12:00"
+    },
+    {
+      "accommodation_id": "ACC-105",
+      "name": "Kunming Family Homestay",
+      "type": "homestay",
+      "location": "Kunming, Yunnan",
+      "price_per_night": 320,
+      "address": "15 Nanping Street, Kunming, Yunnan",
+      "contact": "+86-871-6366-6666",
+      "amenities": ["wifi", "breakfast"],
+      "check_in_info": "Check-in after 15:00, check-out by 11:00"
+    },
+    {
+      "accommodation_id": "ACC-201",
+      "name": "Park Hyatt Tokyo",
+      "type": "hotel",
+      "location": "Tokyo",
+      "price_per_night": 45000,
+      "address": "3-7-1-2 Nishi-Shinjuku, Shinjuku-ku, Tokyo",
+      "contact": "+81-3-5322-1234",
+      "amenities": ["wifi", "breakfast", "parking", "pool", "spa"],
+      "check_in_info": "Check-in after 15:00, check-out by 12:00"
+    },
+    {
+      "accommodation_id": "ACC-202",
+      "name": "The Peninsula Tokyo",
+      "type": "hotel",
+      "location": "Tokyo",
+      "price_per_night": 52000,
+      "address": "1-8-1 Yurakucho, Chiyoda-ku, Tokyo",
+      "contact": "+81-3-6270-2888",
+      "amenities": ["wifi", "breakfast", "parking", "pool", "spa"],
+      "check_in_info": "Check-in after 15:00, check-out by 12:00"
+    }
+  ],
+  "restaurants": [
+    {
+      "restaurant_id": "REST-001",
+      "name": "Kyoto Local Kitchen",
+      "cuisine": "local",
+      "location": "Kyoto",
+      "price_range": "medium",
+      "rating": 4.5
+    },
+    {
+      "restaurant_id": "REST-002",
+      "name": "Sakura Western Bistro",
+      "cuisine": "western",
+      "location": "Kyoto",
+      "price_range": "medium",
+      "rating": 4.3
+    },
+    {
+      "restaurant_id": "REST-003",
+      "name": "Green Garden Vegetarian",
+      "cuisine": "vegetarian",
+      "location": "Kyoto",
+      "price_range": "low",
+      "rating": 4.4
+    },
+    {
+      "restaurant_id": "REST-101",
+      "name": "Yunnan Crossing-Bridge Noodles",
+      "cuisine": "local",
+      "location": "Kunming, Yunnan",
+      "price_range": "low",
+      "rating": 4.7
+    },
+    {
+      "restaurant_id": "REST-102",
+      "name": "Dali Bai Family Kitchen",
+      "cuisine": "local",
+      "location": "Dali, Yunnan",
+      "price_range": "medium",
+      "rating": 4.6
+    },
+    {
+      "restaurant_id": "REST-103",
+      "name": "Lijiang Naxi Grill",
+      "cuisine": "local",
+      "location": "Lijiang, Yunnan",
+      "price_range": "medium",
+      "rating": 4.5
+    },
+    {
+      "restaurant_id": "REST-104",
+      "name": "Xishuangbanna Dai Cuisine",
+      "cuisine": "local",
+      "location": "Xishuangbanna, Yunnan",
+      "price_range": "low",
+      "rating": 4.4
+    },
+    {
+      "restaurant_id": "REST-201",
+      "name": "Tokyo Sushi Master",
+      "cuisine": "local",
+      "location": "Tokyo",
+      "price_range": "high",
+      "rating": 4.8
+    },
+    {
+      "restaurant_id": "REST-202",
+      "name": "Tokyo Teppanyaki House",
+      "cuisine": "local",
+      "location": "Tokyo",
+      "price_range": "medium",
+      "rating": 4.6
+    },
+    {
+      "restaurant_id": "REST-203",
+      "name": "Tokyo Western Grill",
+      "cuisine": "western",
+      "location": "Tokyo",
+      "price_range": "medium",
+      "rating": 4.4
+    }
+  ],
+  "transportation_options": [
+    {
+      "number": "TOKAIDO-501",
+      "type": "train",
+      "departure": "Tokyo",
+      "arrival": "Kyoto",
+      "departure_time": "09:00",
+      "price": 13320,
+      "duration": "2h15m",
+      "pickup_method": "E-ticket",
+      "seat_types": ["second_class", "first_class"]
+    },
+    {
+      "number": "TOKAIDO-503",
+      "type": "train",
+      "departure": "Tokyo",
+      "arrival": "Kyoto",
+      "departure_time": "11:00",
+      "price": 13320,
+      "duration": "2h15m",
+      "pickup_method": "E-ticket",
+      "seat_types": ["second_class", "first_class"]
+    },
+    {
+      "number": "TOKAIDO-505",
+      "type": "train",
+      "departure": "Tokyo",
+      "arrival": "Kyoto",
+      "departure_time": "14:00",
+      "price": 13320,
+      "duration": "2h15m",
+      "pickup_method": "E-ticket",
+      "seat_types": ["second_class", "first_class"]
+    },
+    {
+      "number": "KYOTO-NA-201",
+      "type": "bus",
+      "departure": "Kyoto",
+      "arrival": "Nara",
+      "departure_time": "08:30",
+      "price": 1500,
+      "duration": "1h30m",
+      "pickup_method": "E-ticket",
+      "seat_types": ["standard"]
+    },
+    {
+      "number": "CA-4188",
+      "type": "flight",
+      "departure": "Beijing",
+      "arrival": "Kunming",
+      "departure_time": "08:00",
+      "price": 1500,
+      "duration": "3h30m",
+      "pickup_method": "E-ticket",
+      "seat_types": ["economy", "business"]
+    },
+    {
+      "number": "MU-5702",
+      "type": "flight",
+      "departure": "Shanghai",
+      "arrival": "Kunming",
+      "departure_time": "10:30",
+      "price": 1200,
+      "duration": "3h",
+      "pickup_method": "E-ticket",
+      "seat_types": ["economy", "business"]
+    },
+    {
+      "number": "CA-9201",
+      "type": "flight",
+      "departure": "Shanghai",
+      "arrival": "Tokyo",
+      "departure_time": "09:00",
+      "price": 3200,
+      "duration": "3h",
+      "pickup_method": "E-ticket",
+      "seat_types": ["economy", "business"]
+    },
+    {
+      "number": "KUNMING-DALI-01",
+      "type": "train",
+      "departure": "Kunming",
+      "arrival": "Dali",
+      "departure_time": "09:00",
+      "price": 145,
+      "duration": "2h",
+      "pickup_method": "E-ticket",
+      "seat_types": ["second_class", "first_class"]
+    },
+    {
+      "number": "DALI-LIJ-01",
+      "type": "train",
+      "departure": "Dali",
+      "arrival": "Lijiang",
+      "departure_time": "10:00",
+      "price": 80,
+      "duration": "1h30m",
+      "pickup_method": "E-ticket",
+      "seat_types": ["second_class", "first_class"]
+    },
+    {
+      "number": "JL-0005",
+      "type": "flight",
+      "departure": "New York",
+      "arrival": "Tokyo",
+      "departure_time": "22:00",
+      "price": 120000,
+      "duration": "14h",
+      "pickup_method": "E-ticket",
+      "seat_types": ["economy", "business", "first_class"]
+    },
+    {
+      "number": "JL-0100",
+      "type": "flight",
+      "departure": "Tokyo",
+      "arrival": "Kyoto",
+      "departure_time": "10:00",
+      "price": 28000,
+      "duration": "1h10m",
+      "pickup_method": "E-ticket",
+      "seat_types": ["economy", "business"]
+    }
+  ],
+  "weather_forecasts": {
+    "tokyo": [
+      {"date": "2026-09-10", "condition": "Sunny", "temp_high": 28, "temp_low": 20, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"date": "2026-09-11", "condition": "Sunny", "temp_high": 29, "temp_low": 21, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"date": "2026-09-12", "condition": "Partly Cloudy", "temp_high": 27, "temp_low": 19, "rain_chance": 20, "wind": "Moderate", "suggestion": "Good day for sightseeing"},
+      {"date": "2026-09-13", "condition": "Sunny", "temp_high": 28, "temp_low": 20, "rain_chance": 15, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"date": "2026-09-14", "condition": "Sunny", "temp_high": 29, "temp_low": 21, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"date": "2026-09-15", "condition": "Partly Cloudy", "temp_high": 26, "temp_low": 18, "rain_chance": 25, "wind": "Moderate", "suggestion": "Bring a light jacket"}
+    ],
+    "kyoto": [
+      {"date": "2026-08-15", "condition": "Sunny", "temp_high": 35, "temp_low": 25, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities, stay hydrated"},
+      {"date": "2026-08-16", "condition": "Sunny", "temp_high": 34, "temp_low": 25, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities, stay hydrated"},
+      {"date": "2026-08-17", "condition": "Partly Cloudy", "temp_high": 33, "temp_low": 24, "rain_chance": 20, "wind": "Moderate", "suggestion": "Good day for sightseeing"},
+      {"date": "2026-08-18", "condition": "Sunny", "temp_high": 35, "temp_low": 25, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities, stay hydrated"},
+      {"date": "2026-08-19", "condition": "Sunny", "temp_high": 34, "temp_low": 24, "rain_chance": 15, "wind": "Light", "suggestion": "Suitable for outdoor activities"}
+    ],
+    "kunming": [
+      {"date": "2026-08-10", "condition": "Partly Cloudy", "temp_high": 25, "temp_low": 17, "rain_chance": 30, "wind": "Light", "suggestion": "Pleasant weather, bring a light rain jacket"},
+      {"date": "2026-08-11", "condition": "Sunny", "temp_high": 26, "temp_low": 18, "rain_chance": 15, "wind": "Light", "suggestion": "Great for outdoor sightseeing"},
+      {"date": "2026-08-12", "condition": "Partly Cloudy", "temp_high": 24, "temp_low": 16, "rain_chance": 25, "wind": "Moderate", "suggestion": "Comfortable temperature for family activities"},
+      {"date": "2026-08-13", "condition": "Sunny", "temp_high": 27, "temp_low": 18, "rain_chance": 10, "wind": "Light", "suggestion": "Perfect for outdoor exploration"},
+      {"date": "2026-08-14", "condition": "Partly Cloudy", "temp_high": 25, "temp_low": 17, "rain_chance": 20, "wind": "Light", "suggestion": "Good day for sightseeing"}
+    ],
+    "dali": [
+      {"date": "2026-08-10", "condition": "Sunny", "temp_high": 26, "temp_low": 16, "rain_chance": 20, "wind": "Light", "suggestion": "Pleasant weather for lake and old town visits"},
+      {"date": "2026-08-11", "condition": "Partly Cloudy", "temp_high": 25, "temp_low": 15, "rain_chance": 30, "wind": "Moderate", "suggestion": "Bring a light jacket"},
+      {"date": "2026-08-12", "condition": "Sunny", "temp_high": 27, "temp_low": 17, "rain_chance": 10, "wind": "Light", "suggestion": "Great for cycling around Erhai Lake"},
+      {"date": "2026-08-13", "condition": "Sunny", "temp_high": 26, "temp_low": 16, "rain_chance": 15, "wind": "Light", "suggestion": "Perfect for outdoor activities"},
+      {"date": "2026-08-14", "condition": "Partly Cloudy", "temp_high": 25, "temp_low": 16, "rain_chance": 25, "wind": "Light", "suggestion": "Comfortable for sightseeing"}
+    ],
+    "lijiang": [
+      {"date": "2026-08-10", "condition": "Sunny", "temp_high": 24, "temp_low": 14, "rain_chance": 15, "wind": "Light", "suggestion": "Cool and pleasant, bring layers"},
+      {"date": "2026-08-11", "condition": "Partly Cloudy", "temp_high": 23, "temp_low": 13, "rain_chance": 25, "wind": "Moderate", "suggestion": "Good for old town exploration"},
+      {"date": "2026-08-12", "condition": "Sunny", "temp_high": 25, "temp_low": 15, "rain_chance": 10, "wind": "Light", "suggestion": "Ideal for mountain hiking"},
+      {"date": "2026-08-13", "condition": "Sunny", "temp_high": 24, "temp_low": 14, "rain_chance": 15, "wind": "Light", "suggestion": "Perfect weather for Jade Dragon Snow Mountain"},
+      {"date": "2026-08-14", "condition": "Partly Cloudy", "temp_high": 23, "temp_low": 13, "rain_chance": 20, "wind": "Light", "suggestion": "Comfortable for outdoor activities"}
+    ],
+    "default": [
+      {"condition": "Sunny", "temp_high": 25, "temp_low": 15, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"condition": "Sunny", "temp_high": 25, "temp_low": 15, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"condition": "Sunny", "temp_high": 25, "temp_low": 15, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"condition": "Sunny", "temp_high": 25, "temp_low": 15, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"},
+      {"condition": "Sunny", "temp_high": 25, "temp_low": 15, "rain_chance": 10, "wind": "Light", "suggestion": "Suitable for outdoor activities"}
+    ]
+  },
+  "local_services": [
+    {
+      "service_id": "SVC-001",
+      "name": "Kyoto Family Tour Guide",
+      "service_type": "guide",
+      "location": "Kyoto",
+      "price": 8000,
+      "rating": 4.8,
+      "contact": "+81-75-123-4567",
+      "description": "Professional English-speaking guide specializing in family tours of Kyoto temples and gardens"
+    },
+    {
+      "service_id": "SVC-002",
+      "name": "Kyoto Car Rental",
+      "service_type": "car_rental",
+      "location": "Kyoto",
+      "price": 6000,
+      "rating": 4.5,
+      "contact": "+81-75-987-6543",
+      "description": "Compact and family cars available for daily rental in Kyoto area"
+    },
+    {
+      "service_id": "SVC-003",
+      "name": "Kyoto Temple Pass",
+      "service_type": "tickets",
+      "location": "Kyoto",
+      "price": 2000,
+      "rating": 4.6,
+      "contact": "+81-75-555-1234",
+      "description": "Multi-temple pass for major Kyoto attractions, valid for 5 days"
+    },
+    {
+      "service_id": "SVC-004",
+      "name": "Kyoto Food Walking Tour",
+      "service_type": "food",
+      "location": "Kyoto",
+      "price": 5000,
+      "rating": 4.7,
+      "contact": "+81-75-222-3344",
+      "description": "Guided food tour through Nishiki Market and local restaurants, family-friendly"
+    },
+    {
+      "service_id": "SVC-101",
+      "name": "Yunnan Family Tour Guide",
+      "service_type": "guide",
+      "location": "Kunming, Yunnan",
+      "price": 500,
+      "rating": 4.7,
+      "contact": "+86-871-123-4567",
+      "description": "Professional English-speaking guide for Kunming and Yunnan family tours"
+    },
+    {
+      "service_id": "SVC-102",
+      "name": "Kunming Car Rental",
+      "service_type": "car_rental",
+      "location": "Kunming, Yunnan",
+      "price": 350,
+      "rating": 4.5,
+      "contact": "+86-871-987-6543",
+      "description": "SUVs and family cars available for daily rental in Kunming and Yunnan area"
+    },
+    {
+      "service_id": "SVC-103",
+      "name": "Yunnan Scenic Pass",
+      "service_type": "tickets",
+      "location": "Kunming, Yunnan",
+      "price": 300,
+      "rating": 4.6,
+      "contact": "+86-871-555-1234",
+      "description": "Multi-site pass for major Yunnan attractions, valid for 7 days"
+    },
+    {
+      "service_id": "SVC-104",
+      "name": "Kunming Food Tour",
+      "service_type": "food",
+      "location": "Kunming, Yunnan",
+      "price": 200,
+      "rating": 4.8,
+      "contact": "+86-871-222-3344",
+      "description": "Guided food tour featuring Yunnan specialties including crossing-bridge noodles and flower cakes"
+    },
+    {
+      "service_id": "SVC-105",
+      "name": "Dali Cycling Tour",
+      "service_type": "guide",
+      "location": "Dali, Yunnan",
+      "price": 280,
+      "rating": 4.6,
+      "contact": "+86-872-333-5566",
+      "description": "Guided cycling tour around Erhai Lake with stops at Bai villages"
+    },
+    {
+      "service_id": "SVC-106",
+      "name": "Lijiang Car Rental",
+      "service_type": "car_rental",
+      "location": "Lijiang, Yunnan",
+      "price": 380,
+      "rating": 4.4,
+      "contact": "+86-888-876-5432",
+      "description": "Family-friendly car rental for exploring Lijiang and surrounding Yunnan attractions"
+    },
+    {
+      "service_id": "SVC-201",
+      "name": "Tokyo Premium Car Rental",
+      "service_type": "car_rental",
+      "location": "Tokyo",
+      "price": 8000,
+      "rating": 4.7,
+      "contact": "+81-3-3456-7890",
+      "description": "Premium car rental service in Tokyo with luxury sedans and SUVs available"
+    },
+    {
+      "service_id": "SVC-202",
+      "name": "Tokyo Family Car Rental",
+      "service_type": "car_rental",
+      "location": "Tokyo",
+      "price": 5000,
+      "rating": 4.5,
+      "contact": "+81-3-9876-5432",
+      "description": "Affordable family car rental in Tokyo with English-speaking staff"
+    },
+    {
+      "service_id": "SVC-203",
+      "name": "Tokyo City Tour Guide",
+      "service_type": "guide",
+      "location": "Tokyo",
+      "price": 10000,
+      "rating": 4.8,
+      "contact": "+81-3-1111-2222",
+      "description": "Professional English-speaking guide for Tokyo sightseeing tours"
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "ORD-789",
+      "user_id": "USER-42",
+      "itinerary_id": "",
+      "order_type": "accommodation",
+      "accommodation_name": "Kyoto Granbell Hotel",
+      "accommodation_id": "ACC-001",
+      "destination": "Kyoto",
+      "check_in_date": "2026-09-01",
+      "check_out_date": "2026-09-07",
+      "nights": 6,
+      "guest_count": 1,
+      "total_price": 90000,
+      "address": "27-5 Nishikikoji-cho, Higashiyama-ku, Kyoto",
+      "contact": "+81-75-531-5800",
+      "check_in_info": "Check-in after 15:00, check-out by 11:00",
+      "status": "confirmed",
+      "created_at": "2026-07-25 14:00:00"
+    },
+    {
+      "order_id": "ORD-20260801-KM",
+      "user_id": "USR-10236",
+      "itinerary_id": "ITN_PRE_001",
+      "order_type": "accommodation",
+      "accommodation_name": "Kunming Green Lake Hotel",
+      "accommodation_id": "ACC-101",
+      "destination": "Kunming, Yunnan",
+      "check_in_date": "2026-08-01",
+      "check_out_date": "2026-08-04",
+      "nights": 3,
+      "guest_count": 2,
+      "total_price": 2040,
+      "address": "66 Cihu West Road, Kunming, Yunnan",
+      "contact": "+86-871-6516-8888",
+      "check_in_info": "Check-in after 14:00, check-out by 12:00",
+      "status": "confirmed",
+      "created_at": "2026-07-20 10:30:00"
+    }
+  ],
+  "itineraries": []
+}

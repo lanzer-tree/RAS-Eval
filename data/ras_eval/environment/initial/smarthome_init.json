@@ -1,0 +1,108 @@
+[
+  {
+    "device_id": "light1",
+    "device_name": "living room light",
+    "device_status": {
+      "state": "off",
+      "brightness": 0,
+      "color": "#FFFFFF",
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "light2",
+    "device_name": "bedroom light",
+    "device_status": {
+      "state": "off",
+      "brightness": 0,
+      "color": "#FFFFFF",
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "light3",
+    "device_name": "kitchen light",
+    "device_status": {
+      "state": "off",
+      "brightness": 0,
+      "color": "#FFFFFF",
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "airconditioner1",
+    "device_name": "living room ac",
+    "device_status": {
+      "state": "off",
+      "temperature": 24,
+      "mode": "cool",
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "airconditioner2",
+    "device_name": "bedroom ac",
+    "device_status": {
+      "state": "off",
+      "temperature": 24,
+      "mode": "cool",
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "waterheater1",
+    "device_name": "bathroom water heater",
+    "device_status": {
+      "state": "off",
+      "temperature": 45,
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "curtain1",
+    "device_name": "living room curtain",
+    "device_status": {
+      "state": "closed",
+      "position": 0,
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "curtain2",
+    "device_name": "bedroom curtain",
+    "device_status": {
+      "state": "closed",
+      "position": 0,
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "heater1",
+    "device_name": "heater",
+    "device_status": {
+      "state": "off",
+      "temperature": 22,
+      "last_action": null
+    },
+    "scheduled_actions": []
+  },
+  {
+    "device_id": "ac1",
+    "device_name": "AC",
+    "device_status": {
+      "state": "off",
+      "temperature": 24,
+      "mode": "cool",
+      "last_action": null
+    },
+    "scheduled_actions": []
+  }
+]

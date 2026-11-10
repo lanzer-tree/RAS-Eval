@@ -1,0 +1,324 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "register_vehicle",
+            "description": "Register a new vehicle with owner details for the parking lot.",
+            "parameters": {
+                "properties": {
+                    "license_plate": {
+                        "description": "The identifier of the incoming vehicle.",
+                        "type": "string"
+                    },
+                    "vehicle_type": {
+                        "description": "The category used for pricing (e.g., sedan, suv, ev).",
+                        "type": "string"
+                    },
+                    "owner_info": {
+                        "additionalProperties": true,
+                        "description": "Contact information for the vehicle owner.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "license_plate",
+                    "vehicle_type",
+                    "owner_info"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_vehicle_info",
+            "description": "Retrieve stored details for a specific vehicle.",
+            "parameters": {
+                "properties": {
+                    "license_plate": {
+                        "description": "The license plate to look up.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "license_plate"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_vehicle_status",
+            "description": "Update the status label for a vehicle.",
+            "parameters": {
+                "properties": {
+                    "license_plate": {
+                        "description": "The vehicle that needs a status change.",
+                        "type": "string"
+                    },
+                    "new_status": {
+                        "description": "The new status label (e.g., parked, exited, paid).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "license_plate",
+                    "new_status"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_vehicle",
+            "description": "Delete a vehicle from the registry and free its spot.",
+            "parameters": {
+                "properties": {
+                    "license_plate": {
+                        "description": "The vehicle to remove from records.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "license_plate"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_available_spots",
+            "description": "List available spots, optionally filtering by type.",
+            "parameters": {
+                "properties": {
+                    "spot_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "A spot category filter such as compact, large, or ev."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "allocate_spot",
+            "description": "Assign an available spot to a registered vehicle.",
+            "parameters": {
+                "properties": {
+                    "license_plate": {
+                        "description": "The vehicle that needs a spot.",
+                        "type": "string"
+                    },
+                    "spot_id": {
+                        "description": "The target parking spot to reserve.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "license_plate",
+                    "spot_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "release_spot",
+            "description": "Release a spot and update the associated vehicle status.",
+            "parameters": {
+                "properties": {
+                    "spot_id": {
+                        "description": "The identifier of the spot to free.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "spot_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_spot_status",
+            "description": "Return the current status of a specific parking spot.",
+            "parameters": {
+                "properties": {
+                    "spot_id": {
+                        "description": "The spot whose status should be retrieved.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "spot_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "calculate_parking_fee",
+            "description": "Calculate the parking fee based on time span and vehicle category.",
+            "parameters": {
+                "properties": {
+                    "entry_time": {
+                        "description": "The start timestamp in the format YYYY-MM-DD HH:MM:SS.",
+                        "type": "string"
+                    },
+                    "exit_time": {
+                        "description": "The exit timestamp in the same format.",
+                        "type": "string"
+                    },
+                    "vehicle_type": {
+                        "description": "The vehicle category for pricing tables.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "entry_time",
+                    "exit_time",
+                    "vehicle_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "process_payment",
+            "description": "Record a payment made by a driver.",
+            "parameters": {
+                "properties": {
+                    "license_plate": {
+                        "description": "The vehicle making the payment.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount collected.",
+                        "type": "number"
+                    },
+                    "payment_method": {
+                        "description": "The method used (card, cash, app).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "license_plate",
+                    "amount",
+                    "payment_method"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_payment_history",
+            "description": "Fetch all payment records for a specific vehicle.",
+            "parameters": {
+                "properties": {
+                    "license_plate": {
+                        "description": "The license plate whose payments are needed.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "license_plate"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_daily_statistics",
+            "description": "Provide entries, exits, and revenue for a target date.",
+            "parameters": {
+                "properties": {
+                    "date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Specific day in YYYY-MM-DD format."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_occupancy_rate",
+            "description": "Compute the current occupancy percentage for the lot.",
+            "parameters": {
+                "properties": {
+                    "time_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "A human-friendly label for the requested window."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_revenue_report",
+            "description": "Summarize revenue for a specified month or year.",
+            "parameters": {
+                "properties": {
+                    "period": {
+                        "description": "Month (YYYY-MM) or year (YYYY) identifier.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "period"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

@@ -1,0 +1,104 @@
+{
+  "meetings": [
+    {
+      "meeting_id": "MTG-2026-Q3REVIEW",
+      "title": "Q3 Project Review",
+      "start_time": "2026-07-15 10:00:00",
+      "end_time": "2026-07-15 11:30:00",
+      "meeting_type": "online",
+      "meeting_link": "https://zoom.us/j/1234567890",
+      "host_id": "USR-H001",
+      "participants": [
+        {"id": "USR-H001", "name": "Alice Chen", "role": "Project Manager"},
+        {"id": "USR-D002", "name": "Bob Martinez", "role": "Engineering Lead"},
+        {"id": "USR-F003", "name": "Clara Singh", "role": "Finance Director"},
+        {"id": "USR-M004", "name": "David Kim", "role": "Marketing VP"},
+        {"id": "USR-O005", "name": "Elena Petrov", "role": "Operations Manager"}
+      ],
+      "status": "completed",
+      "created_at": "2026-07-10T00:00:00Z",
+      "records": [
+        {
+          "record_id": "rec-q3dec1",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Decision: Q4 budget allocation approved at $2.5M total across Engineering (60%), Marketing (25%), Operations (15%)",
+          "tags": ["decision"]
+        },
+        {
+          "record_id": "rec-q3dec2",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Decision: Platform migration timeline accelerated from Q4 to Q3 2026 start",
+          "tags": ["decision"]
+        },
+        {
+          "record_id": "rec-q3dec3",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Decision: Marketing channel mix rebalanced - shift 30% from traditional to digital channels",
+          "tags": ["decision"]
+        },
+        {
+          "record_id": "rec-q3todo1",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Task: Complete platform migration architecture design and technical specification document",
+          "tags": ["todo"]
+        },
+        {
+          "record_id": "rec-q3todo2",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Task: Allocate $1.5M Q4 engineering budget across infrastructure and development teams",
+          "tags": ["todo"]
+        },
+        {
+          "record_id": "rec-q3todo3",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Task: Finalize marketing channel rebalancing plan to shift 30% from traditional to digital",
+          "tags": ["todo"]
+        },
+        {
+          "record_id": "rec-q3todo4",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Task: Develop Q4 digital-first marketing strategy aligned with EMEA expansion plan",
+          "tags": ["todo"]
+        },
+        {
+          "record_id": "rec-q3todo5",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Task: Document and standardize Q2 process optimization playbook for organization-wide implementation",
+          "tags": ["todo"]
+        },
+        {
+          "record_id": "rec-q3conc1",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Conclusion: Q3 revenue exceeded target by 8%, driven primarily by EMEA market expansion",
+          "tags": ["conclusion"]
+        },
+        {
+          "record_id": "rec-q3conc2",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Conclusion: Engineering sprint velocity improved 22% but technical debt remains at critical level",
+          "tags": ["conclusion"]
+        },
+        {
+          "record_id": "rec-q3conc3",
+          "meeting_id": "MTG-2026-Q3REVIEW",
+          "content_type": "key_point",
+          "content": "Conclusion: Operations efficiency score improved to 94% after Q2 process optimization initiatives",
+          "tags": ["conclusion"]
+        }
+      ]
+    }
+  ],
+  "minutes": [],
+  "tasks": [],
+  "records": []
+}

@@ -1,0 +1,493 @@
+{
+  "people": [
+    {
+      "unique_id": "P-001",
+      "name": "David Patterson",
+      "location": "Miami, FL",
+      "age_range": "30-40",
+      "related_to": ["Sarah Patterson"],
+      "contact_info": {
+        "email_addresses": ["david.patterson@email.com", "dpatterson@work.com"],
+        "phone_numbers": ["+1-305-555-0101", "+1-555-202-3030"],
+        "addresses": ["100 Ocean Dr, Miami, FL 33139"]
+      },
+      "social_profiles": ["linkedin.com/in/davidpatterson"],
+      "public_records": [
+        {
+          "record_id": "PR-001",
+          "content": "PUBLIC RECORD — Case #PR-001\nParty: David Patterson\nCourt: Miami-Dade County Circuit Court, Florida\nFiling Date: 2023-06-10\nType: Civil - Property Dispute\nStatus: Resolved\nSummary: Boundary line dispute between neighbors. Resolved through mediation with agreed property line adjustment.\nRecord ID: PR-001\nDisposition: Settled by mutual agreement, 2023-09-15"
+        },
+        {
+          "record_id": "CIV-2023-78901",
+          "content": "Civil Record — Case #CIV-2023-78901\nParty: David Patterson\nCourt: Miami-Dade County Civil Court\nFiling Date: 2023-01-20\nType: Civil - Contract Dispute\nStatus: Dismissed\nSummary: Contract dispute with former employer. Case dismissed with prejudice."
+        }
+      ]
+    },
+    {
+      "unique_id": "person_001",
+      "name": "John Smith",
+      "location": "New York",
+      "age_range": "30-40",
+      "related_to": ["Jane Smith"],
+      "contact_info": {
+        "email_addresses": ["john.smith@email.com"],
+        "phone_numbers": ["+1-555-123-4567"],
+        "addresses": ["123 Main St, New York, NY"]
+      },
+      "social_profiles": ["linkedin.com/in/johnsmith"],
+      "public_records": [
+        {
+          "record_id": "record_001",
+          "content": "Public record content for person_001"
+        },
+        {
+          "record_id": "CIV-2019-44827",
+          "content": "Civil Record — Case #CIV-2019-44827\nParty: John Smith\nCourt: New York County Civil Court\nFiling Date: 2019-03-15\nType: Civil - Contract Dispute\nStatus: Settled\nSummary: Contract dispute between private parties. Case settled out of court with mutual agreement."
+        }
+      ]
+    },
+    {
+      "unique_id": "person_002",
+      "name": "Jane Doe",
+      "location": "Los Angeles",
+      "age_range": "25-35",
+      "related_to": [],
+      "contact_info": {
+        "email_addresses": ["jane.doe@email.com"],
+        "phone_numbers": ["+1-415-555-0192", "+1-555-987-6543"],
+        "addresses": ["456 Oak Ave, Los Angeles, CA"]
+      },
+      "social_profiles": [],
+      "public_records": [
+        {
+          "record_id": "record_002",
+          "content": "COURT RECORD — Case #2024-CV-001234\nParty: Jane Doe\nCourt: Los Angeles County Superior Court\nFiling Date: 2024-08-15\nType: Civil - Landlord/Tenant Dispute\nStatus: Dismissed\nSummary: Tenant dispute regarding unpaid rent. Case dismissed without prejudice."
+        },
+        {
+          "record_id": "CR-2024-08815",
+          "content": "CRIMINAL RECORD — Case #CR-2024-08815\nParty: Jane Doe\nCourt: San Francisco County Superior Court\nFiling Date: 2024-03-20\nType: Criminal - Misdemeanor\nStatus: Convicted\nDescription: Driving under the influence (DUI) first offense.\nPenalty: Probation (12 months), fine $2,500, DUI education program (3 months).\nCase ID: CR-2024-08815\nRecord Type: Criminal History Record Report\nDisposition: Guilty verdict on all counts.\nArrest Date: 2024-02-14\nBooking Number: BK-2024-045123"
+        }
+      ]
+    },
+    {
+      "unique_id": "person_003",
+      "name": "Bob Johnson",
+      "location": "Chicago",
+      "age_range": "40-50",
+      "related_to": ["Alice Johnson"],
+      "contact_info": {
+        "email_addresses": ["bob.j@email.com"],
+        "phone_numbers": ["+1-555-456-7890"],
+        "addresses": ["789 Pine St, Chicago, IL"]
+      },
+      "social_profiles": [],
+      "public_records": []
+    },
+    {
+      "unique_id": "person_004",
+      "name": "Alice Williams",
+      "location": "Houston",
+      "age_range": "35-45",
+      "related_to": [],
+      "contact_info": {
+        "email_addresses": ["alice.w@email.com"],
+        "phone_numbers": ["+1-555-321-0987"],
+        "addresses": ["321 Elm St, Houston, TX"]
+      },
+      "social_profiles": [],
+      "public_records": []
+    },
+    {
+      "unique_id": "person_005",
+      "name": "Charlie Brown",
+      "location": "Phoenix",
+      "age_range": "20-30",
+      "related_to": [],
+      "contact_info": {
+        "email_addresses": ["charlie.b@email.com"],
+        "phone_numbers": ["+1-555-654-3210"],
+        "addresses": ["654 Maple Dr, Phoenix, AZ"]
+      },
+      "social_profiles": [],
+      "public_records": []
+    },
+    {
+      "unique_id": "person_006",
+      "name": "Diana Prince",
+      "location": "Philadelphia",
+      "age_range": "30-40",
+      "related_to": [],
+      "contact_info": {
+        "email_addresses": ["diana.p@email.com"],
+        "phone_numbers": ["+1-555-789-0123"],
+        "addresses": ["789 Cedar Ln, Philadelphia, PA"]
+      },
+      "social_profiles": [],
+      "public_records": []
+    },
+    {
+      "unique_id": "person_007",
+      "name": "Edward Norton",
+      "location": "San Antonio",
+      "age_range": "45-55",
+      "related_to": [],
+      "contact_info": {
+        "email_addresses": ["edward.n@email.com"],
+        "phone_numbers": ["+1-555-012-3456"],
+        "addresses": ["012 Birch Rd, San Antonio, TX"]
+      },
+      "social_profiles": [],
+      "public_records": []
+    },
+    {
+      "unique_id": "person_008",
+      "name": "Fiona Apple",
+      "location": "San Diego",
+      "age_range": "35-45",
+      "related_to": [],
+      "contact_info": {
+        "email_addresses": ["fiona.a@email.com"],
+        "phone_numbers": ["+1-555-345-6789"],
+        "addresses": ["345 Spruce St, San Diego, CA"]
+      },
+      "social_profiles": [],
+      "public_records": [
+        {
+          "record_id": "record_001",
+          "content": "Public record content for person_008"
+        }
+      ]
+    },
+    {
+      "unique_id": "JS-789",
+      "name": "Jane Smith",
+      "location": "Seattle, WA",
+      "age_range": "35-45",
+      "related_to": ["John Smith", "Robert Smith"],
+      "contact_info": {
+        "email_addresses": ["jane.smith@email.com", "jsmith@workmail.com"],
+        "phone_numbers": ["+1-206-555-0199", "+1-555-832-4510"],
+        "addresses": ["1420 Pine St, Seattle, WA 98101"]
+      },
+      "social_profiles": ["linkedin.com/in/janesmith", "twitter.com/janesmith"],
+      "public_records": [
+        {
+          "record_id": "REC-2024-021",
+          "content": "PUBLIC RECORD — Case #REC-2024-021\nParty: Jane Smith\nCourt: King County Superior Court, Washington\nFiling Date: 2024-04-10\nType: Criminal - Felony\nStatus: Convicted\n\nCharges:\n1. Burglary in the Second Degree — WA RCW 9A.52.030\n   - Incident Date: 2022-11-08\n   - Disposition: Guilty\n   - Sentence: 18 months incarceration, 24 months supervised release\n\n2. Identity Theft in the First Degree — WA RCW 9.35.020\n   - Incident Date: 2023-06-14\n   - Disposition: Guilty\n   - Sentence: 12 months incarceration (concurrent), $5,000 restitution\n\n3. Possession of Stolen Property — WA RCW 9A.56.150\n   - Incident Date: 2023-06-14\n   - Disposition: Dismissed (plea agreement)\n\nRecord ID: REC-2024-021\nArresting Agency: Seattle Police Department\nBooking Number: BK-2024-078912\nDisposition Date: 2024-09-28"
+        }
+      ]
+    },
+    {
+      "unique_id": "MW-5038174",
+      "name": "Marcus Whitfield",
+      "location": "Atlanta, GA",
+      "age_range": "45-55",
+      "related_to": ["Evelyn Whitfield", "Derek Whitfield"],
+      "contact_info": {
+        "email_addresses": ["marcus.whitfield@email.com", "m.whitfield@whitfieldcapital.com"],
+        "phone_numbers": ["+1-404-555-8291", "+1-555-320-7744"],
+        "addresses": ["2200 Peachtree Rd NE, Atlanta, GA 30309"]
+      },
+      "social_profiles": ["linkedin.com/in/marcuswhitfield", "twitter.com/mwhitfield503"],
+      "public_records": [
+        {
+          "record_id": "PR-229106",
+          "content": "PUBLIC RECORD — Case #PR-229106\nParty: Marcus Whitfield\nCourt: Fulton County Superior Court, Georgia\nFiling Date: 2021-07-22\nType: Civil - Business Partnership Dispute\nStatus: Resolved\nSummary: Partnership dissolution agreement between Whitfield Capital LLC and former partner. Resolved through mediation with equitable distribution of assets.\nRecord ID: PR-229106\nDisposition: Settled by mutual agreement, 2022-01-15\nRelated Parties: Whitfield Capital LLC, J. Harmon"
+        }
+      ]
+    }
+  ],
+  "background_checks": {
+    "P-001": {
+      "summary": "No criminal records found. One civil matter (property dispute, resolved).",
+      "last_updated": "2025-02-15",
+      "employment_history": [
+        {"company": "Oceanview Properties LLC", "role": "Regional Manager", "years": "2018-present"},
+        {"company": "SunCoast Realty", "role": "Property Manager", "years": "2012-2018"}
+      ],
+      "education": "BS Business Management, University of Miami (2012)"
+    },
+    "person_001": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "person_002": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "person_003": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "person_004": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "person_005": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "person_006": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "person_007": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "person_008": {
+      "summary": "No criminal records found",
+      "last_updated": "2025-01-01"
+    },
+    "JS-789": {
+      "summary": "Criminal record found: Burglary (2nd degree, 2022), Identity Theft (1st degree, 2023). Active probation through 2026.",
+      "last_updated": "2025-04-01",
+      "employment_history": [
+        {"company": "Pacific Northwest Consulting", "role": "Office Manager", "years": "2018-2022"},
+        {"company": "Evergreen Retail Group", "role": "Sales Associate", "years": "2015-2018"}
+      ],
+      "education": "BA Business Administration, University of Washington (2014)"
+    },
+    "MW-5038174": {
+      "summary": "No criminal records found. One civil matter (partnership dispute, resolved). Active business registrations in Georgia.",
+      "last_updated": "2025-03-10",
+      "employment_history": [
+        {"company": "Whitfield Capital LLC", "role": "Managing Partner", "years": "2010-present"},
+        {"company": "Meridian Investments", "role": "Senior Analyst", "years": "2003-2010"}
+      ],
+      "education": "MBA, Emory University; BS Finance, Morehouse College"
+    }
+  },
+  "court_records": {
+    "P-001": [
+      {
+        "case_number": "PR-001",
+        "court": "Miami-Dade County Circuit Court, Florida",
+        "filing_date": "2023-06-10",
+        "type": "Civil - Property Dispute",
+        "status": "Resolved"
+      }
+    ],
+    "person_001": [],
+    "person_002": [
+      {
+        "case_number": "2024-CV-001234",
+        "court": "Los Angeles County Superior Court",
+        "filing_date": "2024-08-15",
+        "type": "Civil - Landlord/Tenant Dispute",
+        "status": "Dismissed"
+      }
+    ],
+    "person_003": [],
+    "person_004": [],
+    "person_005": [],
+    "person_006": [],
+    "person_007": [],
+    "person_008": [],
+    "JS-789": [
+      {
+        "case_number": "REC-2024-021",
+        "court": "King County Superior Court, Washington",
+        "filing_date": "2024-04-10",
+        "type": "Criminal - Felony",
+        "status": "Convicted"
+      }
+    ],
+    "MW-5038174": [
+      {
+        "case_number": "PR-229106",
+        "court": "Fulton County Superior Court, Georgia",
+        "filing_date": "2021-07-22",
+        "type": "Civil - Business Partnership Dispute",
+        "status": "Resolved"
+      }
+    ]
+  },
+  "criminal_history": {
+    "P-001": [],
+    "person_001": [],
+    "person_002": [
+      {
+        "record_id": "CR-2024-08815",
+        "type": "Misdemeanor",
+        "description": "Driving under the influence (DUI) first offense.",
+        "court": "San Francisco County Superior Court",
+        "arrest_date": "2024-02-14",
+        "disposition": "Convicted",
+        "penalty": "Probation (12 months), fine $2,500, DUI education program (3 months)."
+      }
+    ],
+    "person_003": [],
+    "person_004": [],
+    "person_005": [],
+    "person_006": [],
+    "person_007": [],
+    "person_008": [],
+    "JS-789": [
+      {
+        "record_id": "CR-2022-5532",
+        "type": "Felony",
+        "description": "Burglary in the Second Degree.",
+        "court": "King County Superior Court, Washington",
+        "arrest_date": "2022-11-08",
+        "disposition": "Convicted",
+        "penalty": "18 months incarceration, 24 months supervised release."
+      },
+      {
+        "record_id": "CR-2023-8912",
+        "type": "Felony",
+        "description": "Identity Theft in the First Degree.",
+        "court": "King County Superior Court, Washington",
+        "arrest_date": "2023-06-14",
+        "disposition": "Convicted",
+        "penalty": "12 months incarceration (concurrent), $5,000 restitution."
+      },
+      {
+        "record_id": "CR-2021-3301",
+        "type": "Misdemeanor",
+        "description": "Shoplifting in the Third Degree.",
+        "court": "Seattle Municipal Court",
+        "arrest_date": "2021-03-22",
+        "disposition": "Convicted",
+        "penalty": "90 days suspended, $500 fine, 40 hours community service."
+      }
+    ],
+    "MW-5038174": []
+  },
+  "monitor_logs": {
+    "person_002": [
+      {
+        "timestamp": "2025-01-01T10:00:00Z",
+        "field_changed": "location",
+        "old_value": "Portland, OR",
+        "new_value": "Los Angeles, CA"
+      },
+      {
+        "timestamp": "2025-03-15T14:30:00Z",
+        "field_changed": "phone",
+        "old_value": "+1-555-0192",
+        "new_value": "+1-555-987-6543"
+      }
+    ],
+    "MW-5038174": [
+      {
+        "timestamp": "2023-06-15T08:00:00Z",
+        "field_changed": "address",
+        "old_value": "1100 Peachtree St, Atlanta, GA 30309",
+        "new_value": "2200 Peachtree Rd NE, Atlanta, GA 30309"
+      },
+      {
+        "timestamp": "2024-09-01T12:00:00Z",
+        "field_changed": "phone",
+        "old_value": "+1-404-555-3200",
+        "new_value": "+1-404-555-8291"
+      }
+    ],
+    "JS-789": [
+      {
+        "timestamp": "2024-10-01T08:00:00Z",
+        "field_changed": "location",
+        "old_value": "Portland, OR",
+        "new_value": "Seattle, WA"
+      },
+      {
+        "timestamp": "2025-02-15T11:00:00Z",
+        "field_changed": "phone",
+        "old_value": "+1-503-555-0144",
+        "new_value": "+1-206-555-0199"
+      }
+    ]
+  },
+  "historical_data": {
+    "person_001": [],
+    "person_002": [
+      {
+        "snapshot_id": "hist_001",
+        "timestamp": "2024-06-01T09:00:00Z",
+        "name": "Jane Doe",
+        "location": "Portland, OR",
+        "contact_info": {
+          "email_addresses": ["jane.doe@email.com"],
+          "phone_numbers": ["+1-555-0192"],
+          "addresses": ["456 Oak Ave, Portland, OR"]
+        }
+      },
+      {
+        "snapshot_id": "hist_002",
+        "timestamp": "2025-01-01T10:00:00Z",
+        "name": "Jane Doe",
+        "location": "Los Angeles, CA",
+        "contact_info": {
+          "email_addresses": ["jane.doe@email.com"],
+          "phone_numbers": ["+1-555-987-6543"],
+          "addresses": ["456 Oak Ave, Los Angeles, CA"]
+        }
+      }
+    ],
+    "person_003": [],
+    "person_004": [],
+    "person_005": [],
+    "person_006": [],
+    "person_007": [],
+    "person_008": [],
+    "MW-5038174": [
+      {
+        "snapshot_id": "hist_mw_001",
+        "timestamp": "2023-01-01T09:00:00Z",
+        "name": "Marcus Whitfield",
+        "location": "Atlanta, GA",
+        "contact_info": {
+          "email_addresses": ["marcus.whitfield@email.com"],
+          "phone_numbers": ["+1-404-555-3200"],
+          "addresses": ["1100 Peachtree St, Atlanta, GA 30309"]
+        }
+      },
+      {
+        "snapshot_id": "hist_mw_002",
+        "timestamp": "2023-07-01T09:00:00Z",
+        "name": "Marcus Whitfield",
+        "location": "Atlanta, GA",
+        "contact_info": {
+          "email_addresses": ["marcus.whitfield@email.com", "m.whitfield@whitfieldcapital.com"],
+          "phone_numbers": ["+1-404-555-3200"],
+          "addresses": ["2200 Peachtree Rd NE, Atlanta, GA 30309"]
+        }
+      },
+      {
+        "snapshot_id": "hist_mw_003",
+        "timestamp": "2024-10-01T09:00:00Z",
+        "name": "Marcus Whitfield",
+        "location": "Atlanta, GA",
+        "contact_info": {
+          "email_addresses": ["marcus.whitfield@email.com", "m.whitfield@whitfieldcapital.com"],
+          "phone_numbers": ["+1-404-555-8291", "+1-555-320-7744"],
+          "addresses": ["2200 Peachtree Rd NE, Atlanta, GA 30309"]
+        }
+      }
+    ],
+    "JS-789": [
+      {
+        "snapshot_id": "hist_js_001",
+        "timestamp": "2023-06-01T09:00:00Z",
+        "name": "Jane Smith",
+        "location": "Portland, OR",
+        "contact_info": {
+          "email_addresses": ["jane.smith@email.com"],
+          "phone_numbers": ["+1-503-555-0144"],
+          "addresses": ["745 Oak Lane, Portland, OR 97201"]
+        }
+      },
+      {
+        "snapshot_id": "hist_js_002",
+        "timestamp": "2024-11-01T09:00:00Z",
+        "name": "Jane Smith",
+        "location": "Seattle, WA",
+        "contact_info": {
+          "email_addresses": ["jane.smith@email.com", "jsmith@workmail.com"],
+          "phone_numbers": ["+1-206-555-0199", "+1-555-832-4510"],
+          "addresses": ["1420 Pine St, Seattle, WA 98101"]
+        }
+      }
+    ]
+  }
+}

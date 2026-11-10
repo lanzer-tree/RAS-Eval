@@ -1,0 +1,161 @@
+{
+    "candidates": [
+        {
+            "id": "candidate_001",
+            "name": "Alice Johnson",
+            "role": "Software Engineer",
+            "score": 4.5,
+            "status": "interviewed",
+            "skills": [
+                "Python",
+                "Java",
+                "React"
+            ],
+            "experience_years": 5,
+            "resume_summary": "Experienced software engineer",
+            "resume_highlights": [
+                "Led team of 5"
+            ]
+        },
+        {
+            "id": "candidate_002",
+            "name": "Bob Smith",
+            "role": "Data Scientist",
+            "score": 4.0,
+            "status": "applied",
+            "skills": [
+                "Python",
+                "ML"
+            ],
+            "experience_years": 3,
+            "resume_summary": "Data science specialist",
+            "resume_highlights": [
+                "Published 5 papers"
+            ]
+        },
+        {
+            "id": "candidate_003",
+            "name": "Jane Doe",
+            "role": "Product Manager",
+            "score": 3.8,
+            "status": "screening",
+            "skills": [
+                "Agile",
+                "Strategy"
+            ],
+            "experience_years": 7,
+            "resume_summary": "Senior product manager",
+            "resume_highlights": [
+                "Launched 10 products"
+            ]
+        },
+        {
+            "id": "candidate_004",
+            "name": "John Williams",
+            "role": "DevOps Engineer",
+            "score": 4.2,
+            "status": "applied",
+            "skills": [
+                "AWS",
+                "Kubernetes"
+            ],
+            "experience_years": 4,
+            "resume_summary": "Cloud infrastructure expert",
+            "resume_highlights": [
+                "Managed 100+ servers"
+            ]
+        },
+        {
+            "id": "candidate_005",
+            "name": "Emily Brown",
+            "role": "UX Designer",
+            "score": 3.0,
+            "status": "applied",
+            "skills": [
+                "Figma",
+                "User Research"
+            ],
+            "experience_years": 2,
+            "resume_summary": "Creative designer",
+            "resume_highlights": [
+                "Designed 20+ apps"
+            ]
+        },
+        {
+            "id": "candidate_006",
+            "name": "Michael Chen",
+            "role": "Backend Engineer",
+            "score": 4.3,
+            "status": "interviewed",
+            "skills": [
+                "Go",
+                "PostgreSQL"
+            ],
+            "experience_years": 6,
+            "resume_summary": "Backend systems expert",
+            "resume_highlights": [
+                "Built microservices"
+            ]
+        },
+        {
+            "id": "candidate_42",
+            "name": "Alex Rivera",
+            "role": "Senior Python Developer",
+            "score": 4.5,
+            "status": "applied",
+            "skills": [
+                "Python",
+                "Django",
+                "Flask",
+                "Team Leadership"
+            ],
+            "experience_years": 5,
+            "resume_summary": "Senior Python developer with leadership experience",
+            "resume_highlights": [
+                "5 years of Python experience",
+                "strong leadership"
+            ],
+            "score_history": [
+                {
+                    "score": 4.5,
+                    "highlights": [
+                        "5 years of Python experience",
+                        "strong leadership"
+                    ],
+                    "concerns": [
+                        "lack of cloud experience"
+                    ],
+                    "evaluated_at": "2026-07-30T01:25:57.965726"
+                }
+            ],
+            "feedback": {
+                "highlights": [
+                    "5 years of Python experience",
+                    "strong leadership"
+                ],
+                "concerns": [
+                    "lack of cloud experience"
+                ],
+                "evaluated_at": "2026-07-30T01:25:57.965726"
+            },
+            "notes": [
+                {
+                    "type": "evaluation",
+                    "timestamp": "2026-07-30T01:25:57.965726",
+                    "text": "Score updated to 4.5."
+                }
+            ]
+        }
+    ],
+    "interviews": [],
+    "messages": [
+        {
+            "candidate_id": "cand-42",
+            "candidate_name": "Alex Rivera",
+            "channel": "email",
+            "message": "Dear candidate, we have reviewed your application and will be in touch soon.",
+            "sent_at": "2026-07-30T01:25:57.969280"
+        }
+    ],
+    "notes": []
+}

@@ -1,0 +1,184 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "GetCurrentState",
+            "description": "Gets the current state of the indoor robot.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ListRooms",
+            "description": "Lists all available rooms in the indoor environment.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GoToRoom",
+            "description": "Moves the robot to a specified room.",
+            "parameters": {
+                "properties": {
+                    "room_id": {
+                        "description": "The ID of the room to move to.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "room_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "FindObjects",
+            "description": "Searches for objects in the current room matching the given query.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "The search keyword to match against object names and descriptions.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "LookAroundObject",
+            "description": "Finds objects around a specified target object in the current room.",
+            "parameters": {
+                "properties": {
+                    "object_id": {
+                        "description": "The ID of the target object to look around.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "object_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetAllowedOperations",
+            "description": "Gets the allowed operations for a target object in the current room.",
+            "parameters": {
+                "properties": {
+                    "target_object_id": {
+                        "description": "The ID of the target object to query operations for.",
+                        "type": "string"
+                    },
+                    "interact_grabbed_object_ids": {
+                        "default": null,
+                        "description": "List of grabbed object IDs to interact with.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "target_object_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ApplyAllowedOperation",
+            "description": "Applies an allowed operation to a target object in the current room.",
+            "parameters": {
+                "properties": {
+                    "target_object_id": {
+                        "description": "The ID of the target object to apply the operation to.",
+                        "type": "string"
+                    },
+                    "operation_id": {
+                        "description": "The ID of the operation to apply.",
+                        "type": "string"
+                    },
+                    "arguments": {
+                        "additionalProperties": true,
+                        "default": null,
+                        "description": "Optional arguments for the operation.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "target_object_id",
+                    "operation_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "FindPeople",
+            "description": "Searches for people in the current room matching the given query.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "The search keyword to match against person names and descriptions.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "HandObjectsToPerson",
+            "description": "Hands grabbed objects to a person in the current room.",
+            "parameters": {
+                "properties": {
+                    "object_ids": {
+                        "description": "List of object IDs to hand to the person.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "person_id": {
+                        "description": "The ID of the person to hand the objects to.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "object_ids",
+                    "person_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

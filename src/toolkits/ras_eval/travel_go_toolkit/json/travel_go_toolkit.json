@@ -1,0 +1,358 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "search_destination",
+            "description": "Search for travel destinations or attractions based on keyword and travel date.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "Destination or attraction name keyword to search",
+                        "type": "string"
+                    },
+                    "travel_date": {
+                        "description": "Travel date in format YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "travel_type": {
+                        "default": "",
+                        "description": "Optional travel type (family/hiking/leisure)",
+                        "type": "string"
+                    },
+                    "budget_range": {
+                        "default": "",
+                        "description": "Optional budget range (low/medium/high)",
+                        "type": "string"
+                    },
+                    "filters": {
+                        "default": "",
+                        "description": "Optional filters (free_entry/senior_friendly/popular)",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "keyword",
+                    "travel_date"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "plan_itinerary",
+            "description": "Generate a personalized travel itinerary based on selected destinations.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID for the itinerary",
+                        "type": "string"
+                    },
+                    "destination_ids": {
+                        "description": "Comma-separated destination IDs",
+                        "type": "string"
+                    },
+                    "travel_days": {
+                        "description": "Number of travel days",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "description": "Start date in format YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "accommodation_type": {
+                        "default": "hotel",
+                        "description": "Type of accommodation (hotel/homestay)",
+                        "type": "string"
+                    },
+                    "meal_preference": {
+                        "default": "",
+                        "description": "Meal preference (local/western/vegetarian)",
+                        "type": "string"
+                    },
+                    "pace": {
+                        "default": "relaxed",
+                        "description": "Itinerary pace (relaxed/compact)",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "destination_ids",
+                    "travel_days",
+                    "start_date"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "book_transportation",
+            "description": "Book transportation tickets (flight/train/bus) for the trip.",
+            "parameters": {
+                "properties": {
+                    "itinerary_id": {
+                        "description": "Associated itinerary ID",
+                        "type": "string"
+                    },
+                    "transport_type": {
+                        "description": "Type of transport (flight/train/bus)",
+                        "type": "string"
+                    },
+                    "departure": {
+                        "description": "Departure location",
+                        "type": "string"
+                    },
+                    "arrival": {
+                        "description": "Arrival location",
+                        "type": "string"
+                    },
+                    "departure_time": {
+                        "description": "Departure time in format YYYY-MM-DD HH:MM",
+                        "type": "string"
+                    },
+                    "seat_type": {
+                        "description": "Seat type (economy/business/first_class for flights; second_class/first_class for trains)",
+                        "type": "string"
+                    },
+                    "passenger_info": {
+                        "description": "Passenger information in JSON format",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "itinerary_id",
+                    "transport_type",
+                    "departure",
+                    "arrival",
+                    "departure_time",
+                    "seat_type",
+                    "passenger_info"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "book_accommodation",
+            "description": "Book accommodation (hotel/homestay) for the trip.",
+            "parameters": {
+                "properties": {
+                    "itinerary_id": {
+                        "description": "Associated itinerary ID",
+                        "type": "string"
+                    },
+                    "destination": {
+                        "description": "Destination city or area",
+                        "type": "string"
+                    },
+                    "check_in_date": {
+                        "description": "Check-in date in format YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "check_out_date": {
+                        "description": "Check-out date in format YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "guest_count": {
+                        "description": "Number of guests",
+                        "type": "string"
+                    },
+                    "accommodation_type": {
+                        "default": "hotel",
+                        "description": "Type (hotel/homestay)",
+                        "type": "string"
+                    },
+                    "price_range": {
+                        "default": "",
+                        "description": "Price range (low/medium/high)",
+                        "type": "string"
+                    },
+                    "amenities": {
+                        "default": "",
+                        "description": "Required amenities (wifi/parking/breakfast)",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "itinerary_id",
+                    "destination",
+                    "check_in_date",
+                    "check_out_date",
+                    "guest_count"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_travel_weather",
+            "description": "Get weather forecast for the destination during the travel period.",
+            "parameters": {
+                "properties": {
+                    "destination": {
+                        "description": "Destination city or area",
+                        "type": "string"
+                    },
+                    "time_range": {
+                        "description": "Date range in format YYYY-MM-DD to YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "weather_type": {
+                        "default": "all",
+                        "description": "Type of weather info (temperature/rain/wind/all)",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "destination",
+                    "time_range"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_itinerary",
+            "description": "Update or modify an existing itinerary.",
+            "parameters": {
+                "properties": {
+                    "itinerary_id": {
+                        "description": "ID of the itinerary to update",
+                        "type": "string"
+                    },
+                    "update_data": {
+                        "description": "Update content in JSON format (e.g., {\"add_destination\": \"DEST-003\", \"change_accommodation\": \"ACC-002\"})",
+                        "type": "string"
+                    },
+                    "update_reason": {
+                        "default": "",
+                        "description": "Reason for the update",
+                        "type": "string"
+                    },
+                    "operator_id": {
+                        "default": "",
+                        "description": "ID of the person making the update",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "itinerary_id",
+                    "update_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "track_travel_orders",
+            "description": "Track all orders (transportation/accommodation) associated with an itinerary.",
+            "parameters": {
+                "properties": {
+                    "itinerary_id": {
+                        "description": "ID of the itinerary to track orders for",
+                        "type": "string"
+                    },
+                    "order_id": {
+                        "default": "",
+                        "description": "Optional specific order ID to track",
+                        "type": "string"
+                    },
+                    "order_type": {
+                        "default": "",
+                        "description": "Optional filter by order type (transportation/accommodation)",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "itinerary_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_local_services",
+            "description": "Search for local services at the destination (tour guide/car rental/tickets/food recommendations).",
+            "parameters": {
+                "properties": {
+                    "destination": {
+                        "description": "Destination city or area",
+                        "type": "string"
+                    },
+                    "service_type": {
+                        "description": "Type of service (guide/car_rental/tickets/food)",
+                        "type": "string"
+                    },
+                    "price_range": {
+                        "default": "",
+                        "description": "Optional price range (low/medium/high)",
+                        "type": "string"
+                    },
+                    "user_rating": {
+                        "default": "",
+                        "description": "Minimum rating required (e.g., \"4.0\")",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "destination",
+                    "service_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "handle_travel_issue",
+            "description": "Handle travel issues such as cancellations, modifications, or complaints.",
+            "parameters": {
+                "properties": {
+                    "order_id": {
+                        "description": "ID of the order with the issue",
+                        "type": "string"
+                    },
+                    "issue_type": {
+                        "description": "Type of issue (cancel/modify/complaint)",
+                        "type": "string"
+                    },
+                    "issue_desc": {
+                        "description": "Description of the issue",
+                        "type": "string"
+                    },
+                    "evidence": {
+                        "default": "",
+                        "description": "Optional evidence URLs (comma-separated)",
+                        "type": "string"
+                    },
+                    "expected_result": {
+                        "default": "",
+                        "description": "Expected resolution",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "order_id",
+                    "issue_type",
+                    "issue_desc"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

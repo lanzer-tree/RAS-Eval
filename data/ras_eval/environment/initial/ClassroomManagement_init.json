@@ -1,0 +1,46 @@
+{
+  "classrooms": [
+    {
+      "id": "RM101",
+      "name": "Room 101",
+      "location": "Building A, Floor 1",
+      "size": "Medium",
+      "seats": 30,
+      "equipment": "Whiteboard, Projector",
+      "status": "available",
+      "schedule": [],
+      "bookings": [],
+      "available_times": []
+    },
+    {
+      "id": "RM102",
+      "name": "Room 102",
+      "location": "Building A, Floor 1",
+      "size": "Large",
+      "seats": 50,
+      "equipment": "Whiteboard, Projector, Computers",
+      "status": "available",
+      "schedule": [],
+      "bookings": [],
+      "available_times": []
+    },
+    {
+      "id": "RM201",
+      "name": "A201",
+      "location": "Building A, Floor 2",
+      "size": "Medium",
+      "seats": 35,
+      "equipment": "Projector, Whiteboard, Document Camera",
+      "status": "available",
+      "schedule": [
+        {"date": "2026-07-20", "period": "09:00-11:00", "course": "Calculus I", "instructor": "Prof. Smith"},
+        {"date": "2026-07-21", "period": "14:00-16:00", "course": "Linear Algebra", "instructor": "Prof. Johnson"},
+        {"date": "2026-07-22", "period": "10:00-12:00", "course": "Differential Equations", "instructor": "Prof. Lee"},
+        {"date": "2026-07-23", "period": "09:00-11:00", "course": "Statistics", "instructor": "Prof. Brown"},
+        {"date": "2026-07-24", "period": "08:00-10:00", "course": "Physics", "instructor": "Prof. Davis"}
+      ],
+      "bookings": [],
+      "available_times": []
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchLocations",
+            "description": "Search for locations by name and type.",
+            "parameters": {
+                "properties": {
+                    "location_name": {
+                        "description": "The name or partial name of the location to search for.",
+                        "type": "string"
+                    },
+                    "location_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The type of location to filter by ('road' or 'intersection'). Default is None to search all types."
+                    }
+                },
+                "required": [
+                    "location_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetRoadDetails",
+            "description": "Get detailed information about a specific road.",
+            "parameters": {
+                "properties": {
+                    "road_id": {
+                        "description": "The unique identifier of the road.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "road_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetIntersectionDetails",
+            "description": "Get detailed information about a specific intersection.",
+            "parameters": {
+                "properties": {
+                    "intersection_id": {
+                        "description": "The unique identifier of the intersection.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "intersection_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchRoute",
+            "description": "Search for routes between two locations.",
+            "parameters": {
+                "properties": {
+                    "origin_id": {
+                        "description": "The unique identifier or name of the starting location.",
+                        "type": "string"
+                    },
+                    "destination_id": {
+                        "description": "The unique identifier or name of the destination location.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 1,
+                        "description": "The maximum number of routes to return. Default is 1.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "origin_id",
+                    "destination_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CheckTrafficLightsStates",
+            "description": "Check the current state of traffic lights at an intersection.",
+            "parameters": {
+                "properties": {
+                    "intersection_id": {
+                        "description": "The unique identifier or name of the intersection.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "intersection_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManageTrafficLightState",
+            "description": "Manage the state of a traffic light at an intersection.",
+            "parameters": {
+                "properties": {
+                    "intersection_id": {
+                        "description": "The unique identifier or name of the intersection.",
+                        "type": "string"
+                    },
+                    "traffic_light_id": {
+                        "description": "The unique identifier or name of the traffic light.",
+                        "type": "string"
+                    },
+                    "traffic_light_state": {
+                        "description": "The desired state of the traffic light.",
+                        "type": "string"
+                    },
+                    "start_time": {
+                        "default": null,
+                        "description": "The start time of the traffic light state change. Default is now.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "default": null,
+                        "description": "The end time of the traffic light state change. Default is None.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "intersection_id",
+                    "traffic_light_id",
+                    "traffic_light_state"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "MonitorTrafficCongestion",
+            "description": "Monitor the current level of traffic congestion at a location.",
+            "parameters": {
+                "properties": {
+                    "location_id": {
+                        "description": "The unique identifier or name of the location.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "location_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "PredictTrafficCongestion",
+            "description": "Predict the level of traffic congestion at a location.",
+            "parameters": {
+                "properties": {
+                    "location_id": {
+                        "description": "The unique identifier or name of the location.",
+                        "type": "string"
+                    },
+                    "prediction_start_time": {
+                        "description": "The start time of the prediction.",
+                        "type": "string"
+                    },
+                    "prediction_end_time": {
+                        "description": "The end time of the prediction.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "location_id",
+                    "prediction_start_time",
+                    "prediction_end_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "AnalyzeTrafficPatterns",
+            "description": "Analyze traffic patterns at a location.",
+            "parameters": {
+                "properties": {
+                    "location_id": {
+                        "description": "The unique identifier or name of the location.",
+                        "type": "string"
+                    },
+                    "start_time": {
+                        "description": "The start time of the analysis.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "description": "The end time of the analysis.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "location_id",
+                    "start_time",
+                    "end_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GivePriorityToEmergencyVehicle",
+            "description": "Give priority to emergency vehicles at specified intersections.",
+            "parameters": {
+                "properties": {
+                    "intersection_ids": {
+                        "description": "The unique identifiers or names of the intersections.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "start_time": {
+                        "description": "The start time of the priority.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "description": "The end time of the priority.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "intersection_ids",
+                    "start_time",
+                    "end_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GivePriorityToPublicTransportation",
+            "description": "Give priority to public transportation vehicles at specified intersections.",
+            "parameters": {
+                "properties": {
+                    "intersection_ids": {
+                        "description": "The unique identifiers or names of the intersections.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "start_time": {
+                        "description": "The start time of the priority.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "description": "The end time of the priority.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "intersection_ids",
+                    "start_time",
+                    "end_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ScheduleRoadMaintenance",
+            "description": "Schedule maintenance at a location.",
+            "parameters": {
+                "properties": {
+                    "location_id": {
+                        "description": "The unique identifier or name of the location.",
+                        "type": "string"
+                    },
+                    "start_time": {
+                        "description": "The start time of the maintenance.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "description": "The end time of the maintenance.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "location_id",
+                    "start_time",
+                    "end_time"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

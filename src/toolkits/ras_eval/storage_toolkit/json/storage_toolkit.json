@@ -1,0 +1,353 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "AddItem",
+            "description": "Add a new item to the inventory.",
+            "parameters": {
+                "properties": {
+                    "item_name": {
+                        "description": "The name of the item, must be a non-empty string.",
+                        "type": "string"
+                    },
+                    "category": {
+                        "description": "The category of the item, must be a non-empty string.",
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "description": "The quantity of the item, must be a positive integer.",
+                        "type": "integer"
+                    },
+                    "supplier": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The supplier of the item, must be a non-empty string if provided."
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The description of the item, must be a non-empty string if provided."
+                    }
+                },
+                "required": [
+                    "item_name",
+                    "category",
+                    "quantity"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdateItem",
+            "description": "Update an existing item in the inventory.",
+            "parameters": {
+                "properties": {
+                    "item_id": {
+                        "description": "The unique identifier of the item, must be a non-empty string.",
+                        "type": "string"
+                    },
+                    "item_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The new name of the item, must be a non-empty string if provided."
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The new category of the item, must be a non-empty string if provided."
+                    },
+                    "quantity": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The new quantity of the item, must be a positive integer if provided."
+                    },
+                    "supplier": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The new supplier of the item, must be a non-empty string if provided."
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The new description of the item, must be a non-empty string if provided."
+                    }
+                },
+                "required": [
+                    "item_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteItem",
+            "description": "Delete an item from the inventory.",
+            "parameters": {
+                "properties": {
+                    "item_id": {
+                        "description": "The unique identifier of the item, must be a non-empty string.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "item_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchItems",
+            "description": "Search for items in the inventory by keyword or category.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The keyword to search for in the item name, must be a non-empty string if provided."
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The category to search for, must be a non-empty string if provided."
+                    },
+                    "page": {
+                        "default": 1,
+                        "description": "The page number to retrieve, must be a positive integer if provided. Default is 1.",
+                        "type": "integer"
+                    },
+                    "results_per_page": {
+                        "default": 10,
+                        "description": "The maximum number of results per page, must be a positive integer if provided. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetItemDetails",
+            "description": "Get detailed information about an item in the inventory.",
+            "parameters": {
+                "properties": {
+                    "item_id": {
+                        "description": "The unique identifier of the item, must be a non-empty string.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "item_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "TrackInventory",
+            "description": "Track inventory levels and receive notifications when stock levels are low.",
+            "parameters": {
+                "properties": {
+                    "threshold": {
+                        "description": "The stock level threshold, must be a positive integer.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "threshold"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SetupAlert",
+            "description": "Set up an alert for a specific item or category when the stock reaches a certain threshold.",
+            "parameters": {
+                "properties": {
+                    "threshold": {
+                        "description": "The stock level threshold, must be a positive integer.",
+                        "type": "integer"
+                    },
+                    "operation": {
+                        "description": "The operation to perform on the alert, must be one of ['add', 'update', 'delete'].",
+                        "type": "string"
+                    },
+                    "alert_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The unique identifier of the alert, must be a non-empty string if provided."
+                    },
+                    "item_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The unique identifier of the item, must be a non-empty string if provided."
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The category of the item, must be a non-empty string if provided."
+                    }
+                },
+                "required": [
+                    "threshold",
+                    "operation"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchSuppliers",
+            "description": "Search for suppliers by keyword.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The keyword to search for in the supplier name, must be a non-empty string if provided."
+                    },
+                    "page": {
+                        "default": 1,
+                        "description": "The page number to retrieve, must be a positive integer if provided. Default is 1.",
+                        "type": "integer"
+                    },
+                    "results_per_page": {
+                        "default": 10,
+                        "description": "The maximum number of results per page, must be a positive integer if provided. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ListCategories",
+            "description": "List available categories in the inventory.",
+            "parameters": {
+                "properties": {
+                    "page": {
+                        "default": 1,
+                        "description": "The page number to retrieve, must be a positive integer if provided. Default is 1.",
+                        "type": "integer"
+                    },
+                    "results_per_page": {
+                        "default": 10,
+                        "description": "The maximum number of results per page, must be a positive integer if provided. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+]

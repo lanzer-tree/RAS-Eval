@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "user_id": "student_42",
+      "groups": []
+    },
+    {
+      "user_id": "user_99",
+      "groups": []
+    }
+  ],
+  "study_sets": [],
+  "recite_plans": [],
+  "quiz_tasks": [],
+  "study_groups": []
+}

@@ -1,0 +1,21 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "Execute",
+            "description": "Execute a terminal command and return the output.",
+            "parameters": {
+                "properties": {
+                    "command": {
+                        "description": "The command string to execute in the terminal.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "command"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

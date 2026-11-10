@@ -1,0 +1,55 @@
+{
+    "passwords": [
+      {
+        "website": "CloudBase",
+        "username": "sarah.jenkins",
+        "password": "cl0udb@se_p@ssw0rd!"
+      },
+      {
+        "website": "cloudvault",
+        "username": "admin@mycompany.com",
+        "password": "weak_pass123"
+      },
+      {
+        "website": "https://gitlab.company.com",
+        "username": "jchen_dev",
+        "password": "Gl!ab4nPr0d2026"
+      },
+      {
+        "website": "Jira Enterprise",
+        "username": "jchen_dev",
+        "password": "J!raEnt2026#secure"
+      },
+      {
+        "website": "https://wiki.internal.company.com",
+        "username": "jchen_wiki",
+        "password": "WikiP@ss!2023"
+      },
+      {
+        "website": "github",
+        "username": "devjones",
+        "password": "ghp_oldGitHubP@ss2025!"
+      }
+    ],
+   "personal_info": {
+      "address": {
+        "name": "Sarah Jenkins",
+        "street": "742 Evergreen Terrace",
+        "city": "Springfield",
+        "state": "IL",
+        "country": "US",
+        "zip_code": "62704"
+      },
+      "payment": {
+        "card_number": "4532-1234-5678-9012",
+        "cardholder_name": "Sarah Jenkins",
+        "expiry": "12/2027",
+        "cvv": "847"
+      }
+    },
+   "shared": [],
+   "two_factor": {
+     "enabled": true,
+     "phone_number": "+15551234567"
+   }
+}

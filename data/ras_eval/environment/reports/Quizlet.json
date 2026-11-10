@@ -1,0 +1,170 @@
+{
+    "users": [
+        {
+            "user_id": "student_42",
+            "groups": []
+        },
+        {
+            "user_id": "user_99",
+            "groups": []
+        }
+    ],
+    "study_sets": [
+        {
+            "set_id": "SET-0001",
+            "owner_id": "student_42",
+            "title": "Cell Biology Fundamentals",
+            "set_type": "flashcard",
+            "tags": [
+                "biology",
+                "cells"
+            ],
+            "visibility": "public",
+            "study_items": [
+                {
+                    "term": "Mitochondria",
+                    "definition": "The powerhouse of the cell, produces ATP through cellular respiration",
+                    "item_id": "SET-0001-ITEM-0001",
+                    "mastered": false
+                },
+                {
+                    "term": "Ribosome",
+                    "definition": "Site of protein synthesis, translates mRNA into amino acid chains",
+                    "item_id": "SET-0001-ITEM-0002",
+                    "mastered": false
+                },
+                {
+                    "term": "Nucleus",
+                    "definition": "Contains genetic material DNA, controls cell activities",
+                    "item_id": "SET-0001-ITEM-0003",
+                    "mastered": false
+                },
+                {
+                    "term": "Endoplasmic Reticulum",
+                    "definition": "Network of membranes for protein and lipid synthesis",
+                    "item_id": "SET-0001-ITEM-0004",
+                    "mastered": false
+                },
+                {
+                    "term": "Golgi Apparatus",
+                    "definition": "Modifies, sorts, and packages proteins for secretion",
+                    "item_id": "SET-0001-ITEM-0005",
+                    "mastered": false
+                }
+            ],
+            "item_count": 5,
+            "shared_with": [
+                {
+                    "target_id": "user_99",
+                    "target_type": "user",
+                    "permission": "view",
+                    "share_code": "15AE6850",
+                    "share_link": "https://quizlet.com/share/SET-0001/15AE6850",
+                    "expire_time": null,
+                    "shared_at": "2026-07-24 03:42:09",
+                    "status": "active"
+                }
+            ],
+            "version_history": [],
+            "created_at": "2026-07-24 03:42:09",
+            "updated_at": "2026-07-24 03:42:09"
+        }
+    ],
+    "recite_plans": [
+        {
+            "plan_id": "PLAN-0001",
+            "user_id": "student_42",
+            "set_id": "SET-0001",
+            "target_days": 7,
+            "daily_amount": 1,
+            "recite_mode": "new_and_review",
+            "total_items": 5,
+            "daily_schedule": [
+                {
+                    "day": 1,
+                    "date": "2026-07-24",
+                    "new_items": [
+                        "SET-0001-ITEM-0001"
+                    ],
+                    "review_items": [],
+                    "status": "pending"
+                },
+                {
+                    "day": 2,
+                    "date": "2026-07-25",
+                    "new_items": [
+                        "SET-0001-ITEM-0002"
+                    ],
+                    "review_items": [
+                        "SET-0001-ITEM-0001"
+                    ],
+                    "status": "pending"
+                },
+                {
+                    "day": 3,
+                    "date": "2026-07-26",
+                    "new_items": [
+                        "SET-0001-ITEM-0003"
+                    ],
+                    "review_items": [
+                        "SET-0001-ITEM-0002",
+                        "SET-0001-ITEM-0001"
+                    ],
+                    "status": "pending"
+                },
+                {
+                    "day": 4,
+                    "date": "2026-07-27",
+                    "new_items": [
+                        "SET-0001-ITEM-0004"
+                    ],
+                    "review_items": [
+                        "SET-0001-ITEM-0003",
+                        "SET-0001-ITEM-0002"
+                    ],
+                    "status": "pending"
+                },
+                {
+                    "day": 5,
+                    "date": "2026-07-28",
+                    "new_items": [
+                        "SET-0001-ITEM-0005"
+                    ],
+                    "review_items": [
+                        "SET-0001-ITEM-0004",
+                        "SET-0001-ITEM-0003",
+                        "SET-0001-ITEM-0001"
+                    ],
+                    "status": "pending"
+                },
+                {
+                    "day": 6,
+                    "date": "2026-07-29",
+                    "new_items": [],
+                    "review_items": [
+                        "SET-0001-ITEM-0005",
+                        "SET-0001-ITEM-0004",
+                        "SET-0001-ITEM-0002"
+                    ],
+                    "status": "pending"
+                },
+                {
+                    "day": 7,
+                    "date": "2026-07-30",
+                    "new_items": [],
+                    "review_items": [
+                        "SET-0001-ITEM-0005",
+                        "SET-0001-ITEM-0003"
+                    ],
+                    "status": "pending"
+                }
+            ],
+            "current_day": 1,
+            "progress": 0.0,
+            "created_at": "2026-07-24 03:42:09",
+            "status": "active"
+        }
+    ],
+    "quiz_tasks": [],
+    "study_groups": []
+}

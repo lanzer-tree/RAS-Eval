@@ -1,0 +1,364 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "search_design_templates",
+            "description": "Search and filter design templates from the template library.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "design_type": {
+                        "description": "The type of design to search for. Valid values: 'poster', 'document', 'ppt', 'social_media'.",
+                        "type": "string"
+                    },
+                    "style": {
+                        "default": null,
+                        "description": "Style filter. Valid values: 'minimal', 'business', 'cute', 'modern', 'vintage'.",
+                        "type": "string"
+                    },
+                    "dimension": {
+                        "default": null,
+                        "description": "Dimension filter. Valid values: 'A4', '9:16', '16:9', '1:1', 'custom'.",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "default": null,
+                        "description": "Keywords to filter templates by.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "design_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "init_design_project",
+            "description": "Initialize a new design project based on a template or as a blank canvas.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "project_name": {
+                        "description": "The name of the new project.",
+                        "type": "string"
+                    },
+                    "template_id": {
+                        "default": null,
+                        "description": "Template ID to base the project on. Leave empty for blank design.",
+                        "type": "string"
+                    },
+                    "custom_dimension": {
+                        "default": null,
+                        "description": "Custom dimension for blank design (e.g., '1920x1080'). Required if template_id is not provided.",
+                        "type": "string"
+                    },
+                    "design_category": {
+                        "default": null,
+                        "description": "Category label for the project.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "project_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "fetch_design_assets",
+            "description": "Fetch design assets from the asset library (images, icons, fonts, shapes).",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "asset_type": {
+                        "description": "The type of asset to fetch. Valid values: 'image', 'icon', 'font', 'shape'.",
+                        "type": "string"
+                    },
+                    "keyword": {
+                        "default": null,
+                        "description": "Search keyword to filter assets.",
+                        "type": "string"
+                    },
+                    "style_filter": {
+                        "default": null,
+                        "description": "Style filter for assets (e.g., 'minimal', 'colorful').",
+                        "type": "string"
+                    },
+                    "license_type": {
+                        "default": null,
+                        "description": "License type filter. Valid values: 'free', 'commercial'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "asset_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "edit_design_elements",
+            "description": "Edit design elements in a project (add, modify, or delete text, images, shapes).",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "description": "The unique identifier of the project.",
+                        "type": "string"
+                    },
+                    "element_operations": {
+                        "description": "List of operations to perform. Each operation should have: 'action' ('add', 'modify', or 'delete'), 'element_type' ('text', 'image', or 'shape', required for 'add'), 'element_id' (ID of element, required for 'modify' and 'delete'), 'properties' (Dict of properties to set, for 'add' and 'modify')",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "element_params": {
+                        "additionalProperties": true,
+                        "default": null,
+                        "description": "Additional parameters like position, size, color, font.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "project_id",
+                    "element_operations"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "batch_generate_designs",
+            "description": "Batch generate design outputs by replacing elements with batch data.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "description": "The base project ID to use as template.",
+                        "type": "string"
+                    },
+                    "batch_data": {
+                        "description": "List of data for batch generation. Each item should contain element replacements like {'text_1': 'New Text', 'image_1': 'url'}.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "output_format": {
+                        "default": "PNG",
+                        "description": "Output format. Valid values: 'PNG', 'JPG', 'PDF'. Default is 'PNG'.",
+                        "type": "string"
+                    },
+                    "naming_rule": {
+                        "default": null,
+                        "description": "Naming rule for output files (e.g., 'design_{index}').",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "project_id",
+                    "batch_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "adjust_design_layout",
+            "description": "Intelligently adjust the design layout based on specified requirements.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "description": "The unique identifier of the project.",
+                        "type": "string"
+                    },
+                    "layout_demand": {
+                        "description": "Layout requirement. Valid values: 'center_align', 'columns', 'auto_fit', 'left_text_right_image', 'top_text_bottom_image'.",
+                        "type": "string"
+                    },
+                    "spacing": {
+                        "default": null,
+                        "description": "Element spacing in pixels.",
+                        "type": "integer"
+                    },
+                    "priority_elements": {
+                        "default": null,
+                        "description": "List of element IDs to prioritize in layout.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "project_id",
+                    "layout_demand"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "preview_design_project",
+            "description": "Preview the design project in different formats and dimensions.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "description": "The unique identifier of the project.",
+                        "type": "string"
+                    },
+                    "preview_type": {
+                        "description": "Preview type. Valid values: 'full', 'dimension_adapt'.",
+                        "type": "string"
+                    },
+                    "target_dimensions": {
+                        "default": null,
+                        "description": "Target dimensions for adaptation preview (e.g., ['mobile', 'tablet', 'desktop']).",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "project_id",
+                    "preview_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "export_design_files",
+            "description": "Export the design project to various file formats.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "description": "The unique identifier of the project.",
+                        "type": "string"
+                    },
+                    "export_format": {
+                        "description": "Export format. Valid values: 'PNG', 'JPG', 'PDF', 'PPT'.",
+                        "type": "string"
+                    },
+                    "resolution": {
+                        "default": "high",
+                        "description": "Resolution quality. Valid values: 'standard', 'high', 'ultra'. Default is 'high'.",
+                        "type": "string"
+                    },
+                    "compress_ratio": {
+                        "default": null,
+                        "description": "Compression ratio (0.1-1.0). Lower means more compression.",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "project_id",
+                    "export_format"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "share_design_project",
+            "description": "Share a design project or exported file with others.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "target_id": {
+                        "description": "The ID of the project or exported file to share.",
+                        "type": "string"
+                    },
+                    "share_type": {
+                        "description": "Type of sharing permission. Valid values: 'edit', 'view'.",
+                        "type": "string"
+                    },
+                    "recipient_ids": {
+                        "default": null,
+                        "description": "List of recipient user IDs or email addresses.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "expire_time": {
+                        "default": null,
+                        "description": "Expiration time for the share link (format: 'YYYY-MM-DDTHH:MM:SSZ').",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "target_id",
+                    "share_type"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

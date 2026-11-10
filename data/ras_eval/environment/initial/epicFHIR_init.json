@@ -1,0 +1,31 @@
+{
+  "patients": [
+    {
+      "patient_id": "PAT001",
+      "name": "John Doe",
+      "age": 45,
+      "gender": "Male",
+      "conditions": ["Hypertension"],
+      "allergies": ["Penicillin"],
+      "contact_info": {
+        "phone": "555-0101",
+        "email": "john.doe@example.com"
+      }
+    }
+  ],
+  "doctors": [
+    {
+      "doctor_id": "DOC001",
+      "name": "Dr. Smith",
+      "specialty": "Cardiology",
+      "contact_info": {
+        "phone": "555-0201",
+        "email": "smith@hospital.com"
+      }
+    }
+  ],
+  "clinical_documents": [],
+  "appointments": [],
+  "records": [],
+  "reports": []
+}

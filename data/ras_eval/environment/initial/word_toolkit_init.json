@@ -1,0 +1,10 @@
+{
+  "reports_dir": "/workspace/environment/reports",
+  "documents": [
+    {
+      "name": "Project_Report_Template.docx",
+      "path": "/workspace/environment/reports/Project_Report_Template.docx",
+      "content": "[TEMPLATE_PLACEHOLDER: Replace this section with key performance metrics and achievements for the reporting period.]"
+    }
+  ]
+}

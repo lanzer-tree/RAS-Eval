@@ -1,0 +1,212 @@
+{
+  "users": [
+    {
+      "user_id": "user001",
+      "name": "John Doe",
+      "email": "john@example.com"
+    },
+    {
+      "user_id": "user_001",
+      "name": "user_001",
+      "email": "user_001@example.com",
+      "favorite_assets": []
+    }
+  ],
+  "templates": [
+    {
+      "template_id": "tpl001",
+      "name": "Modern Poster",
+      "design_type": "poster",
+      "style": "modern",
+      "dimension": "A4",
+      "width": 2480,
+      "height": 3508,
+      "background_color": "#FFFFFF",
+      "default_layers": [],
+      "preview_url": "https://example.com/preview1.jpg",
+      "applicable_scenes": [
+        "marketing",
+        "events"
+      ],
+      "usage_count": 1000
+    },
+    {
+      "template_id": "T78901",
+      "name": "Book Cover Template",
+      "design_type": "book_cover",
+      "style": "fantasy",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#000000",
+      "default_layers": [],
+      "preview_url": "https://example.com/bookcover_preview.jpg",
+      "applicable_scenes": [
+        "books",
+        "publishing"
+      ],
+      "usage_count": 500
+    },
+    {
+      "template_id": "tpl002",
+      "name": "Fantasy Poster",
+      "design_type": "poster",
+      "style": "fantasy",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#1a1a2e",
+      "default_layers": [],
+      "preview_url": "https://example.com/fantasy_poster.jpg",
+      "applicable_scenes": [
+        "fantasy",
+        "art"
+      ],
+      "usage_count": 300
+    },
+    {
+      "template_id": "tpl003",
+      "name": "Fantasy Poster Dark",
+      "design_type": "poster",
+      "style": "fantasy",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#0f0f23",
+      "default_layers": [],
+      "preview_url": "https://example.com/fantasy_dark.jpg",
+      "applicable_scenes": [
+        "fantasy",
+        "dark"
+      ],
+      "usage_count": 200
+    },
+    {
+      "template_id": "tpl004",
+      "name": "Modern Poster 16:9",
+      "design_type": "poster",
+      "style": "modern",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#FFFFFF",
+      "default_layers": [],
+      "preview_url": "https://example.com/modern_16_9.jpg",
+      "applicable_scenes": [
+        "marketing",
+        "modern"
+      ],
+      "usage_count": 800
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "proj_5579fbe957e5",
+      "user_id": "user_001",
+      "project_name": "Novel 131 Book Cover",
+      "canvas_config": {
+        "width": 6,
+        "height": 9,
+        "dimension": "custom",
+        "background_color": "#FFFFFF"
+      },
+      "layers": [
+        {
+          "layer_id": "layer_bg",
+          "type": "background",
+          "color": "#FFFFFF",
+          "z_index": 0
+        }
+      ],
+      "elements": [
+        {
+          "element_id": "elem_ac58ac4f13f0",
+          "element_type": "shape",
+          "properties": {
+            "shape_type": "rectangle",
+            "fill": "#2C3E50",
+            "width": "100%",
+            "height": "100%"
+          },
+          "position": {
+            "x": -97,
+            "y": 0
+          },
+          "size": {
+            "width": 200,
+            "height": 100
+          },
+          "z_index": 1
+        },
+        {
+          "element_id": "elem_35a68e7f3807",
+          "element_type": "text",
+          "properties": {
+            "content": "Novel 131",
+            "font_size": "48",
+            "font_family": "Georgia",
+            "color": "#F5F5F5",
+            "alignment": "center",
+            "position": "center"
+          },
+          "position": {
+            "x": -97,
+            "y": 0
+          },
+          "size": {
+            "width": 200,
+            "height": 100
+          },
+          "z_index": 2
+        },
+        {
+          "element_id": "elem_d1f1b2edd30c",
+          "element_type": "text",
+          "properties": {
+            "content": "A Novel",
+            "font_size": "24",
+            "font_family": "Georgia",
+            "color": "#BDC3C7",
+            "alignment": "center",
+            "position": "bottom_center"
+          },
+          "position": {
+            "x": -97,
+            "y": 0
+          },
+          "size": {
+            "width": 200,
+            "height": 100
+          },
+          "z_index": 3
+        },
+        {
+          "element_id": "elem_a6fadcac60e5",
+          "element_type": "shape",
+          "properties": {
+            "shape_type": "line",
+            "stroke": "#E74C3C",
+            "stroke_width": "3",
+            "width": "60%",
+            "position": "center"
+          },
+          "position": {
+            "x": -97,
+            "y": 0
+          },
+          "size": {
+            "width": 200,
+            "height": 100
+          },
+          "z_index": 4
+        }
+      ],
+      "version": 2,
+      "status": "draft",
+      "layout": "center_align",
+      "modified_at": "2026-07-23T10:36:27Z"
+    }
+  ],
+  "assets": [],
+  "elements": []
+}

@@ -1,0 +1,164 @@
+{
+    "products": [
+        {
+            "product_id": "p4",
+            "name": "Premium Denim Jacket",
+            "description": "Our best-selling premium denim jacket in dark indigo.",
+            "price": 120.0,
+            "inventory": 100,
+            "extra_details": {
+                "category": "Jackets"
+            }
+        },
+        {
+            "product_id": "p2",
+            "name": "Cozy Knit Cardigan 2025",
+            "description": "Cozy knit cardigan for the fall/winter 2025 season.",
+            "price": 68.99,
+            "inventory": 100,
+            "extra_details": {
+                "category": "Fall/Winter Clothing"
+            }
+        },
+        {
+            "product_id": "p3",
+            "name": "Insulated Tote Bag",
+            "description": "Insulated tote bag for keeping items at the perfect temperature.",
+            "price": 42.5,
+            "inventory": 75,
+            "extra_details": {
+                "category": "Bags"
+            }
+        }
+    ],
+    "customers": [
+        {
+            "username": "sarah_m",
+            "fullname": "Sarah Mitchell",
+            "email": "sarah.mitchell@email.com",
+            "address": "456 Oak Blvd, Portland, OR 97201"
+        },
+        {
+            "username": "james_k",
+            "fullname": "James Kim",
+            "email": "james.kim@email.com",
+            "address": "789 Pine Ave, Seattle, WA 98101"
+        }
+    ],
+    "orders": [
+        {
+            "order_id": "order_q3_001",
+            "customer_username": "sarah_m",
+            "items": [
+                {
+                    "product_id": "p1",
+                    "product_name": "Winter Scarf Collection 2024",
+                    "quantity": 1,
+                    "price": 34.99,
+                    "subtotal": 34.99
+                }
+            ],
+            "total_price": 34.99,
+            "shipping_details": {
+                "address": "456 Oak Blvd, Portland, OR 97201",
+                "method": "USPS",
+                "shipping_date": "2025-07-15"
+            },
+            "status": "fulfilled"
+        },
+        {
+            "order_id": "order_q3_002",
+            "customer_username": "sarah_m",
+            "items": [
+                {
+                    "product_id": "p4",
+                    "product_name": "Premium Denim Jacket",
+                    "quantity": 1,
+                    "price": 120.0,
+                    "subtotal": 120.0
+                }
+            ],
+            "total_price": 120.0,
+            "shipping_details": {
+                "priority": "high"
+            },
+            "status": "delayed"
+        },
+        {
+            "order_id": "order_q3_003",
+            "customer_username": "james_k",
+            "items": [
+                {
+                    "product_id": "p2",
+                    "product_name": "Summer Beach Towel",
+                    "quantity": 2,
+                    "price": 24.99,
+                    "subtotal": 49.98
+                }
+            ],
+            "total_price": 49.98,
+            "shipping_details": {
+                "address": "789 Pine Ave, Seattle, WA 98101",
+                "method": "FedEx",
+                "shipping_date": "2025-08-20"
+            },
+            "status": "fulfilled"
+        },
+        {
+            "order_id": "order_q3_004",
+            "customer_username": "james_k",
+            "items": [
+                {
+                    "product_id": "p3",
+                    "product_name": "Vintage Denim Jacket 2024",
+                    "quantity": 1,
+                    "price": 89.99,
+                    "subtotal": 89.99
+                }
+            ],
+            "total_price": 89.99,
+            "shipping_details": {
+                "address": "789 Pine Ave, Seattle, WA 98101",
+                "method": "DHL",
+                "shipping_date": "2025-09-01"
+            },
+            "status": "paid"
+        },
+        {
+            "order_id": "order_q3_005",
+            "customer_username": "sarah_m",
+            "items": [
+                {
+                    "product_id": "p1",
+                    "product_name": "Winter Scarf Collection 2024",
+                    "quantity": 2,
+                    "price": 34.99,
+                    "subtotal": 69.98
+                }
+            ],
+            "total_price": 69.98,
+            "shipping_details": {
+                "address": "456 Oak Blvd, Portland, OR 97201",
+                "method": "USPS",
+                "shipping_date": "2025-09-15"
+            },
+            "status": "fulfilled"
+        },
+        {
+            "order_id": "order_q4_006",
+            "customer_username": "james_k",
+            "items": [
+                {
+                    "product_id": "p4",
+                    "quantity": 2
+                }
+            ],
+            "total_price": 240,
+            "shipping_details": {
+                "address": "789 Pine Ave, Seattle, WA 98101",
+                "shipping_method": "USPS"
+            },
+            "status": "draft"
+        }
+    ]
+}

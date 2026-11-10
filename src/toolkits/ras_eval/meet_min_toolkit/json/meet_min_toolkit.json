@@ -1,0 +1,345 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "init_meeting",
+            "description": "Initialize a meeting with basic information.",
+            "parameters": {
+                "properties": {
+                    "meeting_id": {
+                        "description": "The unique identifier for the meeting.",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "The title of the meeting.",
+                        "type": "string"
+                    },
+                    "start_time": {
+                        "description": "The start time of the meeting in format 'YYYY-MM-DD HH:MM:SS'.",
+                        "type": "string"
+                    },
+                    "participants": {
+                        "description": "List of participants, each with 'id', 'name', and 'role'.",
+                        "items": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "end_time": {
+                        "default": null,
+                        "description": "The expected end time of the meeting in format 'YYYY-MM-DD HH:MM:SS'.",
+                        "type": "string"
+                    },
+                    "meeting_type": {
+                        "default": "offline",
+                        "description": "Type of meeting, either 'online' or 'offline'. Default is 'offline'.",
+                        "type": "string"
+                    },
+                    "meeting_link": {
+                        "default": null,
+                        "description": "The link for online meetings (e.g., Zoom, Tencent Meeting).",
+                        "type": "string"
+                    },
+                    "host_id": {
+                        "default": null,
+                        "description": "The ID of the meeting host.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "meeting_id",
+                    "title",
+                    "start_time",
+                    "participants"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "record_meeting_content",
+            "description": "Record meeting content in real-time.",
+            "parameters": {
+                "properties": {
+                    "meeting_id": {
+                        "description": "The unique identifier of the meeting.",
+                        "type": "string"
+                    },
+                    "content_type": {
+                        "description": "Type of content: 'speech_to_text', 'text_record', or 'key_point'.",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "The content to record.",
+                        "type": "string"
+                    },
+                    "speaker_id": {
+                        "default": null,
+                        "description": "The ID of the speaker.",
+                        "type": "string"
+                    },
+                    "record_time": {
+                        "default": null,
+                        "description": "The time of recording in format 'YYYY-MM-DD HH:MM:SS'. Default is current time.",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "default": null,
+                        "description": "Content tags such as 'decision', 'todo', 'discussion'.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "meeting_id",
+                    "content_type",
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "extract_key_points",
+            "description": "Extract key information from meeting records.",
+            "parameters": {
+                "properties": {
+                    "meeting_id": {
+                        "description": "The unique identifier of the meeting.",
+                        "type": "string"
+                    },
+                    "extract_types": {
+                        "default": null,
+                        "description": "Types to extract: 'decision', 'todo', 'controversy', 'conclusion'. Default is all.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "content_ids": {
+                        "default": null,
+                        "description": "Specific record IDs to extract from. Default is all records.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "meeting_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "generate_meeting_minutes",
+            "description": "Generate standardized meeting minutes.",
+            "parameters": {
+                "properties": {
+                    "meeting_id": {
+                        "description": "The unique identifier of the meeting.",
+                        "type": "string"
+                    },
+                    "template_type": {
+                        "default": "general",
+                        "description": "Template type: 'general', 'project_meeting', or 'business_meeting'. Default is 'general'.",
+                        "type": "string"
+                    },
+                    "include_items": {
+                        "default": null,
+                        "description": "Items to include: 'key_points', 'task_list', 'participants'. Default is all.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "language": {
+                        "default": "zh",
+                        "description": "Language for the minutes, e.g., 'zh' for Chinese, 'en' for English. Default is 'zh'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "meeting_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "assign_meeting_tasks",
+            "description": "Assign meeting todo tasks.",
+            "parameters": {
+                "properties": {
+                    "meeting_id": {
+                        "description": "The unique identifier of the meeting.",
+                        "type": "string"
+                    },
+                    "tasks": {
+                        "description": "List of tasks, each with 'description', 'assignee_id', 'deadline', and 'priority'.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "task_source": {
+                        "default": null,
+                        "description": "Source record ID of the task.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "meeting_id",
+                    "tasks"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "track_task_progress",
+            "description": "Track todo task progress.",
+            "parameters": {
+                "properties": {
+                    "meeting_id": {
+                        "description": "The unique identifier of the meeting.",
+                        "type": "string"
+                    },
+                    "task_id": {
+                        "default": null,
+                        "description": "The specific task ID to query.",
+                        "type": "string"
+                    },
+                    "progress_status": {
+                        "default": null,
+                        "description": "Filter by status: 'not_started', 'in_progress', or 'completed'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "meeting_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_meeting_minutes",
+            "description": "Update meeting minutes.",
+            "parameters": {
+                "properties": {
+                    "minutes_id": {
+                        "description": "The unique identifier of the meeting minutes.",
+                        "type": "string"
+                    },
+                    "update_data": {
+                        "additionalProperties": true,
+                        "description": "Update content including supplementary points, task corrections, or conclusion modifications.",
+                        "type": "object"
+                    },
+                    "update_reason": {
+                        "default": null,
+                        "description": "Reason for the update.",
+                        "type": "string"
+                    },
+                    "operator_id": {
+                        "default": null,
+                        "description": "ID of the person making the update.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "minutes_id",
+                    "update_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "distribute_meeting_minutes",
+            "description": "Distribute meeting minutes to recipients.",
+            "parameters": {
+                "properties": {
+                    "minutes_id": {
+                        "description": "The unique identifier of the meeting minutes.",
+                        "type": "string"
+                    },
+                    "recipient_ids": {
+                        "description": "List of recipient IDs.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "distribute_method": {
+                        "description": "Distribution method: 'email', 'wechat_work', or 'link_share'.",
+                        "type": "string"
+                    },
+                    "attachments": {
+                        "default": null,
+                        "description": "Attachments such as 'original_record' or 'task_list'.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "minutes_id",
+                    "recipient_ids",
+                    "distribute_method"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_meeting_history",
+            "description": "Query meeting history information.",
+            "parameters": {
+                "properties": {
+                    "query_key": {
+                        "description": "Query keyword: meeting_id, meeting title, or time range (format: 'YYYY-MM-DD to YYYY-MM-DD').",
+                        "type": "string"
+                    },
+                    "query_types": {
+                        "default": null,
+                        "description": "Query types: 'minutes', 'tasks', 'records'. Default is all.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "query_key"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

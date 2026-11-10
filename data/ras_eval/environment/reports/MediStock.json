@@ -1,0 +1,487 @@
+{
+    "hospital": {
+        "hospital_id": "HOSP-RMC-2026",
+        "name": "Riverside Medical Center"
+    },
+    "authorized_hospitals": [
+        "HOSP-RMC-2026",
+        "HOSP001",
+        "HOSP-001",
+        "HOSP-01",
+        "HOSP-RGH-001",
+        "H001"
+    ],
+    "materials": [
+        {
+            "material_id": "MAT-SUT-450",
+            "name": "Surgical Sutures",
+            "material_type": "consumable",
+            "specification": "3-0 braided absorbable, 75cm",
+            "total_stock": 320,
+            "min_stock": 50,
+            "unit_price": 12.5,
+            "unit": "box",
+            "storage_location": "Operating Room Supply, Shelf B3",
+            "batch_number": "BN-2026-0412",
+            "supplier_id": null,
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {
+                "DEPT-SURG-01": {
+                    "quantity": 200
+                },
+                "DEPT-EMER-02": {
+                    "quantity": 120
+                }
+            }
+        },
+        {
+            "material_id": "MAT-001",
+            "name": "Surgical Masks",
+            "material_type": "consumable",
+            "specification": "3-ply disposable, 50/box",
+            "total_stock": 0,
+            "min_stock": 200,
+            "unit_price": 0.5,
+            "unit": "piece",
+            "storage_location": "Central Warehouse, Shelf A1",
+            "batch_number": null,
+            "supplier_id": null,
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {}
+        },
+        {
+            "material_id": "MAT-N95-001",
+            "name": "N95 Respirator Masks",
+            "material_type": "consumable",
+            "specification": "N95 particulate respirator, 20/box",
+            "total_stock": 15,
+            "min_stock": 200,
+            "unit_price": 2.5,
+            "unit": "piece",
+            "storage_location": "Central Warehouse, Shelf A2",
+            "batch_number": null,
+            "supplier_id": null,
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {
+                "DEPT-ICU-02": {
+                    "quantity": 15
+                }
+            }
+        },
+        {
+            "material_id": "MG-001",
+            "name": "Surgical Gloves",
+            "material_type": "consumable",
+            "specification": "Latex, powder-free, size M",
+            "total_stock": 0,
+            "min_stock": 50,
+            "unit_price": 0.2,
+            "unit": "pair",
+            "storage_location": "Pharmacy, Shelf B2",
+            "batch_number": null,
+            "supplier_id": "SUP-001",
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {}
+        },
+        {
+            "material_id": "VITC001",
+            "name": "Vitamin C",
+            "material_type": "medicine",
+            "specification": "1000mg, 30 tablets",
+            "total_stock": 100,
+            "min_stock": 20,
+            "unit_price": 15.99,
+            "unit": "box",
+            "storage_location": "Pharmacy, Shelf A1",
+            "batch_number": "BN-2025-1100",
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {}
+        },
+        {
+            "material_id": "M001",
+            "name": "Surgical Gloves",
+            "material_type": "consumable",
+            "specification": "Latex, powder-free, size M",
+            "total_stock": 0,
+            "min_stock": 50,
+            "unit_price": 0.2,
+            "unit": "pair",
+            "storage_location": "Central Warehouse, Shelf A1",
+            "batch_number": "B001",
+            "supplier_id": "S001",
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {
+                "D001": {
+                    "quantity": 0
+                }
+            },
+            "expiry_date": "2027-01-01"
+        },
+        {
+            "material_id": "M002",
+            "name": "Sutures",
+            "material_type": "consumable",
+            "specification": "3-0 braided absorbable, 75cm",
+            "total_stock": 0,
+            "min_stock": 50,
+            "unit_price": 12.5,
+            "unit": "box",
+            "storage_location": "Central Warehouse, Shelf B3",
+            "batch_number": "B002",
+            "supplier_id": "S001",
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {
+                "D001": {
+                    "quantity": 0
+                }
+            },
+            "expiry_date": "2027-06-30"
+        },
+        {
+            "material_id": "MET001",
+            "name": "Metformin",
+            "material_type": "medicine",
+            "specification": "500mg, 30 tablets",
+            "total_stock": 500,
+            "min_stock": 50,
+            "unit_price": 25.99,
+            "unit": "box",
+            "storage_location": "Pharmacy, Shelf C2",
+            "batch_number": "BN-2025-0800",
+            "is_high_value": false,
+            "is_controlled": false,
+            "dept_stocks": {}
+        }
+    ],
+    "suppliers": [
+        {
+            "supplier_id": "SUPP-001",
+            "name": "MedSupply Inc.",
+            "status": "active",
+            "cooperation_level": "preferred",
+            "supplied_materials": [
+                "MAT-001",
+                "MAT-SUT-450"
+            ],
+            "qualifications": [
+                {
+                    "type": "production_license",
+                    "certificate_no": "MFG-2025-001",
+                    "expiry_date": "2027-12-31"
+                },
+                {
+                    "type": "business_license",
+                    "certificate_no": "BL-2025-001",
+                    "expiry_date": "2027-06-30"
+                }
+            ],
+            "contact": {
+                "phone": "123-456-7890",
+                "email": "sales@medsupply.com"
+            }
+        },
+        {
+            "supplier_id": "SUPP-N95-001",
+            "name": "Respiratory Protection Inc.",
+            "status": "active",
+            "cooperation_level": "preferred",
+            "supplied_materials": [
+                "MAT-N95-001",
+                "MAT-001"
+            ],
+            "qualifications": [
+                {
+                    "type": "production_license",
+                    "certificate_no": "MFG-2026-095",
+                    "expiry_date": "2028-06-30"
+                },
+                {
+                    "type": "business_license",
+                    "certificate_no": "BL-2026-095",
+                    "expiry_date": "2028-12-31"
+                }
+            ],
+            "contact": {
+                "phone": "555-019-5555",
+                "email": "sales@respiratorypro.com"
+            }
+        },
+        {
+            "supplier_id": "S001",
+            "name": "Medical Supply Co.",
+            "status": "active",
+            "cooperation_level": "preferred",
+            "supplied_materials": [
+                "M001",
+                "M002"
+            ],
+            "qualifications": [
+                {
+                    "type": "production_license",
+                    "certificate_no": "MFG-2025-003",
+                    "expiry_date": "2027-12-31"
+                },
+                {
+                    "type": "business_license",
+                    "certificate_no": "BL-2025-003",
+                    "expiry_date": "2027-06-30"
+                }
+            ],
+            "contact": {
+                "phone": "555-010-0000",
+                "email": "sales@medsupplyco.com"
+            }
+        },
+        {
+            "supplier_id": "SUP-001",
+            "name": "Global Medical Supplies Ltd.",
+            "status": "active",
+            "cooperation_level": "preferred",
+            "supplied_materials": [
+                "MG-001",
+                "MAT-001"
+            ],
+            "qualifications": [
+                {
+                    "type": "production_license",
+                    "certificate_no": "MFG-2025-002",
+                    "expiry_date": "2027-12-31"
+                },
+                {
+                    "type": "business_license",
+                    "certificate_no": "BL-2025-002",
+                    "expiry_date": "2027-06-30"
+                }
+            ],
+            "contact": {
+                "phone": "987-654-3210",
+                "email": "sales@globalmedsupplies.com"
+            }
+        }
+    ],
+    "departments": [
+        {
+            "dept_id": "DEPT-WH",
+            "name": "Central Warehouse",
+            "type": "storage"
+        },
+        {
+            "dept_id": "DEPT-ICU",
+            "name": "ICU Department",
+            "type": "clinical"
+        },
+        {
+            "dept_id": "DEPT-ICU-02",
+            "name": "ICU Department",
+            "type": "clinical"
+        },
+        {
+            "dept_id": "DEPT-SURG-01",
+            "name": "Surgery Department",
+            "type": "clinical"
+        },
+        {
+            "dept_id": "DEPT-EMER-02",
+            "name": "Emergency Department",
+            "type": "clinical"
+        },
+        {
+            "dept_id": "DEPT-PHARM-01",
+            "name": "Pharmacy Department",
+            "type": "support"
+        },
+        {
+            "dept_id": "DEPT-PHARM",
+            "name": "Pharmacy Department",
+            "type": "support"
+        },
+        {
+            "dept_id": "DEPT-OR",
+            "name": "Operating Room",
+            "type": "clinical"
+        },
+        {
+            "dept_id": "DEPT-ER",
+            "name": "Emergency Department",
+            "type": "clinical"
+        },
+        {
+            "dept_id": "MediStock",
+            "name": "MediStock",
+            "type": "storage"
+        },
+        {
+            "dept_id": "Pharmacy",
+            "name": "Pharmacy",
+            "type": "storage"
+        },
+        {
+            "dept_id": "D001",
+            "name": "Surgery Department",
+            "type": "clinical"
+        }
+    ],
+    "flow_records": [
+        {
+            "flow_id": "FL-00000001",
+            "flow_type": "warehousing",
+            "material_id": "MAT-SUT-450",
+            "material_name": "Surgical Sutures",
+            "quantity": 500,
+            "old_stock": 0,
+            "new_stock": 500,
+            "operator_id": "OP-SC-0091",
+            "dept_id": "DEPT-SURG-01",
+            "reference_id": "WH-12345678",
+            "timestamp": "2026-07-01T10:15:00"
+        },
+        {
+            "flow_id": "FL-00000002",
+            "flow_type": "outbound",
+            "material_id": "MAT-SUT-450",
+            "material_name": "Surgical Sutures",
+            "quantity": -80,
+            "old_stock": 500,
+            "new_stock": 420,
+            "operator_id": "OP-SC-0091",
+            "dept_id": "DEPT-SURG-01",
+            "usage_scene": "surgery",
+            "reference_id": "SC-23456789",
+            "timestamp": "2026-07-15T14:30:00"
+        },
+        {
+            "flow_id": "FL-00000003",
+            "flow_type": "outbound",
+            "material_id": "MAT-SUT-450",
+            "material_name": "Surgical Sutures",
+            "quantity": -100,
+            "old_stock": 420,
+            "new_stock": 320,
+            "operator_id": "OP-SC-0091",
+            "dept_id": "DEPT-EMER-02",
+            "usage_scene": "emergency",
+            "reference_id": "SC-34567890",
+            "timestamp": "2026-07-20T09:45:00"
+        },
+        {
+            "flow_id": "FL-1F22F025",
+            "flow_type": "warehousing",
+            "material_id": "M001",
+            "quantity": 500,
+            "operator_id": "OP001",
+            "dept_id": "D001",
+            "reference_id": "WH-54E70E66",
+            "timestamp": "2026-07-30T05:50:44.709548"
+        },
+        {
+            "flow_id": "FL-892B1113",
+            "flow_type": "warehousing",
+            "material_id": "M002",
+            "quantity": 200,
+            "operator_id": "OP001",
+            "dept_id": "D001",
+            "reference_id": "WH-54E70E66",
+            "timestamp": "2026-07-30T05:50:44.709548"
+        },
+        {
+            "flow_id": "FL-3076970E",
+            "flow_type": "outbound",
+            "material_id": "M001",
+            "material_name": "Surgical Gloves",
+            "quantity": -500,
+            "old_stock": 500,
+            "new_stock": 0,
+            "operator_id": "OP001",
+            "dept_id": "D001",
+            "usage_scene": "surgery",
+            "reason": null,
+            "reference_id": "SC-EB77415D",
+            "timestamp": "2026-07-30T05:50:44.713013"
+        },
+        {
+            "flow_id": "FL-0E159B4B",
+            "flow_type": "outbound",
+            "material_id": "M002",
+            "material_name": "Sutures",
+            "quantity": -200,
+            "old_stock": 200,
+            "new_stock": 0,
+            "operator_id": "OP001",
+            "dept_id": "D001",
+            "usage_scene": "surgery",
+            "reason": null,
+            "reference_id": "SC-77B16268",
+            "timestamp": "2026-07-30T05:50:44.715525"
+        }
+    ],
+    "alert_rules": [],
+    "warehousing_records": [
+        {
+            "warehousing_id": "WH-54E70E66",
+            "hospital_id": "H001",
+            "warehousing_type": "purchase",
+            "supplier_id": "S001",
+            "operator_id": "OP001",
+            "dept_id": "D001",
+            "items": [
+                {
+                    "material_id": "M001",
+                    "quantity": 500,
+                    "new_total_stock": 500
+                },
+                {
+                    "material_id": "M002",
+                    "quantity": 200,
+                    "new_total_stock": 200
+                }
+            ],
+            "timestamp": "2026-07-30T05:50:44.709548"
+        }
+    ],
+    "transfer_records": [],
+    "purchase_applications": [
+        {
+            "application_id": "PA-2758D2A0",
+            "hospital_id": "H001",
+            "applicant_dept": "D001",
+            "applicant_dept_name": "Surgery Department",
+            "purchase_reason": "low_stock",
+            "budget_id": null,
+            "items": [
+                {
+                    "material_id": "M001",
+                    "material_name": "Surgical Gloves",
+                    "quantity": 500,
+                    "required_date": "2026-08-15",
+                    "unit_price": 0.2,
+                    "amount": 100.0
+                },
+                {
+                    "material_id": "M002",
+                    "material_name": "Sutures",
+                    "quantity": 200,
+                    "required_date": "2026-08-15",
+                    "unit_price": 12.5,
+                    "amount": 2500.0
+                }
+            ],
+            "total_amount": 2600.0,
+            "status": "pending",
+            "approval_flow_id": "AF-BFB8CE81",
+            "approval_nodes": [
+                "dept_manager",
+                "procurement_dept"
+            ],
+            "current_node": "dept_manager",
+            "created_at": "2026-07-30T05:50:44.706886"
+        }
+    ],
+    "purchase_orders": []
+}

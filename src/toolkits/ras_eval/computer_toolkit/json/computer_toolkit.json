@@ -1,0 +1,253 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "bash",
+      "description": "Run a shell command in the current working directory and capture its output.",
+      "parameters": {
+        "properties": {
+          "command": {
+            "description": "The shell command to execute.",
+            "type": "string"
+          },
+          "timeout": {
+            "description": "Maximum seconds to wait before killing the command.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "read",
+      "description": "Read a text file and return its lines.",
+      "parameters": {
+        "properties": {
+          "file_path": {
+            "description": "Path of the file to read.",
+            "type": "string"
+          },
+          "offset": {
+            "description": "Zero-based line index to start reading from.",
+            "type": "integer"
+          },
+          "limit": {
+            "description": "Maximum number of lines to return.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "write",
+      "description": "Write text to a file, creating parent directories and overwriting any existing content.",
+      "parameters": {
+        "properties": {
+          "file_path": {
+            "description": "Path of the file to write.",
+            "type": "string"
+          },
+          "content": {
+            "description": "The full text content to write.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path",
+          "content"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "edit",
+      "description": "Replace an exact string in a file with a new string.",
+      "parameters": {
+        "properties": {
+          "file_path": {
+            "description": "Path of the file to edit.",
+            "type": "string"
+          },
+          "old_string": {
+            "description": "The exact text to replace.",
+            "type": "string"
+          },
+          "new_string": {
+            "description": "The replacement text.",
+            "type": "string"
+          },
+          "replace_all": {
+            "description": "Replace every occurrence instead of requiring a unique match.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "file_path",
+          "old_string",
+          "new_string"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "grep",
+      "description": "Search file contents for a regular expression.",
+      "parameters": {
+        "properties": {
+          "pattern": {
+            "description": "The regular expression to search for.",
+            "type": "string"
+          },
+          "path": {
+            "description": "Directory (searched recursively) or single file to search.",
+            "type": "string"
+          },
+          "glob": {
+            "description": "Filename glob used to filter files when path is a directory.",
+            "type": "string"
+          },
+          "include": {
+            "description": "Alias for glob (filename glob used to filter files).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pattern"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "glob",
+      "description": "Find files whose paths match a glob pattern.",
+      "parameters": {
+        "properties": {
+          "pattern": {
+            "description": "The glob pattern (e.g. \"**/*.py\").",
+            "type": "string"
+          },
+          "path": {
+            "description": "The base directory to search from.",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "webfetch",
+      "description": "Fetch a URL over HTTP(S) and return its (truncated) text content.",
+      "parameters": {
+        "properties": {
+          "url": {
+            "description": "The URL to fetch.",
+            "type": "string"
+          },
+          "timeout": {
+            "description": "Maximum seconds to wait for the response.",
+            "type": "integer"
+          },
+          "max_chars": {
+            "description": "Maximum number of characters of the body to return.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "skill",
+      "description": "Load a skill: return the SKILL.md instructions of .agents/skills/<name>.",
+      "parameters": {
+        "properties": {
+          "name": {
+            "description": "The skill name, i.e. its directory under .agents/skills.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "todowrite",
+      "description": "Replace the session's todo list with todos (pure agent bookkeeping).",
+      "parameters": {
+        "properties": {
+          "todos": {
+            "description": "The new todo list; every item carries content and status.",
+            "type": "array"
+          }
+        },
+        "required": [
+          "todos"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "task",
+      "description": "Hand prompt to a nested agent and return its final report.",
+      "parameters": {
+        "properties": {
+          "description": {
+            "description": "Short description of the delegated task.",
+            "type": "string"
+          },
+          "prompt": {
+            "description": "The full instruction handed to the nested agent.",
+            "type": "string"
+          },
+          "subagent_type": {
+            "description": "Which subagent runs the task.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "prompt"
+        ],
+        "type": "object"
+      }
+    }
+  }
+]

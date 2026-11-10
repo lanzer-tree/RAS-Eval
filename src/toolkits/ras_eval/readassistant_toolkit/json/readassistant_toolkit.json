@@ -1,0 +1,506 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "reset_readassistant_environment",
+            "description": "Reset the read assistant working environment to the initial snapshot.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_reading_resource",
+            "description": "Search reading resources (ebooks, articles, papers) by keyword and filters.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "Search keyword (book name, author, or topic).",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Resource type (ebook, paper, news, novel). Optional."
+                    },
+                    "language": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Language filter (e.g., 'en', 'zh')."
+                    },
+                    "price_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Price filter ('free' or 'paid')."
+                    },
+                    "format": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Format filter (PDF, EPUB, TXT)."
+                    },
+                    "rating": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Minimum rating filter (0-5)."
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "parse_reading_content",
+            "description": "Parse reading content to extract core information.",
+            "parameters": {
+                "properties": {
+                    "resource_id": {
+                        "description": "Resource ID to parse.",
+                        "type": "string"
+                    },
+                    "parse_type": {
+                        "description": "Parse type (core_points, chapter_summary, key_data).",
+                        "type": "string"
+                    },
+                    "content_text": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Direct text input for parsing (optional)."
+                    },
+                    "target_length": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Summary length (short, medium, long)."
+                    },
+                    "focus_topics": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Priority topics to highlight (max 3)."
+                    }
+                },
+                "required": [
+                    "resource_id",
+                    "parse_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "explain_difficult_content",
+            "description": "Explain difficult content (words, sentences, concepts) in plain language.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "description": "Difficult content to explain (word, sentence, or paragraph).",
+                        "type": "string"
+                    },
+                    "explain_type": {
+                        "description": "Explanation type (definition, background, logic_analysis).",
+                        "type": "string"
+                    },
+                    "resource_context": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Context information for better explanation."
+                    },
+                    "target_audience": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Target audience (student, general, professional)."
+                    }
+                },
+                "required": [
+                    "content",
+                    "explain_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "track_reading_progress",
+            "description": "Track and update reading progress for a user and resource.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID.",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "description": "Resource ID being read.",
+                        "type": "string"
+                    },
+                    "progress_data": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Progress update as JSON string or dict (page, reading_time, percentage)."
+                    },
+                    "notes": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Reading notes to add."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "resource_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "add_reading_notes",
+            "description": "Add reading notes (annotations, comments) for a resource.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID.",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "description": "Resource ID.",
+                        "type": "string"
+                    },
+                    "note_content": {
+                        "description": "Note content.",
+                        "type": "string"
+                    },
+                    "position": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Position in resource (page number, paragraph, timestamp)."
+                    },
+                    "note_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Note type (annotation, question, highlight)."
+                    },
+                    "tags": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Note tags for categorization (comma-separated string or list)."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "resource_id",
+                    "note_content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_reading_notes",
+            "description": "Query reading notes by various conditions.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID.",
+                        "type": "string"
+                    },
+                    "query_condition": {
+                        "description": "Query condition (resource_id, tag, or keyword).",
+                        "type": "string"
+                    },
+                    "time_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Time range filter (e.g., '7d', '30d', 'all')."
+                    },
+                    "note_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by note type (annotation, question, highlight)."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "query_condition"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "generate_reading_plan",
+            "description": "Generate a personalized reading plan for a resource.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID.",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "description": "Resource ID.",
+                        "type": "string"
+                    },
+                    "target_completion_time": {
+                        "description": "Target completion date (YYYY-MM-DD).",
+                        "type": "string"
+                    },
+                    "daily_reading_time": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Daily available reading time in minutes."
+                    },
+                    "priority": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Priority level (high, medium, low)."
+                    },
+                    "focus_sections": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Important sections to prioritize (comma-separated string or list)."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "resource_id",
+                    "target_completion_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "recommend_related_resources",
+            "description": "Recommend related reading resources based on current reading or interests.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID.",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Current resource ID for context-based recommendation."
+                    },
+                    "interest_topics": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Interest topics for recommendation (comma-separated string or list)."
+                    },
+                    "resource_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Preferred resource type for recommendations."
+                    },
+                    "limit": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Maximum number of recommendations (default 5)."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

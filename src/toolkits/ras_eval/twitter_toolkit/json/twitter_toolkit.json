@@ -1,0 +1,263 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "PostTweet",
+            "description": "Post a new tweet with optional media attachments.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "description": "The text content of the tweet, maximum 280 characters.",
+                        "type": "string"
+                    },
+                    "media_paths": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "List of media file paths to attach, maximum 4 items."
+                    }
+                },
+                "required": [
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchTweets",
+            "description": "Search for tweets matching a query string.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "The search query string to match against tweet content.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return, must be positive.",
+                        "type": "integer"
+                    },
+                    "own_tweets": {
+                        "default": false,
+                        "description": "Whether to only return tweets posted by the current user.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ReadTweet",
+            "description": "Read a specific tweet by its ID.",
+            "parameters": {
+                "properties": {
+                    "tweet_id": {
+                        "description": "The unique identifier of the tweet to read.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteTweets",
+            "description": "Delete one or more tweets owned by the current user.",
+            "parameters": {
+                "properties": {
+                    "tweet_ids": {
+                        "description": "List of tweet IDs to delete.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "tweet_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "FollowUsers",
+            "description": "Follow one or more users by their user IDs.",
+            "parameters": {
+                "properties": {
+                    "user_ids": {
+                        "description": "List of user IDs to follow.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "user_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UnfollowUsers",
+            "description": "Unfollow one or more users by their user IDs.",
+            "parameters": {
+                "properties": {
+                    "user_ids": {
+                        "description": "List of user IDs to unfollow.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "user_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetUserProfile",
+            "description": "Get the profile of a user.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "default": "",
+                        "description": "The user ID to get profile for, empty string for current user.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "LikeTweet",
+            "description": "Like a tweet by its ID.",
+            "parameters": {
+                "properties": {
+                    "tweet_id": {
+                        "description": "The unique identifier of the tweet to like.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UnlikeTweet",
+            "description": "Unlike a tweet by its ID.",
+            "parameters": {
+                "properties": {
+                    "tweet_id": {
+                        "description": "The unique identifier of the tweet to unlike.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "Retweet",
+            "description": "Retweet a tweet by its ID.",
+            "parameters": {
+                "properties": {
+                    "tweet_id": {
+                        "description": "The unique identifier of the tweet to retweet.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ReplyToTweet",
+            "description": "Reply to a tweet by its ID.",
+            "parameters": {
+                "properties": {
+                    "tweet_id": {
+                        "description": "The unique identifier of the tweet to reply to.",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "The text content of the reply, maximum 280 characters.",
+                        "type": "string"
+                    },
+                    "media_paths": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "List of media file paths to attach, maximum 4 items."
+                    }
+                },
+                "required": [
+                    "tweet_id",
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

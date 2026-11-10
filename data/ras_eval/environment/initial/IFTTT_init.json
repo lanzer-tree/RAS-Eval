@@ -1,0 +1,105 @@
+{
+  "connected_services": [
+    {
+      "service_name": "Gmail",
+      "service_description": "Email service",
+      "triggers": [
+        {
+          "trigger_name": "new_email",
+          "trigger_description": "When a new email arrives",
+          "trigger_parameters": {}
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "send_email",
+          "action_description": "Send an email",
+          "action_parameters": {}
+        }
+      ]
+    },
+    {
+      "service_name": "Slack",
+      "service_description": "Team messaging service",
+      "triggers": [
+        {
+          "trigger_name": "new_message",
+          "trigger_description": "When a new message is received",
+          "trigger_parameters": {}
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "send_message",
+          "action_description": "Send a message to channel",
+          "action_parameters": {"channel": "string", "message": "string"}
+        }
+      ]
+    },
+    {
+      "service_name": "Dropbox",
+      "service_description": "Cloud storage service",
+      "triggers": [
+        {
+          "trigger_name": "new_file",
+          "trigger_description": "When a new file is added",
+          "trigger_parameters": {}
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "upload_file",
+          "action_description": "Upload a file",
+          "action_parameters": {}
+        }
+      ]
+    },
+    {
+      "service_name": "Google Calendar",
+      "service_description": "Calendar service",
+      "triggers": [
+        {
+          "trigger_name": "event_start",
+          "trigger_description": "When an event is about to start",
+          "trigger_parameters": {}
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "create_event",
+          "action_description": "Create a calendar event",
+          "action_parameters": {}
+        }
+      ]
+    }
+  ],
+  "applets": [
+    {
+      "applet_id": "applet-001",
+      "trigger_service_name": "Gmail",
+      "trigger_name": "new_email",
+      "trigger_parameters": {},
+      "action_service_name": "Slack",
+      "action_name": "send_message",
+      "action_parameters": {"channel": "#general", "message": "New email received"}
+    },
+    {
+      "applet_id": "applet-002",
+      "trigger_service_name": "Dropbox",
+      "trigger_name": "new_file",
+      "trigger_parameters": {},
+      "action_service_name": "Gmail",
+      "action_name": "send_email",
+      "action_parameters": {}
+    },
+    {
+      "applet_id": "applet-003",
+      "trigger_service_name": "Gmail",
+      "trigger_name": "new_email",
+      "trigger_parameters": {},
+      "action_service_name": "Google Calendar",
+      "action_name": "create_event",
+      "action_parameters": {}
+    }
+  ]
+}

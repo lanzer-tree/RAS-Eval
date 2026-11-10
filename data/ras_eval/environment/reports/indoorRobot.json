@@ -1,0 +1,173 @@
+{
+  "current_room": "kitchen",
+  "grabbed_objects": [],
+  "rooms": [
+    {
+      "room_id": "living_room",
+      "room_name": "Living Room",
+      "objects": [
+        {
+          "object_id": "obj001",
+          "object_name": "Remote Control",
+          "object_location": "coffee table",
+          "description": "TV remote control",
+          "can_be_grabbed": true,
+          "around": [],
+          "allowed_operations": [
+            {
+              "operation_id": "grab_remote",
+              "operation_name": "Grab"
+            }
+          ]
+        }
+      ],
+      "people": [
+        {
+          "person_id": "person_1",
+          "person_name": "John",
+          "person_location": "living room",
+          "description": "John is in the living room"
+        }
+      ]
+    },
+    {
+      "room_id": "kitchen",
+      "room_name": "Kitchen",
+      "objects": [],
+      "people": []
+    },
+    {
+      "room_id": "library",
+      "room_name": "Library",
+      "objects": [
+        {
+          "object_id": "obj002",
+          "object_name": "Cabinet",
+          "object_location": "corner",
+          "description": "A locked wooden cabinet",
+          "can_be_grabbed": false,
+          "around": ["obj003"],
+          "allowed_operations": [
+            {
+              "operation_id": "unlock_cabinet",
+              "operation_name": "Unlock"
+            }
+          ]
+        },
+        {
+          "object_id": "obj003",
+          "object_name": "Book",
+          "object_location": "inside cabinet",
+          "description": "A book about indoor robots",
+          "can_be_grabbed": true,
+          "around": [],
+          "allowed_operations": [
+            {
+              "operation_id": "grab_book",
+              "operation_name": "Grab"
+            }
+          ]
+        }
+      ],
+      "people": []
+    },
+    {
+      "room_id": "laboratory",
+      "room_name": "Laboratory",
+      "objects": [
+        {
+          "object_id": "lab_bench_03",
+          "object_name": "Lab Bench",
+          "object_location": "center of lab",
+          "description": "A lab bench with various equipment for experiments",
+          "can_be_grabbed": false,
+          "around": ["obj004", "obj005", "person_2"],
+          "allowed_operations": []
+        },
+        {
+          "object_id": "obj004",
+          "object_name": "Centrifuge",
+          "object_location": "lab bench",
+          "description": "A high-speed centrifuge for separating samples",
+          "can_be_grabbed": false,
+          "around": ["obj005", "person_2", "lab_bench_03"],
+          "allowed_operations": [
+            {
+              "operation_id": "turn_on_centrifuge",
+              "operation_name": "Turn On"
+            }
+          ]
+        },
+        {
+          "object_id": "obj005",
+          "object_name": "Fire Extinguisher",
+          "object_location": "wall near centrifuge",
+          "description": "A red fire extinguisher mounted on the wall",
+          "can_be_grabbed": false,
+          "around": [],
+          "allowed_operations": []
+        }
+      ],
+      "people": [
+        {
+          "person_id": "person_2",
+          "person_name": "Dr. Kim",
+          "person_location": "near lab bench",
+          "description": "Dr. Kim is in charge of the laboratory, usually working on experiments near the lab bench"
+        }
+      ]
+    },
+    {
+      "room_id": "conference_room",
+      "room_name": "Conference Room",
+      "objects": [
+        {
+          "object_id": "obj006",
+          "object_name": "Light Switch",
+          "object_location": "wall near door",
+          "description": "A light switch panel for the conference room lights",
+          "can_be_grabbed": false,
+          "around": ["obj007"],
+          "allowed_operations": [
+            {
+              "operation_id": "turn_on",
+              "operation_name": "Turn On"
+            },
+            {
+              "operation_id": "turn_off",
+              "operation_name": "Turn Off"
+            }
+          ]
+        },
+        {
+          "object_id": "obj007",
+          "object_name": "Ceiling Lights",
+          "object_location": "ceiling",
+          "description": "Overhead lights in the conference room",
+          "can_be_grabbed": false,
+          "around": [],
+          "allowed_operations": [
+            {
+              "operation_id": "turn_on",
+              "operation_name": "Turn On"
+            },
+            {
+              "operation_id": "turn_off",
+              "operation_name": "Turn Off"
+            }
+          ]
+        },
+        {
+          "object_id": "obj008",
+          "object_name": "Conference Table",
+          "object_location": "center of room",
+          "description": "A large table for meetings in the conference room",
+          "can_be_grabbed": false,
+          "around": [],
+          "allowed_operations": []
+        }
+      ],
+      "people": []
+    }
+  ]
+}

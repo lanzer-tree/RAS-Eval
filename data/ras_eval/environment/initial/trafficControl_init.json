@@ -1,0 +1,1784 @@
+{
+  "roads": [
+    {
+      "road_id": "RD-789",
+      "name": "Broadway Avenue",
+      "connected_intersections": [
+        "int-001",
+        "int-002",
+        "int-004",
+        "int-006",
+        "int-008",
+        "DOWNTOWN-MAIN-01",
+        "CENTRAL-PARK-02",
+        "RIVERSIDE-ENT-03",
+        "int-010",
+        "int-014",
+        "int-016",
+        "int-020",
+        "int-021"
+      ]
+    },
+    {
+      "road_id": "road-001",
+      "name": "Broadway",
+      "connected_intersections": [
+        "int-001",
+        "int-002",
+        "int-004",
+        "int-006",
+        "int-008",
+        "DOWNTOWN-MAIN-01",
+        "CENTRAL-PARK-02",
+        "RIVERSIDE-ENT-03",
+        "int-010",
+        "int-014",
+        "int-016",
+        "int-020",
+        "int-021"
+      ]
+    },
+    {
+      "road_id": "road-002",
+      "name": "5th Avenue",
+      "connected_intersections": [
+        "int-001",
+        "int-003",
+        "int-005",
+        "int-007",
+        "int-009",
+        "int-011",
+        "IX-004"
+      ]
+    },
+    {
+      "road_id": "road-003",
+      "name": "Emergency Access Route",
+      "connected_intersections": [
+        "IX-001",
+        "int-006",
+        "int-007"
+      ]
+    },
+    {
+      "road_id": "road-004",
+      "name": "7th to Main Connector",
+      "connected_intersections": [
+        "int-002",
+        "int-003"
+      ]
+    },
+    {
+      "road_id": "road-005",
+      "name": "Oak Street",
+      "connected_intersections": [
+        "int-003",
+        "int-005"
+      ]
+    },
+    {
+      "road_id": "OAK-ROAD-01",
+      "name": "Oak Boulevard",
+      "connected_intersections": [
+        "int-003",
+        "OAK-INT-N1",
+        "OAK-INT-N2",
+        "OAK-INT-H1",
+        "OAK-INT-S1",
+        "OAK-INT-S2",
+        "OAK-INT-S3"
+      ]
+    },
+    {
+      "road_id": "road-006",
+      "name": "Main Street",
+      "connected_intersections": [
+        "int-003",
+        "IX-004",
+        "DOWNTOWN-MAIN-01",
+        "int-023"
+      ]
+    },
+    {
+      "road_id": "road-007",
+      "name": "Market Street",
+      "connected_intersections": [
+        "DOWNTOWN-MAIN-01",
+        "int-009"
+      ]
+    },
+    {
+      "road_id": "road-008",
+      "name": "1st Street",
+      "connected_intersections": [
+        "int-001",
+        "int-002",
+        "int-003"
+      ]
+    },
+    {
+      "road_id": "road-009",
+      "name": "Central Park Road",
+      "connected_intersections": [
+        "int-004"
+      ]
+    },
+    {
+      "road_id": "road-010",
+      "name": "City Hall Plaza",
+      "connected_intersections": [
+        "int-005"
+      ]
+    },
+    {
+      "road_id": "RIVERSIDE-DR-01",
+      "name": "Riverside Drive",
+      "connected_intersections": [
+        "int-001",
+        "int-004",
+        "DOWNTOWN-MAIN-01",
+        "RIVERSIDE-ENT-03",
+        "int-010",
+        "int-014",
+        "CENTRAL-PARK-02"
+      ]
+    },
+    {
+      "road_id": "RD-010",
+      "name": "Hospital Arterial Road",
+      "connected_intersections": [
+        "IX-001",
+        "int-004"
+      ]
+    },
+    {
+      "road_id": "ELM-ST-01",
+      "name": "Elm Street",
+      "connected_intersections": [
+        "int-002",
+        "int-004",
+        "int-014",
+        "int-016"
+      ]
+    },
+    {
+      "road_id": "Warehouse-Dist-K4",
+      "name": "Warehouse District K4",
+      "connected_intersections": [
+        "int-004",
+        "int-006",
+        "IX-001"
+      ]
+    },
+    {
+      "road_id": "Airport-Terminal-A1",
+      "name": "Airport Terminal A1",
+      "connected_intersections": [
+        "int-009",
+        "int-011",
+        "int-007"
+      ]
+    },
+    {
+      "road_id": "ALT-ROAD-01",
+      "name": "Southpark Alternative Corridor",
+      "connected_intersections": [
+        "LOC-SOUTH-PR",
+        "INT-MAIN-01"
+      ]
+    },
+    {
+      "road_id": "ALT-ROAD-02",
+      "name": "Central Ring Road",
+      "connected_intersections": [
+        "INT-MAIN-01",
+        "INT-ALT-05"
+      ]
+    },
+    {
+      "road_id": "ALT-ROAD-03",
+      "name": "Northpark Alternative Corridor",
+      "connected_intersections": [
+        "INT-ALT-05",
+        "INT-BRIDGE-09"
+      ]
+    },
+    {
+      "road_id": "ALT-ROAD-04",
+      "name": "North Plaza Approach",
+      "connected_intersections": [
+        "INT-BRIDGE-09",
+        "LOC-NORTH-PLAZA"
+      ]
+    },
+    {
+      "road_id": "ALT-ROAD-05",
+      "name": "East Bypass",
+      "connected_intersections": [
+        "LOC-SOUTH-PR",
+        "INT-ALT-05"
+      ]
+    },
+    {
+      "road_id": "ALT-ROAD-06",
+      "name": "Plaza Direct Access",
+      "connected_intersections": [
+        "INT-ALT-05",
+        "LOC-NORTH-PLAZA"
+      ]
+    },
+    {
+      "road_id": "road-011",
+      "name": "3rd Street",
+      "connected_intersections": [
+        "OAK-INT-S1",
+        "int-023"
+      ]
+    },
+    {
+      "road_id": "R-450",
+      "name": "R-450",
+      "connected_intersections": [
+        "I-101",
+        "I-102"
+      ]
+    },
+    {
+      "road_id": "RIV-OAK-001",
+      "name": "Oak Avenue",
+      "connected_intersections": [
+        "RIV-INT-003",
+        "RIVER-OAK-01"
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [
+          {"start": "07:00", "end": "09:00"},
+          {"start": "16:00", "end": "18:00"}
+        ],
+        "low_periods": [
+          {"start": "00:00", "end": "04:00"},
+          {"start": "22:00", "end": "23:59"}
+        ]
+      }
+    },
+    {
+      "road_id": "road-42nd",
+      "name": "42nd Street",
+      "connected_intersections": [
+        "Intersection_5th_42nd",
+        "Intersection_7th_42nd"
+      ]
+    },
+    {
+      "road_id": "road-57th",
+      "name": "57th Street",
+      "connected_intersections": [
+        "Intersection_5th_57th"
+      ]
+    },
+    {
+      "road_id": "road-7th-ave",
+      "name": "7th Avenue",
+      "connected_intersections": [
+        "Intersection_5th_57th",
+        "Intersection_7th_42nd"
+      ]
+    }
+  ],
+  "intersections": [
+    {
+      "intersection_id": "I-101",
+      "name": "I-101",
+      "connected_roads": [
+        {
+          "road_id": "R-450",
+          "road_name": "R-450"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-I-101",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-I-101-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "I-102",
+      "name": "I-102",
+      "connected_roads": [
+        {
+          "road_id": "R-450",
+          "road_name": "R-450"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-I-102",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-I-102-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "IX-001",
+      "name": "Central Hospital",
+      "connected_roads": [
+        {
+          "road_id": "RD-010",
+          "road_name": "Hospital Arterial Road"
+        },
+        {
+          "road_id": "road-003",
+          "road_name": "Emergency Access Route"
+        },
+        {
+          "road_id": "Warehouse-Dist-K4",
+          "road_name": "Warehouse District K4"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-IX-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-IX-001-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium"
+    },
+    {
+      "intersection_id": "int-001",
+      "name": "Broadway and 5th Avenue",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "TL-BW-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium"
+    },
+    {
+      "intersection_id": "IX-004",
+      "name": "Main St & 5th Ave",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "road-006",
+          "road_name": "Main Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-IX-004",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-IX-004-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        },
+        {
+          "traffic_light_id": "TL-204",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-002",
+      "name": "Broadway and 7th Avenue",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-004",
+          "road_name": "7th to Main Connector"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-003",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-004",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-003",
+      "name": "5th Avenue and Main Street",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "road-004",
+          "road_name": "7th to Main Connector"
+        },
+        {
+          "road_id": "road-005",
+          "road_name": "Oak Street"
+        },
+        {
+          "road_id": "OAK-ROAD-01",
+          "road_name": "Oak Boulevard"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-005",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-006",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        },
+        {
+          "traffic_light_id": "TL-MAIN-5TH-NB",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-004",
+      "name": "Central Park",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-009",
+          "road_name": "Central Park Road"
+        },
+        {
+          "road_id": "Warehouse-Dist-K4",
+          "road_name": "Warehouse District K4"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-007",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-008",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-005",
+      "name": "City Hall",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "road-005",
+          "road_name": "Oak Street"
+        },
+        {
+          "road_id": "road-010",
+          "road_name": "City Hall Plaza"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-009",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-010",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-006",
+      "name": "Metroville General Hospital",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-003",
+          "road_name": "Emergency Access Route"
+        },
+        {
+          "road_id": "Warehouse-Dist-K4",
+          "road_name": "Warehouse District K4"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-011",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-012",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-007",
+      "name": "City Emergency Operations Center",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "road-003",
+          "road_name": "Emergency Access Route"
+        },
+        {
+          "road_id": "Airport-Terminal-A1",
+          "road_name": "Airport Terminal A1"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-013",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-014",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-008",
+      "name": "Central Transit Hub",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-015",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-016",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium"
+    },
+    {
+      "intersection_id": "int-009",
+      "name": "Convention Center",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "Airport-Terminal-A1",
+          "road_name": "Airport Terminal A1"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-017",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-018",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium"
+    },
+    {
+      "intersection_id": "OAK-INT-N1",
+      "name": "Oak Boulevard and Northgate Drive",
+      "connected_roads": [
+        {
+          "road_id": "OAK-ROAD-01",
+          "road_name": "Oak Boulevard"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "SL-SB-01",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "SL-NB-01",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "pw-001",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "OAK-INT-N2",
+      "name": "Oak Boulevard and Pinery Road",
+      "connected_roads": [
+        {
+          "road_id": "OAK-ROAD-01",
+          "road_name": "Oak Boulevard"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "SL-SB-02",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "SL-NB-02",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "pw-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "OAK-INT-H1",
+      "name": "Oak Boulevard and Hospital Entrance",
+      "connected_roads": [
+        {
+          "road_id": "OAK-ROAD-01",
+          "road_name": "Oak Boulevard"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "SL-EW-H1",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "SL-NS-H1",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "pw-003",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "OAK-INT-S1",
+      "name": "Oak Boulevard and 3rd Street",
+      "connected_roads": [
+        {
+          "road_id": "OAK-ROAD-01",
+          "road_name": "Oak Boulevard"
+        },
+        {
+          "road_id": "road-011",
+          "road_name": "3rd Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "TL-Oak-3rd",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "SL-SB-03",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "pw-006",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "OAK-INT-S2",
+      "name": "Oak Boulevard and Southpark Avenue",
+      "connected_roads": [
+        {
+          "road_id": "OAK-ROAD-01",
+          "road_name": "Oak Boulevard"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "SL-SB-04",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "SL-NB-04",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "pw-004",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "OAK-INT-S3",
+      "name": "Oak Boulevard and South End Junction",
+      "connected_roads": [
+        {
+          "road_id": "OAK-ROAD-01",
+          "road_name": "Oak Boulevard"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "SL-SB-05",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "SL-NB-05",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "pw-005",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "DOWNTOWN-MAIN-01",
+      "name": "Downtown and Main Street",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DL-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "DL-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "CENTRAL-PARK-02",
+      "name": "Central Park Interchange",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DL-010",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "DL-011",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low",
+      "pattern_profile": {
+        "average_congestion_level": "low",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "RIVERSIDE-ENT-03",
+      "name": "Riverside Park Entrance",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DL-020",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "DL-021",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low",
+      "pattern_profile": {
+        "average_congestion_level": "low",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "int-010",
+      "name": "Riverfront Park",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DL-030",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "DL-031",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low",
+      "pattern_profile": {
+        "average_congestion_level": "low",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "int-011",
+      "name": "Riverside Convention Center",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "road-007",
+          "road_name": "Market Street"
+        },
+        {
+          "road_id": "Airport-Terminal-A1",
+          "road_name": "Airport Terminal A1"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DL-040",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "yellow"
+        },
+        {
+          "traffic_light_id": "DL-041",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "int-012",
+      "name": "Market Street and 3rd Avenue",
+      "connected_roads": [
+        {
+          "road_id": "road-007",
+          "road_name": "Market Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-020",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-021",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-013",
+      "name": "City Hall at 2nd Street",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-022",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-023",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-014",
+      "name": "Elm St & Park Ave",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-024",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-025",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-015",
+      "name": "Oak St & Market Rd",
+      "connected_roads": [
+        {
+          "road_id": "road-007",
+          "road_name": "Market Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-026",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-027",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-016",
+      "name": "Cedar St & Bridge Way",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-028",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-029",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "RIVER-MAIN-01",
+      "name": "River & Main",
+      "connected_roads": [
+        {
+          "road_id": "RIVERSIDE-DR-01",
+          "road_name": "Riverside Drive"
+        },
+        {
+          "road_id": "road-006",
+          "road_name": "Main Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "RL-main-01",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "RM-ped-01",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "RIVER-OAK-01",
+      "name": "River & Oak",
+      "connected_roads": [
+        {
+          "road_id": "RIVERSIDE-DR-01",
+          "road_name": "Riverside Drive"
+        },
+        {
+          "road_id": "road-005",
+          "road_name": "Oak Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "RL-oak-02",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "RO-ped-01",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low",
+      "pattern_profile": {
+        "average_congestion_level": "low",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "CENTRAL-5TH-01",
+      "name": "Central & 5th",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "C5-veh-01",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "C5-ped-01",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "PARK-BWAY-01",
+      "name": "Park & Broadway",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "PB-veh-01",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "PB-ped-01",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low",
+      "pattern_profile": {
+        "average_congestion_level": "low",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "DT-INTERSECTION-CENTRAL",
+      "name": "Downtown Central",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DT-CTL-MAIN",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "DT-CTL-PED",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "NB-INTERSECTION",
+      "name": "North Bridge Ave",
+      "connected_roads": [
+        {
+          "road_id": "road-004",
+          "road_name": "7th to Main Connector"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "NB-CTL-NORTH",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "NB-CTL-PED",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "SM-INTERSECTION",
+      "name": "South Market Square",
+      "connected_roads": [
+        {
+          "road_id": "road-006",
+          "road_name": "Main Street"
+        },
+        {
+          "road_id": "road-007",
+          "road_name": "Market Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "SM-CTL-MAIN",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "SM-CTL-PED",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "EH-INTERSECTION",
+      "name": "East Harbor Junction",
+      "connected_roads": [
+        {
+          "road_id": "RIVERSIDE-DR-01",
+          "road_name": "Riverside Drive"
+        },
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "EH-CTL-MAIN",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "EH-CTL-PED",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "DT-PLAZA-01",
+      "name": "Downtown Plaza",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-006",
+          "road_name": "Main Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DP-veh-01",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "DP-ped-01",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "high",
+      "pattern_profile": {
+        "average_congestion_level": "high",
+        "peak_periods": [
+          {"start": "07:30", "end": "08:45"}
+        ],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "DT-CENTRAL",
+      "name": "Downtown Central Zone",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        },
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "DTC-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "DTC-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "LOC-SOUTH-PR",
+      "name": "South Park-and-Ride Lot",
+      "connected_roads": [
+        {
+          "road_id": "ALT-ROAD-01",
+          "road_name": "Southpark Alternative Corridor"
+        },
+        {
+          "road_id": "ALT-ROAD-05",
+          "road_name": "East Bypass"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "SPR-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "SPR-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "LOC-NORTH-PLAZA",
+      "name": "North Shopping Plaza",
+      "connected_roads": [
+        {
+          "road_id": "ALT-ROAD-04",
+          "road_name": "North Plaza Approach"
+        },
+        {
+          "road_id": "ALT-ROAD-06",
+          "road_name": "Plaza Direct Access"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "NP-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "NP-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "INT-ALT-05",
+      "name": "Alternative Corridor Junction 05",
+      "connected_roads": [
+        {
+          "road_id": "ALT-ROAD-02",
+          "road_name": "Central Ring Road"
+        },
+        {
+          "road_id": "ALT-ROAD-03",
+          "road_name": "Northpark Alternative Corridor"
+        },
+        {
+          "road_id": "ALT-ROAD-05",
+          "road_name": "East Bypass"
+        },
+        {
+          "road_id": "ALT-ROAD-06",
+          "road_name": "Plaza Direct Access"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "TL-301",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "TL-302",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "TL-301-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "INT-MAIN-01",
+      "name": "Main Street Junction 01",
+      "connected_roads": [
+        {
+          "road_id": "ALT-ROAD-01",
+          "road_name": "Southpark Alternative Corridor"
+        },
+        {
+          "road_id": "ALT-ROAD-02",
+          "road_name": "Central Ring Road"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "TM-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "TM-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "RIV-INT-003",
+      "name": "Oak Avenue & Riverside Drive",
+      "connected_roads": [
+        {
+          "road_id": "RIV-OAK-001",
+          "road_name": "Oak Avenue"
+        },
+        {
+          "road_id": "RIVERSIDE-DR-01",
+          "road_name": "Riverside Drive"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "RIV-TL-003-N",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "RIV-TL-003-S",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "RIV-TL-003-P",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "low",
+      "pattern_profile": {
+        "average_congestion_level": "low",
+        "peak_periods": [],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "INT-BRIDGE-09",
+      "name": "Bridge Approach Junction 09",
+      "connected_roads": [
+        {
+          "road_id": "ALT-ROAD-03",
+          "road_name": "Northpark Alternative Corridor"
+        },
+        {
+          "road_id": "ALT-ROAD-04",
+          "road_name": "North Plaza Approach"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "TB-001",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "TB-002",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    },
+    {
+      "intersection_id": "int-020",
+      "name": "University Campus",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-030",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-031",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [
+          {"start": "07:00", "end": "09:00"}
+        ],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "int-021",
+      "name": "Downtown Transit Hub",
+      "connected_roads": [
+        {
+          "road_id": "road-001",
+          "road_name": "Broadway"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-032",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-033",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "medium",
+      "pattern_profile": {
+        "average_congestion_level": "medium",
+        "peak_periods": [
+          {"start": "07:00", "end": "09:00"}
+        ],
+        "low_periods": []
+      }
+    },
+    {
+      "intersection_id": "int-023",
+      "name": "Main Street and 3rd Avenue",
+      "connected_roads": [
+        {
+          "road_id": "road-006",
+          "road_name": "Main Street"
+        },
+        {
+          "road_id": "road-011",
+          "road_name": "3rd Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "TL-MAIN-3RD",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "TL-MAIN-3RD-PED",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium"
+    },
+    {
+      "intersection_id": "Intersection_5th_42nd",
+      "name": "Intersection 5th and 42nd",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "road-42nd",
+          "road_name": "42nd Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-5th-42nd-veh",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-5th-42nd-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "medium"
+    },
+    {
+      "intersection_id": "Intersection_5th_57th",
+      "name": "Intersection 5th and 57th",
+      "connected_roads": [
+        {
+          "road_id": "road-002",
+          "road_name": "5th Avenue"
+        },
+        {
+          "road_id": "road-57th",
+          "road_name": "57th Street"
+        },
+        {
+          "road_id": "road-7th-ave",
+          "road_name": "7th Avenue"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-5th-57th-veh",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "green"
+        },
+        {
+          "traffic_light_id": "tl-5th-57th-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "walk"
+        }
+      ],
+      "congestion_level": "high"
+    },
+    {
+      "intersection_id": "Intersection_7th_42nd",
+      "name": "Intersection 7th and 42nd",
+      "connected_roads": [
+        {
+          "road_id": "road-7th-ave",
+          "road_name": "7th Avenue"
+        },
+        {
+          "road_id": "road-42nd",
+          "road_name": "42nd Street"
+        }
+      ],
+      "traffic_lights": [
+        {
+          "traffic_light_id": "tl-7th-42nd-veh",
+          "traffic_light_type": "vehicle",
+          "traffic_light_state": "red"
+        },
+        {
+          "traffic_light_id": "tl-7th-42nd-ped",
+          "traffic_light_type": "pedestrian",
+          "traffic_light_state": "stop"
+        }
+      ],
+      "congestion_level": "low"
+    }
+  ]
+}

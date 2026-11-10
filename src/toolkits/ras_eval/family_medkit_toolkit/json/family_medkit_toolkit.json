@@ -1,0 +1,128 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "check_drug_interaction",
+            "description": "Check the interaction level among medicines and customize guidance for an optional user.",
+            "parameters": {
+                "properties": {
+                    "medicine_ids": {
+                        "description": "List of medicine IDs to compare (minimum two).",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "user_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "User ID to tie interactions to health history."
+                    }
+                },
+                "required": [
+                    "medicine_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "verify_medication_eligibility",
+            "description": "Assess whether a medicine is suitable for a specific family member.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "Family member identifier.",
+                        "type": "string"
+                    },
+                    "medicine_id": {
+                        "description": "Medicine being evaluated.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "medicine_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_expiry_alert",
+            "description": "Return medicines that are expired or approaching expiry within the provided range.",
+            "parameters": {
+                "properties": {
+                    "alert_range": {
+                        "description": "Acceptable values like 'already expired', '7 days', or '30 days'.",
+                        "type": "string"
+                    },
+                    "sort_by": {
+                        "description": "Either 'expiry_date' or 'stock'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "alert_range",
+                    "sort_by"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "scan_medicine_qrcode",
+            "description": "Scan a medicine QR code, build a record, and optionally restock the cabinet.",
+            "parameters": {
+                "properties": {
+                    "qrcode_data": {
+                        "additionalProperties": true,
+                        "description": "Parsed QR data containing medicine_id, name, expiry_date, and batch.",
+                        "type": "object"
+                    },
+                    "auto_update_stock": {
+                        "default": true,
+                        "description": "Whether to bump the stock after scanning.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "qrcode_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_safety_notes",
+            "description": "Retrieve structured safety notes for the requested medicine.",
+            "parameters": {
+                "properties": {
+                    "medicine_id": {
+                        "description": "Identifier of the medicine.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "medicine_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

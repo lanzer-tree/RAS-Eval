@@ -1,0 +1,137 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "GenerateVideoDeepfake",
+            "description": "Generates a deepfake video given a source video and a target face.",
+            "parameters": {
+                "properties": {
+                    "source_video_path": {
+                        "description": "The path to the source video file.",
+                        "type": "string"
+                    },
+                    "target_face_image_path": {
+                        "description": "The path to the target face image file.",
+                        "type": "string"
+                    },
+                    "output_video_path": {
+                        "description": "The path where the output deepfake video will be saved.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "source_video_path",
+                    "target_face_image_path",
+                    "output_video_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GenerateAudioDeepfake",
+            "description": "Generates a deepfake audio given a source audio and a target voice.",
+            "parameters": {
+                "properties": {
+                    "source_audio_path": {
+                        "description": "The path to the source audio file.",
+                        "type": "string"
+                    },
+                    "target_voice_sample_path": {
+                        "description": "The path to the target voice sample file.",
+                        "type": "string"
+                    },
+                    "output_audio_path": {
+                        "description": "The path where the output deepfake audio will be saved.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "source_audio_path",
+                    "target_voice_sample_path",
+                    "output_audio_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManipulateVideoDeepfake",
+            "description": "Manipulates an existing deepfake video, such as changing the target face.",
+            "parameters": {
+                "properties": {
+                    "input_video_path": {
+                        "description": "The path to the input deepfake video file.",
+                        "type": "string"
+                    },
+                    "new_target_face_image_path": {
+                        "description": "The path to the new target face image file.",
+                        "type": "string"
+                    },
+                    "output_video_path": {
+                        "description": "The path where the output manipulated video will be saved.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "input_video_path",
+                    "new_target_face_image_path",
+                    "output_video_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManipulateAudioDeepfake",
+            "description": "Manipulates an existing deepfake audio, such as changing the target voice.",
+            "parameters": {
+                "properties": {
+                    "input_audio_path": {
+                        "description": "The path to the input deepfake audio file.",
+                        "type": "string"
+                    },
+                    "new_target_voice_sample_path": {
+                        "description": "The path to the new target voice sample file.",
+                        "type": "string"
+                    },
+                    "output_audio_path": {
+                        "description": "The path where the output manipulated audio will be saved.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "input_audio_path",
+                    "new_target_voice_sample_path",
+                    "output_audio_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "VerifyDeepfake",
+            "description": "Verifies if a given video/audio is a deepfake or not.",
+            "parameters": {
+                "properties": {
+                    "media_path": {
+                        "description": "The path to the media file to verify.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "media_path"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

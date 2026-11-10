@@ -1,0 +1,147 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "find_device_id",
+            "description": "\u6839\u636e\u8bbe\u5907\u540d\u79f0\u67e5\u627e\u5bf9\u5e94\u7684\u8bbe\u5907ID",
+            "parameters": {
+                "properties": {
+                    "device_name": {
+                        "description": "\u8bbe\u5907\u7684\u5e38\u89c1\u540d\u79f0\uff08\u5982\"living room light\"\u3001\"bedroom ac\"\u7b49\uff09",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "device_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_device_status",
+            "description": "\u83b7\u53d6\u6307\u5b9a\u8bbe\u5907\u7684\u5f53\u524d\u72b6\u6001",
+            "parameters": {
+                "properties": {
+                    "device_id": {
+                        "description": "\u8bbe\u5907ID\uff08\u5982light1\u3001airconditioner1\u7b49\uff09",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "device_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "set_device_state",
+            "description": "\u8bbe\u7f6e\u8bbe\u5907\u7684\u5f00\u5173\u72b6\u6001\uff08on/off\uff09",
+            "parameters": {
+                "properties": {
+                    "device_id": {
+                        "description": "\u8bbe\u5907ID",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "\u76ee\u6807\u72b6\u6001\uff0c\u5fc5\u987b\u4e3a\"on\"\u6216\"off\"",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "device_id",
+                    "state"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "add_schedule_action",
+            "description": "\u4e3a\u8bbe\u5907\u6dfb\u52a0\u5b9a\u65f6\u4efb\u52a1",
+            "parameters": {
+                "properties": {
+                    "device_id": {
+                        "description": "\u8bbe\u5907ID",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "\u5b9a\u65f6\u6267\u884c\u7684\u64cd\u4f5c\uff08\u5982turn_on\u3001set_temperature\u7b49\uff09",
+                        "type": "string"
+                    },
+                    "date_time": {
+                        "description": "\u6267\u884c\u65f6\u95f4\uff0c\u683c\u5f0f\u4e3a\"YYYY-MM-DD HH:MM\"",
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "additionalProperties": true,
+                        "description": "\u64cd\u4f5c\u53c2\u6570\uff08\u6839\u636e\u8bbe\u5907\u7c7b\u578b\u4e0d\u540c\u800c\u53d8\u5316\uff09",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "device_id",
+                    "action",
+                    "date_time",
+                    "parameters"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_schedule_action",
+            "description": "\u5220\u9664\u8bbe\u5907\u7684\u6307\u5b9a\u5b9a\u65f6\u4efb\u52a1",
+            "parameters": {
+                "properties": {
+                    "device_id": {
+                        "description": "\u8bbe\u5907ID",
+                        "type": "string"
+                    },
+                    "schedule_id": {
+                        "description": "\u8981\u5220\u9664\u7684\u5b9a\u65f6\u4efb\u52a1ID",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "device_id",
+                    "schedule_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_scheduled_actions",
+            "description": "\u5217\u51fa\u8bbe\u5907\u7684\u5b9a\u65f6\u4efb\u52a1\uff0c\u53ef\u9009\u6307\u5b9a\u8bbe\u5907ID",
+            "parameters": {
+                "properties": {
+                    "device_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "\u53ef\u9009\uff0c\u8bbe\u5907ID\uff0c\u4e0d\u6307\u5b9a\u5219\u8fd4\u56de\u6240\u6709\u8bbe\u5907\u7684\u5b9a\u65f6\u4efb\u52a1"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+]

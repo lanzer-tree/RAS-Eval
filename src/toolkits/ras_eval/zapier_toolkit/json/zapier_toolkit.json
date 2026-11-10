@@ -1,0 +1,419 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "list_connected_apps",
+            "description": "Query supported applications and their authorization status.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "app_category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by application category (office/storage/communication). Optional."
+                    },
+                    "search_keyword": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Search keyword to filter applications by name. Optional."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "authorize_app",
+            "description": "Authorize connection to a third-party application.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "app_id": {
+                        "description": "The ID of the application to authorize.",
+                        "type": "string"
+                    },
+                    "auth_params": {
+                        "description": "Authorization parameters (API key or OAuth token) as JSON string.",
+                        "type": "string"
+                    },
+                    "scope": {
+                        "default": "read_write",
+                        "description": "Authorization scope, either 'read_only' or 'read_write'. Default is 'read_write'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "app_id",
+                    "auth_params"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_automation_flow",
+            "description": "Create an automation flow (Zap).",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "flow_name": {
+                        "description": "The name of the automation flow.",
+                        "type": "string"
+                    },
+                    "trigger": {
+                        "description": "Trigger configuration as JSON string containing app_id, trigger_action, and trigger_condition.",
+                        "type": "string"
+                    },
+                    "actions": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "List of action configurations as JSON string. Each action contains app_id, action_type, and parameters. Optional."
+                    },
+                    "flow_desc": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Description of the flow. Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "flow_name",
+                    "trigger"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "configure_trigger",
+            "description": "Configure flow trigger conditions.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "flow_id": {
+                        "description": "The ID of the flow to configure.",
+                        "type": "string"
+                    },
+                    "trigger_params": {
+                        "description": "Trigger parameters as JSON string (e.g., 'when Notion adds new database entry').",
+                        "type": "string"
+                    },
+                    "filter_rules": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter rules as JSON string (e.g., entry contains keyword 'urgent'). Optional."
+                    },
+                    "trigger_frequency": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Trigger frequency limit (e.g., 'max 1 per minute'). Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "flow_id",
+                    "trigger_params"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "configure_action",
+            "description": "Configure flow execution action.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "flow_id": {
+                        "description": "The ID of the flow to configure.",
+                        "type": "string"
+                    },
+                    "action_seq": {
+                        "description": "The sequence number of the action (1, 2, 3...).",
+                        "type": "integer"
+                    },
+                    "action_params": {
+                        "description": "Action parameters as JSON string (e.g., 'send email to specified address').",
+                        "type": "string"
+                    },
+                    "error_handler": {
+                        "default": "retry",
+                        "description": "Error handling strategy: 'retry', 'ignore', or 'notify'. Default is 'retry'.",
+                        "type": "string"
+                    },
+                    "data_mapping": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Data mapping configuration as JSON string (trigger data -> action data). Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "flow_id",
+                    "action_seq",
+                    "action_params"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "test_automation_flow",
+            "description": "Test an automation flow.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "flow_id": {
+                        "description": "The ID of the flow to test.",
+                        "type": "string"
+                    },
+                    "test_type": {
+                        "default": "full",
+                        "description": "Test type - 'full', 'trigger', or 'single_action'. Default is 'full'.",
+                        "type": "string"
+                    },
+                    "test_data": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Custom test data as JSON string. Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "flow_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "start_stop_flow",
+            "description": "Start or pause an automation flow.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "flow_id": {
+                        "description": "The ID of the flow.",
+                        "type": "string"
+                    },
+                    "operation": {
+                        "description": "Operation type - 'start' or 'pause'.",
+                        "type": "string"
+                    },
+                    "operation_reason": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Reason for the operation. Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "flow_id",
+                    "operation"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_flow_execution_log",
+            "description": "Query flow execution logs.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "flow_id": {
+                        "default": "all",
+                        "description": "The ID of the flow, or 'all' to query all flows. Default is 'all'.",
+                        "type": "string"
+                    },
+                    "time_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Time range for filtering (e.g., 'last_7_days', 'last_30_days'). Optional."
+                    },
+                    "status_filter": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Status filter - 'success', 'failed', or 'pending'. Optional."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_automation_flow",
+            "description": "Update automation flow configuration.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The unique identifier of the user.",
+                        "type": "string"
+                    },
+                    "flow_id": {
+                        "description": "The ID of the flow to update.",
+                        "type": "string"
+                    },
+                    "update_type": {
+                        "description": "Type of update - 'trigger', 'action', or 'flow_name'.",
+                        "type": "string"
+                    },
+                    "new_config": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New configuration as JSON string. Optional."
+                    },
+                    "update_reason": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Reason for the update. Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "flow_id",
+                    "update_type"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

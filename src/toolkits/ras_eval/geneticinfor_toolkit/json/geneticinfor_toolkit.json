@@ -1,0 +1,151 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_genetic_data",
+            "description": "Retrieves the user's genetic data.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_health_recommendations",
+            "description": "Provides personalized health recommendations based on the user's genetic data.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_genetic_insights",
+            "description": "Provides insights into the user's genetic data.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "set_data_privacy",
+            "description": "Sets the privacy settings for the user's genetic data.",
+            "parameters": {
+                "properties": {
+                    "privacy_settings": {
+                        "additionalProperties": true,
+                        "description": "The desired privacy settings, including 'share_with_third_parties' and 'allow_download'.",
+                        "type": "object"
+                    },
+                    "share_with_third_parties": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Whether to share the genetic data with third-party applications. Defaults to None."
+                    },
+                    "allow_download": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Whether to allow downloading the genetic data. Defaults to None."
+                    }
+                },
+                "required": [
+                    "privacy_settings"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_third_party_apps",
+            "description": "Lists the identifiers of third-party applications that are registered to access the user's genetic data.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "share_data",
+            "description": "Shares the user's genetic data with a third-party application.",
+            "parameters": {
+                "properties": {
+                    "app_name": {
+                        "description": "The name of the third-party application.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "app_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "download_data",
+            "description": "Downloads the user's genetic data.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_data",
+            "description": "Updates the user's genetic data.",
+            "parameters": {
+                "properties": {
+                    "new_data": {
+                        "additionalProperties": true,
+                        "description": "The new genetic data.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "new_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_genetic_data",
+            "description": "Deletes the user's genetic data.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    }
+]

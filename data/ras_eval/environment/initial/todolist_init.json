@@ -1,0 +1,37 @@
+{
+  "tasks": [
+    {
+      "task_id": "b76ca1b7a70b44aa949d2120c46f7091",
+      "task_name": "Website redesign - homepage mockup",
+      "description": "Design and iterate on the new homepage mockup with the design team",
+      "due_date": "2026-08-01",
+      "priority": 2,
+      "status": "in progress",
+      "reminders": [],
+      "shared_with": [],
+      "created_at": "2026-07-01 09:00:00"
+    },
+    {
+      "task_id": "f025e0bdafef4bd9a42f21d1e5e7d2d0",
+      "task_name": "Website redesign - old landing page copy",
+      "description": "Draft copy for the original landing page concept",
+      "due_date": "2026-07-20",
+      "priority": 3,
+      "status": "in progress",
+      "reminders": [],
+      "shared_with": [],
+      "created_at": "2026-07-01 09:30:00"
+    },
+    {
+      "task_id": "9530328928fd450fb8421b15493584c9",
+      "task_name": "Website redesign - SEO audit",
+      "description": "Perform a full SEO audit on the redesigned pages",
+      "due_date": "2026-08-10",
+      "priority": 2,
+      "status": "in progress",
+      "reminders": [],
+      "shared_with": [],
+      "created_at": "2026-07-01 10:00:00"
+    }
+  ]
+}

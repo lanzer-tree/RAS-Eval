@@ -1,0 +1,93 @@
+{
+  "channels": [
+    {
+      "name": "#general",
+      "is_public": true,
+      "members": ["@user1", "@user2"],
+      "owner": "@admin"
+    },
+    {
+      "name": "#alpha-project",
+      "is_public": true,
+      "members": ["@current_user", "@testuser-alpha", "@dummy-alpha"],
+      "owner": "@current_user"
+    },
+    {
+      "name": "#beta-project-v2",
+      "is_public": true,
+      "members": [],
+      "owner": "@current_user"
+    }
+  ],
+  "users": [
+    {
+      "username": "@admin",
+      "profile": {"real_name": "Admin User"},
+      "status": {"presence": "auto"}
+    },
+    {
+      "username": "@john",
+      "profile": {"real_name": "John Doe"},
+      "status": {"presence": "away"}
+    },
+    {
+      "username": "@jane",
+      "profile": {"real_name": "Jane Smith"},
+      "status": {"presence": "auto"}
+    },
+    {
+      "username": "@current_user",
+      "profile": {"real_name": "Current User"},
+      "status": {"presence": "auto"}
+    },
+    {
+      "username": "@user1",
+      "profile": {"real_name": "User One"},
+      "status": {"presence": "auto"}
+    },
+    {
+      "username": "@user2",
+      "profile": {"real_name": "User Two"},
+      "status": {"presence": "auto"}
+    },
+    {
+      "username": "@testuser-alpha",
+      "profile": {"real_name": "Test User Alpha"},
+      "status": {"presence": "inactive"}
+    },
+    {
+      "username": "@dummy-alpha",
+      "profile": {"real_name": "Dummy User Alpha"},
+      "status": {"presence": "inactive"}
+    }
+  ],
+  "messages": [
+    {
+      "content": "Welcome to the team!",
+      "timestamp": "2025-01-01T10:00:00",
+      "in": "#general",
+      "from": "@admin"
+    },
+    {
+      "content": "Here is our final deliverable - check the docs attached",
+      "timestamp": "2025-01-02T14:00:00",
+      "in": "#alpha-project",
+      "from": "@current_user"
+    },
+    {
+      "content": "Project update meeting scheduled",
+      "timestamp": "2025-01-03T15:00:00",
+      "in": "#alpha-project",
+      "from": "@jane"
+    },
+    {
+      "content": "The final deliverable deadline has been extended",
+      "timestamp": "2025-01-04T09:30:00",
+      "in": "#alpha-project",
+      "from": "@jane"
+    }
+  ],
+  "files": {
+    "ARCHIVE_2024_SUMMARY": "environment/README.md"
+  }
+}

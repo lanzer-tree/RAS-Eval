@@ -1,0 +1,690 @@
+# ClawGuard Rules Configuration - Enhanced Security
+version: 2
+
+# ============================================
+# Command Rules - Enhanced
+# ============================================
+command_rules:
+  blacklist:
+    # Filesystem destruction
+    - pattern: "rm\\s+-rf\\s+/$|rm\\s+-rf\\s+/[^t]"
+      action: deny
+      reason: "🚨 CRITICAL: Recursive deletion of system directories"
+    
+    - pattern: "rm\\s+-rf\\s+~|rm\\s+-rf\\s+\\$HOME"
+      action: deny
+      reason: "🚨 CRITICAL: Recursive deletion of user directory"
+    
+    - pattern: "rm\\s+-rf\\s+/\\*|rm\\s+-rf\\s+\\."
+      action: deny
+      reason: "🚨 CRITICAL: Wildcard recursive deletion"
+    
+    - pattern: "\\s+/dev/(sd[a-z]|nvme|vd[a-z]|hd[a-z])|>\\s*/dev/(sd|nvme|vd|hd)"
+      action: deny
+      reason: "🚨 CRITICAL: Direct disk device access"
+    
+    # Disk operations
+    - pattern: "mkfs|fdisk|parted|dd\\s+if=|dd\\s+of=/dev"
+      action: deny
+      reason: "🚨 CRITICAL: Disk formatting/partitioning"
+    
+    # Fork bombs & resource exhaustion
+    - pattern: ":\\(\\)\\s*\\{\\s*:\\|:&\\s*\\};\\s*:|\\(\\s*\\)\\s*\\{.*\\|.*&\\s*\\}"
+      action: deny
+      reason: "🚨 CRITICAL: Fork bomb detected"
+    
+    - pattern: "while\\s+true.*do|while\\s*\\[\\s*1\\s*\\]"
+      action: deny
+      reason: "⚠️ DANGER: Infinite loop detected"
+    
+    # Permission manipulation
+    - pattern: "chmod\\s+-R\\s+777\\s+/|chmod\\s+777\\s+-R\\s+/"
+      action: deny
+      reason: "🚨 CRITICAL: Opening all system permissions"
+    
+    - pattern: "chmod\\s+[0-7]*[7]{3}\\s+/"
+      action: deny
+      reason: "⚠️ DANGER: Overly permissive root directory"
+    
+    # Remote code execution
+    - pattern: "curl.*\\|\\s*(bash|sh|python[0-9.]*|perl|ruby)\\s*$|wget.*\\|\\s*(bash|sh|python[0-9.]*|perl|ruby)\\s*$"
+      action: deny
+      reason: "🚨 CRITICAL: Piping remote content to interpreter"
+    
+    - pattern: "eval\\s*\\$\\(curl|eval\\s*\\$\\(wget|\\$\\(curl.*\\)\\s*\\|"
+      action: deny
+      reason: "🚨 CRITICAL: Remote code eval"
+    
+    # Data exfiltration
+    - pattern: "curl\\s+-X\\s+POST.*-d\\s+@|curl.*--data-binary\\s+@|nc.*<.*\\.tar"
+      action: deny
+      reason: "⚠️ DANGER: Potential data exfiltration"
+    
+    - pattern: "scp\\s+.*root@|rsync.*root@|ssh.*'cat\\s+/etc/(shadow|passwd)'"
+      action: deny
+      reason: "🚨 CRITICAL: Suspicious remote file transfer"
+    
+    # Backdoors & persistence
+    - pattern: "echo.*>>\\s*/etc/(rc\\.local|crontab|systemd)|crontab.*@reboot"
+      action: deny
+      reason: "🚨 CRITICAL: Persistence mechanism"
+    
+    - pattern: "nc\\s+-l\\s+-p\\s+[0-9]+.*-e|bash\\s+-i\\s+>&\\s+/dev/tcp"
+      action: deny
+      reason: "🚨 CRITICAL: Reverse shell detected"
+    
+    # Credential theft
+    - pattern: "cat\\s+/etc/shadow|cat\\s+.*\\.ssh/id_rsa|grep.*password.*history"
+      action: deny
+      reason: "🚨 CRITICAL: Credential access attempt"
+    
+    - pattern: "find.*-name\\s+.*password.*-print|strings.*keychain"
+      action: deny
+      reason: "⚠️ DANGER: Credential enumeration"
+    
+    # Process manipulation
+    - pattern: "kill\\s+-9\\s+1|killall\\s+-9\\s+init|pkill\\s+systemd"
+      action: deny
+      reason: "🚨 CRITICAL: Attempting to kill critical system processes"
+    
+    # Memory/kernel manipulation
+    - pattern: "/proc/(kcore|kmsg)|insmod|modprobe.*rootkit"
+      action: deny
+      reason: "🚨 CRITICAL: Kernel/memory access"
+    
+    # Container escape
+    - pattern: "docker\\s+run.*--privileged|docker.*-v\\s+/:/host"
+      action: deny
+      reason: "⚠️ DANGER: Privileged container or host mount"
+    
+    # Package manager abuse
+    - pattern: "pip\\s+install.*--break-system-packages|apt-get.*--force-yes.*unknown"
+      action: deny
+      reason: "⚠️ DANGER: Unsafe package installation"
+    
+    # System control commands (NEWLY ADDED)
+    - pattern: "\\b(reboot|shutdown|halt|poweroff|init\\s+0|init\\s+6)\\b"
+      action: deny
+      reason: "🚨 CRITICAL: Unauthorized system shutdown/reboot"
+    
+    - pattern: "kill\\s+-9\\s+-1|kill\\s+-KILL\\s+-1|pkill\\s+-9\\s+\\."
+      action: deny
+      reason: "🚨 CRITICAL: Attempting to kill all processes"
+    
+    # Reverse shells & network backdoors (EXPANDED)
+    - pattern: "nc\\s+-e\\s+/bin/(bash|sh)|ncat.*-e\\s+/bin"
+      action: deny
+      reason: "🚨 CRITICAL: Netcat reverse shell"
+    
+    - pattern: "bash\\s+-i\\s+>&\\s+/dev/tcp|sh\\s+-i\\s+>&\\s+/dev/tcp"
+      action: deny
+      reason: "🚨 CRITICAL: TCP reverse shell"
+    
+    - pattern: "telnet.*\\|\\s+/bin/(bash|sh)|socat.*exec:"
+      action: deny
+      reason: "🚨 CRITICAL: Remote shell via telnet/socat"
+    
+    # Credential enumeration (EXPANDED)
+    - pattern: "find.*-name\\s+['\"]?\\*\\.key['\"]?.*-exec\\s+cat"
+      action: deny
+      reason: "🚨 CRITICAL: Private key enumeration"
+    
+    - pattern: "grep\\s+-r.*password.*~|find.*\\.ssh.*-print"
+      action: deny
+      reason: "🚨 CRITICAL: Credential search"
+    
+    # SysRq and kernel manipulation (NEWLY ADDED)
+    - pattern: "echo.*>\\s*/proc/sys/kernel/(sysrq|panic)|echo.*>\\s*/proc/sysrq-trigger"
+      action: deny
+      reason: "🚨 CRITICAL: SysRq manipulation"
+    
+    # Cron manipulation (NEWLY ADDED)
+    - pattern: "crontab\\s+-r|rm\\s+/var/spool/cron"
+      action: deny
+      reason: "⚠️ DANGER: Cron deletion"
+    
+    # SSH key generation/deployment (anti-injection)
+    - pattern: "ssh-keygen|ssh-copy-id"
+      action: deny
+      reason: "🚨 CRITICAL: SSH key generation/deployment blocked"
+    
+    # SSH authorized_keys manipulation
+    - pattern: ">>?\\s*.*authorized_keys|echo.*ssh-(rsa|ed25519|ecdsa).*>>"
+      action: deny
+      reason: "🚨 CRITICAL: SSH authorized_keys manipulation"
+
+  whitelist:
+    # Read-only inspection (safe)
+    - pattern: "^ls\\s+(-[alhtrsS]+\\s+)?[^|;&><]+$|^ls$"
+      action: allow
+    
+    - pattern: "^cat\\s+[^|;&><]+$"
+      action: allow
+    
+    - pattern: "^head\\s+(-n\\s+[0-9]+\\s+)?[^|;&><]+$|^tail\\s+(-n\\s+[0-9]+\\s+)?[^|;&><]+$"
+      action: allow
+    
+    - pattern: "^pwd$|^whoami$|^hostname$"
+      action: allow
+    
+    - pattern: "^which\\s+[a-zA-Z0-9_-]+$|^where\\s+[a-zA-Z0-9_-]+$"
+      action: allow
+    
+    - pattern: "^echo\\s+(\"[^\"]*\"|'[^']*'|[^|;&><]+)$"
+      action: allow
+    
+    - pattern: "^env$|^printenv$"
+      action: allow
+    
+    # VCS operations (read-only)
+    - pattern: "^git\\s+(status|log|diff|show|branch|remote|config\\s+--get)"
+      action: allow
+    
+    - pattern: "^git\\s+ls-files|^git\\s+ls-tree"
+      action: allow
+    
+    # Package inspection (read-only)
+    - pattern: "^pip3?\\s+(list|show|freeze)\\s"
+      action: allow
+    
+    - pattern: "^npm\\s+(list|ls)\\s"
+      action: allow
+    
+    # File system navigation (safe)
+    - pattern: "^cd\\s+[^|;&><]+$"
+      action: allow
+    
+    - pattern: "^find\\s+[^-].*-type\\s+(f|d)\\s+-name\\s+"
+      action: allow
+    
+    - pattern: "^grep\\s+(-[rinE]+\\s+)?[^|;&><]+\\s+[^|;&><]+$"
+      action: allow
+    
+    # File operations (restricted to workspace)
+    - pattern: "^mkdir\\s+-p?\\s+(\\.?/|~/)[^|;&><]+$"
+      action: allow
+    
+    - pattern: "^touch\\s+[^|;&><]+$"
+      action: allow
+    
+    # Programming languages (with safe args only)
+    - pattern: "^python3?\\s+[a-zA-Z0-9_/-]+\\.py(\\s+[^|;&><]+)?$"
+      action: allow
+    
+    - pattern: "^node\\s+[a-zA-Z0-9_/-]+\\.js(\\s+[^|;&><]+)?$"
+      action: allow
+    
+    # Archiving (read-only)
+    - pattern: "^tar\\s+-[tz].*-f\\s+[^|;&><]+$"
+      action: allow
+    
+    - pattern: "^unzip\\s+-l\\s+[^|;&><]+$|^zip\\s+-sf\\s+[^|;&><]+$"
+      action: allow
+
+  supervised:
+    # Deletion (require approval)
+    - pattern: "\\brm\\s+"
+      action: approve
+      reason: "⚠️ File deletion - requires manual approval"
+    
+    - pattern: "\\brm\\s+[^-]|\\brm\\s+-[^r]"
+      action: approve
+      reason: "⚠️ File deletion (non-recursive) - requires approval"
+    
+    # Privileged operations
+    - pattern: "\\bsudo\\s+"
+      action: approve
+      reason: "🔐 Root privilege required - needs approval"
+    
+    - pattern: "su\\s+-|su\\s+root"
+      action: approve
+      reason: "🔐 Switching to root - needs approval"
+    
+    # Permission changes
+    - pattern: "\\bchmod\\s+[0-7]{3,4}\\s+"
+      action: approve
+      reason: "🔑 Permission change - verify target and mode"
+    
+    - pattern: "\\bchown\\s+"
+      action: approve
+      reason: "🔑 Ownership change - verify user and target"
+    
+    # Network operations
+    - pattern: "\\bcurl\\s+-X\\s+(POST|PUT|DELETE)|\\bwget\\s+--method=(POST|PUT|DELETE)"
+      action: approve
+      reason: "🌐 HTTP write operation - verify URL and data"
+    
+    - pattern: "\\bnc\\s+|\\btelnet\\s+|\\bsocat\\s+"
+      action: approve
+      reason: "🌐 Raw network connection - verify destination"
+    
+    # Package installation
+    - pattern: "\\bpip3?\\s+install|\\bnpm\\s+install|\\bapt-get\\s+install|\\byum\\s+install"
+      action: approve
+      reason: "📦 Package installation - verify package name"
+    
+    - pattern: "\\bdocker\\s+(pull|run)|\\bkubectl\\s+apply"
+      action: approve
+      reason: "🐳 Container operation - verify image/config"
+    
+    # File write operations
+    - pattern: ">\\s+[^/&|;]+|>>\\s+[^/&|;]+"
+      action: approve
+      reason: "📝 File redirect - verify target file"
+    
+    - pattern: "\\bcp\\s+.*\\s+/|\\bmv\\s+.*\\s+/"
+      action: approve
+      reason: "📁 Copy/move to root - verify destination"
+    
+    # System modification
+    - pattern: "\\bsystemctl\\s+(start|stop|restart|enable|disable)"
+      action: approve
+      reason: "⚙️ Service control - verify service name"
+    
+    - pattern: "\\bcrontab\\s+-e|\\bsystemctl\\s+edit"
+      action: approve
+      reason: "⏰ Scheduled task modification - review changes"
+    
+    # Git write operations
+    - pattern: "\\bgit\\s+(push|commit|add|reset\\s+--hard|clean\\s+-fd)"
+      action: approve
+      reason: "📝 Git write operation - verify changes"
+    
+    # Archive extraction (can overwrite files)
+    - pattern: "\\btar\\s+-[xzj]|\\bunzip|\\bgunzip|\\buntar"
+      action: approve
+      reason: "📦 Archive extraction - verify contents and destination"
+    
+    # SSH operations
+    - pattern: "\\bssh\\s+.*@|\\bscp\\s+.*:|\\brsync\\s+.*:"
+      action: approve
+      reason: "🔐 Remote connection - verify host and credentials"
+    
+    # Database operations
+    - pattern: "\\bmysql\\s+.*-e|\\bpsql\\s+.*-c|\\bmongo\\s+"
+      action: approve
+      reason: "🗄️ Database operation - verify query safety"
+
+# ============================================
+# File Rules - Enhanced
+# ============================================
+file_rules:
+  allowed_paths:
+    # Workspace directories
+    - ~/work
+    
+
+  denied_paths:
+    # Credentials & secrets
+    - ~/.ssh/**
+    - ~/.gnupg/**
+    - ~/.aws/**
+    - ~/.config/gcloud/**
+    - ~/.kube/config
+    - ~/.docker/config.json
+    - ~/Library/Keychains/**
+    - ~/.password-store/**
+    
+    # System critical
+    - /etc/shadow
+    - /etc/passwd
+    - /etc/sudoers
+    - /etc/sudoers.d/**
+    - /boot/**
+    - /sys/**
+    - /proc/kcore
+    
+    # Browser profiles (contain saved passwords)
+    - ~/Library/Application Support/Google/Chrome/**
+    - ~/Library/Application Support/Firefox/**
+    - ~/.mozilla/firefox/**
+    - ~/.config/google-chrome/**
+    - ~/.config/chromium/**
+    
+    # Password managers
+    - ~/Library/Containers/com.agilebits.onepassword*/**
+    - ~/.local/share/keyrings/**
+    - ~/.gnome2/keyrings/**
+    
+    # Private keys
+    - ~/.config/**/credentials
+    - ~/.config/**/auth
+    - ~/.config/**/tokens
+    - ~/.**/secrets/**
+    - ~/.**/private/**
+    
+    # Email/chat history
+    - ~/Library/Mail/**
+    - ~/Library/Messages/**
+    - ~/.thunderbird/**
+    - ~/.config/Signal/**
+    - ~/.config/Telegram/**
+    
+    # ClawGuard — protect its own internals
+    - ~/.clawguard/**
+    - ~/clawguard-py/**
+    - ~/target_clawguard/**
+    - ~/.openclaw/openclaw.json
+    
+  sensitive_patterns:
+    # Private keys
+    - "*.pem"
+    - "*.key"
+    - "*.p12"
+    - "*.pfx"
+    - "*.jks"
+    - "*.keystore"
+    - "*_rsa"
+    - "*_dsa"
+    - "*_ecdsa"
+    - "*_ed25519"
+    
+    # Credentials
+    - ".env*"
+    - "*.env"
+    - "*password*"
+    - "*passwd*"
+    - "*secret*"
+    - "*credential*"
+    - "*token*"
+    - "*auth*"
+    - "*.ovpn"
+    - "*.mobileconfig"
+    
+    # Financial
+    - "*wallet*"
+    - "*bitcoin*"
+    - "*ethereum*"
+    - "*.wallet"
+    
+    # Backup files (may contain sensitive data)
+    - "*.bak"
+    - "*.backup"
+    - "*~"
+    - "*.swp"
+    
+    # Database dumps
+    - "*.sql"
+    - "*.dump"
+    - "*.db"
+
+# ============================================
+# Network Rules - Enhanced
+# ============================================
+network_rules:
+  allowed_domains:
+    
+    # Package registries
+    - registry.npmjs.org
+    - pypi.org
+    - files.pythonhosted.org
+    - rubygems.org
+    - crates.io
+    - pkg.go.dev
+    
+    # AI APIs
+    - api.openai.com
+    - api.anthropic.com
+    
+    # Documentation
+    - docs.python.org
+    - developer.mozilla.org
+    - stackoverflow.com
+    
+    # CDNs (read-only)
+    - cdnjs.cloudflare.com
+    - cdn.jsdelivr.net
+    - unpkg.com
+    
+    # Weather/news APIs
+    - wttr.in
+    - api.weather.gov
+    
+    # Safe utilities
+    - httpbin.org
+    - jsonplaceholder.typicode.com
+
+  denied_domains:
+    # Anonymization networks
+    - "*.onion"
+    - "*.i2p"
+    
+    # Code sharing (potential data exfil)
+    - pastebin.com
+    - paste.ee
+    - hastebin.com
+    - dpaste.com
+    - ghostbin.com
+    
+    # Tunneling services
+    - ngrok.io
+    - "*-ngrok.io"
+    - localtunnel.me
+    - serveo.net
+    - "*.loca.lt"
+    
+    # URL shorteners (phishing risk)
+    - bit.ly
+    - tinyurl.com
+    - goo.gl
+    - ow.ly
+    - t.co
+    
+    # File sharing (data exfil risk)
+    - transfer.sh
+    - file.io
+    - temp.sh
+    - anonymfile.com
+    
+    # Malicious/suspicious
+    - raw.githubusercontent.com/*/master/install.sh
+    - raw.githubusercontent.com/*/main/install.sh
+    
+    # IP addresses (should be explicit)
+    - "[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}"
+
+  default_action: approve
+
+# ============================================
+# Sanitizer Rules - Enhanced (25+ patterns)
+# ============================================
+sanitizer_rules:
+  enabled: true
+  
+  patterns:
+    # ========== Cloud Provider Keys ==========
+    
+    # AWS
+    aws_access_key:
+      pattern: "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+      replacement: "[AWS_ACCESS_KEY_REDACTED]"
+    
+    aws_secret_key:
+      pattern: "(?i)aws(.{0,20})?['\"]([0-9a-zA-Z/+=]{40})['\"]"
+      replacement: "[AWS_SECRET_KEY_REDACTED]"
+    
+    aws_session_token:
+      pattern: "(?i)(aws_session_token|x-amz-security-token)['\"]?\\s*[=:]\\s*['\"]?[A-Za-z0-9+/=]{100,}['\"]?"
+      replacement: "[AWS_SESSION_TOKEN_REDACTED]"
+    
+    # Google Cloud
+    gcp_api_key:
+      pattern: "AIza[0-9A-Za-z\\-_]{35}"
+      replacement: "[GCP_API_KEY_REDACTED]"
+    
+    gcp_oauth:
+      pattern: "ya29\\.[0-9A-Za-z\\-_]+"
+      replacement: "[GCP_OAUTH_TOKEN_REDACTED]"
+    
+    # Azure
+    azure_client_secret:
+      pattern: "[a-zA-Z0-9~_\\-]{34,40}"
+      replacement: "[AZURE_SECRET_REDACTED]"
+    
+    # ========== VCS Tokens ==========
+    
+    github_token:
+      pattern: "gh[ps]_[A-Za-z0-9]{36}|gho_[A-Za-z0-9]{36}|ghu_[A-Za-z0-9]{36}|ghs_[A-Za-z0-9]{36}|ghr_[A-Za-z0-9]{36}"
+      replacement: "[GITHUB_TOKEN_REDACTED]"
+    
+    gitlab_token:
+      pattern: "glpat-[A-Za-z0-9\\-_]{20,40}"
+      replacement: "[GITLAB_TOKEN_REDACTED]"
+    
+    bitbucket_token:
+      pattern: "(?i)bitbucket['\"]?\\s*[=:]\\s*['\"]?[A-Za-z0-9\\-_]{40,}['\"]?"
+      replacement: "[BITBUCKET_TOKEN_REDACTED]"
+    
+    # ========== Communication Platforms ==========
+    
+    slack_token:
+      pattern: "xox[baprs]-[0-9]{10,13}-[0-9]{10,13}-[A-Za-z0-9]{24,}"
+      replacement: "[SLACK_TOKEN_REDACTED]"
+    
+    slack_webhook:
+      pattern: "https://hooks\\.slack\\.com/services/[A-Z0-9]{9,}/[A-Z0-9]{9,}/[A-Za-z0-9]{24}"
+      replacement: "[SLACK_WEBHOOK_REDACTED]"
+    
+    discord_webhook:
+      pattern: "https://discord(?:app)?\\.com/api/webhooks/[0-9]{17,19}/[A-Za-z0-9_-]{68}"
+      replacement: "[DISCORD_WEBHOOK_REDACTED]"
+    
+    telegram_bot_token:
+      pattern: "[0-9]{8,10}:[A-Za-z0-9_-]{35}"
+      replacement: "[TELEGRAM_BOT_TOKEN_REDACTED]"
+    
+    # ========== Payment Providers ==========
+    
+    stripe_key:
+      pattern: "(?i)(sk|rk)_live_[0-9a-zA-Z]{24,}"
+      replacement: "[STRIPE_KEY_REDACTED]"
+    
+    stripe_restricted:
+      pattern: "rk_live_[0-9a-zA-Z]{24,}"
+      replacement: "[STRIPE_RESTRICTED_KEY_REDACTED]"
+    
+    paypal_access_token:
+      pattern: "access_token\\$production\\$[a-z0-9]{16}\\$[a-z0-9]{32}"
+      replacement: "[PAYPAL_TOKEN_REDACTED]"
+    
+    # ========== Email/SMS Services ==========
+    
+    sendgrid_token:
+      pattern: "SG\\.[A-Za-z0-9\\-_]{22}\\.[A-Za-z0-9\\-_]{43}"
+      replacement: "[SENDGRID_TOKEN_REDACTED]"
+    
+    mailgun_key:
+      pattern: "key-[0-9a-z]{32}"
+      replacement: "[MAILGUN_KEY_REDACTED]"
+    
+    twilio_key:
+      pattern: "SK[0-9a-f]{32}"
+      replacement: "[TWILIO_KEY_REDACTED]"
+    
+    # ========== Auth Tokens ==========
+    
+    jwt_token:
+      pattern: "eyJ[A-Za-z0-9-_=]+\\.eyJ[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_.+/=]*"
+      replacement: "[JWT_TOKEN_REDACTED]"
+    
+    bearer_token:
+      pattern: "(?i)bearer\\s+[A-Za-z0-9\\-._~+/]+=*"
+      replacement: "[BEARER_TOKEN_REDACTED]"
+    
+    oauth_token:
+      pattern: "(?i)oauth['\"]?\\s*[=:]\\s*['\"]?[A-Za-z0-9\\-_]{20,}['\"]?"
+      replacement: "[OAUTH_TOKEN_REDACTED]"
+    
+    # ========== SSH & Crypto Keys ==========
+    
+    ssh_private_key:
+      pattern: "-----BEGIN (?:RSA |DSA |EC |OPENSSH )?PRIVATE KEY-----[\\s\\S]{1,4096}?-----END (?:RSA |DSA |EC |OPENSSH )?PRIVATE KEY-----"
+      replacement: "[SSH_PRIVATE_KEY_REDACTED]"
+    
+    pgp_private_key:
+      pattern: "-----BEGIN PGP PRIVATE KEY BLOCK-----[\\s\\S]{1,8192}?-----END PGP PRIVATE KEY BLOCK-----"
+      replacement: "[PGP_PRIVATE_KEY_REDACTED]"
+    
+    private_key_generic:
+      pattern: "-----BEGIN PRIVATE KEY-----[\\s\\S]{1,4096}?-----END PRIVATE KEY-----"
+      replacement: "[PRIVATE_KEY_REDACTED]"
+    
+    ssh_public_key:
+      pattern: "ssh-(rsa|ed25519|ecdsa|dsa)\\s+[A-Za-z0-9+/=]{40,}"
+      replacement: "[SSH_PUBLIC_KEY_REDACTED]"
+    
+    # ========== Database Credentials ==========
+    
+    db_connection_string:
+      pattern: "(?i)(mysql|postgres|postgresql|mongodb|redis|mssql|oracle)://[^\\s'\"]+:[^\\s'\"@]+@[^\\s'\"/]+"
+      replacement: "[DB_CONNECTION_REDACTED]"
+    
+    db_password:
+      pattern: "(?i)(db_pass|database_password|db_pwd)\\s*[=:]\\s*['\"]([^'\"]{6,})['\"]"
+      replacement: "[DB_PASSWORD_REDACTED]"
+    
+    # ========== Generic Secrets ==========
+    
+    api_key_generic:
+      pattern: "(?i)(api[_-]?key|apikey|api_token)\\s*[=:]\\s*['\"]([A-Za-z0-9\\-_]{20,})['\"]"
+      replacement: "[API_KEY_REDACTED]"
+    
+    password_generic:
+      pattern: "(?i)(password|passwd|pwd)\\s*[=:]\\s*['\"]([^'\"]{8,})['\"]"
+      replacement: "[PASSWORD_REDACTED]"
+    
+    secret_generic:
+      pattern: "(?i)(secret|secret_key|client_secret)\\s*[=:]\\s*['\"]([A-Za-z0-9\\-_]{16,})['\"]"
+      replacement: "[SECRET_REDACTED]"
+    
+    token_generic:
+      pattern: "(?i)(token|access_token|auth_token)\\s*[=:]\\s*['\"]([A-Za-z0-9\\-_]{20,})['\"]"
+      replacement: "[TOKEN_REDACTED]"
+    
+    # ========== Cryptocurrency ==========
+    
+    bitcoin_private_key:
+      pattern: "[5KL][1-9A-HJ-NP-Za-km-z]{50,51}"
+      replacement: "[BITCOIN_PRIVATE_KEY_REDACTED]"
+    
+    ethereum_private_key:
+      pattern: "0x[a-fA-F0-9]{64}"
+      replacement: "[ETHEREUM_PRIVATE_KEY_REDACTED]"
+    
+    # ========== Miscellaneous ==========
+    
+    npm_token:
+      pattern: "npm_[A-Za-z0-9]{36}"
+      replacement: "[NPM_TOKEN_REDACTED]"
+    
+    docker_auth:
+      pattern: "(?i)\"auth\"\\s*:\\s*\"[A-Za-z0-9+/=]{20,}\""
+      replacement: "\"auth\": \"[DOCKER_AUTH_REDACTED]\""
+    
+    heroku_api_key:
+      pattern: "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+      replacement: "[HEROKU_API_KEY_REDACTED]"
+
+  # Skill whitelist exemption (bypass sanitization for trusted skills)
+  skill_whitelist:
+    - "skill-creator"
+    - "github"
+    - "@openclaw/diagnostics"
+
+# ============================================
+# Skill Rules
+# ============================================
+skill_rules:
+  trusted_skills:
+    - "@anthropic/claude-code"
+    - "@openclaw/*"
+  
+  untrusted_actions:
+    - pattern: "network_request"
+      reason: "Network request requires domain check"
+    
+    - pattern: "file_write"
+      reason: "File write requires path permission check"
+    
+    - pattern: "command_exec"
+      reason: "Command execution requires rule check"

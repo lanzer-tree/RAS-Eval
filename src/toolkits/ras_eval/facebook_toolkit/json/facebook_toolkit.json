@@ -1,0 +1,278 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "GetFacebookUserProfile",
+            "description": "Get the current user's profile information.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdateUserProfile",
+            "description": "Update the current user's profile information.",
+            "parameters": {
+                "properties": {
+                    "updates": {
+                        "additionalProperties": true,
+                        "description": "Dictionary of profile fields to update (name, email, birthday, location, bio).",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "updates"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchFriends",
+            "description": "Search for friends based on a keyword.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "Search keyword to match friend names, emails, or locations.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CreatePost",
+            "description": "Create a new post with optional media and privacy settings.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "description": "The text content of the post.",
+                        "type": "string"
+                    },
+                    "media_path": {
+                        "default": "",
+                        "description": "Path to media file to attach, optional.",
+                        "type": "string"
+                    },
+                    "privacy_setting": {
+                        "default": "friends",
+                        "description": "Privacy setting (public, friends, only me).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchPosts",
+            "description": "Search for posts by a specific user.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The ID of the user whose posts to search.",
+                        "type": "string"
+                    },
+                    "keyword": {
+                        "description": "Search keyword to match post content.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchMyPosts",
+            "description": "Search for the current user's own posts.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "Search keyword to match post content.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetPost",
+            "description": "Get detailed information about a specific post.",
+            "parameters": {
+                "properties": {
+                    "post_id": {
+                        "description": "The ID of the post to retrieve.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "post_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdatePost",
+            "description": "Update an existing post's content or privacy settings.",
+            "parameters": {
+                "properties": {
+                    "post_id": {
+                        "description": "The ID of the post to update.",
+                        "type": "string"
+                    },
+                    "new_content": {
+                        "default": "",
+                        "description": "New content for the post, optional.",
+                        "type": "string"
+                    },
+                    "new_privacy_setting": {
+                        "default": "",
+                        "description": "New privacy setting (public, friends, only me), optional.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "post_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeletePost",
+            "description": "Delete a specific post.",
+            "parameters": {
+                "properties": {
+                    "post_id": {
+                        "description": "The ID of the post to delete.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "post_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateComment",
+            "description": "Create a comment on a specific post.",
+            "parameters": {
+                "properties": {
+                    "post_id": {
+                        "description": "The ID of the post to comment on.",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "The text content of the comment.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "post_id",
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetMessages",
+            "description": "Get message history with a specific friend.",
+            "parameters": {
+                "properties": {
+                    "friend_id": {
+                        "description": "The ID of the friend whose messages to retrieve.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of messages to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "friend_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SendFacebookMessage",
+            "description": "Send a message to a specific recipient.",
+            "parameters": {
+                "properties": {
+                    "recipient_id": {
+                        "description": "The ID of the message recipient.",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "The text content of the message.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "recipient_id",
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

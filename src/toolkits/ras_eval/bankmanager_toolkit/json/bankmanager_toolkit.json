@@ -1,0 +1,176 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "GetAccountInformation",
+            "description": "Retrieves account information for a specific account type.",
+            "parameters": {
+                "properties": {
+                    "account_type": {
+                        "description": "The type of account to retrieve information for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "account_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "TransferFunds",
+            "description": "Transfers funds from one account to another.",
+            "parameters": {
+                "properties": {
+                    "from_account_number": {
+                        "description": "The account number to transfer funds from.",
+                        "type": "string"
+                    },
+                    "to_account_number": {
+                        "description": "The account number to transfer funds to.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of funds to transfer.",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "from_account_number",
+                    "to_account_number",
+                    "amount"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchPayee",
+            "description": "Searches for payees by keywords.",
+            "parameters": {
+                "properties": {
+                    "keywords": {
+                        "description": "The keywords to search for, can be a string or list of strings.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "keywords"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "PayBill",
+            "description": "Pays a bill to a payee from a user account.",
+            "parameters": {
+                "properties": {
+                    "from_account_number": {
+                        "description": "The account number to pay the bill from.",
+                        "type": "string"
+                    },
+                    "payee_id": {
+                        "description": "The ID of the payee to pay.",
+                        "type": "string"
+                    },
+                    "service_account_number": {
+                        "description": "The service account number for the bill.",
+                        "type": "string"
+                    },
+                    "payment_date": {
+                        "description": "The date of the payment.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount to pay.",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "from_account_number",
+                    "payee_id",
+                    "service_account_number",
+                    "payment_date",
+                    "amount"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetAccountStatement",
+            "description": "Retrieves account statement for a specific date range.",
+            "parameters": {
+                "properties": {
+                    "account_number": {
+                        "description": "The account number to retrieve statement for.",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "description": "The start date of the statement period.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "description": "The end date of the statement period.",
+                        "type": "string"
+                    },
+                    "download": {
+                        "default": false,
+                        "description": "Whether to download the statement as a CSV file.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "account_number",
+                    "start_date",
+                    "end_date"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchTransactions",
+            "description": "Searches for bank transactions by keyword and amount range.",
+            "parameters": {
+                "properties": {
+                    "account_number": {
+                        "description": "The account number to search transactions for.",
+                        "type": "string"
+                    },
+                    "keyword": {
+                        "default": "",
+                        "description": "The keyword to search for in transaction descriptions.",
+                        "type": "string"
+                    },
+                    "min_amount": {
+                        "default": null,
+                        "description": "The minimum amount to filter by.",
+                        "type": "number"
+                    },
+                    "max_amount": {
+                        "default": null,
+                        "description": "The maximum amount to filter by.",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "account_number"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

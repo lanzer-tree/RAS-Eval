@@ -1,0 +1,439 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "manage_course",
+            "description": "Create, update, or query course information.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "operation_type": {
+                        "description": "The type of operation to perform. Must be one of 'create', 'update', or 'query'.",
+                        "type": "string"
+                    },
+                    "course_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The unique identifier of the course. Required for 'update' and 'query' operations."
+                    },
+                    "course_data": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Course information including name, subject, hours, and objectives. Required for 'create' and 'update' operations."
+                    },
+                    "query_fields": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Specific fields to return in query results."
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "operation_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "batch_import_students",
+            "description": "Batch import students into a course.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "course_id": {
+                        "description": "The unique identifier of the course.",
+                        "type": "string"
+                    },
+                    "student_list": {
+                        "description": "A list of student dictionaries containing student_id, name, class_name, and contact.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "override_duplicate": {
+                        "default": false,
+                        "description": "Whether to override duplicate entries. Default is False (skip).",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "course_id",
+                    "student_list"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "manage_course_resources",
+            "description": "Upload, query, or delete course resources.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "course_id": {
+                        "description": "The unique identifier of the course.",
+                        "type": "string"
+                    },
+                    "operation_type": {
+                        "description": "The type of operation to perform. Must be 'upload', 'query', or 'delete'.",
+                        "type": "string"
+                    },
+                    "resource_list": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "additionalProperties": true,
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "A list of resource dictionaries containing filename, type, url, and description. Required for 'upload'."
+                    },
+                    "resource_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The unique identifier of the resource. Required for 'delete'."
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "course_id",
+                    "operation_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "publish_assignment",
+            "description": "Publish an assignment or learning task for a course.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "course_id": {
+                        "description": "The unique identifier of the course.",
+                        "type": "string"
+                    },
+                    "assignment_data": {
+                        "additionalProperties": true,
+                        "description": "Assignment information including title, content, deadline, and points.",
+                        "type": "object"
+                    },
+                    "resource_ids": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "A list of associated resource IDs."
+                    },
+                    "is_group": {
+                        "default": false,
+                        "description": "Whether this is a group assignment. Default is False.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "course_id",
+                    "assignment_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "grade_assignment",
+            "description": "Grade assignments and record scores.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "assignment_id": {
+                        "description": "The unique identifier of the assignment.",
+                        "type": "string"
+                    },
+                    "grading_data": {
+                        "description": "A list of grading dictionaries containing student_id, score, and comment.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "batch_mode": {
+                        "default": "custom",
+                        "description": "Grading mode - 'template' or 'custom'. Default is 'custom'.",
+                        "type": "string"
+                    },
+                    "allow_regrade": {
+                        "default": true,
+                        "description": "Whether to allow regrading. Default is True.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "assignment_id",
+                    "grading_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "manage_grade_book",
+            "description": "Manage grade book including query, statistics, and export operations.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "course_id": {
+                        "description": "The unique identifier of the course.",
+                        "type": "string"
+                    },
+                    "operation_type": {
+                        "description": "The type of operation - 'query', 'statistics', or 'export'.",
+                        "type": "string"
+                    },
+                    "assignment_ids": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Specific assignment IDs to include."
+                    },
+                    "export_format": {
+                        "default": "Excel",
+                        "description": "Export format - 'Excel' or 'CSV'. Default is 'Excel'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "course_id",
+                    "operation_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "process_student_interaction",
+            "description": "Process teacher-student interactions including Q&A and feedback.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "interaction_type": {
+                        "description": "The type of interaction - 'qa' (Q&A) or 'feedback'.",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "The content of the interaction.",
+                        "type": "string"
+                    },
+                    "student_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The specific student ID. If not provided, applies to all students."
+                    },
+                    "course_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The specific course ID for course-related interactions."
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "interaction_type",
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "send_notification",
+            "description": "Send teaching notifications to students.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "notification_data": {
+                        "additionalProperties": true,
+                        "description": "Notification content including title, body, and recipients.",
+                        "type": "object"
+                    },
+                    "send_channel": {
+                        "default": "in_app",
+                        "description": "The channel to send through - 'in_app', 'sms', or 'email'. Default is 'in_app'.",
+                        "type": "string"
+                    },
+                    "schedule_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Scheduled time to send the notification in 'YYYY-MM-DD HH:MM:SS' format."
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "notification_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "sync_teaching_data",
+            "description": "Synchronize and backup teaching data.",
+            "parameters": {
+                "properties": {
+                    "teacher_id": {
+                        "description": "The unique identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "sync_type": {
+                        "description": "The type of data to sync - 'courses', 'students', 'grades', or 'all'.",
+                        "type": "string"
+                    },
+                    "backup_path": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Custom backup file path."
+                    },
+                    "sync_platform": {
+                        "default": "cloud",
+                        "description": "Platform to sync to - 'academic_system' or 'cloud'. Default is 'cloud'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "teacher_id",
+                    "sync_type"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

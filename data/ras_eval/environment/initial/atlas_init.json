@@ -1,0 +1,43 @@
+{
+  "atlas_proposal": {
+    "file_path": "/workspace/documents/atlas_proposal.docx",
+    "description": "Draft document for Atlas Quantum Computing Initiative proposal",
+    "status": "draft",
+    "required_elements": [
+      "Level 1 heading: ATLAS QUANTUM COMPUTING INITIATIVE",
+      "Paragraph: Prepared for: GlobalTech Partnerships Division",
+      "Level 2 heading: Executive Summary",
+      "Paragraph with proposal details",
+      "Page break",
+      "Level 2 heading: Project Timeline and Budget",
+      "Table with 6 rows and 3 columns",
+      "Page break",
+      "Level 2 heading: Technical Architecture",
+      "Paragraph about QPU architecture",
+      "Level 3 heading: Research Team",
+      "Paragraph about lead researchers",
+      "Picture: team_structure.png",
+      "Page break",
+      "Level 2 heading: Expected Outcomes",
+      "Paragraph about expected outcomes"
+    ],
+    "formatting_requirements": {
+      "ATLAS QUANTUM COMPUTING INITIATIVE": {
+        "bold": true,
+        "font_name": "Times New Roman",
+        "font_size": 16,
+        "color": "003366"
+      },
+      "Executive Summary": {
+        "bold": true,
+        "italic": true,
+        "font_size": 14
+      }
+    }
+  },
+  "team_structure_image": {
+    "file_path": "/workspace/images/team_structure.png",
+    "description": "Team structure org chart image",
+    "width_inches": 5
+  }
+}

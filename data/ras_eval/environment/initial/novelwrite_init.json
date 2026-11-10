@@ -1,0 +1,17 @@
+{
+  "projects": [
+    {
+      "project_id": "1edce9a2a3fd4bfd8c2ef7a3f21ce6bb",
+      "project_name": "Dungeon Chronicles",
+      "genre": "Fantasy",
+      "description": "A tale of magic and adventure in ancient dungeons.",
+      "created_at": "2026-07-25 21:46:11",
+      "last_modified": "2026-07-25 21:46:11",
+      "content": "In the heart of the forgotten realm, where shadows dance with ancient magic, a young adventurer named Elara discovered the entrance to a labyrinthine dungeon that had been sealed for a thousand years. The stone door groaned as she pushed, revealing a darkness that hummed with power and possibility.",
+      "word_count": 65,
+      "writing_time_minutes": 0,
+      "status": "active"
+    }
+  ],
+  "current_project_id": null
+}

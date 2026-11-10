@@ -1,0 +1,233 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchConnectedServices",
+            "description": "Search for connected services by keywords.",
+            "parameters": {
+                "properties": {
+                    "keywords": {
+                        "description": "The search keywords to match against service names and descriptions.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": null,
+                        "description": "The maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "keywords"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchTriggers",
+            "description": "Search for triggers in a specific connected service by keywords.",
+            "parameters": {
+                "properties": {
+                    "service_name": {
+                        "description": "The name of the connected service to search in.",
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "description": "The search keywords to match against trigger names and descriptions.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": null,
+                        "description": "The maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "service_name",
+                    "keywords"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchActions",
+            "description": "Search for actions in a specific connected service by keywords.",
+            "parameters": {
+                "properties": {
+                    "service_name": {
+                        "description": "The name of the connected service to search in.",
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "description": "The search keywords to match against action names and descriptions.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": null,
+                        "description": "The maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "service_name",
+                    "keywords"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateApplet",
+            "description": "Create a new applet with specified trigger and action.",
+            "parameters": {
+                "properties": {
+                    "trigger_service_name": {
+                        "description": "The name of the service containing the trigger.",
+                        "type": "string"
+                    },
+                    "trigger_name": {
+                        "description": "The name of the trigger to use.",
+                        "type": "string"
+                    },
+                    "trigger_parameters": {
+                        "description": "The parameters for the trigger as a JSON string.",
+                        "type": "string"
+                    },
+                    "action_service_name": {
+                        "description": "The name of the service containing the action.",
+                        "type": "string"
+                    },
+                    "action_name": {
+                        "description": "The name of the action to use.",
+                        "type": "string"
+                    },
+                    "action_parameters": {
+                        "description": "The parameters for the action as a JSON string.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "trigger_service_name",
+                    "trigger_name",
+                    "trigger_parameters",
+                    "action_service_name",
+                    "action_name",
+                    "action_parameters"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchApplets",
+            "description": "Search for applets by trigger and action keywords.",
+            "parameters": {
+                "properties": {
+                    "trigger_keywords": {
+                        "default": null,
+                        "description": "Optional keywords to match against trigger service and name.",
+                        "type": "string"
+                    },
+                    "action_keywords": {
+                        "default": null,
+                        "description": "Optional keywords to match against action service and name.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": null,
+                        "description": "The maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdateApplet",
+            "description": "Update an existing applet with new trigger and action configuration.",
+            "parameters": {
+                "properties": {
+                    "applet_id": {
+                        "description": "The ID of the applet to update.",
+                        "type": "string"
+                    },
+                    "trigger_service_name": {
+                        "description": "The name of the service containing the trigger.",
+                        "type": "string"
+                    },
+                    "trigger_name": {
+                        "description": "The name of the trigger to use.",
+                        "type": "string"
+                    },
+                    "trigger_parameters": {
+                        "description": "The parameters for the trigger as a JSON string.",
+                        "type": "string"
+                    },
+                    "action_service_name": {
+                        "description": "The name of the service containing the action.",
+                        "type": "string"
+                    },
+                    "action_name": {
+                        "description": "The name of the action to use.",
+                        "type": "string"
+                    },
+                    "action_parameters": {
+                        "description": "The parameters for the action as a JSON string.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "applet_id",
+                    "trigger_service_name",
+                    "trigger_name",
+                    "trigger_parameters",
+                    "action_service_name",
+                    "action_name",
+                    "action_parameters"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteApplets",
+            "description": "Delete one or more applets by their IDs.",
+            "parameters": {
+                "properties": {
+                    "applet_ids": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "description": "A single applet ID or a list of applet IDs to delete."
+                    }
+                },
+                "required": [
+                    "applet_ids"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

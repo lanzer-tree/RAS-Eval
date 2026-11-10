@@ -1,0 +1,542 @@
+{
+  "user": {
+    "user_id": "u_me",
+    "name": "Jamie Chen",
+    "email": "user@example.com",
+    "bio": "Wild soul, weekend adventurer, and beer enthusiast. #LifeIsAboutParty",
+    "location": "Austin, TX"
+  },
+  "users": [
+    {
+      "user_id": "user_10293",
+      "name": "Sarah Johnson",
+      "email": "sarah@example.com"
+    },
+    {
+      "user_id": "u_alexc",
+      "name": "Alex Chen",
+      "email": "alex@example.com"
+    },
+    {
+      "user_id": "u_morgan",
+      "name": "Morgan Chen",
+      "email": "morgan@example.com"
+    },
+    {
+      "user_id": "u_davidp",
+      "name": "David Park",
+      "email": "davidpark@example.com"
+    },
+    {
+      "user_id": "u_wang",
+      "name": "Chris Wang",
+      "email": "chris@example.com"
+    },
+    {
+      "user_id": "mgr_4829",
+      "name": "Patricia Hughes",
+      "email": "patricia.hughes@techcorp.com"
+    }
+  ],
+  "friends": [
+    {
+      "user_id": "user_10293",
+      "name": "Sarah Johnson",
+      "email": "sarah@example.com",
+      "location": "Springfield"
+    },
+    {
+      "user_id": "u_alexc",
+      "name": "Alex Chen",
+      "email": "alex@example.com",
+      "location": "San Francisco, CA"
+    },
+    {
+      "user_id": "u_morgan",
+      "name": "Morgan Chen",
+      "email": "morgan@example.com",
+      "location": "Seattle, WA"
+    },
+    {
+      "user_id": "u_davidp",
+      "name": "David Park",
+      "email": "davidpark@example.com",
+      "location": "Portland, OR"
+    },
+    {
+      "user_id": "u_wang",
+      "name": "Chris Wang",
+      "email": "chris@example.com",
+      "location": "San Francisco, CA",
+      "profile": "Entrepreneur, startup advisor, tech enthusiast"
+    },
+    {
+      "user_id": "fr_84210",
+      "name": "Taylor Reed",
+      "email": "taylor@example.com",
+      "location": "San Francisco, CA"
+    },
+    {
+      "user_id": "u_davidchen",
+      "name": "David Chen",
+      "email": "davidchen@example.com",
+      "location": "San Francisco, CA",
+      "profile": "Software architect, mentor, and close friend"
+    },
+    {
+      "user_id": "sarah.chen.42",
+      "name": "Sarah Chen",
+      "email": "sarah.chen@example.com",
+      "location": "San Francisco, CA",
+      "profile": "Party planner and foodie"
+    },
+    {
+      "user_id": "friend_5678",
+      "name": "Jordan Lee",
+      "email": "jordan.lee@example.com",
+      "location": "Austin, TX"
+    }
+  ],
+  "posts": [
+    {
+      "post_id": "9876543210_11111111",
+      "user_id": "u_me",
+      "content": "Working late on the startup that will change everything!",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-06-15T08:00:00Z"
+    },
+    {
+      "post_id": "post_startup_2026",
+      "user_id": "u_me",
+      "content": "Excited to announce our new startup launching next month!",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-10T12:00:00Z"
+    },
+    {
+      "post_id": "post_sarah_r1",
+      "user_id": "user_10293",
+      "content": "So excited about our upcoming class reunion! Can't wait to see everyone after 10 years!",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-07-22T08:00:00Z"
+    },
+    {
+      "post_id": "post_sarah_r2",
+      "user_id": "user_10293",
+      "content": "Who's bringing what to the reunion potluck? I'm planning to bring my famous brownies!",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-23T12:00:00Z"
+    },
+    {
+      "post_id": "post_party",
+      "user_id": "u_me",
+      "content": "Just got back from the most epic wild party of the year! This was so wild lol #blessed",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-07-24T06:30:00Z"
+    },
+    {
+      "post_id": "post_conf",
+      "user_id": "u_me",
+      "content": "Attending the Tech Innovation Conference 2024 this weekend! Looking forward to the keynote presentations and workshops.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-15T10:00:00Z"
+    },
+    {
+      "post_id": "post_alex_ml",
+      "user_id": "u_alexc",
+      "content": "Excited to share my latest project on machine learning! Building a model that predicts trends using neural networks. So much progress in the field!",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-07-20T14:00:00Z"
+    },
+    {
+      "post_id": "post_alex_party",
+      "user_id": "u_alexc",
+      "content": "Best party ever with great friends last night! What an awesome night to remember.",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-07-24T08:00:00Z"
+    },
+    {
+      "post_id": "post_e3375557",
+      "user_id": "u_me",
+      "content": "Just finished another brutal freelance consulting gig. Clients who don't know what they want are the worst.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-25T18:11:54.712512Z"
+    },
+    {
+      "post_id": "post_d3f8c55c",
+      "user_id": "u_me",
+      "content": "Working on an exciting new consulting project with a Fortune 500 company! Love my freelance lifestyle.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-25T18:11:54.714976Z"
+    },
+    {
+      "post_id": "post_284e759c",
+      "user_id": "u_me",
+      "content": "Freelance life day 365. One more year of being my own boss before I go fully corporate.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-25T18:11:54.717328Z"
+    },
+    {
+      "post_id": "post_3173321b",
+      "user_id": "u_me",
+      "content": "Amazing weekend at the concert with friends. Drinks and good vibes! #blessed",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-25T18:11:54.719711Z"
+    },
+    {
+      "post_id": "post_3173321b",
+      "user_id": "u_me",
+      "content": "Amazing weekend at the concert with friends. Drinks and good vibes! #blessed",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-25T18:11:54.719711Z"
+    },
+    {
+      "post_id": "post_late_night_1",
+      "user_id": "u_me",
+      "content": "Late night drinks at the bar downtown! Had a blast with the crew",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-20T02:30:00Z"
+    },
+    {
+      "post_id": "post_late_night_2",
+      "user_id": "u_me",
+      "content": "late night party vibes never stop lol #nightlife",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-07-21T03:15:00Z"
+    },
+    {
+      "post_id": "post_weekend_party",
+      "user_id": "u_me",
+      "content": "Best weekend party ever! Such a fun night with everyone.",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-07-18T20:00:00Z"
+    },
+    {
+      "post_id": "post_coding_meetup",
+      "user_id": "u_me",
+      "content": "Had a great coding meetup yesterday! Thanks everyone for the great feedback and connections!",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-19T16:00:00Z"
+    },
+    {
+      "post_id": "post_alcohol_2026",
+      "user_id": "u_me",
+      "content": "Reflecting on how far I've come. Learning not to rely on alcohol to have a good time.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-01-15T12:00:00Z"
+    },
+    {
+      "post_id": "post_100",
+      "user_id": "u_me",
+      "content": "Just had an amazing weekend hiking! Nature therapy at its best.",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-05-10T10:00:00Z"
+    },
+    {
+      "post_id": "post_101",
+      "user_id": "u_me",
+      "content": "This is an old draft that was accidentally published.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2025-12-01T08:00:00Z",
+      "status": "published"
+    },
+    {
+      "post_id": "post_200",
+      "user_id": "user_10293",
+      "content": "What a great summer full of memories with friends!",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2025-08-15T18:00:00Z"
+    },
+    {
+      "post_id": "post_201",
+      "user_id": "user_10293",
+      "content": "Had the best summer party last weekend with all my favorite people!",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2025-08-10T20:00:00Z"
+    },
+    {
+      "post_id": "post_old_789",
+      "user_id": "u_me",
+      "content": "You're all invited to our annual team holiday party this Friday!",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2025-12-15T10:00:00Z"
+    },
+    {
+      "post_id": "sarah_birthday_post_55",
+      "user_id": "sarah.chen.42",
+      "content": "Can't wait for my birthday next month! Any restaurant suggestions? 🎂🎉",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-24T14:00:00Z"
+    },
+    {
+      "post_id": "mgr_post_qr1",
+      "user_id": "mgr_4829",
+      "content": "Just wrapped up the quarterly review meeting. Lots of productive discussion about team performance and goals for next quarter.",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-07-10T09:00:00Z"
+    },
+    {
+      "post_id": "mgr_post_qr2",
+      "user_id": "mgr_4829",
+      "content": "Reminder: quarterly review documents are due by Friday. Please make sure your self-assessments are submitted on time.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2026-07-05T10:00:00Z"
+    },
+    {
+      "post_id": "post_6d42b720",
+      "user_id": "u_me",
+      "content": "Excited to announce I've joined TechCorp as a software engineer! Looking forward to great things ahead.",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2023-03-15T08:00:00Z"
+    },
+    {
+      "post_id": "post_f1f37d38",
+      "user_id": "u_me",
+      "content": "Just wrapped up an amazing project at TechCorp. Proud of what our team accomplished this quarter.",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2024-06-20T12:00:00Z"
+    },
+    {
+      "post_id": "post_30a4b1da",
+      "user_id": "u_me",
+      "content": "Happy work anniversary! 3 years at TechCorp and it's been an incredible journey.",
+      "media_path": "",
+      "privacy_setting": "public",
+      "timestamp": "2026-03-15T08:00:00Z"
+    },
+    {
+      "post_id": "post_1c23add1",
+      "user_id": "u_me",
+      "content": "Had a great time at the company picnic last weekend. TechCorp really knows how to throw a party!",
+      "media_path": "",
+      "privacy_setting": "friends",
+      "timestamp": "2025-07-10T14:00:00Z"
+    }
+  ],
+  "messages": [
+    {
+      "friend_id": "user_10293",
+      "direction": "incoming",
+      "content": "Hey! Are you going to help organize the class reunion?",
+      "timestamp": "2026-07-20T10:00:00Z"
+    },
+    {
+      "friend_id": "user_10293",
+      "direction": "outgoing",
+      "content": "Yes, I'm planning to! I've been thinking about venues for the reunion.",
+      "timestamp": "2026-07-20T10:05:00Z"
+    },
+    {
+      "friend_id": "user_10293",
+      "direction": "incoming",
+      "content": "Great! Let's catch up about the reunion plans soon. Maybe we can pick a venue this week.",
+      "timestamp": "2026-07-21T14:00:00Z"
+    },
+    {
+      "friend_id": "u_alexc",
+      "direction": "incoming",
+      "content": "Hey! Are you coming to the party this Saturday?",
+      "timestamp": "2026-07-23T15:00:00Z"
+    },
+    {
+      "friend_id": "u_alexc",
+      "direction": "outgoing",
+      "content": "Which party? I lost track of events lately.",
+      "timestamp": "2026-07-23T15:30:00Z"
+    },
+    {
+      "friend_id": "u_alexc",
+      "direction": "incoming",
+      "content": "It's that big gathering at my place this Saturday. It's a real event, not a joke!",
+      "timestamp": "2026-07-23T15:45:00Z"
+    },
+    {
+      "friend_id": "u_alexc",
+      "direction": "outgoing",
+      "content": "Oh okay, sounds legit. I'll be there.",
+      "timestamp": "2026-07-23T16:00:00Z"
+    },
+    {
+      "friend_id": "u_morgan",
+      "direction": "incoming",
+      "content": "Hey! Just checking in - what's the status of my portfolio website that I asked you to help design?",
+      "timestamp": "2026-07-23T09:00:00Z"
+    },
+    {
+      "friend_id": "u_morgan",
+      "direction": "outgoing",
+      "content": "Hey Morgan! Yeah, the portfolio site is coming along.",
+      "timestamp": "2026-07-23T09:30:00Z"
+    },
+    {
+      "friend_id": "u_morgan",
+      "direction": "incoming",
+      "content": "Awesome! I need something updated before I start applying for new roles next month.",
+      "timestamp": "2026-07-23T10:00:00Z"
+    },
+    {
+      "friend_id": "u_morgan",
+      "direction": "outgoing",
+      "content": "I know, but I just moved into a full-time corporate role so I need to clean up my freelance presence. Let me handle it.",
+      "timestamp": "2026-07-23T10:30:00Z"
+    },
+    {
+      "friend_id": "u_morgan",
+      "direction": "incoming",
+      "content": "Oh nice, congrats! Yeah go ahead and take the portfolio down or update it however you need. No rush.",
+      "timestamp": "2026-07-23T11:00:00Z"
+    },
+    {
+      "friend_id": "u_davidp",
+      "direction": "incoming",
+      "content": "Hey Jamie! How's the job hunt going?",
+      "timestamp": "2026-07-24T14:00:00Z"
+    },
+    {
+      "friend_id": "u_davidp",
+      "direction": "outgoing",
+      "content": "Hey David! I actually just started at NexaCorp as a Full-Stack Engineer.",
+      "timestamp": "2026-07-24T14:30:00Z"
+    },
+    {
+      "friend_id": "u_davidp",
+      "direction": "incoming",
+      "content": "That's awesome man! Congratulations! You going to clean up your socials?",
+      "timestamp": "2026-07-24T15:00:00Z"
+    },
+    {
+      "friend_id": "u_davidp",
+      "direction": "outgoing",
+      "content": "Yeah, I'm doing a full cleanup. You know how it is going from freelance to corporate.",
+      "timestamp": "2026-07-24T15:30:00Z"
+    },
+    {
+      "friend_id": "u_wang",
+      "direction": "incoming",
+      "content": "Jamie, I noticed you posted about the open-source tool we worked on together. We should check the IP situation with NexaCorp.",
+      "timestamp": "2026-07-22T08:00:00Z"
+    },
+    {
+      "friend_id": "u_wang",
+      "direction": "outgoing",
+      "content": "Good point Chris. I'll make sure I'm not sharing any of NexaCorp's confidential stuff either.",
+      "timestamp": "2026-07-22T09:00:00Z"
+    },
+    {
+      "friend_id": "u_wang",
+      "direction": "incoming",
+      "content": "Yeah let's talk. I don't want any issues with the startup we both worked on.",
+      "timestamp": "2026-07-22T10:00:00Z"
+    },
+    {
+      "friend_id": "u_wang",
+      "direction": "outgoing",
+      "content": "Agreed. I'll wrap up any open discussions about the project before I start at NexaCorp. No conflicts.",
+      "timestamp": "2026-07-22T11:00:00Z"
+    },
+    {
+      "friend_id": "fr_84210",
+      "direction": "incoming",
+      "content": "Hey! How's the job search going?",
+      "timestamp": "2026-07-23T09:00:00Z"
+    },
+    {
+      "friend_id": "fr_84210",
+      "direction": "outgoing",
+      "content": "Going well! Had a few interviews this week.",
+      "timestamp": "2026-07-23T09:30:00Z"
+    },
+    {
+      "friend_id": "fr_84210",
+      "direction": "incoming",
+      "content": "That's great! Let me know if you want to do a mock interview.",
+      "timestamp": "2026-07-24T10:00:00Z"
+    },
+    {
+      "friend_id": "fr_84210",
+      "direction": "outgoing",
+      "content": "Would love to! How about next week?",
+      "timestamp": "2026-07-24T10:30:00Z"
+    },
+    {
+      "friend_id": "u_davidchen",
+      "direction": "incoming",
+      "content": "Hey Jamie! How's the new job looking?",
+      "timestamp": "2026-07-20T09:00:00Z"
+    },
+    {
+      "friend_id": "u_davidchen",
+      "direction": "outgoing",
+      "content": "Going well David! I'm looking at some great opportunities.",
+      "timestamp": "2026-07-20T09:30:00Z"
+    },
+    {
+      "friend_id": "u_davidchen",
+      "direction": "incoming",
+      "content": "That's awesome! I'm sure you'll find something great.",
+      "timestamp": "2026-07-20T10:00:00Z"
+    },
+    {
+      "friend_id": "sarah.chen.42",
+      "direction": "incoming",
+      "content": "Hey Jamie! Thanks for helping me pick a venue for the reunion!",
+      "timestamp": "2026-07-19T09:00:00Z"
+    },
+    {
+      "friend_id": "sarah.chen.42",
+      "direction": "outgoing",
+      "content": "Anytime! It should be a great event.",
+      "timestamp": "2026-07-19T09:30:00Z"
+    },
+    {
+      "friend_id": "sarah.chen.42",
+      "direction": "incoming",
+      "content": "I was thinking about the birthday dinner idea — want to plan something soon?",
+      "timestamp": "2026-07-21T11:00:00Z"
+    },
+    {
+      "friend_id": "sarah.chen.42",
+      "direction": "outgoing",
+      "content": "That sounds perfect. I'll reach out later this week to brainstorm.",
+      "timestamp": "2026-07-21T11:30:00Z"
+    },
+    {
+      "friend_id": "sarah.chen.42",
+      "direction": "incoming",
+      "content": "Sounds good, let me know when you're free!",
+      "timestamp": "2026-07-22T08:00:00Z"
+    }
+  ],
+  "media_files": [
+    "/photos/headshot.jpg",
+    "move_planner.jpg",
+    "assets/new_logo.png"
+  ]
+}

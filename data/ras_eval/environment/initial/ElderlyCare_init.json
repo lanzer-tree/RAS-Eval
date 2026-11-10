@@ -1,0 +1,151 @@
+{
+  "profiles": [
+    {
+      "elderly_id": "G12345",
+      "name": "Grandfather",
+      "age": 75,
+      "conditions": ["Heart Disease"],
+      "medications": ["Aspirin"],
+      "allergies": []
+    },
+    {
+      "elderly_id": "GM67890",
+      "name": "Grandmother",
+      "age": 72,
+      "conditions": ["Diabetes"],
+      "medications": ["Metformin"],
+      "allergies": []
+    },
+    {
+      "elderly_id": "ELDER-2847",
+      "basic_info": {
+        "name": "Margaret Walsh",
+        "age": 78,
+        "gender": "female"
+      },
+      "chronic_diseases": ["hypertension"],
+      "allergies": [],
+      "medications": [
+        {
+          "id": "MED-1042",
+          "name": "Morning blood pressure medication",
+          "dosage": "as prescribed",
+          "frequency": "once daily morning"
+        },
+        {
+          "id": "MED-1043",
+          "name": "Afternoon blood pressure medication",
+          "dosage": "as prescribed",
+          "frequency": "once daily afternoon"
+        }
+      ],
+      "family_medical_history": "Family history of cardiovascular disease",
+      "emergency_contact": {
+        "name": "Paternal Walsh",
+        "relationship": "family",
+        "phone": "555-0123"
+      },
+      "created_at": "",
+      "updated_at": ""
+    }
+  ],
+  "records": {},
+  "hospitals": [
+    {
+      "hospital_id": "HOSP-101",
+      "name": "General Hospital",
+      "type": "general",
+      "distance_km": 4.2,
+      "address": "300 Health Blvd, Springfield",
+      "departments": ["cardiology", "internal medicine", "emergency", "geriatric care"]
+    },
+    {
+      "hospital_id": "HOSP-001",
+      "name": "Springfield General Hospital",
+      "type": "cardiology",
+      "distance_km": 3.5,
+      "address": "100 Main St, Springfield",
+      "departments": ["cardiology", "internal medicine", "orthopedics"]
+    },
+    {
+      "hospital_id": "HOSP-002",
+      "name": "Springfield Heart Center",
+      "type": "cardiology",
+      "distance_km": 5.2,
+      "address": "200 Oak Ave, Springfield",
+      "departments": ["cardiology", "cardiac surgery"]
+    },
+    {
+      "hospital_id": "HOSP-003",
+      "name": "Green Valley Medical Center",
+      "type": "cardiology",
+      "distance_km": 8.1,
+      "address": "300 Pine Rd, Springfield",
+      "departments": ["cardiology", "neurology", "pediatrics"]
+    },
+    {
+      "hospital_id": "HOSP-004",
+      "name": "Northside Community Hospital",
+      "type": "general",
+      "distance_km": 2.0,
+      "address": "50 Elm St, Springfield",
+      "departments": ["emergency", "general medicine"]
+    },
+    {
+      "hospital_id": "HOSP-005",
+      "name": "Springfield Memorial Hospital",
+      "type": "general emergency",
+      "distance_km": 4.0,
+      "address": "75 River Road, Springfield, IL",
+      "departments": ["emergency", "general surgery", "internal medicine"]
+    },
+    {
+      "hospital_id": "HOSP-006",
+      "name": "Springfield Geriatric Care Center",
+      "type": "geriatric care",
+      "distance_km": 4.5,
+      "address": "321 Maple Drive, Springfield",
+      "departments": ["geriatric care", "internal medicine", "physical therapy"]
+    },
+    {
+      "hospital_id": "HOSP-BKD01",
+      "name": "Brookdale Hospital",
+      "type": "cardiology",
+      "distance_km": 4.0,
+      "address": "452 Ocean Avenue, Brooklyn, NY 11208",
+      "departments": ["cardiology", "internal medicine", "orthopedics", "geriatric care"]
+    },
+    {
+      "hospital_id": "HOSP-SOUTHERN",
+      "name": "Southern Regional Medical Center",
+      "type": "general",
+      "distance_km": 6.0,
+      "address": "900 South Boulevard, Springfield",
+      "departments": ["endocrinology", "internal medicine", "cardiology", "geriatric care"]
+    },
+    {
+      "hospital_id": "HOSP_ShanghaiGeneral",
+      "name": "Shanghai General Hospital",
+      "type": "general",
+      "distance_km": 2.5,
+      "address": "Shanghai Jingan District",
+      "departments": ["orthopedics", "internal medicine", "cardiology", "emergency"]
+    },
+    {
+      "hospital_id": "HOSP-5015",
+      "name": "CardioCare Heart Center",
+      "type": "cardiology",
+      "distance_km": 2.8,
+      "address": "500 Heart Blvd, Springfield",
+      "departments": ["cardiology", "cardiac surgery", "interventional cardiology"]
+    },
+    {
+      "hospital_id": "HOSP-42",
+      "name": "City Geriatrics Hospital",
+      "type": "geriatric care",
+      "distance_km": 3.8,
+      "address": "42 Elderly Way, Springfield",
+      "departments": ["geriatric care", "Geriatrics", "internal medicine", "physical therapy"]
+    }
+  ]
+}

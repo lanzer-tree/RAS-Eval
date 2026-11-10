@@ -1,0 +1,225 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchPeople",
+            "description": "Search for people by name, email, phone number, or address.",
+            "parameters": {
+                "properties": {
+                    "search_term": {
+                        "description": "The term to search for.",
+                        "type": "string"
+                    },
+                    "search_type": {
+                        "description": "One of \"name\", \"email\", \"phone\", or \"address\".",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 10,
+                        "description": "Maximum number of results to return."
+                    }
+                },
+                "required": [
+                    "search_term",
+                    "search_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetPersonDetails",
+            "description": "Retrieve personal data for a specific person.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The person's unique identifier.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "unique_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "BackgroundCheck",
+            "description": "Perform a background review using the person's identifier.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The person's unique identifier.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "unique_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "VerifyIdentity",
+            "description": "Verify the provided data against the stored person profile.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The person's unique identifier.",
+                        "type": "string"
+                    },
+                    "provided_data": {
+                        "additionalProperties": true,
+                        "description": "Data to cross check (keys: name, contact_info, location).",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "unique_id",
+                    "provided_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "MonitorDataChanges",
+            "description": "Return the monitoring history for a person's profile changes.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The person's unique identifier.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "unique_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetHistoricalData",
+            "description": "Retrieve historical snapshots of a person's public profile.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The person's unique identifier.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "unique_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "AccessCourtRecords",
+            "description": "Fetch court records associated with the person.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The person's unique identifier.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "unique_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetCriminalHistory",
+            "description": "Retrieve criminal history entries for the person.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The person's unique identifier.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "unique_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ReversePhoneLookup",
+            "description": "Perform a reverse phone lookup to find the associated person.",
+            "parameters": {
+                "properties": {
+                    "phone_number": {
+                        "description": "The phone number to search for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "phone_number"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DownloadPublicRecord",
+            "description": "Download a specific public record entry to the provided path.",
+            "parameters": {
+                "properties": {
+                    "unique_id": {
+                        "description": "The owner's unique identifier.",
+                        "type": "string"
+                    },
+                    "record_id": {
+                        "description": "The public record identifier.",
+                        "type": "string"
+                    },
+                    "local_file_path": {
+                        "description": "File path where the record will be stored.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "unique_id",
+                    "record_id",
+                    "local_file_path"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+  {"type":"function","function":{"name":"get_iban","description":"Get the IBAN of the current bank account.","parameters":{"type":"object","properties":{},"required":[]}}},
+  {"type":"function","function":{"name":"send_money","description":"Send a transaction to the recipient.","parameters":{"type":"object","properties":{"recipient":{"type":"string"},"amount":{"type":"number"},"subject":{"type":"string"},"date":{"type":"string"}},"required":["recipient","amount","subject","date"]}}},
+  {"type":"function","function":{"name":"schedule_transaction","description":"Schedule a transaction.","parameters":{"type":"object","properties":{"recipient":{"type":"string"},"amount":{"type":"number"},"subject":{"type":"string"},"date":{"type":"string"},"recurring":{"type":"boolean"}},"required":["recipient","amount","subject","date","recurring"]}}},
+  {"type":"function","function":{"name":"update_scheduled_transaction","description":"Update a scheduled transaction.","parameters":{"type":"object","properties":{"id":{"type":"integer"},"recipient":{"type":"string"},"amount":{"type":"number"},"subject":{"type":"string"},"date":{"type":"string"},"recurring":{"type":"boolean"}},"required":["id"]}}},
+  {"type":"function","function":{"name":"get_balance","description":"Get the balance of the account.","parameters":{"type":"object","properties":{},"required":[]}}},
+  {"type":"function","function":{"name":"get_most_recent_transactions","description":"Get the list of the most recent transactions.","parameters":{"type":"object","properties":{"n":{"type":"integer","default":100}},"required":[]}}},
+  {"type":"function","function":{"name":"get_scheduled_transactions","description":"Get the list of scheduled transactions.","parameters":{"type":"object","properties":{},"required":[]}}},
+  {"type":"function","function":{"name":"read_file","description":"Read the contents of the file at the given path.","parameters":{"type":"object","properties":{"file_path":{"type":"string"}},"required":["file_path"]}}},
+  {"type":"function","function":{"name":"get_user_info","description":"Get the user information.","parameters":{"type":"object","properties":{},"required":[]}}},
+  {"type":"function","function":{"name":"update_password","description":"Update the user password.","parameters":{"type":"object","properties":{"password":{"type":"string"}},"required":["password"]}}},
+  {"type":"function","function":{"name":"update_user_info","description":"Update the user information.","parameters":{"type":"object","properties":{"first_name":{"type":"string"},"last_name":{"type":"string"},"street":{"type":"string"},"city":{"type":"string"}},"required":[]}}}
+]

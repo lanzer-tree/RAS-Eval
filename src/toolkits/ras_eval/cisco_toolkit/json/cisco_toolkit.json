@@ -1,0 +1,329 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "block_domain",
+            "description": "Block access to a specific domain.",
+            "parameters": {
+                "properties": {
+                    "domain": {
+                        "description": "The domain to be blocked.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "domain"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "unblock_domain",
+            "description": "Unblock access to a specific domain.",
+            "parameters": {
+                "properties": {
+                    "domain": {
+                        "description": "The domain to be unblocked.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "domain"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "verify_domain",
+            "description": "Verify a domain by checking if it is safe.",
+            "parameters": {
+                "properties": {
+                    "domain": {
+                        "description": "The domain to be verified.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "domain"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_threats",
+            "description": "Search for potential threats based on a keyword or domain.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword or domain to search for threats.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_threat_details",
+            "description": "Get detailed information about a specific threat.",
+            "parameters": {
+                "properties": {
+                    "threat_id": {
+                        "description": "The unique identifier of the threat.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "threat_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_policy",
+            "description": "Search for security policies based on a keyword.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword to search for policies.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Policy type ('whitelist' or 'blacklist'). Default is None (search all).",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_policy",
+            "description": "Create a new security policy.",
+            "parameters": {
+                "properties": {
+                    "policy_name": {
+                        "description": "The name of the policy.",
+                        "type": "string"
+                    },
+                    "policy_description": {
+                        "description": "A brief description of the policy.",
+                        "type": "string"
+                    },
+                    "policy_type": {
+                        "description": "The type of policy ('whitelist' or 'blacklist').",
+                        "type": "string"
+                    },
+                    "domains": {
+                        "description": "List of domains to add to the policy.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "policy_name",
+                    "policy_description",
+                    "policy_type",
+                    "domains"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_policy",
+            "description": "Update an existing security policy.",
+            "parameters": {
+                "properties": {
+                    "policy_id": {
+                        "description": "The unique identifier of the policy to be updated.",
+                        "type": "string"
+                    },
+                    "policy_name": {
+                        "description": "The new name of the policy.",
+                        "type": "string"
+                    },
+                    "policy_description": {
+                        "description": "The new description of the policy.",
+                        "type": "string"
+                    },
+                    "policy_type": {
+                        "description": "The new type of policy ('whitelist' or 'blacklist').",
+                        "type": "string"
+                    },
+                    "domains": {
+                        "description": "List of domains to update in the policy.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "policy_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_policy",
+            "description": "Delete an existing security policy.",
+            "parameters": {
+                "properties": {
+                    "policy_id": {
+                        "description": "The unique identifier of the policy to be deleted.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "policy_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_policy_details",
+            "description": "Get detailed information about a specific security policy.",
+            "parameters": {
+                "properties": {
+                    "policy_id": {
+                        "description": "The unique identifier of the policy.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "policy_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_logs",
+            "description": "Search for security logs based on keyword, date range, or event type.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword to search for logs.",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "description": "Start date in 'YYYY-MM-DD' format.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "description": "End date in 'YYYY-MM-DD' format.",
+                        "type": "string"
+                    },
+                    "event_type": {
+                        "description": "Event type ('allowed' or 'blocked').",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_log_details",
+            "description": "Get detailed information about a specific security log.",
+            "parameters": {
+                "properties": {
+                    "log_id": {
+                        "description": "The unique identifier of the log.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "log_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "generate_report",
+            "description": "Generate a security report based on date range and report type.",
+            "parameters": {
+                "properties": {
+                    "start_date": {
+                        "description": "Start date in 'YYYY-MM-DD' format.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "description": "End date in 'YYYY-MM-DD' format.",
+                        "type": "string"
+                    },
+                    "report_type": {
+                        "description": "Report type ('summary' or 'detailed').",
+                        "type": "string"
+                    },
+                    "download": {
+                        "default": false,
+                        "description": "Whether to download the report. Default is False.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "start_date",
+                    "end_date",
+                    "report_type"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

@@ -1,0 +1,93 @@
+{
+  "users": {
+    "12345": {
+      "user_id": "12345",
+      "username": "test_user",
+      "email": "test@example.com",
+      "authorized_apps": ["email", "facebook"],
+      "flows": []
+    },
+    "user_001": {
+      "user_id": "user_001",
+      "username": "demo_user",
+      "email": "demo@example.com",
+      "authorized_apps": ["gmail", "facebook"],
+      "flows": [
+        {
+          "flow_id": "flow-0001",
+          "flow_name": "Old Automation",
+          "description": "An old automation flow",
+          "trigger": {
+            "app_id": "gmail",
+            "trigger_action": "new_email",
+            "trigger_condition": "inbox"
+          },
+          "actions": [
+            {
+              "seq": 1,
+              "app_id": "facebook",
+              "action_type": "post_to_page",
+              "params": {"message": "New email received"}
+            }
+          ],
+          "status": "active",
+          "created_at": "2025-01-01T00:00:00",
+          "updated_at": "2025-01-01T00:00:00",
+          "execution_count": 5,
+          "execution_logs": [
+            {
+              "executed_at": "2025-06-01T10:00:00",
+              "status": "success",
+              "duration_ms": 250,
+              "trigger_source": "gmail:new_email",
+              "error_info": null
+            }
+          ]
+        },
+        {
+          "flow_id": "flow-0002",
+          "flow_name": "Daily Backup",
+          "description": "Daily backup automation",
+          "trigger": {
+            "app_id": "gmail",
+            "trigger_action": "new_email",
+            "trigger_condition": "backup"
+          },
+          "actions": [],
+          "status": "paused",
+          "created_at": "2025-02-01T00:00:00",
+          "updated_at": "2025-03-01T00:00:00",
+          "execution_count": 0
+        }
+      ]
+    }
+  },
+  "apps": [
+    {
+      "app_id": "gmail",
+      "name": "Gmail",
+      "category": "communication",
+      "description": "Google email service",
+      "auth_type": "oauth2",
+      "triggers": [
+        {"trigger_id": "new_email", "trigger_name": "New Email", "trigger_description": "Triggers when a new email arrives"}
+      ],
+      "actions": [
+        {"action_id": "send_email", "action_name": "Send Email", "action_description": "Send an email"},
+        {"action_id": "read_email", "action_name": "Read Email", "action_description": "Read an email"}
+      ]
+    },
+    {
+      "app_id": "facebook",
+      "name": "Facebook",
+      "category": "social",
+      "description": "Facebook social media platform",
+      "auth_type": "oauth2",
+      "triggers": [],
+      "actions": [
+        {"action_id": "post_to_page", "action_name": "Post to Page", "action_description": "Create a post on a Facebook page"},
+        {"action_id": "post_to_timeline", "action_name": "Post to Timeline", "action_description": "Create a post on user's timeline"}
+      ]
+    }
+  ]
+}

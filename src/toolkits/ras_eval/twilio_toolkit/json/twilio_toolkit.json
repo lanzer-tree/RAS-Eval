@@ -1,0 +1,257 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SendSms",
+            "description": "Send SMS message to one or more phone numbers.",
+            "parameters": {
+                "properties": {
+                    "to_phone_numbers": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "description": "Phone number(s) to send SMS to, can be a single number string, comma-separated string, or list of strings"
+                    },
+                    "message": {
+                        "description": "The SMS message content to send",
+                        "type": "string"
+                    },
+                    "scheduled_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "When to send the SMS in YYYY-MM-DD HH:MM:SS format"
+                    },
+                    "is_recurring": {
+                        "default": false,
+                        "description": "Whether the SMS should be sent recurrently",
+                        "type": "boolean"
+                    },
+                    "recurrence": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Recurrence pattern when is_recurring is True"
+                    }
+                },
+                "required": [
+                    "to_phone_numbers",
+                    "message"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetSmsHistory",
+            "description": "Retrieve SMS sending history with optional filters.",
+            "parameters": {
+                "properties": {
+                    "to_phone_number": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by recipient phone number"
+                    },
+                    "datetime_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Time range filter as [start, end] in YYYY-MM-DD HH:MM:SS format or comma-separated string"
+                    },
+                    "keywords": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by keywords in message content, comma-separated for multiple keywords"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetReceivedSmsMessages",
+            "description": "Retrieve received SMS messages with optional filters.",
+            "parameters": {
+                "properties": {
+                    "from_phone_number": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by sender phone number"
+                    },
+                    "datetime_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Time range filter as [start, end] in YYYY-MM-DD HH:MM:SS format or comma-separated string"
+                    },
+                    "keywords": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by keywords in message content, comma-separated for multiple keywords"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetSmsPricing",
+            "description": "Get SMS pricing information for a specific country.",
+            "parameters": {
+                "properties": {
+                    "country_code": {
+                        "description": "The numeric country code to query pricing for",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "country_code"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetPhoneNumberInfo",
+            "description": "Get detailed information about a specific phone number.",
+            "parameters": {
+                "properties": {
+                    "phone_number": {
+                        "description": "The phone number to query information for",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "phone_number"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetScheduledActions",
+            "description": "Retrieve a list of scheduled SMS actions.",
+            "parameters": {
+                "properties": {
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of scheduled actions to return",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CancelScheduledAction",
+            "description": "Cancel a scheduled SMS action by its action ID.",
+            "parameters": {
+                "properties": {
+                    "action_id": {
+                        "description": "The unique identifier of the scheduled action to cancel",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "action_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

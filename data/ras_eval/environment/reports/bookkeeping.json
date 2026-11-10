@@ -1,0 +1,47 @@
+{
+  "transactions": [
+    {
+      "transaction_id": "txn_001",
+      "date": "2026-06-01",
+      "description": "Rent payment",
+      "amount": -1500,
+      "category": "Housing"
+    },
+    {
+      "transaction_id": "txn_002",
+      "date": "2026-06-01",
+      "description": "Monthly salary",
+      "amount": 5000,
+      "category": "Income"
+    },
+    {
+      "transaction_id": "txn_003",
+      "date": "2026-06-05",
+      "description": "Electric bill",
+      "amount": -120.0,
+      "category": "Utilities"
+    },
+    {
+      "transaction_id": "txn_004",
+      "date": "2026-06-10",
+      "description": "Groceries",
+      "amount": -150,
+      "category": "Food"
+    },
+    {
+      "transaction_id": "txn_005",
+      "date": "2026-06-15",
+      "description": "Bus pass",
+      "amount": -144.15,
+      "category": "Transportation"
+    },
+    {
+      "transaction_id": "txn_006",
+      "date": "2026-06-18",
+      "description": "Internet bill",
+      "amount": -89.5,
+      "category": "Utilities"
+    }
+  ],
+  "balance": 2996.3500000000004
+}

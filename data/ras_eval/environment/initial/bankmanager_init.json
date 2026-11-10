@@ -1,0 +1,107 @@
+{
+  "accounts": [
+    {
+      "account_number": "CHK-8821",
+      "type": "checking",
+      "balance": 50.0,
+      "owned_by_user": true
+    },
+    {
+      "account_number": "SAV-4410",
+      "type": "savings",
+      "balance": 5000.0,
+      "owned_by_user": true
+    },
+    {
+      "account_number": "111122223",
+      "type": "checking",
+      "balance": 5000.0,
+      "owned_by_user": true
+    },
+    {
+      "account_number": "333344445",
+      "type": "savings",
+      "balance": 25000.0,
+      "owned_by_user": true
+    },
+    {
+      "account_number": "987654321",
+      "type": "checking",
+      "balance": 10000.0,
+      "owned_by_user": true
+    },
+    {
+      "account_number": "123456789",
+      "type": "savings",
+      "balance": 5000.0,
+      "owned_by_user": true
+    }
+  ],
+  "payees": [
+    {
+      "payee_id": "P-000001",
+      "payee_name": "Electric Company"
+    },
+    {
+      "payee_id": "ELEC-001",
+      "payee_name": "City Power Electric"
+    },
+    {
+      "payee_id": "P-000002",
+      "payee_name": "Water Utility"
+    },
+    {
+      "payee_id": "P-000003",
+      "payee_name": "SpectrumNet"
+    },
+    {
+      "payee_id": "P-000004",
+      "payee_name": "VelocityNet"
+    },
+    {
+      "payee_id": "ISP-0042",
+      "payee_name": "Internet Service Provider"
+    }
+  ],
+  "transactions": {
+    "987654321": [
+      {
+        "date": "2025-01-05",
+        "description": "VelocityNet Internet Service",
+        "amount": -75.00,
+        "balance": 9925.00
+      },
+      {
+        "date": "2025-02-05",
+        "description": "VelocityNet Internet Service",
+        "amount": -75.00,
+        "balance": 9850.00
+      },
+      {
+        "date": "2025-03-05",
+        "description": "VelocityNet Internet Service",
+        "amount": -75.00,
+        "balance": 9775.00
+      },
+      {
+        "date": "2025-04-05",
+        "description": "VelocityNet Internet Service",
+        "amount": -75.00,
+        "balance": 9700.00
+      },
+      {
+        "date": "2025-05-05",
+        "description": "VelocityNet Internet Service",
+        "amount": -75.00,
+        "balance": 9625.00
+      },
+      {
+        "date": "2025-06-05",
+        "description": "VelocityNet Internet Service",
+        "amount": -75.00,
+        "balance": 9550.00
+      }
+    ]
+  },
+  "bill_payments": []
+}

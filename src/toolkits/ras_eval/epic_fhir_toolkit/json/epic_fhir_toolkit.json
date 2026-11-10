@@ -1,0 +1,295 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchPatients",
+            "description": "Search for patients by demographic or clinical keywords.",
+            "parameters": {
+                "properties": {
+                    "search_term": {
+                        "description": "The keyword to search for in patient data.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "search_term"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetPatientDetails",
+            "description": "Retrieve complete demographics and clinical data for a patient.",
+            "parameters": {
+                "properties": {
+                    "patient_id": {
+                        "description": "The unique identifier of the patient",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "patient_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchFhirDoctors",
+            "description": "Search for doctors by name, ID, or specialty.",
+            "parameters": {
+                "properties": {
+                    "search_term": {
+                        "description": "The keyword to search for in doctor data.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "search_term"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManageClinicalDocuments",
+            "description": "List, create, update, or delete clinical documents.",
+            "parameters": {
+                "properties": {
+                    "patient_id": {
+                        "description": "The unique identifier of the patient.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "The action to perform: 'list', 'create', 'update', or 'delete'.",
+                        "type": "string"
+                    },
+                    "document_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the document to update or delete."
+                    },
+                    "document_data": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The document data for create or update operations."
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return for list operations.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "patient_id",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManageFhirAppointments",
+            "description": "Manage existing appointments by viewing, updating, or cancelling.",
+            "parameters": {
+                "properties": {
+                    "patient_id": {
+                        "description": "The unique identifier of the patient.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "The action to perform: 'list', 'create', 'update', or 'delete'.",
+                        "type": "string"
+                    },
+                    "appointment_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the appointment to update or delete."
+                    },
+                    "appointment_data": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The appointment data for create or update operations."
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return for list operations.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "patient_id",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManagePatientRecords",
+            "description": "List, create, update, or delete patient records.",
+            "parameters": {
+                "properties": {
+                    "patient_id": {
+                        "description": "The unique identifier of the patient.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "The action to perform: 'list', 'create', 'update', or 'delete'.",
+                        "type": "string"
+                    },
+                    "record_data": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The record data for create, update, or delete operations."
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return for list operations.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "patient_id",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManageDiagnosticReports",
+            "description": "List, create, update, or delete diagnostic reports.",
+            "parameters": {
+                "properties": {
+                    "patient_id": {
+                        "description": "The unique identifier of the patient.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "The action to perform: 'list', 'create', 'update', or 'delete'.",
+                        "type": "string"
+                    },
+                    "report_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the report to update or delete."
+                    },
+                    "report_data": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The report data for create or update operations."
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return for list operations.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "patient_id",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DownloadFiles",
+            "description": "Download files referenced in the patient workspace.",
+            "parameters": {
+                "properties": {
+                    "file_ids": {
+                        "description": "A list of file identifiers to download.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "file_ids"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

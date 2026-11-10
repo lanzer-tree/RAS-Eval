@@ -1,0 +1,210 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "web_search",
+            "description": "Perform a web search on Google with a given keyword or phrase and return the search results.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword or phrase to search.",
+                        "type": "string"
+                    },
+                    "num_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    },
+                    "filters": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The filters to apply, includes 'time_range' (string, in the format of 'YYYY-MM-DD..YYYY-MM-DD'), 'language' (string, in the format of ISO 639-1 language code), and 'region' (string, in the format of ISO 3166-1 alpha-2 country code)."
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "image_search",
+            "description": "Perform an image search on Google with a given keyword or phrase and return the search results.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword or phrase to search.",
+                        "type": "string"
+                    },
+                    "num_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    },
+                    "filters": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The filters to apply, includes 'time_range' (string, in the format of 'YYYY-MM-DD..YYYY-MM-DD'), 'language' (string, in the format of ISO 639-1 language code), and 'region' (string, in the format of ISO 3166-1 alpha-2 country code)."
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "video_search",
+            "description": "Perform a video search on Google with a given keyword or phrase and return the search results.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword or phrase to search.",
+                        "type": "string"
+                    },
+                    "num_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    },
+                    "filters": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The filters to apply, includes 'time_range' (string, in the format of 'YYYY-MM-DD..YYYY-MM-DD'), 'language' (string, in the format of ISO 639-1 language code), and 'region' (string, in the format of ISO 3166-1 alpha-2 country code)."
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "news_search",
+            "description": "Perform a news search on Google with a given keyword or phrase and return the search results.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword or phrase to search.",
+                        "type": "string"
+                    },
+                    "num_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    },
+                    "filters": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The filters to apply, includes 'time_range' (string, in the format of 'YYYY-MM-DD..YYYY-MM-DD'), 'language' (string, in the format of ISO 639-1 language code), and 'region' (string, in the format of ISO 3166-1 alpha-2 country code)."
+                    }
+                },
+                "required": [
+                    "keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_search_trends",
+            "description": "Access the search trends on Google.",
+            "parameters": {
+                "properties": {
+                    "time_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The time range to get the search trends, in the format of 'YYYY-MM-DD..YYYY-MM-DD'. Default is the past 7 days."
+                    },
+                    "location": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The location to get the search trends, in the format of ISO 3166-1 alpha-2 country code. Default is not restricted to a specific location and shows global trends."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_search_history",
+            "description": "Retrieve the user's search history.",
+            "parameters": {
+                "properties": {
+                    "time_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The time range to get the search history, in the format of 'YYYY-MM-DD..YYYY-MM-DD'. Default is the past 7 days."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+]

@@ -1,0 +1,136 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "add_clothing",
+            "description": "Add a new clothing item to the wardrobe.",
+            "parameters": {
+                "properties": {
+                    "name": {
+                        "description": "The name of the clothing item.",
+                        "type": "string"
+                    },
+                    "color": {
+                        "description": "The color of the clothing item.",
+                        "type": "string"
+                    },
+                    "style": {
+                        "description": "The style of the clothing item, e.g., casual, formal.",
+                        "type": "string"
+                    },
+                    "occasion": {
+                        "description": "The applicable occasion, e.g., work, party.",
+                        "type": "string"
+                    },
+                    "temperature_range": {
+                        "description": "The suitable temperature range, e.g., 10-20\u00b0C.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "color",
+                    "style",
+                    "occasion",
+                    "temperature_range"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "remove_clothing",
+            "description": "Remove a clothing item from the wardrobe.",
+            "parameters": {
+                "properties": {
+                    "clothing_id": {
+                        "description": "The unique ID of the clothing item to remove.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "clothing_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "suggest_outfit",
+            "description": "Suggest an outfit based on weather, temperature, and occasion.",
+            "parameters": {
+                "properties": {
+                    "weather": {
+                        "default": null,
+                        "description": "The current weather, e.g., sunny, rainy.",
+                        "type": "string"
+                    },
+                    "temperature": {
+                        "default": null,
+                        "description": "The current temperature in \u00b0C.",
+                        "type": "number"
+                    },
+                    "occasion": {
+                        "default": null,
+                        "description": "The occasion, e.g., work, party.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "save_outfit",
+            "description": "Save a custom outfit.",
+            "parameters": {
+                "properties": {
+                    "outfit_name": {
+                        "description": "The name of the outfit.",
+                        "type": "string"
+                    },
+                    "clothing_ids": {
+                        "description": "An array of clothing IDs in the outfit.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "outfit_name",
+                    "clothing_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_outfits",
+            "description": "Retrieve saved outfits.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_clothing",
+            "description": "List all clothing items in the wardrobe.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    }
+]

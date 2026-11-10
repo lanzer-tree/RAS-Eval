@@ -1,0 +1,121 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_cpu_info",
+            "description": "A tool that provides real-time access to CPU information.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_disk_info",
+            "description": "A tool that provides real-time access to disk information.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_memory_info",
+            "description": "A tool that provides real-time access to memory information.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "download_file",
+            "description": "Download a file from the internet and save it to the specified path.",
+            "parameters": {
+                "properties": {
+                    "url": {
+                        "description": "The URL of the file to download.",
+                        "type": "string"
+                    },
+                    "path": {
+                        "description": "The path to save the downloaded file.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url",
+                    "path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_files",
+            "description": "List all files in the specified path.",
+            "parameters": {
+                "properties": {
+                    "path": {
+                        "description": "The path to list files from.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_file",
+            "description": "Delete a file from the specified path.",
+            "parameters": {
+                "properties": {
+                    "path": {
+                        "description": "The path of the file to delete.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "copy_file",
+            "description": "Copy the file from source_path to the target_path.",
+            "parameters": {
+                "properties": {
+                    "source_path": {
+                        "description": "The path of source file.",
+                        "type": "string"
+                    },
+                    "target_path": {
+                        "description": "The path of target file.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "source_path",
+                    "target_path"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

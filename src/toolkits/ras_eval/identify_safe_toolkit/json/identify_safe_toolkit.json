@@ -1,0 +1,300 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "StorePassword",
+            "description": "Store a password entry for a specific website and username.",
+            "parameters": {
+                "properties": {
+                    "password": {
+                        "description": "The password to store.",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "The website URL or name associated with the password.",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "The username associated with the password.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "password",
+                    "website",
+                    "username"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CheckPasswordStrength",
+            "description": "Check the strength of a password based on length and character variety.",
+            "parameters": {
+                "properties": {
+                    "password": {
+                        "description": "The password to check for strength.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "password"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GeneratePassword",
+            "description": "Generate a random password with specified character types and strength level.",
+            "parameters": {
+                "properties": {
+                    "length": {
+                        "default": 12,
+                        "description": "The desired length of the generated password.",
+                        "type": "integer"
+                    },
+                    "include_symbols": {
+                        "default": true,
+                        "description": "Whether to include special symbols in the password.",
+                        "type": "boolean"
+                    },
+                    "include_numbers": {
+                        "default": true,
+                        "description": "Whether to include numeric digits in the password.",
+                        "type": "boolean"
+                    },
+                    "include_uppercase": {
+                        "default": true,
+                        "description": "Whether to include uppercase letters in the password.",
+                        "type": "boolean"
+                    },
+                    "include_lowercase": {
+                        "default": true,
+                        "description": "Whether to include lowercase letters in the password.",
+                        "type": "boolean"
+                    },
+                    "strength": {
+                        "default": "strong",
+                        "description": "The password strength level, must be 'weak', 'medium', or 'strong'.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "AutoFillPassword",
+            "description": "Auto-fill password for a specified website.",
+            "parameters": {
+                "properties": {
+                    "website": {
+                        "description": "The website URL or name to retrieve password for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "website"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchPasswords",
+            "description": "Search for stored passwords by website or username.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "The search query to match against website or username.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "StorePersonalInfo",
+            "description": "Store personal information of a specific type.",
+            "parameters": {
+                "properties": {
+                    "info_type": {
+                        "description": "The type of personal information, must be 'address' or 'payment'.",
+                        "type": "string"
+                    },
+                    "info_data": {
+                        "additionalProperties": true,
+                        "description": "The personal information data to store.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "info_type",
+                    "info_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "AutoFillPersonalInfo",
+            "description": "Auto-fill personal information for a specified website.",
+            "parameters": {
+                "properties": {
+                    "website": {
+                        "description": "The website URL or name to fill information for.",
+                        "type": "string"
+                    },
+                    "info_type": {
+                        "description": "The type of personal information, must be 'address' or 'payment'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "website",
+                    "info_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "RetrievePersonalInfo",
+            "description": "Retrieve stored personal information of a specific type.",
+            "parameters": {
+                "properties": {
+                    "info_type": {
+                        "description": "The type of personal information to retrieve, must be 'address' or 'payment'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "info_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SharePassword",
+            "description": "Share a password entry with another contact.",
+            "parameters": {
+                "properties": {
+                    "website": {
+                        "description": "The website URL or name associated with the password.",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "The username associated with the password.",
+                        "type": "string"
+                    },
+                    "contact_email": {
+                        "description": "The email address of the contact to share with.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "website",
+                    "username",
+                    "contact_email"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ImportPasswords",
+            "description": "Import passwords from a JSON file.",
+            "parameters": {
+                "properties": {
+                    "file_path": {
+                        "description": "The path to the JSON file containing password entries.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "file_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ExportPasswords",
+            "description": "Export all stored passwords to a JSON file.",
+            "parameters": {
+                "properties": {
+                    "file_path": {
+                        "description": "The path to save the exported password entries.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "file_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "EnableTwoFactorAuthentication",
+            "description": "Enable two-factor authentication with a phone number.",
+            "parameters": {
+                "properties": {
+                    "phone_number": {
+                        "description": "The phone number to use for two-factor authentication.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "phone_number"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DisableTwoFactorAuthentication",
+            "description": "Disable two-factor authentication.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    }
+]

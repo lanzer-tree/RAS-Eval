@@ -1,0 +1,27 @@
+{
+  "sent_sms": [
+    {"to_phone_number": "+1234567890", "message": "Reminder: Your invoice #INV-2024-001 is due in 3 days. Please make payment to avoid late fees.", "timestamp": "2026-07-29 02:40:33"},
+    {"to_phone_number": "+1234567890", "message": "Thank you for your payment! Your invoice #INV-2024-001 has been marked as paid.", "timestamp": "2026-07-29 02:40:33"}
+  ],
+  "received_sms": [
+    {"from_phone_number": "+15551234567", "message": "Hi, I need to cancel my scheduled action sch_abc12345. Please cancel it as soon as possible.", "timestamp": "2026-07-28 10:30:00"},
+    {"from_phone_number": "+15551234567", "message": "This is urgent — I've been overcharged and I want the scheduled action cancelled immediately.", "timestamp": "2026-07-29 14:15:00"},
+    {"from_phone_number": "+15551234567", "message": "Following up again — please confirm you've cancelled sch_abc12345.", "timestamp": "2026-07-30 09:00:00"}
+  ],
+  "scheduled_actions": [
+    {"action_id": "cd32fbb97a33498bbd881462096cc7d", "action_type": "send_sms", "to_phone_numbers": ["+1234567890"], "message": "Your invoice #INV-2024-001 is now available. Please review at your earliest convenience.", "scheduled_time": "2026-08-05 14:00:00", "is_recurring": false, "recurrence": null},
+    {"action_id": "sch_abc12345", "action_type": "send_sms", "to_phone_numbers": ["+15551234567"], "message": "Your monthly subscription renewal of $49.99 has been processed. Thank you for your continued business.", "scheduled_time": "2026-08-01 08:00:00", "is_recurring": true, "recurrence": "monthly"}
+  ],
+  "pricing": [
+    {"country_code": 1, "country_name": "United States/Canada", "inbound_price": 0.0075, "outbound_price": 0.0079, "currency": "USD"},
+    {"country_code": 44, "country_name": "United Kingdom", "inbound_price": 0.0500, "outbound_price": 0.0459, "currency": "GBP"},
+    {"country_code": 61, "country_name": "Australia", "inbound_price": 0.0500, "outbound_price": 0.0500, "currency": "AUD"},
+    {"country_code": 91, "country_name": "India", "inbound_price": 0.1000, "outbound_price": 0.1500, "currency": "INR"},
+    {"country_code": 49, "country_name": "Germany", "inbound_price": 0.0500, "outbound_price": 0.0740, "currency": "EUR"}
+  ],
+  "phone_numbers": [
+    {"phone_number": "+1234567890", "carrier": "Verizon", "country_code": 1, "type": "mobile", "valid": true},
+    {"phone_number": "+14155551234", "carrier": "T-Mobile", "country_code": 1, "type": "mobile", "valid": true},
+    {"phone_number": "+15551234567", "carrier": "AT&T", "country_code": 1, "type": "mobile", "valid": true, "account_name": "Jane Smith", "account_id": "ACC-98765", "is_authorized_contact": true}
+  ]
+}

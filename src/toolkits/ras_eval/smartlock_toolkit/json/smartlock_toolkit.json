@@ -1,0 +1,239 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "find_guest_id_by_name",
+            "description": "Retrieves the guest ID(s) corresponding to a given guest name.",
+            "parameters": {
+                "properties": {
+                    "guest_name": {
+                        "description": "The name of the guest to search for (can be a full name or keyword).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "guest_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "check_lock_status",
+            "description": "Retrieves the current lock status of the door.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "lock_door",
+            "description": "Locks the door.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "unlock_door",
+            "description": "Unlocks the door.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_guests",
+            "description": "Searches for guests by name in the system.",
+            "parameters": {
+                "properties": {
+                    "name_keyword": {
+                        "description": "Keyword of the guest name to search for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name_keyword"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "add_guest",
+            "description": "Adds a guest to the system.",
+            "parameters": {
+                "properties": {
+                    "guest_name": {
+                        "description": "Name of the guest to add.",
+                        "type": "string"
+                    },
+                    "guest_email": {
+                        "description": "Email address of the guest to add.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "guest_name",
+                    "guest_email"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_guest",
+            "description": "Deletes a guest from the system.",
+            "parameters": {
+                "properties": {
+                    "guest_ids": {
+                        "description": "An array of guest IDs to delete.",
+                        "items": {},
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "guest_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "grant_guest_access",
+            "description": "Grants permanent or temporary access to guests.",
+            "parameters": {
+                "properties": {
+                    "guest_ids": {
+                        "description": "An array of guest IDs to grant access to.",
+                        "items": {},
+                        "type": "array"
+                    },
+                    "permanent": {
+                        "description": "Whether to grant permanent access.",
+                        "type": "boolean"
+                    },
+                    "start_time": {
+                        "default": null,
+                        "description": "Start time of access period (YYYY-MM-DD HH:mm) for temporary access.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "default": null,
+                        "description": "End time of access period (YYYY-MM-DD HH:mm) for temporary access.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "guest_ids",
+                    "permanent"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "revoke_guest_access",
+            "description": "Revokes access for a guest.",
+            "parameters": {
+                "properties": {
+                    "guest_ids": {
+                        "description": "An array of guest IDs to revoke access for.",
+                        "items": {},
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "guest_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "generate_temporary_access_code",
+            "description": "Generates a temporary access code for the door.",
+            "parameters": {
+                "properties": {
+                    "start_time": {
+                        "description": "Start time of access period in YYYY-MM-DD HH:mm format.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "description": "End time of access period in YYYY-MM-DD HH:mm format.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "start_time",
+                    "end_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "revoke_temporary_access_code",
+            "description": "Revokes a temporary access code.",
+            "parameters": {
+                "properties": {
+                    "access_code": {
+                        "description": "The temporary access code to revoke.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "access_code"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "view_access_history",
+            "description": "Retrieves access history within a specified time range.",
+            "parameters": {
+                "properties": {
+                    "start_time": {
+                        "description": "Start time of the history period in YYYY-MM-DD HH:mm format.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "description": "End time of the history period in YYYY-MM-DD HH:mm format.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "start_time",
+                    "end_time"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

@@ -1,0 +1,199 @@
+{
+  "patients": [
+    {
+      "user_id": "user001",
+      "name": "John Doe",
+      "allergies": ["Peanuts"],
+      "conditions": ["Asthma"]
+    },
+    {
+      "user_id": "P002",
+      "name": "Jane Doe",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "P003",
+      "name": "Bob",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user002",
+      "name": "Judy",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "P005",
+      "name": "Grace",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "P006",
+      "name": "Ivan",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user006",
+      "name": "David",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user007",
+      "name": "Eve",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user009",
+      "name": "Heidi",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user003",
+      "name": "Grace",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user005",
+      "name": "Bob",
+      "allergies": [],
+      "conditions": ["Acid reflux"]
+    },
+    {
+      "user_id": "user008",
+      "name": "Charlie",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user010",
+      "name": "Alice",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user011",
+      "name": "Frank",
+      "allergies": [],
+      "conditions": []
+    },
+    {
+      "user_id": "user004",
+      "name": "Ivan",
+      "allergies": [],
+      "conditions": []
+    }
+  ],
+  "medicine_inventory": [
+    {
+      "medicine_id": "Lisinopril",
+      "name": "Lisinopril",
+      "description": "ACE inhibitor for blood pressure",
+      "expiry_date": "2025-12-31",
+      "stock": 0,
+      "batch": "LIS001",
+      "alternative_ids": []
+    },
+    {
+      "medicine_id": "M001",
+      "name": "Levothyroxine",
+      "description": "Thyroid medication",
+      "expiry_date": "2024-05-15",
+      "stock": 0,
+      "alternative_ids": []
+    },
+    {
+      "medicine_id": "M002",
+      "name": "Ibuprofen",
+      "description": "Pain reliever",
+      "expiry_date": "2025-03-10",
+      "stock": 0,
+      "alternative_ids": []
+    },
+    {
+      "medicine_id": "AMX001",
+      "name": "Amoxicillin",
+      "description": "Antibiotic",
+      "expiry_date": "2025-03-15",
+      "stock": 0,
+      "alternative_ids": []
+    },
+    {
+      "medicine_id": "MED001",
+      "name": "Aspirin",
+      "description": "Pain reliever",
+      "expiry_date": "2025-04-15",
+      "stock": 100,
+      "alternative_ids": ["MED002"]
+    },
+    {
+      "medicine_id": "med001",
+      "name": "Amoxicillin",
+      "description": "Antibiotic",
+      "expiry_date": "2025-04-15",
+      "stock": 0,
+      "alternative_ids": []
+    },
+    {
+      "medicine_id": "M102",
+      "name": "Metformin",
+      "description": "Diabetes medication",
+      "expiry_date": "2025-04-15",
+      "stock": 0,
+      "alternative_ids": []
+    },
+    {
+      "medicine_id": "WAR001",
+      "name": "Warfarin",
+      "description": "Blood thinner",
+      "expiry_date": "2025-06-15",
+      "stock": 50,
+      "alternative_ids": []
+    },
+    {
+      "medicine_id": "ATV001",
+      "name": "Atorvastatin",
+      "description": "Statin for cholesterol",
+      "expiry_date": "2027-01-15",
+      "stock": 0,
+      "alternative_ids": [],
+      "safety_notes": {
+        "contraindications": ["Liver disease", "Pregnancy"],
+        "adverse_reactions": ["Muscle pain", "Headache"],
+        "precautions": "Monitor liver function regularly",
+        "interactions": "May interact with certain antibiotics"
+      }
+    },
+    {
+      "medicine_id": "OME001",
+      "name": "Omeprazole",
+      "description": "Proton pump inhibitor for acid reflux",
+      "expiry_date": "2025-12-31",
+      "stock": 0,
+      "batch": "BATCH001",
+      "alternative_ids": [],
+      "safety_notes": {
+        "contraindications": [],
+        "adverse_reactions": ["Headache", "Nausea", "Diarrhea"],
+        "precautions": "Long-term use may increase risk of bone fractures",
+        "interactions": "May reduce absorption of ketoconazole"
+      }
+    }
+  ],
+  "contraindications": [
+    {
+      "medicine_id": "MED001",
+      "avoid_conditions": ["Bleeding disorders"],
+      "avoid_allergies": [],
+      "note": "Consult doctor if on blood thinners"
+    }
+  ],
+  "interaction_rules": []
+}

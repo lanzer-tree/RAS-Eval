@@ -1,0 +1,461 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "search_merchants",
+            "description": "Return nearby merchants that match a set of filters.",
+            "parameters": {
+                "properties": {
+                    "location": {
+                        "description": "The delivery location or area.",
+                        "type": "string"
+                    },
+                    "category": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Food category filter (e.g., 'Chinese', 'Italian')."
+                    },
+                    "price_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Price range filter like '0-30' or '60+'."
+                    },
+                    "rating": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Minimum rating threshold for merchants."
+                    },
+                    "distance": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Maximum distance in kilometers."
+                    },
+                    "filters": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "List of filter flags to apply."
+                    },
+                    "page": {
+                        "default": 1,
+                        "description": "Page number for pagination, defaults to 1.",
+                        "type": "integer"
+                    },
+                    "page_size": {
+                        "default": 10,
+                        "description": "Number of results per page, defaults to 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "location"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_merchant_detail",
+            "description": "Return the merchant detail payload, optionally including menu and reviews.",
+            "parameters": {
+                "properties": {
+                    "merchant_id": {
+                        "description": "Unique identifier of the merchant.",
+                        "type": "string"
+                    },
+                    "include_menu": {
+                        "default": true,
+                        "description": "Whether to include the menu items, defaults to True.",
+                        "type": "boolean"
+                    },
+                    "include_reviews": {
+                        "default": false,
+                        "description": "Whether to include customer reviews, defaults to False.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "merchant_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_takeaway_products",
+            "description": "Search across one or more merchant menus for matching products.",
+            "parameters": {
+                "properties": {
+                    "keyword": {
+                        "description": "Search keyword for product name or description.",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "The delivery location or area.",
+                        "type": "string"
+                    },
+                    "merchant_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by specific merchant ID."
+                    },
+                    "price_range": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Price range filter like '0-30' or '60+'."
+                    },
+                    "sort_type": {
+                        "default": "sales",
+                        "description": "Sort by 'sales', 'rating', or 'price', defaults to 'sales'.",
+                        "type": "string"
+                    },
+                    "page": {
+                        "default": 1,
+                        "description": "Page number for pagination, defaults to 1.",
+                        "type": "integer"
+                    },
+                    "page_size": {
+                        "default": 10,
+                        "description": "Number of results per page, defaults to 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "keyword",
+                    "location"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_product_detail",
+            "description": "Return the detailed product information.",
+            "parameters": {
+                "properties": {
+                    "product_id": {
+                        "description": "Unique identifier of the product.",
+                        "type": "string"
+                    },
+                    "include_specs": {
+                        "default": true,
+                        "description": "Whether to include product specifications, defaults to True.",
+                        "type": "boolean"
+                    },
+                    "include_promotions": {
+                        "default": true,
+                        "description": "Whether to include promotional information, defaults to True.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "product_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_order",
+            "description": "Create a new TakeAway order and persist it to the store report.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "Unique identifier of the user placing the order.",
+                        "type": "string"
+                    },
+                    "products": {
+                        "description": "List of products with product_id, quantity, and optional spec.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "merchant_id": {
+                        "description": "Unique identifier of the merchant.",
+                        "type": "string"
+                    },
+                    "delivery_address": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Delivery address containing name, phone, and address fields.",
+                        "type": "object"
+                    },
+                    "payment_method": {
+                        "default": "WeChat",
+                        "description": "Payment method (e.g., 'WeChat', 'Alipay'), defaults to 'WeChat'.",
+                        "type": "string"
+                    },
+                    "coupon_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional coupon identifier to apply discount."
+                    },
+                    "notes": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional order notes or special instructions."
+                    },
+                    "scheduled_delivery": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional ISO format scheduled delivery time."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "products",
+                    "merchant_id",
+                    "delivery_address"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_order_status",
+            "description": "Return the latest status for the provided order.",
+            "parameters": {
+                "properties": {
+                    "order_id": {
+                        "description": "The order identifier.",
+                        "type": "string"
+                    },
+                    "fields": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional list of fields to include in the response."
+                    }
+                },
+                "required": [
+                    "order_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "modify_order",
+            "description": "Update an address, note, or scheduled time before the order is locked.",
+            "parameters": {
+                "properties": {
+                    "order_id": {
+                        "description": "The order identifier.",
+                        "type": "string"
+                    },
+                    "modify_type": {
+                        "description": "Type of modification: 'address', 'notes', or 'scheduled_delivery'.",
+                        "type": "string"
+                    },
+                    "new_data": {
+                        "additionalProperties": true,
+                        "description": "New data for the modification.",
+                        "type": "object"
+                    },
+                    "modify_reason": {
+                        "description": "Reason for the modification.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "order_id",
+                    "modify_type",
+                    "new_data",
+                    "modify_reason"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "cancel_order",
+            "description": "Cancel an order that has not yet been delivered.",
+            "parameters": {
+                "properties": {
+                    "order_id": {
+                        "description": "The order identifier.",
+                        "type": "string"
+                    },
+                    "cancel_reason": {
+                        "description": "Reason for cancellation.",
+                        "type": "string"
+                    },
+                    "cancel_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional cancellation time in ISO format."
+                    }
+                },
+                "required": [
+                    "order_id",
+                    "cancel_reason"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_order_history",
+            "description": "Return a paginated order history for a user.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "The user identifier.",
+                        "type": "string"
+                    },
+                    "time_range": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional time range filter with start and end dates."
+                    },
+                    "order_status": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional list of order statuses to filter by."
+                    },
+                    "page": {
+                        "default": 1,
+                        "description": "Page number for pagination.",
+                        "type": "integer"
+                    },
+                    "page_size": {
+                        "default": 10,
+                        "description": "Number of results per page.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "user_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

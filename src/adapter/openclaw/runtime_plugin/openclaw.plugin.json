@@ -1,0 +1,12 @@
+{
+  "id": "daedalus-runtime-verification",
+  "name": "Daedalus Runtime Verification",
+  "description": "Crash-safe trajectory capture and per-tool LTL verification for Daedalus.",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false
+  }
+}

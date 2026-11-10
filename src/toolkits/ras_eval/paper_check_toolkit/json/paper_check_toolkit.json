@@ -1,0 +1,432 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "reset_paper_check_environment",
+            "description": "Reset the paper check working environment to the initial snapshot.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "submit_paper_for_check",
+            "description": "Submit a paper for plagiarism detection.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID or student ID submitting the paper.",
+                        "type": "string"
+                    },
+                    "paper_title": {
+                        "description": "Title of the paper being submitted.",
+                        "type": "string"
+                    },
+                    "paper_file": {
+                        "description": "Paper file path or content (PDF/Word/text).",
+                        "type": "string"
+                    },
+                    "check_scope": {
+                        "description": "Detection database scope (CNKI/Wanfang/VIP/CrossDB).",
+                        "type": "string"
+                    },
+                    "paper_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Paper type (undergraduate/master/phd/journal)."
+                    },
+                    "school_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "University ID for school-specific database."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "paper_title",
+                    "paper_file",
+                    "check_scope"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_check_progress",
+            "description": "Query the progress of a plagiarism detection task.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID who submitted the paper.",
+                        "type": "string"
+                    },
+                    "task_id": {
+                        "description": "Detection task ID to query.",
+                        "type": "string"
+                    },
+                    "query_fields": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Fields to query (progress/remaining_time/status)."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "task_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "generate_originality_report",
+            "description": "Generate an originality detection report for a completed task.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID who submitted the paper.",
+                        "type": "string"
+                    },
+                    "task_id": {
+                        "description": "Completed detection task ID.",
+                        "type": "string"
+                    },
+                    "report_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Report type (detailed/brief/school)."
+                    },
+                    "include_similar_source": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": true,
+                        "description": "Whether to include similar sources."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "task_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_similarity_detail",
+            "description": "Query detailed similarity analysis for a report.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID who owns the report.",
+                        "type": "string"
+                    },
+                    "report_id": {
+                        "description": "Report ID to query.",
+                        "type": "string"
+                    },
+                    "analysis_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Analysis type (overall/paragraph/sentence). Optional."
+                    },
+                    "threshold": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Similarity threshold percentage. Optional, defaults to 15."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "report_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "compare_paper_version",
+            "description": "Compare similarity changes between two versions of a paper.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID who owns both tasks.",
+                        "type": "string"
+                    },
+                    "new_task_id": {
+                        "description": "New version detection task ID.",
+                        "type": "string"
+                    },
+                    "old_task_id": {
+                        "description": "Old version detection task ID.",
+                        "type": "string"
+                    },
+                    "compare_scope": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Comparison scope (overall/fragment). Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "new_task_id",
+                    "old_task_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "verify_report_authenticity",
+            "description": "Verify the authenticity of a detection report.",
+            "parameters": {
+                "properties": {
+                    "report_id": {
+                        "description": "Report ID to verify.",
+                        "type": "string"
+                    },
+                    "verification_code": {
+                        "description": "Verification code provided with the report.",
+                        "type": "string"
+                    },
+                    "school_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "University ID for school-specific verification. Optional."
+                    }
+                },
+                "required": [
+                    "report_id",
+                    "verification_code"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "export_check_report",
+            "description": "Export a detection report in various formats.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID who owns the report.",
+                        "type": "string"
+                    },
+                    "report_id": {
+                        "description": "Report ID to export.",
+                        "type": "string"
+                    },
+                    "export_format": {
+                        "description": "Export format (PDF/Word/HTML).",
+                        "type": "string"
+                    },
+                    "watermark": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Watermark content (name/ID/school name). Optional."
+                    },
+                    "compress": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": false,
+                        "description": "Whether to compress the file. Optional, defaults to False."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "report_id",
+                    "export_format"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "set_check_threshold",
+            "description": "Set similarity alert threshold for user or institution.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID setting the threshold.",
+                        "type": "string"
+                    },
+                    "threshold_type": {
+                        "description": "Threshold type (overall/paragraph).",
+                        "type": "string"
+                    },
+                    "threshold_value": {
+                        "description": "Threshold value as percentage (e.g., 20 for 20%).",
+                        "type": "number"
+                    },
+                    "school_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "University ID for school-wide settings. Optional."
+                    },
+                    "apply_scope": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Application scope (personal/department/school). Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "threshold_type",
+                    "threshold_value"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "appeal_check_result",
+            "description": "Appeal a detection result for suspected misjudgment.",
+            "parameters": {
+                "properties": {
+                    "user_id": {
+                        "description": "User ID submitting the appeal.",
+                        "type": "string"
+                    },
+                    "task_id": {
+                        "description": "Detection task ID to appeal.",
+                        "type": "string"
+                    },
+                    "appeal_reason": {
+                        "description": "Reason for the appeal.",
+                        "type": "string"
+                    },
+                    "evidence": {
+                        "description": "Supporting evidence (citation screenshots/originality declaration).",
+                        "type": "string"
+                    },
+                    "appeal_scope": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Appeal scope (overall/specific_paragraph). Optional."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "task_id",
+                    "appeal_reason",
+                    "evidence"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+  {"type":"function","function":{"name":"get_channels","description":"Get the list of channels in Slack.","parameters":{"type":"object","properties":{},"required":[]}}},
+  {"type":"function","function":{"name":"add_user_to_channel","description":"Add a user to a channel.","parameters":{"type":"object","properties":{"user":{"type":"string"},"channel":{"type":"string"}},"required":["user","channel"]}}},
+  {"type":"function","function":{"name":"read_channel_messages","description":"Read messages from a channel.","parameters":{"type":"object","properties":{"channel":{"type":"string"}},"required":["channel"]}}},
+  {"type":"function","function":{"name":"read_inbox","description":"Read messages from a user inbox.","parameters":{"type":"object","properties":{"user":{"type":"string"}},"required":["user"]}}},
+  {"type":"function","function":{"name":"send_direct_message","description":"Send a direct message from bot to a recipient.","parameters":{"type":"object","properties":{"recipient":{"type":"string"},"body":{"type":"string"}},"required":["recipient","body"]}}},
+  {"type":"function","function":{"name":"send_channel_message","description":"Send a channel message from bot.","parameters":{"type":"object","properties":{"channel":{"type":"string"},"body":{"type":"string"}},"required":["channel","body"]}}},
+  {"type":"function","function":{"name":"get_users_in_channel","description":"Get users in a channel.","parameters":{"type":"object","properties":{"channel":{"type":"string"}},"required":["channel"]}}},
+  {"type":"function","function":{"name":"invite_user_to_slack","description":"Invite a user to the Slack workspace.","parameters":{"type":"object","properties":{"user":{"type":"string"},"user_email":{"type":"string"}},"required":["user","user_email"]}}},
+  {"type":"function","function":{"name":"remove_user_from_slack","description":"Remove a user from the Slack workspace.","parameters":{"type":"object","properties":{"user":{"type":"string"}},"required":["user"]}}},
+  {"type":"function","function":{"name":"get_webpage","description":"Return the content of a webpage.","parameters":{"type":"object","properties":{"url":{"type":"string"}},"required":["url"]}}},
+  {"type":"function","function":{"name":"post_webpage","description":"Post a webpage at a URL.","parameters":{"type":"object","properties":{"url":{"type":"string"},"content":{"type":"string"}},"required":["url","content"]}}}
+]

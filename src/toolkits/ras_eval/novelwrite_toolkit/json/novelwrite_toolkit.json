@@ -1,0 +1,351 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateProject",
+            "description": "Create a new novel project.",
+            "parameters": {
+                "properties": {
+                    "project_name": {
+                        "description": "The name of the novel project",
+                        "type": "string"
+                    },
+                    "genre": {
+                        "default": null,
+                        "description": "Optional genre of the novel (e.g., fantasy, romance, thriller)",
+                        "type": "string"
+                    },
+                    "description": {
+                        "default": null,
+                        "description": "Optional description or synopsis of the project",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "project_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SwitchProject",
+            "description": "Switch to a different project.",
+            "parameters": {
+                "properties": {
+                    "project_name": {
+                        "description": "The name of the project to switch to",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "project_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ListProjects",
+            "description": "List all novel projects.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "WriteContent",
+            "description": "Write or append content to the current project.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "description": "The content to write",
+                        "type": "string"
+                    },
+                    "append": {
+                        "default": true,
+                        "description": "If True, append to existing content; if False, replace existing content",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetContent",
+            "description": "Get content from a project.",
+            "parameters": {
+                "properties": {
+                    "project_name": {
+                        "default": null,
+                        "description": "Optional project name. If not provided, uses current project",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ImportDocument",
+            "description": "Import a document into a project.",
+            "parameters": {
+                "properties": {
+                    "file_path": {
+                        "description": "Path to the document file to import",
+                        "type": "string"
+                    },
+                    "project_name": {
+                        "default": null,
+                        "description": "Optional project name. If not provided, uses current project",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "file_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ExportDocument",
+            "description": "Export a project to a document file.",
+            "parameters": {
+                "properties": {
+                    "file_path": {
+                        "description": "Path where the document should be exported",
+                        "type": "string"
+                    },
+                    "project_name": {
+                        "default": null,
+                        "description": "Optional project name. If not provided, uses current project",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "file_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CheckGrammar",
+            "description": "Check grammar in content using AI.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to check. If not provided, checks current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CheckSpelling",
+            "description": "Check spelling in content using AI.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to check. If not provided, checks current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CheckPunctuation",
+            "description": "Check punctuation in content using AI.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to check. If not provided, checks current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "OptimizeRedundancy",
+            "description": "Check and optimize redundant expressions in content using AI.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to check. If not provided, checks current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "OptimizeStyle",
+            "description": "Analyze and optimize writing style using AI.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to check. If not provided, checks current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ExpandContent",
+            "description": "Expand content based on specific requirements using AI.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "description": "The content to expand",
+                        "type": "string"
+                    },
+                    "requirements": {
+                        "description": "Description of how to expand the content",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "content",
+                    "requirements"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ScoreContent",
+            "description": "Score content across multiple dimensions using AI (readability, plot tension, character development, writing quality).",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to score. If not provided, scores current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetWritingSuggestions",
+            "description": "Get AI-powered writing suggestions for content.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to analyze. If not provided, analyzes current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "RecordWritingTime",
+            "description": "Record writing time for a project.",
+            "parameters": {
+                "properties": {
+                    "minutes": {
+                        "description": "Number of minutes spent writing",
+                        "type": "string"
+                    },
+                    "project_name": {
+                        "default": null,
+                        "description": "Optional project name. If not provided, uses current project",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "minutes"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetWritingStatistics",
+            "description": "Get writing statistics for a project.",
+            "parameters": {
+                "properties": {
+                    "project_name": {
+                        "default": null,
+                        "description": "Optional project name. If not provided, uses current project",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CountWords",
+            "description": "Count words in content.",
+            "parameters": {
+                "properties": {
+                    "content": {
+                        "default": null,
+                        "description": "Optional content to count. If not provided, counts current project content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+]

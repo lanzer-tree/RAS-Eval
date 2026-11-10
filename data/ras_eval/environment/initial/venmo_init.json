@@ -1,0 +1,72 @@
+{
+  "balance": 50.0,
+  "users": [
+    {
+      "username": "Bob",
+      "display_name": "Bob",
+      "email": "bob@example.com"
+    },
+    {
+      "username": "Alice",
+      "display_name": "Alice",
+      "email": "alice@example.com"
+    },
+    {
+      "username": "alice99",
+      "display_name": "Alice99",
+      "email": "alice99@example.com"
+    },
+    {
+      "username": "bob_the_builder",
+      "display_name": "Bob the Builder",
+      "email": "bob_builder@example.com"
+    },
+    {
+      "username": "alex_dinner",
+      "display_name": "Alex Dinner",
+      "email": "alex_dinner@example.com"
+    },
+    {
+      "username": "restaurant_jane",
+      "display_name": "Restaurant Jane",
+      "email": "restaurant_jane@example.com"
+    },
+    {
+      "username": "Sarah Chen",
+      "display_name": "Sarah Chen",
+      "email": "sarah.chen@example.com"
+    }
+  ],
+  "friends": [
+    "Sarah Chen"
+  ],
+  "linked_accounts": [
+    {
+      "account_id": "chk_78901",
+      "name": "Checking Account",
+      "type": "checking"
+    },
+    {
+      "account_id": "chk-8872",
+      "name": "Checking Account",
+      "type": "checking"
+    },
+    {
+      "account_id": "sav-3391",
+      "name": "Savings Account",
+      "type": "savings"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "txn_req_42",
+      "type": "request",
+      "date": "2025-06-15T10:30:00Z",
+      "amount": 30.0,
+      "note": "",
+      "status": "pending",
+      "is_starter": false,
+      "other_user": "alice99"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "current_user_email": "user@example.com",
+  "items": [
+    {
+      "id": "root001",
+      "name": "MyDropbox",
+      "path": "/MyDropbox/",
+      "type": "folder",
+      "size": 0,
+      "created_at": "2024-01-01T00:00:00Z",
+      "modified_at": "2024-01-01T00:00:00Z",
+      "parent": ""
+    },
+    {
+      "id": "folder001",
+      "name": "Documents",
+      "path": "/MyDropbox/Documents/",
+      "type": "folder",
+      "size": 0,
+      "created_at": "2024-01-01T00:00:00Z",
+      "modified_at": "2024-01-01T00:00:00Z",
+      "parent": "/MyDropbox/"
+    },
+    {
+      "id": "file_001",
+      "name": "report.pdf",
+      "path": "/MyDropbox/Documents/report.pdf",
+      "type": "file",
+      "size": 1024,
+      "created_at": "2024-01-02T00:00:00Z",
+      "modified_at": "2024-01-02T00:00:00Z",
+      "parent": "/MyDropbox/Documents/"
+    },
+    {
+      "id": "file_002",
+      "name": "data.txt",
+      "path": "/MyDropbox/Documents/data.txt",
+      "type": "file",
+      "size": 512,
+      "created_at": "2024-01-03T00:00:00Z",
+      "modified_at": "2024-01-03T00:00:00Z",
+      "parent": "/MyDropbox/Documents/"
+    },
+    {
+      "id": "file_003",
+      "name": "old_file.txt",
+      "path": "/MyDropbox/old_file.txt",
+      "type": "file",
+      "size": 256,
+      "created_at": "2024-01-04T00:00:00Z",
+      "modified_at": "2024-01-04T00:00:00Z",
+      "parent": "/MyDropbox/"
+    },
+    {
+      "id": "ab8d2f15e529c770",
+      "name": "Projects",
+      "path": "/MyDropbox/Projects/",
+      "type": "folder",
+      "size": 0,
+      "created_at": "2024-01-05T00:00:00Z",
+      "modified_at": "2024-01-05T00:00:00Z",
+      "parent": "/MyDropbox/"
+    },
+    {
+      "id": "7e8e644109acfa6f",
+      "name": "Project Alpha",
+      "path": "/MyDropbox/Projects/Project Alpha/",
+      "type": "folder",
+      "size": 0,
+      "created_at": "2024-01-06T00:00:00Z",
+      "modified_at": "2024-01-06T00:00:00Z",
+      "parent": "/MyDropbox/Projects/"
+    }
+  ],
+  "shared_files": [
+    {
+      "shared_file_id": "file_001",
+      "name": "shared_report.pdf",
+      "shared_with": ["user@example.com", "colleague@example.com"],
+      "permission": "editor"
+    },
+    {
+      "shared_file_id": "shr_12345abc",
+      "name": "shared_document.docx",
+      "shared_with": ["user@example.com", "partner@example.com"],
+      "permission": "editor"
+    }
+  ],
+  "shared_records": []
+}

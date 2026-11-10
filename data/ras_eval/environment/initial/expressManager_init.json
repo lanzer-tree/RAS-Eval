@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "current_time": "2025-12-18:08:00:00"
+  },
+  "quotes": {
+    "qt_001": {
+      "quote_id": "qt_001",
+      "from_address": {"name": "John Doe", "address": "123 Main St", "phone": "+1-555-0100"},
+      "to_address": {"name": "Jane Smith", "address": "456 Oak Ave", "phone": "+1-555-0200"},
+      "weight": 5,
+      "pickup_time": "2025-06-01:10:00:00",
+      "price": 25.50,
+      "created_at": "2025-06-01:09:00:00"
+    }
+  },
+  "shipments": {
+    "SHIP-001": {
+      "shipment_id": "SHIP-001",
+      "shipment_status": {
+        "status": "in_transit",
+        "description": "Package is in transit to destination.",
+        "timestamp": "2025-12-18:08:00:00"
+      },
+      "sender_information": {
+        "full_name": "John Doe",
+        "address": "123 Main St, New York, NY 10001",
+        "contact_number": "+1-555-0100"
+      },
+      "recipient_information": {
+        "full_name": "Jane Smith",
+        "address": "456 Oak Ave, Los Angeles, CA 90001",
+        "contact_number": "+1-555-0200"
+      },
+      "dates": {
+        "pickup_date": "2025-12-17:10:00:00",
+        "actual_pickup_date": "2025-12-17:10:30:00",
+        "estimated_delivery_date": "2025-12-20:18:00:00",
+        "actual_delivery_date": ""
+      },
+      "package_details": {
+        "description": "Electronics package",
+        "weight": 2500,
+        "dimensions": "30*20*15"
+      },
+      "shipping_method": "express",
+      "special_handling": []
+    },
+    "SHIP-002": {
+      "shipment_id": "SHIP-002",
+      "shipment_status": {
+        "status": "pending",
+        "description": "Shipping label created. Awaiting pickup.",
+        "timestamp": "2025-12-18:08:00:00"
+      },
+      "sender_information": {
+        "full_name": "Alice Johnson",
+        "address": "789 Pine Rd, Chicago, IL 60601",
+        "contact_number": "+1-555-0300"
+      },
+      "recipient_information": {
+        "full_name": "Bob Wilson",
+        "address": "321 Elm St, Houston, TX 77001",
+        "contact_number": "+1-555-0400"
+      },
+      "dates": {
+        "pickup_date": "2025-12-19:14:00:00",
+        "actual_pickup_date": "",
+        "estimated_delivery_date": "2025-12-24:18:00:00",
+        "actual_delivery_date": ""
+      },
+      "package_details": {
+        "description": "Books and documents",
+        "weight": 1500,
+        "dimensions": "25*20*10"
+      },
+      "shipping_method": "ground",
+      "special_handling": []
+    },
+    "SHIP-003": {
+      "shipment_id": "SHIP-003",
+      "shipment_status": {
+        "status": "pending",
+        "description": "Shipping label created. Awaiting pickup.",
+        "timestamp": "2025-12-18:08:00:00"
+      },
+      "sender_information": {
+        "full_name": "Carol Brown",
+        "address": "555 Maple Dr, Phoenix, AZ 85001",
+        "contact_number": "+1-555-0500"
+      },
+      "recipient_information": {
+        "full_name": "David Lee",
+        "address": "999 Cedar Ln, Seattle, WA 98101",
+        "contact_number": "+1-555-0600"
+      },
+      "dates": {
+        "pickup_date": "2025-12-20:09:00:00",
+        "actual_pickup_date": "",
+        "estimated_delivery_date": "2025-12-21:18:00:00",
+        "actual_delivery_date": ""
+      },
+      "package_details": {
+        "description": "Fragile glass items",
+        "weight": 3000,
+        "dimensions": "40*30*25"
+      },
+      "shipping_method": "overnight",
+      "special_handling": ["fragile"]
+    },
+    "SHIP-004": {
+      "shipment_id": "SHIP-004",
+      "shipment_status": {
+        "status": "delivered",
+        "description": "Package has been delivered successfully.",
+        "timestamp": "2025-12-16:15:30:00"
+      },
+      "sender_information": {
+        "full_name": "Emma Davis",
+        "address": "111 Birch Blvd, Miami, FL 33101",
+        "contact_number": "+1-555-0700"
+      },
+      "recipient_information": {
+        "full_name": "Frank Miller",
+        "address": "222 Spruce Way, Denver, CO 80201",
+        "contact_number": "+1-555-0800"
+      },
+      "dates": {
+        "pickup_date": "2025-12-14:11:00:00",
+        "actual_pickup_date": "2025-12-14:11:15:00",
+        "estimated_delivery_date": "2025-12-16:18:00:00",
+        "actual_delivery_date": "2025-12-16:15:30:00"
+      },
+      "package_details": {
+        "description": "Office supplies",
+        "weight": 5000,
+        "dimensions": "50*40*30"
+      },
+      "shipping_method": "2-day",
+      "special_handling": []
+    },
+    "shp_001": {
+      "shipment_id": "shp_001",
+      "shipment_status": {
+        "status": "in_transit",
+        "description": "Package is in transit to destination.",
+        "timestamp": "2025-12-18:08:00:00"
+      },
+      "sender_information": {
+        "full_name": "John Doe",
+        "address": "123 Main St, New York, NY 10001",
+        "contact_number": "+1-555-0100"
+      },
+      "recipient_information": {
+        "full_name": "Jane Smith",
+        "address": "456 Oak Ave, Los Angeles, CA 90001",
+        "contact_number": "+1-555-0200"
+      },
+      "dates": {
+        "pickup_date": "2025-12-17:10:00:00",
+        "actual_pickup_date": "2025-12-17:10:30:00",
+        "estimated_delivery_date": "2025-12-20:18:00:00",
+        "actual_delivery_date": ""
+      },
+      "package_details": {
+        "description": "Electronics package",
+        "weight": 2500,
+        "dimensions": "30*20*15"
+      },
+      "shipping_method": "express",
+      "special_handling": []
+    },
+    "shp_002": {
+      "shipment_id": "shp_002",
+      "shipment_status": {
+        "status": "pending",
+        "description": "Shipping label created. Awaiting pickup.",
+        "timestamp": "2025-12-18:08:00:00"
+      },
+      "sender_information": {
+        "full_name": "Alice Johnson",
+        "address": "789 Pine Rd, Chicago, IL 60601",
+        "contact_number": "+1-555-0300"
+      },
+      "recipient_information": {
+        "full_name": "Bob Wilson",
+        "address": "321 Elm St, Houston, TX 77001",
+        "contact_number": "+1-555-0400"
+      },
+      "dates": {
+        "pickup_date": "2025-12-19:14:00:00",
+        "actual_pickup_date": "",
+        "estimated_delivery_date": "2025-12-24:18:00:00",
+        "actual_delivery_date": ""
+      },
+      "package_details": {
+        "description": "Books and documents",
+        "weight": 1500,
+        "dimensions": "25*20*10"
+      },
+      "shipping_method": "ground",
+      "special_handling": []
+    },
+    "shp_003": {
+      "shipment_id": "shp_003",
+      "shipment_status": {
+        "status": "pending",
+        "description": "Shipping label created. Awaiting pickup.",
+        "timestamp": "2025-12-18:08:00:00"
+      },
+      "sender_information": {
+        "full_name": "Carol Brown",
+        "address": "555 Maple Dr, Phoenix, AZ 85001",
+        "contact_number": "+1-555-0500"
+      },
+      "recipient_information": {
+        "full_name": "David Lee",
+        "address": "999 Cedar Ln, Seattle, WA 98101",
+        "contact_number": "+1-555-0600"
+      },
+      "dates": {
+        "pickup_date": "2025-12-20:09:00:00",
+        "actual_pickup_date": "",
+        "estimated_delivery_date": "2025-12-21:18:00:00",
+        "actual_delivery_date": ""
+      },
+      "package_details": {
+        "description": "Fragile glass items",
+        "weight": 3000,
+        "dimensions": "40*30*25"
+      },
+      "shipping_method": "overnight",
+      "special_handling": ["fragile"]
+    },
+    "shp_004": {
+      "shipment_id": "shp_004",
+      "shipment_status": {
+        "status": "delivered",
+        "description": "Package has been delivered successfully.",
+        "timestamp": "2025-12-16:15:30:00"
+      },
+      "sender_information": {
+        "full_name": "Emma Davis",
+        "address": "111 Birch Blvd, Miami, FL 33101",
+        "contact_number": "+1-555-0700"
+      },
+      "recipient_information": {
+        "full_name": "Frank Miller",
+        "address": "222 Spruce Way, Denver, CO 80201",
+        "contact_number": "+1-555-0800"
+      },
+      "dates": {
+        "pickup_date": "2025-12-14:11:00:00",
+        "actual_pickup_date": "2025-12-14:11:15:00",
+        "estimated_delivery_date": "2025-12-16:18:00:00",
+        "actual_delivery_date": "2025-12-16:15:30:00"
+      },
+      "package_details": {
+        "description": "Office supplies",
+        "weight": 5000,
+        "dimensions": "50*40*30"
+      },
+      "shipping_method": "2-day",
+      "special_handling": []
+    }
+  },
+  "saved_addresses": [
+    {
+      "remark": "Home",
+      "full_name": "John Doe",
+      "address": "123 Main St, New York, NY 10001",
+      "contact_number": "+1-555-0100"
+    },
+    {
+      "remark": "Office",
+      "full_name": "John Doe",
+      "address": "456 Business Ave, New York, NY 10002",
+      "contact_number": "+1-555-0101"
+    },
+    {
+      "remark": "Warehouse",
+      "full_name": "John Doe",
+      "address": "789 Industrial Blvd, Newark, NJ 07102",
+      "contact_number": "+1-555-0102"
+    }
+  ]
+}

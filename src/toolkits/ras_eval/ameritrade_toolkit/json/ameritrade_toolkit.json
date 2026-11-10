@@ -1,0 +1,110 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "GetHoldingsInformation",
+            "description": "Retrieve the USD value of every holding in the specified account.",
+            "parameters": {
+                "properties": {
+                    "account": {
+                        "description": "The account type to query holdings for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "account"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetBalance",
+            "description": "Return the available cash balance for the specified account.",
+            "parameters": {
+                "properties": {
+                    "account": {
+                        "description": "The account type to query balance for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "account"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetStockInformation",
+            "description": "Retrieve up-to-date quote data for the requested ticker.",
+            "parameters": {
+                "properties": {
+                    "ticker": {
+                        "description": "The stock ticker symbol to query.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "ticker"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "TradeStock",
+            "description": "Submit a buy or sell order and update the account holdings and cash.",
+            "parameters": {
+                "properties": {
+                    "account": {
+                        "description": "The account type to execute the trade in.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "The trade action, must be 'buy' or 'sell'.",
+                        "type": "string"
+                    },
+                    "order_type": {
+                        "description": "The order type, must be 'limit_order' or 'market_order'.",
+                        "type": "string"
+                    },
+                    "ticker": {
+                        "description": "The stock ticker symbol to trade.",
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "description": "The number of shares to trade.",
+                        "type": "number"
+                    },
+                    "price_limit": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The limit price for limit orders, optional for market orders."
+                    }
+                },
+                "required": [
+                    "account",
+                    "action",
+                    "order_type",
+                    "ticker",
+                    "quantity"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

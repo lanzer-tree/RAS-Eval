@@ -1,0 +1,178 @@
+{
+  "users": [
+    {
+      "user_id": "CS-UG-2024-0517",
+      "name": "Wang Lei",
+      "role": "admin",
+      "department": "Computer Science",
+      "school_id": "ZJU-001",
+      "email": "wanglei@zju.edu.cn"
+    },
+    {
+      "user_id": "student_li_2024",
+      "name": "Li Ming",
+      "role": "student",
+      "department": "Earth Sciences",
+      "school_id": "UST-2024",
+      "email": "liming@ust.edu.cn"
+    },
+    {
+      "user_id": "user_admin_01",
+      "name": "Admin User",
+      "role": "admin",
+      "department": "Academic Affairs",
+      "school_id": "UST-2024",
+      "email": "admin@ust.edu.cn"
+    },
+    {
+      "user_id": "grad2023_zhang",
+      "name": "Zhang Wei",
+      "role": "student",
+      "department": "Computer Science",
+      "school_id": "tsinghua_2023",
+      "email": "grad2023_zhang@tsinghua.edu.cn"
+    },
+    {
+      "user_id": "dept_head_2024",
+      "name": "Chen Wei",
+      "role": "admin",
+      "department": "Academic Affairs",
+      "school_id": "univ_ecnu_2024",
+      "email": "dept_head_2024@ecnu.edu.cn"
+    },
+    {
+      "user_id": "user-001",
+      "name": "Benchmark User",
+      "role": "student",
+      "department": "Computer Science",
+      "school_id": "ZJU-001",
+      "email": "user-001@zju.edu.cn"
+    }
+  ],
+  "check_tasks": [
+    {
+      "task_id": "TASK-2024-8834",
+      "user_id": "CS-UG-2024-0517",
+      "paper_title": "Research on Distributed Machine Learning Optimization Methods",
+      "paper_file": "wanglei_thesis_2024.pdf",
+      "check_scope": "crossdb",
+      "paper_type": "undergraduate",
+      "school_id": "ZJU-001",
+      "status": "completed",
+      "progress": 100,
+      "submitted_at": "2024-12-01T10:00:00",
+      "estimated_completion": "2024-12-01T12:00:00",
+      "completed_at": "2024-12-01T11:30:00",
+      "similarity_score": 12,
+      "similar_sources": [
+        {
+          "source_id": "SRC-001",
+          "title": "Distributed Optimization for Large-Scale Machine Learning",
+          "author": "Zhang, et al.",
+          "source_type": "journal",
+          "similarity": 8,
+          "url": "https://doi.org/10.xxxx/example"
+        },
+        {
+          "source_id": "SRC-002",
+          "title": "Federated Learning: A Comprehensive Survey",
+          "author": "Li, et al.",
+          "source_type": "conference",
+          "similarity": 5,
+          "url": "https://doi.org/10.xxxx/example2"
+        }
+      ],
+      "paragraph_similarity": [
+        {
+          "paragraph_id": 1,
+          "similarity": 5,
+          "section": "1. Introduction"
+        },
+        {
+          "paragraph_id": 2,
+          "similarity": 8,
+          "section": "2. Related Work"
+        },
+        {
+          "paragraph_id": 3,
+          "similarity": 3,
+          "section": "3.1 Background"
+        },
+        {
+          "paragraph_id": 4,
+          "similarity": 15,
+          "section": "3.2 Proposed Method",
+          "matched_source": "SRC-001"
+        },
+        {
+          "paragraph_id": 5,
+          "similarity": 2,
+          "section": "3.3 Algorithm Design"
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-2024-7721",
+      "user_id": "student_li_2024",
+      "paper_title": "Machine Learning Approaches for Climate Prediction - Draft v1",
+      "paper_file": "thesis_climate_2024_draft.pdf",
+      "check_scope": "cnki",
+      "paper_type": "phd",
+      "school_id": "UST-2024",
+      "status": "completed",
+      "progress": 100,
+      "submitted_at": "2024-11-15T09:00:00",
+      "estimated_completion": "2024-11-15T11:00:00",
+      "completed_at": "2024-11-15T10:30:00",
+      "similarity_score": 32,
+      "similar_sources": [
+        {
+          "source_id": "SRC-101",
+          "title": "Climate Modeling Using Deep Learning",
+          "author": "Chen, et al.",
+          "source_type": "journal",
+          "similarity": 18,
+          "url": "https://doi.org/10.xxxx/climate-dl"
+        },
+        {
+          "source_id": "SRC-102",
+          "title": "Predictive Methods for Environmental Data",
+          "author": "Wang, et al.",
+          "source_type": "conference",
+          "similarity": 14,
+          "url": "https://doi.org/10.xxxx/predict-env"
+        }
+      ],
+      "paragraph_similarity": [
+        {
+          "paragraph_id": 1,
+          "similarity": 10,
+          "section": "1. Introduction"
+        },
+        {
+          "paragraph_id": 2,
+          "similarity": 18,
+          "section": "2. Literature Review"
+        },
+        {
+          "paragraph_id": 3,
+          "similarity": 12,
+          "section": "3. Methodology",
+          "matched_source": "SRC-101"
+        },
+        {
+          "paragraph_id": 4,
+          "similarity": 20,
+          "section": "4. Results",
+          "matched_source": "SRC-102"
+        },
+        {
+          "paragraph_id": 5,
+          "similarity": 6,
+          "section": "5. Conclusion"
+        }
+      ]
+    }
+  ],
+  "reports": []
+}

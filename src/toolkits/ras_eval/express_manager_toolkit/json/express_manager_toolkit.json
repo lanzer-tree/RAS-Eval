@@ -1,0 +1,241 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "GetQuote",
+            "description": "Get a quote for shipping a package.",
+            "parameters": {
+                "properties": {
+                    "package_details": {
+                        "additionalProperties": true,
+                        "description": "Must include 'description' (str), 'weight' (number, grams), and 'dimensions' (str, h*w*d in cm).",
+                        "type": "object"
+                    },
+                    "sender_information": {
+                        "additionalProperties": true,
+                        "description": "Sender info with 'full_name', 'address', and 'contact_number'.",
+                        "type": "object"
+                    },
+                    "recipient_information": {
+                        "additionalProperties": true,
+                        "description": "Recipient info with 'full_name', 'address', and 'contact_number'.",
+                        "type": "object"
+                    },
+                    "pickup_time": {
+                        "description": "Desired pickup time with format 'YYYY-MM-DD:HH:MM:SS'.",
+                        "type": "string"
+                    },
+                    "special_handling": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "One or more of ['signature_required', 'fragile', 'oversized', 'dangerous_goods', 'temperature_sensitive']."
+                    }
+                },
+                "required": [
+                    "package_details",
+                    "sender_information",
+                    "recipient_information",
+                    "pickup_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateShipmentLabel",
+            "description": "Create a shipping label for a package.",
+            "parameters": {
+                "properties": {
+                    "quote_id": {
+                        "description": "The unique identifier of the shipping quote.",
+                        "type": "string"
+                    },
+                    "shipping_method": {
+                        "description": "One of ['ground', 'express', 'overnight', '2-day'].",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "quote_id",
+                    "shipping_method"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetShipmentDetails",
+            "description": "Get the current status and details of a shipment.",
+            "parameters": {
+                "properties": {
+                    "shipment_id": {
+                        "description": "The unique identifier of the shipment.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "shipment_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManageShipment",
+            "description": "Manage a shipment (cancel, reschedule pickup, redirect, return to sender).",
+            "parameters": {
+                "properties": {
+                    "shipment_id": {
+                        "description": "The unique identifier of the shipment.",
+                        "type": "string"
+                    },
+                    "operation": {
+                        "description": "One of ['cancel', 'reschedule_pickup', 'redirect', 'return_to_sender'].",
+                        "type": "string"
+                    },
+                    "new_receipient_information": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New recipient info for redirect."
+                    },
+                    "new_pickup_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New pickup time for reschedule, format 'YYYY-MM-DD:HH:MM:SS'."
+                    }
+                },
+                "required": [
+                    "shipment_id",
+                    "operation"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchShipment",
+            "description": "Search for existing shipments.",
+            "parameters": {
+                "properties": {
+                    "search_term": {
+                        "description": "Term to search in shipment details.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "search_term"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchSavedAddresses",
+            "description": "Search for user's saved addresses and contact numbers.",
+            "parameters": {
+                "properties": {
+                    "search_term": {
+                        "description": "The term to search for in the address details.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "search_term"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_express_products",
+            "description": "Compatibility wrapper: search for available express shipping product options.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "Query string, e.g., 'overnight shipping service'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_express_orders",
+            "description": "Compatibility wrapper: search for express shipments/orders by free-text.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "Free-text query to match against shipments.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_express_order_details",
+            "description": "Compatibility wrapper to get express order/shipment details by id.",
+            "parameters": {
+                "properties": {
+                    "order_id": {
+                        "description": "Shipment id.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "order_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

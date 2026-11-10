@@ -1,0 +1,224 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "reset_hr_assistant_environment",
+            "description": "Reset the HR assistant working environment to the initial snapshot.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_candidates",
+            "description": "List candidates with optional filters on status, score, role, and name.",
+            "parameters": {
+                "properties": {
+                    "status": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter candidates by status (e.g., 'interviewed', 'hired')."
+                    },
+                    "min_score": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Minimum score threshold for filtering candidates."
+                    },
+                    "role_keyword": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Keyword to filter candidates by job role."
+                    },
+                    "name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Exact name to filter candidates."
+                    },
+                    "name_keyword": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Keyword to filter candidates by name."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "evaluate_candidate",
+            "description": "Score a resume and capture highlights plus optional concerns.",
+            "parameters": {
+                "properties": {
+                    "candidate_id": {
+                        "description": "Unique identifier of the candidate to evaluate.",
+                        "type": "string"
+                    },
+                    "score": {
+                        "description": "Numerical score between 0 and 5 for the candidate.",
+                        "type": "number"
+                    },
+                    "highlights": {
+                        "description": "List of positive highlights from the resume.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "concerns": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional list of concerns about the candidate."
+                    }
+                },
+                "required": [
+                    "candidate_id",
+                    "score",
+                    "highlights"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "summarize_resume",
+            "description": "Return the key resume summary for a specific candidate.",
+            "parameters": {
+                "properties": {
+                    "candidate_id": {
+                        "description": "Unique identifier of the candidate to summarize.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "candidate_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "send_candidate_message",
+            "description": "Log a message sent to a candidate through the specified channel.",
+            "parameters": {
+                "properties": {
+                    "candidate_id": {
+                        "description": "Unique identifier of the candidate.",
+                        "type": "string"
+                    },
+                    "channel": {
+                        "description": "Communication channel (email, slack, or linkedin).",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "The message content to send to the candidate.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "candidate_id",
+                    "channel",
+                    "message"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "schedule_interview",
+            "description": "Schedule an interview for a candidate and validate the timing.",
+            "parameters": {
+                "properties": {
+                    "candidate_id": {
+                        "description": "Unique identifier of the candidate.",
+                        "type": "string"
+                    },
+                    "interviewer": {
+                        "description": "Name or identifier of the interviewer.",
+                        "type": "string"
+                    },
+                    "start_time": {
+                        "description": "Interview start time in 'YYYY-MM-DD HH:MM' format.",
+                        "type": "string"
+                    },
+                    "end_time": {
+                        "description": "Interview end time in 'YYYY-MM-DD HH:MM' format.",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "Physical location of the interview.",
+                        "type": "string"
+                    },
+                    "mode": {
+                        "default": "onsite",
+                        "description": "Interview mode (onsite, virtual, or phone), defaults to 'onsite'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "candidate_id",
+                    "interviewer",
+                    "start_time",
+                    "end_time",
+                    "location"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

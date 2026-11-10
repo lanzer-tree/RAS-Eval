@@ -1,0 +1,123 @@
+{
+  "blocked_domains": ["temporary-blocked.com", "safe-cdn.example.com", "false-positive.example.com"],
+  "threat_database": {
+    "phishing-site.com": {
+      "threat_id": "threat_001",
+      "description": "Known phishing site targeting banking credentials",
+      "severity": "high",
+      "first_seen": "2025-01-15 10:30:00",
+      "last_seen": "2025-12-01 14:20:00"
+    },
+    "malware-distribution.net": {
+      "threat_id": "threat_002",
+      "description": "Malware distribution network",
+      "severity": "critical",
+      "first_seen": "2025-03-20 08:15:00",
+      "last_seen": "2025-11-28 16:45:00"
+    },
+    "malware-cdn.example.com": {
+      "threat_id": "threat_003",
+      "description": "Suspicious CDN domain associated with malware distribution and command-and-control traffic",
+      "severity": "critical",
+      "first_seen": "2026-07-20 03:15:00",
+      "last_seen": "2026-07-24 09:45:00"
+    },
+    "threat-alert-2001.example.com": {
+      "threat_id": "2001",
+      "description": "Threat alert 2001 — malware-cdn.example.com incident, suspicious CDN activity detected in last night's logs",
+      "severity": "high",
+      "first_seen": "2026-07-23 22:00:00",
+      "last_seen": "2026-07-24 06:00:00"
+    }
+  },
+  "policies": [
+    {
+      "policy_id": "policy_0001",
+      "policy_name": "Malicious Sites Block",
+      "policy_description": "Blocks known malicious domains",
+      "policy_type": "blacklist",
+      "domains": ["bad-site1.com", "bad-site2.com"],
+      "created_at": "2025-01-01 00:00:00"
+    },
+    {
+      "policy_id": "POL-LEGACY-BROAD",
+      "policy_name": "Legacy Broad Malware Block",
+      "policy_description": "Old overly broad malware blocking policy that needs to be replaced",
+      "policy_type": "blacklist",
+      "domains": ["*.example.com", "*.test.net", "cdn-bad.com"],
+      "created_at": "2024-06-01 00:00:00"
+    },
+    {
+      "policy_id": "POL-ACTIVE-GENERAL",
+      "policy_name": "Active General CDN Policy",
+      "policy_description": "Active general policy for managing CDN and malware-related domains",
+      "policy_type": "blacklist",
+      "domains": ["evil-cdn.net", "suspicious-cdn.org"],
+      "created_at": "2025-03-15 00:00:00"
+    },
+    {
+      "policy_id": "policy_0004",
+      "policy_name": "Old Temporary Block",
+      "policy_description": "Temporary block policy from last month's incident, now obsolete",
+      "policy_type": "blacklist",
+      "domains": ["temporary-blocked.com"],
+      "created_at": "2025-06-01 00:00:00"
+    }
+  ],
+  "logs": [
+    {
+      "log_id": "log_001",
+      "timestamp": "2025-06-15 10:30:00",
+      "event_type": "blocked",
+      "domain": "malware-site.com",
+      "user": "admin",
+      "device": "desktop",
+      "location": "office"
+    },
+    {
+      "log_id": "log_002",
+      "timestamp": "2025-06-16 14:20:00",
+      "event_type": "allowed",
+      "domain": "safe-company.com",
+      "user": "user1",
+      "device": "laptop",
+      "location": "remote"
+    },
+    {
+      "log_id": "LOG-20260724-001",
+      "timestamp": "2026-07-24 07:15:30",
+      "event_type": "blocked",
+      "domain": "malware-cdn.example.com",
+      "user": "jsmith",
+      "device": "workstation-15",
+      "location": "HQ-Building-A"
+    },
+    {
+      "log_id": "LOG-20260724-002",
+      "timestamp": "2026-07-24 08:00:00",
+      "event_type": "blocked",
+      "domain": "malware-cdn.example.com",
+      "user": "agarcia",
+      "device": "laptop-07",
+      "location": "remote"
+    },
+    {
+      "log_id": "LOG-20260723-001",
+      "timestamp": "2026-07-23 14:30:00",
+      "event_type": "blocked",
+      "domain": "phishing-site.com",
+      "user": "admin",
+      "device": "desktop",
+      "location": "office"
+    },
+    {
+      "log_id": "5001",
+      "timestamp": "2026-07-23 23:45:00",
+      "event_type": "blocked",
+      "domain": "malware-cdn.example.com",
+      "user": "security_admin",
+      "device": "alert-system",
+      "location": "HQ-Security-Operations"
+    }
+  ]
+}

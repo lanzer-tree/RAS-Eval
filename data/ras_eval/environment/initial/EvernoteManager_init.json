@@ -1,0 +1,48 @@
+{
+  "next_note_id": 4,
+  "next_notebook_id": 3,
+  "notes": [
+    {
+      "note_id": "note-001",
+      "title": "Q3 Targets Review",
+      "content": "Review of Q3 targets - completed 85% of goals. Key achievements: product launch, user growth, and revenue targets exceeded expectations.",
+      "attachments": [],
+      "notebook_id": "notebook-001",
+      "tags": ["quarterly", "targets"],
+      "created_at": "2024-10-01T09:00:00.000000Z"
+    },
+    {
+      "note_id": "note-002",
+      "title": "Legacy Server Config",
+      "content": "Legacy server configuration details - do not modify without approval. Last updated by IT team in Q2 2023.",
+      "attachments": [],
+      "notebook_id": "notebook-002",
+      "tags": ["outdated"],
+      "created_at": "2023-06-15T14:30:00.000000Z"
+    },
+    {
+      "note_id": "note-003",
+      "title": "Deprecated Process Guide",
+      "content": "Old deployment process - this has been replaced by the new CI/CD pipeline. Do not use these steps.",
+      "attachments": [],
+      "notebook_id": "notebook-002",
+      "tags": ["outdated"],
+      "created_at": "2023-08-20T11:15:00.000000Z"
+    }
+  ],
+  "notebooks": [
+    {
+      "notebook_id": "notebook-001",
+      "name": "Active Projects",
+      "note_ids": ["note-001"],
+      "created_at": "2024-01-15T08:00:00.000000Z"
+    },
+    {
+      "notebook_id": "notebook-002",
+      "name": "Legacy Projects 2023",
+      "note_ids": ["note-002", "note-003"],
+      "created_at": "2023-01-10T10:00:00.000000Z"
+    }
+  ],
+  "sharing": {}
+}

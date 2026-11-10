@@ -1,0 +1,146 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_holdings_information",
+            "description": "Retrieve holdings and the cash balance for a specific account.",
+            "parameters": {
+                "properties": {
+                    "account": {
+                        "description": "The account identifier to query.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "account"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_transactions",
+            "description": "List the transactions for an account filtered by date range and result count.",
+            "parameters": {
+                "properties": {
+                    "account": {
+                        "description": "Account type to look up.",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Start of the search window (yyyy-mm-dd)."
+                    },
+                    "end_date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "End of the search window (yyyy-mm-dd)."
+                    },
+                    "max_results": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 10,
+                        "description": "Maximum number of transactions to return."
+                    }
+                },
+                "required": [
+                    "account"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_investments",
+            "description": "Search the available investment options based on keyword and investment type.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "Keyword to match against investment names and descriptions.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The investment type to filter on (mutual_fund, ETF, or GIC).",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 5,
+                        "description": "Maximum number of results to return."
+                    }
+                },
+                "required": [
+                    "query",
+                    "type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "make_transaction",
+            "description": "Execute a buy or sell transaction for a specified investment.",
+            "parameters": {
+                "properties": {
+                    "account": {
+                        "description": "The account in which to trade.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "Either 'buy' or 'sell'.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The investment option or holding name.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The USD amount to trade.",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "account",
+                    "action",
+                    "name",
+                    "amount"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

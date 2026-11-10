@@ -1,0 +1,430 @@
+{
+  "user": {
+    "user_id": "u_me",
+    "username": "current_user"
+  },
+  "users": [
+    {
+      "user_id": "tech_creator_1",
+      "username": "tech_creator_1"
+    },
+    {
+      "user_id": "tech_creator_2",
+      "username": "tech_creator_2"
+    },
+    {
+      "user_id": "tech_creator_3",
+      "username": "tech_creator_3"
+    },
+    {
+      "user_id": "tc_user_001",
+      "username": "TechCrunch"
+    },
+    {
+      "user_id": "verge_user_001",
+      "username": "TheVerge"
+    },
+    {
+      "user_id": "elon_user_001",
+      "username": "ElonMusk"
+    },
+    {
+      "user_id": "sam_user_001",
+      "username": "SamAltman"
+    },
+    {
+      "user_id": "acme_user_001",
+      "username": "AcmeVentures"
+    },
+    {
+      "user_id": "beta_user_001",
+      "username": "BetaLabs"
+    },
+    {
+      "user_id": "oss2026",
+      "username": "OSSummit2026"
+    },
+    {
+      "user_id": "osspambots",
+      "username": "oss_pambots_bot"
+    },
+    {
+      "user_id": "speaker_sarah",
+      "username": "sarah_dev_io"
+    },
+    {
+      "user_id": "speaker_marcus",
+      "username": "marcus_cloud"
+    },
+    {
+      "user_id": "quantum_comp_labs",
+      "username": "quantum_comp_labs"
+    },
+    {
+      "user_id": "neural_quantum_io",
+      "username": "neural_quantum_io"
+    },
+    {
+      "user_id": "summit_organizer",
+      "username": "summit_organizer"
+    },
+    {
+      "user_id": "dr_qubit",
+      "username": "dr_qubit"
+    },
+    {
+      "user_id": "spam_account_221",
+      "username": "clickbait_tech"
+    },
+    {
+      "user_id": "spam_account_222",
+      "username": "fake_astro_news"
+    },
+    {
+      "user_id": "2699949620",
+      "username": "partner_alpha"
+    },
+    {
+      "user_id": "1392615845758564352",
+      "username": "old_collaborator"
+    },
+    {
+      "user_id": "1870699691442308102",
+      "username": "new_framework_dev"
+    },
+    {
+      "user_id": "1567237162487975936",
+      "username": "protocol_watcher"
+    },
+    {
+      "user_id": "1854984826726963200",
+      "username": "open_frame_news"
+    },
+    {
+      "user_id": "1682949014137443328",
+      "username": "frame_community"
+    },
+    {
+      "user_id": "spam_dev_1",
+      "username": "spam_dev_1"
+    },
+    {
+      "user_id": "spam_dev_2",
+      "username": "spam_dev_2"
+    },
+    {
+      "user_id": "spam_dev_3",
+      "username": "spam_dev_3"
+    },
+    {
+      "user_id": "techleader_ace",
+      "username": "techleader_ace"
+    }
+  ],
+  "tweets": [
+    {
+      "tweet_id": "tweet_engage_001",
+      "user_id": "tech_creator_1",
+      "content": "The future of technology isn't just about faster processors — it's about how we design systems that empower people. Accessible, ethical, and human-centered technology should be the standard, not the exception.",
+      "media_paths": [],
+      "timestamp": "2026-07-23T12:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "old_tweet_001",
+      "user_id": "u_me",
+      "content": "Old TechPulse brand content that needs to be removed during rebrand.",
+      "media_paths": [],
+      "timestamp": "2026-06-01T10:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "old_tweet_002",
+      "user_id": "u_me",
+      "content": "Another outdated TechPulse reference tweet to be deleted.",
+      "media_paths": [],
+      "timestamp": "2026-06-02T10:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "old_tweet_003",
+      "user_id": "u_me",
+      "content": "Old partnership content with AcmeVentures that no longer applies.",
+      "media_paths": [],
+      "timestamp": "2026-06-03T10:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "old_tweet_004",
+      "user_id": "u_me",
+      "content": "Old BetaLabs collaboration tweet to be removed as part of rebrand.",
+      "media_paths": [],
+      "timestamp": "2026-06-04T10:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tc_announce_001",
+      "user_id": "tc_user_001",
+      "content": "TechNova is making waves in the AI space! Stay tuned for big announcements.",
+      "media_paths": [],
+      "timestamp": "2026-07-20T08:00:00Z",
+      "likes": ["elon_user_001"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "verge_article_001",
+      "user_id": "verge_user_001",
+      "content": "How AI startups are reshaping the tech landscape in 2026.",
+      "media_paths": [],
+      "timestamp": "2026-07-19T14:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "elon_ai_001",
+      "user_id": "elon_user_001",
+      "content": "AI advancements are happening faster than anyone predicted. This is just the beginning.",
+      "media_paths": [],
+      "timestamp": "2026-07-18T16:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "controversial_tweet_001",
+      "user_id": "u_me",
+      "content": "Old controversial statement from TechPulse days that doesn't align with our new brand voice.",
+      "media_paths": [],
+      "timestamp": "2026-05-15T09:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "1850000000000000003",
+      "user_id": "spam_old_account",
+      "content": "BUY FOLLOWERS NOW! Check out my link!",
+      "media_paths": [],
+      "timestamp": "2025-01-10T05:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tw_oss_announcement",
+      "user_id": "oss2026",
+      "content": "🚀 Official announcement: OpenSource Summit 2026 is back! March 15-17 in San Francisco. Keynote starts at 9AM - register now! #OSSummit2026 #OpenSource",
+      "media_paths": [],
+      "timestamp": "2026-07-25T18:00:00Z",
+      "likes": ["u_me", "elon_user_001"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tw_oss_schedule",
+      "user_id": "oss2026",
+      "content": "📅 OpenSource Summit 2026 schedule is now live! Day 1: Keynotes & Track A, Day 2: Workshops & Track B, Day 3: Closing & Social. Check it out! #OSSummit2026",
+      "media_paths": [],
+      "timestamp": "2026-07-24T12:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tw_sarah_talk",
+      "user_id": "speaker_sarah",
+      "content": "Excited to announce my talk at OpenSource Summit 2026: 'Scaling Distributed Systems with Go' - March 15 at 10AM! #OSSummit2026 #GoLang",
+      "media_paths": [],
+      "timestamp": "2026-07-23T15:00:00Z",
+      "likes": ["sam_user_001"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tw_marcus_keynote",
+      "user_id": "speaker_marcus",
+      "content": "I'll be keynoting at OpenSource Summit 2026 on 'The Future of Cloud-Native Architecture'. March 16 at 9AM. See you in SF! #OSSummit2026",
+      "media_paths": [],
+      "timestamp": "2026-07-22T10:00:00Z",
+      "likes": ["elon_user_001", "tc_user_001"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tw_logistics",
+      "user_id": "oss2026",
+      "content": "🏨 Event logistics: Venue is Moscone Center, West Hall. Shuttle service from partner hotels starts at 7:30AM. Badge pickup opens March 14 at 1PM. #OSSummit2026",
+      "media_paths": [],
+      "timestamp": "2026-07-21T09:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "1936284710052",
+      "user_id": "summit_organizer",
+      "content": "📢 Quantum Summit 2025 Official Announcements:\n\n✅ Final session schedule is now live\n✅ Live streaming available for all tracks\n✅ Resource links: quantum-summit.io/resources\n✅ Networking events: Tuesday & Wednesday evening\n\nDon't miss it! #QuantumSummit2025",
+      "media_paths": [],
+      "timestamp": "2025-07-20T10:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "1936284871123",
+      "user_id": "dr_qubit",
+      "content": "🎯 Demo showcase: Our QML (Quantum Machine Learning) bridge demo at #QuantumSummit2025 just blew everyone away! Real quantum-classical hybrid inference in under 10ms. The pipeline code will be open-sourced next month. Congrats to the whole team on winning Best Demo! 🎉",
+      "media_paths": [],
+      "timestamp": "2025-07-20T11:30:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "1936285120987",
+      "user_id": "neural_quantum_io",
+      "content": "Community recap from #QuantumSummit2025 Day 1:\n\n✨ 150+ quantum computing talks\n✨ Breakthrough in fault-tolerant qubits\n✨ 5000+ attendees from 40+ countries\n✨ Record-breaking networking sessions\n\nWhat an incredible start. Day 2 tomorrow!",
+      "media_paths": [],
+      "timestamp": "2025-07-20T18:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "1748462427483654144",
+      "user_id": "u_me",
+      "content": "Thrilled to share our latest updates from the OpenFrame team! Check out what we've been working on.",
+      "media_paths": [],
+      "timestamp": "2026-01-19T10:00:00Z",
+      "likes": ["acme_user_001"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "1767108034048677309",
+      "user_id": "2699949620",
+      "content": "We're excited to collaborate with OpenFrame on building better developer tools together!",
+      "media_paths": [],
+      "timestamp": "2026-03-10T14:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "1765272035101058820",
+      "user_id": "beta_user_001",
+      "content": "Big announcement coming from BetaLabs soon. Stay tuned for details on our next generation platform.",
+      "media_paths": [],
+      "timestamp": "2026-03-07T16:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "445566",
+      "user_id": "tech_creator_1",
+      "content": "Interesting perspective on the future of tech. What do you all think?",
+      "media_paths": [],
+      "timestamp": "2026-07-20T10:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tweet_pn_001",
+      "user_id": "u_me",
+      "content": "Working on the final phase of ProjectNexus! Exciting updates coming soon #OpenSource #AI",
+      "media_paths": [],
+      "timestamp": "2026-07-26T01:02:25Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tweet_spam_001",
+      "user_id": "spam_dev_1",
+      "content": "Check out this amazing deal! Click now!",
+      "media_paths": [],
+      "timestamp": "2026-06-15T08:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tweet_spam_002",
+      "user_id": "spam_dev_2",
+      "content": "Make money fast with this one trick!",
+      "media_paths": [],
+      "timestamp": "2026-06-15T09:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tweet_spam_003",
+      "user_id": "spam_dev_3",
+      "content": "Free followers and likes! Follow me back!",
+      "media_paths": [],
+      "timestamp": "2026-06-15T10:00:00Z",
+      "likes": ["u_me"],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    },
+    {
+      "tweet_id": "tweet_tech_001",
+      "user_id": "techleader_ace",
+      "content": "Great insights on best practices for building scalable microservices. A must-read thread.",
+      "media_paths": [],
+      "timestamp": "2026-07-24T14:00:00Z",
+      "likes": [],
+      "retweets": [],
+      "replies": [],
+      "reply_to": ""
+    }
+  ],
+  "follows": {
+    "following": [
+      "acme_user_001",
+      "beta_user_001"
+    ]
+  },
+  "media_files": []
+}

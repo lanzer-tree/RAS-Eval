@@ -1,0 +1,57 @@
+{
+  "genetic_data": {
+    "ancestry": "European",
+    "traits": ["Brown hair", "Blue eyes"],
+    "health_predispositions": ["Type 2 Diabetes"],
+    "carrier_status": ["Cystic Fibrosis"]
+  },
+  "privacy_settings": {
+    "share_with_third_parties": false,
+    "allow_download": false
+  },
+  "third_party_apps": [
+    {
+      "app_id": "APP001",
+      "app_info": {
+        "name": "HealthApp",
+        "description": "Health tracking app"
+      }
+    },
+    {
+      "app_id": "APP002",
+      "app_info": {
+        "name": "MyFitnessApp",
+        "description": "Fitness tracking application"
+      }
+    },
+    {
+      "app_id": "APP003",
+      "app_info": {
+        "name": "HealthTracker",
+        "description": "Health monitoring application"
+      }
+    },
+    {
+      "app_id": "APP004",
+      "app_info": {
+        "name": "HealthTracker Pro",
+        "description": "Professional health tracking application"
+      }
+    },
+    {
+      "app_id": "APP005",
+      "app_info": {
+        "name": "GenomeStudy",
+        "description": "Genetic research application"
+      }
+    },
+    {
+      "app_id": "APP006",
+      "app_info": {
+        "name": "HealthTrack Pro",
+        "description": "Wellness tracking application"
+      }
+    }
+  ],
+  "shared_apps": []
+}

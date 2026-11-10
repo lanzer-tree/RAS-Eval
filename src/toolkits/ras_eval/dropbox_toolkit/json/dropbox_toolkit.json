@@ -1,0 +1,190 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "UploadFile",
+            "description": "Upload a local file to a specified folder in Dropbox cloud storage.",
+            "parameters": {
+                "properties": {
+                    "local_file_path": {
+                        "description": "Path to the local file to be uploaded.",
+                        "type": "string"
+                    },
+                    "cloud_folder_path": {
+                        "default": "/MyDropbox/",
+                        "description": "Destination folder path in Dropbox cloud storage.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "local_file_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DownloadFile",
+            "description": "Download a file from Dropbox cloud storage to a local folder.",
+            "parameters": {
+                "properties": {
+                    "user_cloud_file_path": {
+                        "default": "",
+                        "description": "Path to the file in the user's Dropbox cloud storage.",
+                        "type": "string"
+                    },
+                    "shared_file_id": {
+                        "default": "",
+                        "description": "ID of a shared file to download.",
+                        "type": "string"
+                    },
+                    "local_destination_folder": {
+                        "default": "",
+                        "description": "Local folder path where the file will be saved.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ListFilesAndFolders",
+            "description": "List files and folders in a specified Dropbox cloud folder.",
+            "parameters": {
+                "properties": {
+                    "cloud_folder_path": {
+                        "default": "/MyDropbox/",
+                        "description": "Path to the folder in Dropbox cloud storage.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of items to return in the list.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateFolder",
+            "description": "Create a new folder in the specified parent folder in Dropbox.",
+            "parameters": {
+                "properties": {
+                    "folder_name": {
+                        "description": "Name of the new folder to create.",
+                        "type": "string"
+                    },
+                    "parent_folder_path": {
+                        "default": "/MyDropbox/",
+                        "description": "Path to the parent folder where the new folder will be created.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "folder_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ShareItem",
+            "description": "Share a Dropbox item with a specified recipient at a given access level.",
+            "parameters": {
+                "properties": {
+                    "item_path": {
+                        "description": "Path to the item to be shared in Dropbox.",
+                        "type": "string"
+                    },
+                    "recipient_email": {
+                        "description": "Email address of the recipient to share with.",
+                        "type": "string"
+                    },
+                    "access_level": {
+                        "description": "Access level granted to the recipient, must be view, comment, or edit.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "item_path",
+                    "recipient_email",
+                    "access_level"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteDropboxItem",
+            "description": "Delete an item or folder from Dropbox cloud storage.",
+            "parameters": {
+                "properties": {
+                    "item_path": {
+                        "description": "Path to the item or folder to be deleted.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "item_path"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchDropboxItems",
+            "description": "Search for items in Dropbox by name or path.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "Search query string to match against item names and paths.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of search results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetItemMetadata",
+            "description": "Retrieve metadata for a specific item in Dropbox.",
+            "parameters": {
+                "properties": {
+                    "item_path": {
+                        "description": "Path to the item whose metadata is to be retrieved.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "item_path"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

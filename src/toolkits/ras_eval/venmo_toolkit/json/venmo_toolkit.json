@@ -1,0 +1,221 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SendMoney",
+            "description": "Send money to a user.",
+            "parameters": {
+                "properties": {
+                    "recipient_username": {
+                        "description": "The username of the recipient.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of money to send, must be positive.",
+                        "type": "number"
+                    },
+                    "note": {
+                        "default": "",
+                        "description": "Optional note for the transaction.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "recipient_username",
+                    "amount"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "RequestMoney",
+            "description": "Request money from a user.",
+            "parameters": {
+                "properties": {
+                    "requestee_username": {
+                        "description": "The username of the user to request money from.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of money to request, must be positive.",
+                        "type": "number"
+                    },
+                    "note": {
+                        "default": "",
+                        "description": "Optional note for the transaction.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "requestee_username",
+                    "amount"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "HandleRequest",
+            "description": "Handle a pending money request by confirming or declining it.",
+            "parameters": {
+                "properties": {
+                    "transaction_id": {
+                        "description": "The transaction ID of the pending request.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "The action to take, either 'confirm' or 'decline'.",
+                        "type": "string"
+                    },
+                    "note": {
+                        "default": "",
+                        "description": "Optional note for the transaction.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "transaction_id",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CheckBalance",
+            "description": "Check the current account balance.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "AddMoney",
+            "description": "Add money to the account from a linked account.",
+            "parameters": {
+                "properties": {
+                    "amount": {
+                        "description": "The amount of money to add, must be positive.",
+                        "type": "number"
+                    },
+                    "account_id": {
+                        "description": "The ID of the linked account to add money from.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "amount",
+                    "account_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "WithdrawMoney",
+            "description": "Withdraw money from the account to a linked account.",
+            "parameters": {
+                "properties": {
+                    "amount": {
+                        "description": "The amount of money to withdraw, must be positive.",
+                        "type": "number"
+                    },
+                    "account_id": {
+                        "description": "The ID of the linked account to withdraw money to.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "amount",
+                    "account_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchVenmoTransactions",
+            "description": "Search for Venmo transactions with optional filters.",
+            "parameters": {
+                "properties": {
+                    "username": {
+                        "default": "",
+                        "description": "Filter by other user's username.",
+                        "type": "string"
+                    },
+                    "query": {
+                        "default": "",
+                        "description": "Search query to match against transaction notes or usernames.",
+                        "type": "string"
+                    },
+                    "transaction_type": {
+                        "default": "all",
+                        "description": "Filter by transaction type, 'all' for no filter.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 5,
+                        "description": "Maximum number of results to return, between 1 and 10.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ViewFriendsList",
+            "description": "View the friends list.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchUsers",
+            "description": "Search for users by username or display name.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "The search query.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ListLinkedAccounts",
+            "description": "List linked accounts.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    }
+]

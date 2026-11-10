@@ -1,0 +1,244 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "DeploySmartContract",
+            "description": "Deploy a smart contract to the Ethereum network.",
+            "parameters": {
+                "properties": {
+                    "contract_bytecode": {
+                        "description": "The bytecode of the contract to deploy.",
+                        "type": "string"
+                    },
+                    "constructor_args": {
+                        "description": "The constructor arguments for the contract.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "contract_bytecode",
+                    "constructor_args"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CallSmartContractFunction",
+            "description": "Call a function on a deployed smart contract.",
+            "parameters": {
+                "properties": {
+                    "contract_address": {
+                        "description": "The address of the deployed contract.",
+                        "type": "string"
+                    },
+                    "function_name": {
+                        "description": "The name of the function to call.",
+                        "type": "string"
+                    },
+                    "function_args": {
+                        "description": "The arguments to pass to the function.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "default": 0,
+                        "description": "The amount of ether to send with the transaction.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "contract_address",
+                    "function_name",
+                    "function_args"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "TransferEther",
+            "description": "Transfer ether from one address to another.",
+            "parameters": {
+                "properties": {
+                    "from_address": {
+                        "description": "The address sending the ether.",
+                        "type": "string"
+                    },
+                    "to_address": {
+                        "description": "The address receiving the ether.",
+                        "type": "string"
+                    },
+                    "amount_ether": {
+                        "description": "The amount of ether to transfer.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "from_address",
+                    "to_address",
+                    "amount_ether"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateEthereumAccount",
+            "description": "Create a new Ethereum account with a private key and initial balance.",
+            "parameters": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ImportEthereumAccount",
+            "description": "Import an existing Ethereum account using its private key.",
+            "parameters": {
+                "properties": {
+                    "private_key": {
+                        "description": "The 64-character hexadecimal private key.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "private_key"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "EstimateGasCost",
+            "description": "Estimate the gas cost for calling a smart contract function.",
+            "parameters": {
+                "properties": {
+                    "contract_address": {
+                        "description": "The address of the contract.",
+                        "type": "string"
+                    },
+                    "function_name": {
+                        "description": "The name of the function to call.",
+                        "type": "string"
+                    },
+                    "function_args": {
+                        "description": "The arguments to pass to the function.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "contract_address",
+                    "function_name",
+                    "function_args"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CompileSolidity",
+            "description": "Compile Solidity contract code to bytecode.",
+            "parameters": {
+                "properties": {
+                    "contract_code": {
+                        "description": "The Solidity source code to compile.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "contract_code"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SignMessage",
+            "description": "Sign a message using a private key.",
+            "parameters": {
+                "properties": {
+                    "message": {
+                        "description": "The message to sign.",
+                        "type": "string"
+                    },
+                    "private_key": {
+                        "description": "The private key to use for signing.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "message",
+                    "private_key"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "VerifyMessage",
+            "description": "Verify a message signature against an account address.",
+            "parameters": {
+                "properties": {
+                    "message": {
+                        "description": "The original message that was signed.",
+                        "type": "string"
+                    },
+                    "signature": {
+                        "description": "The signature to verify.",
+                        "type": "string"
+                    },
+                    "account_address": {
+                        "description": "The account address to verify against.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "message",
+                    "signature",
+                    "account_address"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "QueryEthereumData",
+            "description": "Query Ethereum data based on query type and value.",
+            "parameters": {
+                "properties": {
+                    "query_type": {
+                        "description": "The type of query (addresses, address info, transaction hash).",
+                        "type": "string"
+                    },
+                    "query_value": {
+                        "description": "The value to query for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "query_type",
+                    "query_value"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

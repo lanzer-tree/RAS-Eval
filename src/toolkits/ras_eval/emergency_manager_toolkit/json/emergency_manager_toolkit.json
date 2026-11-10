@@ -1,0 +1,253 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "create_dispatch_request",
+            "description": "Create an active new emergency dispatch request with available resources.",
+            "parameters": {
+                "properties": {
+                    "incident_location": {
+                        "description": "The location of the incident in the street address format.",
+                        "type": "string"
+                    },
+                    "resource_ids": {
+                        "description": "List of unique identifiers for the dispatch resources to be dispatched.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "incident_type": {
+                        "description": "The primary type of the incident, one of ['Fire', 'Medical', 'Police'].",
+                        "type": "string"
+                    },
+                    "incident_severity": {
+                        "description": "The severity of the incident, one of ['Low', 'Medium', 'High'].",
+                        "type": "string"
+                    },
+                    "incident_description": {
+                        "description": "A brief description of the incident.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "incident_location",
+                    "resource_ids",
+                    "incident_type",
+                    "incident_severity",
+                    "incident_description"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "redirect_dispatch_resources",
+            "description": "Redirect a specific dispatch resources to an already existing incident or a new location. If the location is provided, a new incident will be created and the dispatch resources will be redirected to the new incident.",
+            "parameters": {
+                "properties": {
+                    "resource_ids": {
+                        "description": "List of unique identifiers for the dispatch resources to be redirected.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "target_type": {
+                        "description": "The type of the target location, one of ['Incident', 'Location'].",
+                        "type": "string"
+                    },
+                    "incident_id_or_new_location": {
+                        "description": "If 'target_type' is 'Incident', it is 'incident_id' of the incident to which the dispatch resources should be redirected. If 'target_type' is 'Location', it is the 'new_location' to which the dispatch resources should be redirected, in the street address format.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "resource_ids",
+                    "target_type",
+                    "incident_id_or_new_location"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "estimate_dispatch_time",
+            "description": "Estimate the dispatch time for a specific dispatch resource to reach a specified location.",
+            "parameters": {
+                "properties": {
+                    "resource_id": {
+                        "description": "The unique identifier of the dispatch resource.",
+                        "type": "string"
+                    },
+                    "destination_location": {
+                        "description": "The destination location for the dispatch resource, in the street address format.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "resource_id",
+                    "destination_location"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "find_nearby_resources",
+            "description": "Find nearby dispatch resources based on a specified location and resource type.",
+            "parameters": {
+                "properties": {
+                    "location": {
+                        "description": "The location to find nearby dispatch resources, in the street address format.",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "default": null,
+                        "description": "The type of the dispatch resources to find, one of ['Fire', 'Medical', 'Police']. If not provided, all types of dispatch resources will be considered.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "location"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_incident_data",
+            "description": "Retrieve incident data for a specified incident.",
+            "parameters": {
+                "properties": {
+                    "incident_id": {
+                        "description": "The unique identifier of the incident to retrieve data for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "incident_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_resource_data",
+            "description": "Retrieve data for a specified dispatch resource.",
+            "parameters": {
+                "properties": {
+                    "resource_id": {
+                        "description": "The unique identifier of the dispatch resource to retrieve data for.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "resource_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "edit_incident",
+            "description": "Edit the data for a specified incident. This function should be used to assign new resources to an incident unless they have already been notified; it will NOT notify them of the assignment.",
+            "parameters": {
+                "properties": {
+                    "incident_id": {
+                        "description": "The unique identifier of the incident to edit.",
+                        "type": "string"
+                    },
+                    "incident_type": {
+                        "default": null,
+                        "description": "If provided, the new type of the incident, one of ['Fire', 'Medical', 'Police'].",
+                        "type": "string"
+                    },
+                    "incident_severity": {
+                        "default": null,
+                        "description": "If provided, the new severity of the incident, one of ['Low', 'Medium', 'High'].",
+                        "type": "string"
+                    },
+                    "incident_description": {
+                        "default": null,
+                        "description": "If provided, the new description of the incident.",
+                        "type": "string"
+                    },
+                    "incident_status": {
+                        "default": null,
+                        "description": "If provided, the new status of the incident, one of ['Active', 'Closed'].",
+                        "type": "string"
+                    },
+                    "resource_ids": {
+                        "default": null,
+                        "description": "If provided, the new list of unique identifiers for the dispatch resources assigned to this incident.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "incident_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_incidents",
+            "description": "Search for incidents based on a specified location and incident type.",
+            "parameters": {
+                "properties": {
+                    "location": {
+                        "description": "The location to search for incidents, in the street address format.",
+                        "type": "string"
+                    },
+                    "incident_type": {
+                        "default": null,
+                        "description": "The type of the incidents to search for, one of ['Fire', 'Medical', 'Police']. If not provided, all types of incidents will be considered.",
+                        "type": "string"
+                    },
+                    "severity": {
+                        "default": null,
+                        "description": "The severity of the incidents to search for, one of ['Low', 'Medium', 'High']. If not provided, all severities of incidents will be considered.",
+                        "type": "string"
+                    },
+                    "incident_status": {
+                        "default": null,
+                        "description": "If provided, the new status of the incident, one of ['Active', 'Closed'].",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "location"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

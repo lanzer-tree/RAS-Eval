@@ -1,0 +1,514 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "save_health_profile",
+            "description": "Save a new health profile for an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "basic_info": {
+                        "additionalProperties": true,
+                        "description": "Basic information about the elderly person.",
+                        "type": "object"
+                    },
+                    "chronic_diseases": {
+                        "description": "List of chronic diseases the elderly person has.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "allergies": {
+                        "description": "List of allergies the elderly person has.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "medications": {
+                        "description": "List of medications the elderly person is taking.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "family_medical_history": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Family medical history information."
+                    },
+                    "emergency_contact": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Emergency contact information."
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "basic_info",
+                    "chronic_diseases",
+                    "allergies",
+                    "medications"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_health_profile",
+            "description": "Retrieve health profile information for an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "fields": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "List of specific fields to retrieve, or None for all fields."
+                    }
+                },
+                "required": [
+                    "elderly_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_health_profile",
+            "description": "Update existing health profile information for an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "update_data": {
+                        "additionalProperties": true,
+                        "description": "Dictionary containing fields to update with new values.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "update_data"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "save_health_records",
+            "description": "Save a health record for an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "record_type": {
+                        "description": "Type of health record being saved.",
+                        "type": "string"
+                    },
+                    "record_value": {
+                        "description": "Value of the health record.",
+                        "type": "string"
+                    },
+                    "record_time": {
+                        "description": "Timestamp when the health record was taken.",
+                        "type": "string"
+                    },
+                    "notes": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Additional notes about the health record."
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "record_type",
+                    "record_value",
+                    "record_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_health_records",
+            "description": "Retrieve health records for an elderly person with optional filtering and pagination.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "record_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter records by specific type."
+                    },
+                    "time_range": {
+                        "anyOf": [
+                            {},
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Time range filter for records."
+                    },
+                    "page": {
+                        "default": 1,
+                        "description": "Page number for pagination.",
+                        "type": "integer"
+                    },
+                    "page_size": {
+                        "default": 10,
+                        "description": "Number of records per page.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "elderly_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "generate_health_summary",
+            "description": "Generate a health summary report for an elderly person over a specified period.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "period": {
+                        "default": "week",
+                        "description": "Time period for the summary, either week or month.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "End date for the summary period in ISO format."
+                    }
+                },
+                "required": [
+                    "elderly_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "connect_smart_devices",
+            "description": "Connect a smart device to an elderly person's profile.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "device_type": {
+                        "description": "Type of smart device.",
+                        "type": "string"
+                    },
+                    "device_id": {
+                        "description": "Unique identifier for the smart device.",
+                        "type": "string"
+                    },
+                    "sync_frequency": {
+                        "description": "Frequency of data synchronization.",
+                        "type": "string"
+                    },
+                    "data_types": {
+                        "description": "List of data types the device collects.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "device_type",
+                    "device_id",
+                    "sync_frequency",
+                    "data_types"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_medication_reminder",
+            "description": "Get medication reminders for an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Date for the medication reminder."
+                    },
+                    "time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Time for the medication reminder."
+                    }
+                },
+                "required": [
+                    "elderly_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "record_medication_taken",
+            "description": "Record a medication taken for an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "medication_id": {
+                        "description": "Unique identifier for the medication.",
+                        "type": "string"
+                    },
+                    "take_status": {
+                        "description": "Status of the medication taken.",
+                        "type": "string"
+                    },
+                    "take_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Time when the medication was taken."
+                    },
+                    "notes": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Additional notes about the medication taken."
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "medication_id",
+                    "take_status"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_nearby_hospitals",
+            "description": "Search for nearby hospitals based on location, type, and distance.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "Location for the search.",
+                        "type": "string"
+                    },
+                    "hospital_type": {
+                        "description": "Type of hospital.",
+                        "type": "string"
+                    },
+                    "distance": {
+                        "default": 5.0,
+                        "description": "Maximum distance for the search.",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "location",
+                    "hospital_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "book_doctor_appointment",
+            "description": "Book a doctor appointment for an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "hospital_id": {
+                        "description": "Unique identifier for the hospital.",
+                        "type": "string"
+                    },
+                    "department": {
+                        "description": "Department of the doctor.",
+                        "type": "string"
+                    },
+                    "doctor_id": {
+                        "description": "Unique identifier for the doctor.",
+                        "type": "string"
+                    },
+                    "appointment_time": {
+                        "description": "Time for the appointment.",
+                        "type": "string"
+                    },
+                    "symptoms": {
+                        "description": "Symptoms of the patient.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "hospital_id",
+                    "department",
+                    "doctor_id",
+                    "appointment_time",
+                    "symptoms"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "notify_emergency_contact",
+            "description": "Notify the emergency contact of an elderly person.",
+            "parameters": {
+                "properties": {
+                    "elderly_id": {
+                        "description": "Unique identifier for the elderly person.",
+                        "type": "string"
+                    },
+                    "emergency_info": {
+                        "description": "Emergency information.",
+                        "type": "string"
+                    },
+                    "contact_type": {
+                        "description": "Type of contact.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "elderly_id",
+                    "emergency_info",
+                    "contact_type"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

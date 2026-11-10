@@ -1,0 +1,192 @@
+{
+  "resources": [
+    {
+      "id": "paper-equivariant-gnn-molecular",
+      "title": "E(n) Equivariant Graph Neural Networks for Molecular Property Prediction",
+      "author": "Satorras, V. G., Hoogeboom, E., Welling, M.",
+      "description": "A foundational paper introducing E(n) equivariant graph neural networks (EGNNs) that are equivariant to rotations, translations, and reflections. The model achieves state-of-the-art on QM9 and MD17 datasets for molecular property prediction without requiring data augmentation. The architecture jointly learns invariant scalar features and equivariant coordinate embeddings, making it computationally efficient compared to tensor field network approaches.",
+      "type": "paper",
+      "format": "PDF",
+      "price": 0,
+      "rating": 4.8,
+      "link": "https://arxiv.org/abs/2102.09844",
+      "language": "en",
+      "total_pages": 20,
+      "topics": ["equivariant neural networks", "graph neural networks", "molecular property prediction", "drug discovery", "geometric deep learning", "SE(3) equivariance", "QM9", "molecular dynamics"],
+      "content": {
+        "core_points": [
+          "E(n) equivariant GNNs preserve rotational, translational, and reflectional symmetries without data augmentation",
+          "The EGNN architecture jointly learns invariant scalar features and equivariant coordinate embeddings",
+          "Message passing uses invariant distances ||x_i - x_j||^2 and equivariant coordinate differences (x_i - x_j)",
+          "Achieves state-of-the-art on QM9 (quantum properties) and MD17 (molecular dynamics) benchmarks",
+          "Computationally simpler than tensor field networks and SE(3)-Transformers since it avoids spherical harmonics",
+          "Direct application to drug-target binding affinity prediction and molecular generation"
+        ],
+        "chapters": [
+          {"chapter": 1, "summary": "Introduction to equivariance in molecular modeling and the need for symmetry-aware architectures"},
+          {"chapter": 2, "summary": "Mathematical foundations of E(n) equivariance and group theory preliminaries"},
+          {"chapter": 3, "summary": "The EGNN architecture: message passing with invariant and equivariant features"},
+          {"chapter": 4, "summary": "Experimental results on QM9 and MD17 datasets, comparison with SchNet, DimeNet, and SE(3)-Transformers"},
+          {"chapter": 5, "summary": "Ablation studies on equivariance constraints and model capacity"},
+          {"chapter": 6, "summary": "Applications to drug discovery, molecular dynamics, and N-body simulations"},
+          {"chapter": 7, "summary": "Discussion, limitations, and future directions for equivariant deep learning"}
+        ],
+        "key_data": [
+          {"data_point": "QM9 mean absolute error", "value": "0.0106 for mu (dipole moment)"},
+          {"data_point": "MD17 energy prediction error", "value": "0.0012 kcal/mol on aspirin"},
+          {"data_point": "Training time reduction vs SE(3)-Transformers", "value": "~10x faster"},
+          {"data_point": "Number of model parameters", "value": "~1.2M for QM9 experiments"}
+        ]
+      }
+    },
+    {
+      "id": "paper-se3-transformers",
+      "title": "SE(3)-Transformers: 3D Roto-Translation Equivariant Attention Networks",
+      "author": "Fuchs, F. B., Worrall, D. E., Fischer, V., Welling, M.",
+      "description": "Introduces SE(3)-Transformers that combine tensor field networks with self-attention mechanisms. The model uses spherical harmonics and Clebsch-Gordan tensor products to build SE(3)-equivariant attention layers, enabling richer geometric representations for 3D point cloud and molecular data.",
+      "type": "paper",
+      "format": "PDF",
+      "price": 0,
+      "rating": 4.7,
+      "link": "https://arxiv.org/abs/2006.10503",
+      "language": "en",
+      "total_pages": 16,
+      "topics": ["equivariant neural networks", "SE(3) equivariance", "tensor field networks", "attention mechanisms", "geometric deep learning", "molecular property prediction", "3D point clouds"],
+      "content": {
+        "core_points": [
+          "Extends tensor field networks with self-attention while preserving SE(3) equivariance",
+          "Uses spherical harmonics and Clebsch-Gordan tensor products for equivariant attention",
+          "Achieves competitive results on QM9 and ModelNet40 tasks",
+          "Provides a general framework for building equivariant transformers for 3D data"
+        ]
+      }
+    },
+    {
+      "id": "paper-tensor-field-networks",
+      "title": "Tensor Field Networks: Rotation- and Translation-Equivariant Neural Networks for 3D Point Clouds",
+      "author": "Thomas, N., Smidt, T., Kearnes, S., Yang, L., Li, L., Kohlhoff, K., Riley, P.",
+      "description": "The foundational paper introducing tensor field networks (TFNs) — neural networks that are SE(3)-equivariant by construction. Features at each point are represented as tensor fields that transform under rotations according to irreducible representations of SO(3). Learnable filters are constrained to products of radial functions and spherical harmonics.",
+      "type": "paper",
+      "format": "PDF",
+      "price": 0,
+      "rating": 4.9,
+      "link": "https://arxiv.org/abs/1802.08219",
+      "language": "en",
+      "total_pages": 12,
+      "topics": ["tensor field networks", "SE(3) equivariance", "3D point clouds", "spherical harmonics", "geometric deep learning", "molecular modeling", "SO(3) representations"],
+      "content": {
+        "core_points": [
+          "Tensor Field Networks are the first architecture to achieve SE(3) equivariance in neural networks for 3D data",
+          "Features are represented as tensor fields that transform under irreducible representations of SO(3)",
+          "Learnable filters are products of radial functions (distance-dependent) and spherical harmonics (direction-dependent)",
+          "Fundamental architecture that inspired SE(3)-Transformers, EGNNs, and other modern equivariant GNNs",
+          "Eliminates need for data augmentation by guaranteeing equivariance by construction"
+        ]
+      }
+    },
+    {
+      "id": "paper-equivariant-drug-discovery",
+      "title": "Equivariant Graph Neural Networks for Drug Discovery: From Molecular Property Prediction to Binding Affinity",
+      "author": "Chen, Y., Liu, M., Zhang, L., Wang, H.",
+      "description": "A comprehensive survey and application study of equivariant GNNs in drug discovery pipelines. Covers molecular property prediction, drug-target interaction prediction, binding affinity estimation, and de novo drug design with E(3) and SE(3) equivariant architectures.",
+      "type": "paper",
+      "format": "PDF",
+      "price": 0,
+      "rating": 4.6,
+      "link": "https://arxiv.org/abs/2205.00000",
+      "language": "en",
+      "total_pages": 24,
+      "topics": ["equivariant neural networks", "drug discovery", "graph neural networks", "binding affinity", "molecular property prediction", "pharmaceutical applications", "de novo drug design"],
+      "content": {
+        "core_points": [
+          "Comprehensive survey of equivariant GNN architectures applied to drug discovery",
+          "Benchmarks equivariant models on binding affinity prediction (PDBBind), toxicity prediction (Tox21), and ADME properties",
+          "Shows that equivariant models consistently outperform non-equivariant baselines on 3D molecular tasks",
+          "Proposes a unified framework for integrating equivariant GNNs into pharmaceutical screening pipelines",
+          "Discusses practical challenges: data scarcity, computational cost, and integration with docking software"
+        ]
+      }
+    },
+    {
+      "id": "paper-geometric-deep-learning-molecular",
+      "title": "Geometric Deep Learning for Molecular Property Prediction: A Practical Guide",
+      "author": "Atz, K., Grisoni, F., Schneider, G.",
+      "description": "A tutorial-style paper providing a practical guide to applying geometric deep learning methods to molecular property prediction tasks. Covers SchNet, DimeNet, EGNN, and SE(3)-Transformers with hands-on examples.",
+      "type": "paper",
+      "format": "PDF",
+      "price": 0,
+      "rating": 4.5,
+      "link": "https://arxiv.org/abs/2107.12345",
+      "language": "en",
+      "total_pages": 18,
+      "topics": ["geometric deep learning", "molecular property prediction", "graph neural networks", "equivariance", "drug discovery", "molecular representations"],
+      "content": {
+        "core_points": [
+          "Practical introduction to geometric deep learning for molecular applications",
+          "Step-by-step walkthrough of SchNet, DimeNet, EGNN, and SE(3)-Transformer architectures",
+          "Comparison of invariant vs. equivariant approaches on standard benchmarks",
+          "Guidance on choosing the right architecture for specific molecular tasks"
+        ]
+      }
+    },
+    {
+      "id": "paper-diffdock",
+      "title": "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking",
+      "author": "Corso, G., Stärk, H., Jing, B., Barzilay, R., Jaakkola, T.",
+      "description": "Introduces DiffDock, a diffusion generative model for molecular docking that uses SE(3)-equivariant architectures. State-of-the-art on blind docking tasks, directly building on equivariant GNN principles for drug discovery.",
+      "type": "paper",
+      "format": "PDF",
+      "price": 0,
+      "rating": 4.8,
+      "link": "https://arxiv.org/abs/2210.01776",
+      "language": "en",
+      "total_pages": 22,
+      "topics": ["equivariant neural networks", "molecular docking", "drug discovery", "diffusion models", "SE(3) equivariance", "protein-ligand binding"],
+      "content": {
+        "core_points": [
+          "Diffusion model for molecular docking using SE(3)-equivariant score networks",
+          "Achieves state-of-the-art on PDBBind blind docking benchmark",
+          "Directly applies equivariant GNN principles to predict binding poses",
+          "Significantly outperforms traditional docking methods (AutoDock Vina, GNINA)"
+        ]
+      }
+    },
+    {
+      "id": "paper-mace",
+      "title": "MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields",
+      "author": "Batatia, I., Kovacs, D. P., Simm, G. N. C., Ortner, C., Csányi, G.",
+      "description": "Introduces MACE (Multi-ACE), a higher-order equivariant message passing architecture that uses many-body expansions for state-of-the-art accuracy on molecular force fields. Builds on tensor field networks and equivariant message passing.",
+      "type": "paper",
+      "format": "PDF",
+      "price": 0,
+      "rating": 4.7,
+      "link": "https://arxiv.org/abs/2206.07697",
+      "language": "en",
+      "total_pages": 18,
+      "topics": ["equivariant neural networks", "message passing", "molecular force fields", "tensor field networks", "many-body expansions", "geometric deep learning"],
+      "content": {
+        "core_points": [
+          "Higher-order equivariant message passing with many-body expansions",
+          "Achieves state-of-the-art accuracy on QM9 and MD17 force field benchmarks",
+          "Systematically extends tensor field networks to higher-order representations",
+          "Efficient implementation using e3nn library for equivariant operations"
+        ]
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "user-001",
+      "name": "Thesis Student",
+      "reading_progress": {},
+      "reading_plans": []
+    }
+  ],
+  "explanations": {
+    "tensor field networks": {
+      "explanation": "Tensor Field Networks (TFNs) are SE(3)-equivariant neural networks that operate on 3D point clouds. Each point's features are represented as tensor fields — geometric objects that transform under 3D rotations according to the irreducible representations of the SO(3) group. The key innovation is constraining learnable filters to be products of radial functions (depending only on distance) and spherical harmonics (depending on direction), guaranteeing that the network respects the symmetries of 3D space.",
+      "examples": ["Molecular property prediction", "3D object recognition", "Protein structure analysis"],
+      "background": "Introduced by Thomas et al. (2018), TFNs were the first architecture to achieve full SE(3) equivariance in neural networks."
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "user_id": "user001",
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  ],
+  "templates": [
+    {
+      "template_id": "tpl001",
+      "name": "Modern Poster",
+      "design_type": "poster",
+      "style": "modern",
+      "dimension": "A4",
+      "width": 2480,
+      "height": 3508,
+      "background_color": "#FFFFFF",
+      "default_layers": [],
+      "preview_url": "https://example.com/preview1.jpg",
+      "applicable_scenes": ["marketing", "events"],
+      "usage_count": 1000
+    },
+    {
+      "template_id": "T78901",
+      "name": "Book Cover Template",
+      "design_type": "book_cover",
+      "style": "fantasy",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#000000",
+      "default_layers": [],
+      "preview_url": "https://example.com/bookcover_preview.jpg",
+      "applicable_scenes": ["books", "publishing"],
+      "usage_count": 500
+    },
+    {
+      "template_id": "tpl002",
+      "name": "Fantasy Poster",
+      "design_type": "poster",
+      "style": "fantasy",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#1a1a2e",
+      "default_layers": [],
+      "preview_url": "https://example.com/fantasy_poster.jpg",
+      "applicable_scenes": ["fantasy", "art"],
+      "usage_count": 300
+    },
+    {
+      "template_id": "tpl003",
+      "name": "Fantasy Poster Dark",
+      "design_type": "poster",
+      "style": "fantasy",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#0f0f23",
+      "default_layers": [],
+      "preview_url": "https://example.com/fantasy_dark.jpg",
+      "applicable_scenes": ["fantasy", "dark"],
+      "usage_count": 200
+    },
+    {
+      "template_id": "tpl004",
+      "name": "Modern Poster 16:9",
+      "design_type": "poster",
+      "style": "modern",
+      "dimension": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "background_color": "#FFFFFF",
+      "default_layers": [],
+      "preview_url": "https://example.com/modern_16_9.jpg",
+      "applicable_scenes": ["marketing", "modern"],
+      "usage_count": 800
+    }
+  ],
+  "projects": [],
+  "assets": [],
+  "elements": []
+}

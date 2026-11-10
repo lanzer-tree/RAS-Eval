@@ -1,0 +1,253 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchFlights",
+            "description": "Search for available flights based on specified criteria.",
+            "parameters": {
+                "properties": {
+                    "origin": {
+                        "description": "The departure airport code or city.",
+                        "type": "string"
+                    },
+                    "destination": {
+                        "description": "The arrival airport code or city.",
+                        "type": "string"
+                    },
+                    "departure_date": {
+                        "description": "The date of departure.",
+                        "type": "string"
+                    },
+                    "travellers": {
+                        "additionalProperties": true,
+                        "description": "Information about the travellers.",
+                        "type": "object"
+                    },
+                    "travel_class": {
+                        "description": "The class of travel (e.g., economy, business).",
+                        "type": "string"
+                    },
+                    "return_date": {
+                        "default": "",
+                        "description": "The date of return flight, optional.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 5,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    },
+                    "filters": {
+                        "additionalProperties": true,
+                        "default": null,
+                        "description": "Additional filters like airline, stops, price range.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "origin",
+                    "destination",
+                    "departure_date",
+                    "travellers",
+                    "travel_class"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetFlightDetails",
+            "description": "Get detailed information about a specific flight.",
+            "parameters": {
+                "properties": {
+                    "departure_date": {
+                        "description": "The date of departure.",
+                        "type": "string"
+                    },
+                    "flight_number": {
+                        "description": "The flight number to look up.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "departure_date",
+                    "flight_number"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchAccommodations",
+            "description": "Search for available accommodations based on specified criteria.",
+            "parameters": {
+                "properties": {
+                    "city": {
+                        "description": "The city where accommodation is needed.",
+                        "type": "string"
+                    },
+                    "check_in_date": {
+                        "description": "The check-in date.",
+                        "type": "string"
+                    },
+                    "check_out_date": {
+                        "description": "The check-out date.",
+                        "type": "string"
+                    },
+                    "guests": {
+                        "description": "List of guest information.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "location": {
+                        "default": "",
+                        "description": "Specific location within the city, optional.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 5,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    },
+                    "filters": {
+                        "additionalProperties": true,
+                        "default": null,
+                        "description": "Additional filters like accommodation type, room type, rating.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "city",
+                    "check_in_date",
+                    "check_out_date",
+                    "guests"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "Booking",
+            "description": "Book flights or accommodations with the specified options.",
+            "parameters": {
+                "properties": {
+                    "option_ids": {
+                        "description": "List of option IDs to book.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "payment_method": {
+                        "additionalProperties": true,
+                        "description": "Payment information including card details.",
+                        "type": "object"
+                    },
+                    "travellers": {
+                        "default": null,
+                        "description": "List of traveller information, required for flights.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "option_ids",
+                    "payment_method"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchReservations",
+            "description": "Search for reservations based on type and query criteria.",
+            "parameters": {
+                "properties": {
+                    "reservation_type": {
+                        "description": "Type of reservation ('flight' or 'accommodation').",
+                        "type": "string"
+                    },
+                    "query": {
+                        "description": "Search query string.",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "default": "",
+                        "description": "Start date filter, optional.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "default": "",
+                        "description": "End date filter, optional.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 5,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "reservation_type",
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CancelReservations",
+            "description": "Cancel one or more reservations.",
+            "parameters": {
+                "properties": {
+                    "reservation_ids": {
+                        "description": "List of reservation IDs to cancel.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "reservation_ids"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "RetrieveSavedInformation",
+            "description": "Retrieve saved information of a specific type.",
+            "parameters": {
+                "properties": {
+                    "information_type": {
+                        "description": "Type of information to retrieve ('payments' or 'people').",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "information_type"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

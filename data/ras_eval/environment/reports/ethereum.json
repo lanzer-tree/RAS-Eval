@@ -1,0 +1,14 @@
+{
+  "accounts": {
+    "0xd2bbd742912902c9f7d0faea38ab3d361cbc2f77": {
+      "private_key": "8d343f22d0c1375707cb98037bece919c40496a8a3236ce49858c82c1a47d48a",
+      "balance": 1000
+    },
+    "0xdb98ee5eec7ef4c89228c531d83c2789c34abbb6": {
+      "private_key": "25e63370e365024d2664db143f1f674b4bbb01b164fea53d7d2610a4a930a7e0",
+      "balance": 1000
+    }
+  },
+  "contracts": {},
+  "transactions": []
+}

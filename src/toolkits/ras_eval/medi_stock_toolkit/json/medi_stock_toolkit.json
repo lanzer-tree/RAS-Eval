@@ -1,0 +1,540 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "query_material_stock",
+            "description": "Query material stock status including consumables, medicines, and equipment.",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID for authorization.",
+                        "type": "string"
+                    },
+                    "material_type": {
+                        "description": "Material type (consumable/medicine/equipment).",
+                        "type": "string"
+                    },
+                    "query_params": {
+                        "description": "Query conditions - material ID, name, or specification.",
+                        "type": "string"
+                    },
+                    "dept_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional department ID for precise department stock query."
+                    },
+                    "low_stock_alert": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional low stock alert threshold."
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "material_type",
+                    "query_params"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "add_material_warehousing",
+            "description": "Register material warehousing (purchase or transfer receipt).",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID.",
+                        "type": "string"
+                    },
+                    "material_list": {
+                        "description": "List of materials to warehouse with material_id, quantity, batch_number, expiry_date.",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "warehousing_type": {
+                        "description": "Warehousing type (purchase/transfer).",
+                        "type": "string"
+                    },
+                    "supplier_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Supplier ID, required for purchase warehousing."
+                    },
+                    "operator_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Operator ID."
+                    },
+                    "dept_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Target department for warehousing."
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "material_list",
+                    "warehousing_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_purchase_application",
+            "description": "Initiate a material purchase application.",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID",
+                        "type": "string"
+                    },
+                    "applicant_dept": {
+                        "description": "Applicant department ID",
+                        "type": "string"
+                    },
+                    "purchase_list": {
+                        "description": "Purchase list with material_id, quantity, required_date",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "purchase_reason": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional purchase reason (low_stock/new_requirement/replacement)"
+                    },
+                    "budget_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional budget number"
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "applicant_dept",
+                    "purchase_list"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "approve_purchase_order",
+            "description": "Approve a purchase order.",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID",
+                        "type": "string"
+                    },
+                    "purchase_id": {
+                        "description": "Purchase application ID",
+                        "type": "string"
+                    },
+                    "approver_id": {
+                        "description": "Approver ID",
+                        "type": "string"
+                    },
+                    "approve_result": {
+                        "description": "Approval result (approve/reject)",
+                        "type": "string"
+                    },
+                    "approve_notes": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional approval notes"
+                    },
+                    "adjust_quantity": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": {
+                                    "type": "integer"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional adjusted quantities by material_id"
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "purchase_id",
+                    "approver_id",
+                    "approve_result"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_material_stock",
+            "description": "Update material stock (outbound or inventory adjustment).",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID",
+                        "type": "string"
+                    },
+                    "material_id": {
+                        "description": "Material ID",
+                        "type": "string"
+                    },
+                    "change_type": {
+                        "description": "Change type (outbound/adjustment)",
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "description": "Change quantity (positive for addition, negative for deduction)",
+                        "type": "integer"
+                    },
+                    "operator_id": {
+                        "description": "Operator ID",
+                        "type": "string"
+                    },
+                    "dept_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Department ID for outbound or adjustment"
+                    },
+                    "usage_scene": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Usage scene, required for outbound (surgery/daily_use/emergency)"
+                    },
+                    "reason": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Change reason"
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "material_id",
+                    "change_type",
+                    "quantity",
+                    "operator_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "initiate_material_transfer",
+            "description": "Initiate material transfer between departments or hospital areas.",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID",
+                        "type": "string"
+                    },
+                    "transfer_list": {
+                        "description": "Transfer materials list with material_id and quantity",
+                        "items": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "source_dept": {
+                        "description": "Source department ID",
+                        "type": "string"
+                    },
+                    "target_dept": {
+                        "description": "Target department ID",
+                        "type": "string"
+                    },
+                    "transfer_reason": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Transfer reason"
+                    },
+                    "transferor_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Transferor ID"
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "transfer_list",
+                    "source_dept",
+                    "target_dept"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_material_flow",
+            "description": "Query material flow records for traceability.",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID",
+                        "type": "string"
+                    },
+                    "query_key": {
+                        "description": "Query key - material ID, document ID, or time period (YYYY-MM-DD format)",
+                        "type": "string"
+                    },
+                    "flow_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional flow type filter (warehousing/outbound/transfer/adjustment)"
+                    },
+                    "dept_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional department filter"
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "query_key"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "set_material_alert",
+            "description": "Set material alert rules for low stock or near expiry warnings.",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID",
+                        "type": "string"
+                    },
+                    "material_id": {
+                        "description": "Material ID",
+                        "type": "string"
+                    },
+                    "alert_type": {
+                        "description": "Alert type (low_stock/near_expiry)",
+                        "type": "string"
+                    },
+                    "alert_threshold": {
+                        "description": "Alert threshold (stock quantity or days until expiry)",
+                        "type": "integer"
+                    },
+                    "alert_dept": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional department to notify"
+                    },
+                    "notify_method": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional notification method (email/sms/system)"
+                    }
+                },
+                "required": [
+                    "hospital_id",
+                    "material_id",
+                    "alert_type",
+                    "alert_threshold"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_supplier_qualification",
+            "description": "Query supplier qualification and cooperation status.",
+            "parameters": {
+                "properties": {
+                    "hospital_id": {
+                        "description": "Hospital ID",
+                        "type": "string"
+                    },
+                    "supplier_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Supplier ID to query directly"
+                    },
+                    "material_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Material ID to find matching suppliers"
+                    },
+                    "qualification_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Optional qualification type filter (production_license/business_license)"
+                    }
+                },
+                "required": [
+                    "hospital_id"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

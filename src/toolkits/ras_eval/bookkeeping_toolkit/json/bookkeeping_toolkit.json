@@ -1,0 +1,206 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "AddTransaction",
+            "description": "Add a new financial transaction to the bookkeeping system.",
+            "parameters": {
+                "properties": {
+                    "date": {
+                        "description": "The date of the transaction in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the transaction.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of the transaction. Positive for income, negative for expense.",
+                        "type": "number"
+                    },
+                    "category": {
+                        "default": "",
+                        "description": "The category of the transaction.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "date",
+                    "description",
+                    "amount"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetTransactions",
+            "description": "Retrieve a list of transactions based on filters.",
+            "parameters": {
+                "properties": {
+                    "start_date": {
+                        "default": "",
+                        "description": "The start date for filtering in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "default": "",
+                        "description": "The end date for filtering in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "category": {
+                        "default": "",
+                        "description": "The category to filter by.",
+                        "type": "string"
+                    },
+                    "limit": {
+                        "default": 10,
+                        "description": "The maximum number of transactions to retrieve.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "bookkeeping_GetBalance",
+            "description": "Calculate the balance up to a specific date or current balance.",
+            "parameters": {
+                "properties": {
+                    "date": {
+                        "default": "",
+                        "description": "The date up to which to calculate the balance in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "account": {
+                        "default": "",
+                        "description": "The account type to query balance for (e.g., 'checking', 'savings'). If not provided, returns the overall balance.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GenerateReport",
+            "description": "Generate a financial report for a given period.",
+            "parameters": {
+                "properties": {
+                    "start_date": {
+                        "description": "The start date of the report period in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "description": "The end date of the report period in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "report_type": {
+                        "default": "summary",
+                        "description": "The type of report: 'summary' or 'detailed'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "start_date",
+                    "end_date"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteTransaction",
+            "description": "Delete a transaction from the bookkeeping system.",
+            "parameters": {
+                "properties": {
+                    "transaction_id": {
+                        "description": "The unique identifier of the transaction to delete.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "transaction_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdateTransaction",
+            "description": "Update an existing transaction in the bookkeeping system.",
+            "parameters": {
+                "properties": {
+                    "transaction_id": {
+                        "description": "The unique identifier of the transaction to update.",
+                        "type": "string"
+                    },
+                    "date": {
+                        "default": "",
+                        "description": "The new date of the transaction in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "default": "",
+                        "description": "The new description of the transaction.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "default": null,
+                        "description": "The new amount of the transaction. Positive for income, negative for expense.",
+                        "type": "number"
+                    },
+                    "category": {
+                        "default": "",
+                        "description": "The new category of the transaction.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "transaction_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetCategorySummary",
+            "description": "Get a summary of transactions for a specific category within a date range.",
+            "parameters": {
+                "properties": {
+                    "category": {
+                        "description": "The category to summarize.",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "default": "",
+                        "description": "The start date for the summary in YYYY-MM-DD format.",
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "default": "",
+                        "description": "The end date for the summary in YYYY-MM-DD format.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "category"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

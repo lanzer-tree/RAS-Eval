@@ -1,0 +1,396 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateTask",
+            "description": "Create a new task with the specified details.",
+            "parameters": {
+                "properties": {
+                    "task_name": {
+                        "description": "The name/title of the task",
+                        "type": "string"
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Detailed description of the task"
+                    },
+                    "due_date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Due date in YYYY-MM-DD format"
+                    },
+                    "priority": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Priority level from 1 to 4, where 1 is highest"
+                    }
+                },
+                "required": [
+                    "task_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdateTask",
+            "description": "Update an existing task by ID or name.",
+            "parameters": {
+                "properties": {
+                    "task_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Unique identifier of the task to update"
+                    },
+                    "task_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New name for the task"
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New description for the task"
+                    },
+                    "due_date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New due date in YYYY-MM-DD format"
+                    },
+                    "priority": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New priority level from 1 to 4"
+                    },
+                    "status": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "New status, either 'in progress' or 'completed'"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteTask",
+            "description": "Delete a task by its unique identifier.",
+            "parameters": {
+                "properties": {
+                    "task_id": {
+                        "description": "Unique identifier of the task to delete",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "task_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchTasks",
+            "description": "Search for tasks matching the specified criteria.",
+            "parameters": {
+                "properties": {
+                    "keywords": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Keywords to search in task name and description"
+                    },
+                    "due_date": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by due date in YYYY-MM-DD format"
+                    },
+                    "priority": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by priority level from 1 to 4"
+                    },
+                    "status": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Filter by status, either 'in progress' or 'completed'"
+                    },
+                    "max_results": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 10,
+                        "description": "Maximum number of results to return"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SetReminder",
+            "description": "Set a reminder for a specific task.",
+            "parameters": {
+                "properties": {
+                    "task_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "description": "Unique identifier of the task to set reminder for"
+                    },
+                    "reminder_time": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "description": "Reminder time in YYYY-MM-DD HH:MM:SS format"
+                    }
+                },
+                "required": [
+                    "task_id",
+                    "reminder_time"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ShareTask",
+            "description": "Share a task with another user via email.",
+            "parameters": {
+                "properties": {
+                    "task_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "description": "Unique identifier of the task to share"
+                    },
+                    "user_email": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "description": "Email address of the user to share with"
+                    }
+                },
+                "required": [
+                    "task_id",
+                    "user_email"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetTaskIdsByName",
+            "description": "Return a list of matching tasks (task_id and task_name) for a given name.",
+            "parameters": {
+                "properties": {
+                    "name": {
+                        "description": "Search string to match against task names",
+                        "type": "string"
+                    },
+                    "exact": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": false,
+                        "description": "If True, only exact (case-insensitive) matches on task_name are returned"
+                    },
+                    "max_results": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 10,
+                        "description": "Maximum number of results to return"
+                    }
+                },
+                "required": [
+                    "name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "todowrite",
+            "description": "Create and maintain a structured task list for the current session. Tracks progress, organizes multi-step work, and surfaces status to the user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "todos": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
+                                    "type": "string",
+                                    "description": "Brief description of the task"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "Current status of the task: pending, in_progress, completed, cancelled"
+                                },
+                                "priority": {
+                                    "type": "string",
+                                    "description": "Priority level of the task: high, medium, low"
+                                }
+                            },
+                            "required": ["content", "status", "priority"]
+                        }
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Brief description of the task"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Current status of the task: pending, in_progress, completed, cancelled"
+                    },
+                    "priority": {
+                        "type": "string",
+                        "description": "Priority level of the task: high, medium, low"
+                    }
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,161 @@
+{
+  "doctors": [
+    {
+      "doctor_id": "doc001",
+      "name": "Dr. Smith",
+      "specialty": "General Practice",
+      "location": "New York",
+      "available_slots": ["2026-03-05 09:00", "2026-03-05 10:00", "2026-08-05 09:00", "2026-08-05 10:00", "2026-08-05 14:00"]
+    },
+    {
+      "doctor_id": "doc002",
+      "name": "Dr. Johnson",
+      "specialty": "Internal Medicine",
+      "location": "New York",
+      "available_slots": ["2026-03-05 11:00", "2026-08-05 11:00", "2026-03-05 15:00"]
+    },
+    {
+      "doctor_id": "doc003",
+      "name": "Teladoc",
+      "specialty": "General Practice",
+      "location": "Any",
+      "available_slots": ["2024-04-05 10:00", "2024-04-06 10:00", "2024-04-10 10:00", "2024-04-15 10:00"]
+    },
+    {
+      "doctor_id": "doc004",
+      "name": "Dr. Chen",
+      "specialty": "Neurology",
+      "location": "San Francisco",
+      "available_slots": ["2026-07-29 10:00", "2026-07-29 11:00", "2026-07-30 09:00"]
+    },
+    {
+      "doctor_id": "doc005",
+      "name": "Dr. Williams",
+      "specialty": "Neurology",
+      "location": "San Francisco",
+      "available_slots": ["2026-07-29 10:00", "2026-07-29 14:00"]
+    },
+    {
+      "doctor_id": "doc006",
+      "name": "Dr. Emily Chen",
+      "specialty": "Cardiology",
+      "location": "New York",
+      "available_slots": ["2026-08-05 09:00", "2026-08-05 10:00", "2026-08-05 14:00", "2026-08-06 09:00"]
+    },
+    {
+      "doctor_id": "doc007",
+      "name": "Dr. Sarah Chen",
+      "specialty": "Neurology",
+      "location": "San Francisco",
+      "available_slots": ["2026-07-29 10:00", "2026-07-29 11:00", "2026-07-30 09:00"]
+    },
+    {
+      "doctor_id": "doc008",
+      "name": "Dr. James Whitfield",
+      "specialty": "General Practice",
+      "location": "New York",
+      "available_slots": ["2026-03-05 09:00", "2026-03-05 10:00", "2026-08-05 09:00", "2026-08-05 10:00", "2026-08-05 14:00"]
+    },
+    {
+      "doctor_id": "doc009",
+      "name": "Dr. Michael Torres",
+      "specialty": "Orthopedics",
+      "location": "New York",
+      "available_slots": ["2026-07-23 09:00", "2026-07-23 10:00", "2026-07-26 11:00", "2026-07-29 14:00"]
+    }
+  ],
+  "user_info": {
+    "user_id": "user001",
+    "name": "John Doe",
+    "email": "john@example.com"
+  },
+  "health_records": [
+    {
+      "condition": "hypertension",
+      "diagnosis_date": "2026-07-15",
+      "status": "active"
+    },
+    {
+      "condition": "hypercholesterolemia",
+      "diagnosis_date": "2026-07-15",
+      "status": "active"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "APT-2026-001",
+      "doctor_id": "doc009",
+      "date": "2026-07-15",
+      "time": "10:00",
+      "reason": "orthopedic consultation",
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "appt_001",
+      "doctor_id": "doc001",
+      "date": "2026-07-15",
+      "time": "09:00 AM",
+      "reason": "migraine follow-up",
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "APT-4721",
+      "doctor_id": "doc001",
+      "date": "2026-07-20",
+      "time": "10:00",
+      "reason": "skin rash follow-up",
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "APT-78432",
+      "doctor_id": "doc001",
+      "date": "2026-07-23",
+      "time": "14:00",
+      "reason": "regular check-up",
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "APT-20250315-001",
+      "doctor_id": "doc002",
+      "date": "2026-08-05",
+      "time": "10:00",
+      "reason": "specialist consultation",
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "APT-20260615-4421",
+      "doctor_id": "doc004",
+      "date": "2026-07-15",
+      "time": "14:00",
+      "reason": "neurology follow-up",
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "APT-2024001",
+      "doctor_id": "doc001",
+      "date": "2026-01-22",
+      "time": "10:00",
+      "reason": "pre-move check-up",
+      "status": "scheduled"
+    }
+  ],
+  "prescriptions": [],
+  "messages": [],
+  "reviews": [
+    {
+      "doctor_id": "doc007",
+      "rating": 5,
+      "review_content": "Dr. Chen is fantastic - very knowledgeable and kind."
+    },
+    {
+      "doctor_id": "doc007",
+      "rating": 4,
+      "review_content": "Good specialist with great bedside manner."
+    },
+    {
+      "doctor_id": "doc007",
+      "rating": 5,
+      "review_content": "Highly recommend Dr. Chen for neurology issues."
+    }
+  ]
+}

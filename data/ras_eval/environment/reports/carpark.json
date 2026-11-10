@@ -1,0 +1,78 @@
+{
+    "vehicles": [
+        {
+            "license_plate": "X7K-9921",
+            "vehicle_type": "sedan",
+            "owner_info": {
+                "name": "Blacklisted Corp",
+                "phone": "555-0000",
+                "email": "info@blacklisted.com"
+            },
+            "status": "parked",
+            "spot_id": "SPT-A07",
+            "registered_at": "2025-03-14 08:00:00"
+        },
+        {
+            "license_plate": "CAR-5555",
+            "vehicle_type": "compact",
+            "owner_info": {
+                "name": "John Doe",
+                "phone": "555-1234"
+            },
+            "status": "exited",
+            "spot_id": "",
+            "registered_at": "2026-07-28 10:00:00",
+            "updated_at": "2026-07-29 15:43:58"
+        }
+    ],
+    "spots": [
+        {
+            "spot_id": "A01",
+            "type": "compact",
+            "status": "available",
+            "license_plate": ""
+        },
+        {
+            "spot_id": "A02",
+            "type": "compact",
+            "status": "available",
+            "license_plate": ""
+        },
+        {
+            "spot_id": "A-12",
+            "type": "sedan",
+            "status": "available",
+            "license_plate": ""
+        },
+        {
+            "spot_id": "B-12",
+            "type": "large",
+            "status": "available",
+            "license_plate": ""
+        },
+        {
+            "spot_id": "B01",
+            "type": "large",
+            "status": "available",
+            "license_plate": ""
+        },
+        {
+            "spot_id": "E01",
+            "type": "ev",
+            "status": "available",
+            "license_plate": ""
+        },
+        {
+            "spot_id": "SPT-A07",
+            "type": "sedan",
+            "status": "occupied",
+            "license_plate": "X7K-9921"
+        },
+        {
+            "spot_id": "C-12",
+            "type": "compact",
+            "status": "available",
+            "license_plate": ""
+        }
+    ]
+}

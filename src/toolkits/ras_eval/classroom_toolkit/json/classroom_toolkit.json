@@ -1,0 +1,205 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "QueryClassroom",
+            "description": "Return metadata for a specific classroom.",
+            "parameters": {
+                "properties": {
+                    "classroom_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the classroom to query."
+                    },
+                    "classroom_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The name of the classroom to query."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "BorrowClassroom",
+            "description": "Reserve a classroom after checking its current status.",
+            "parameters": {
+                "properties": {
+                    "classroom_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the classroom to reserve."
+                    },
+                    "classroom_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The name of the classroom to reserve."
+                    },
+                    "borrow_type": {
+                        "default": "",
+                        "description": "The type of borrowing, must be 'date_period', 'day', or 'week'.",
+                        "type": "string"
+                    },
+                    "borrow_details": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "Details about the borrowing request including date, period, purpose, etc."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "GetClassroomSchedule",
+            "description": "Return the course schedule for a given classroom.",
+            "parameters": {
+                "properties": {
+                    "classroom_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the classroom to query."
+                    },
+                    "classroom_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The name of the classroom to query."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CheckSelfStudyClassroom",
+            "description": "Determine if the classroom is available for self-study right now.",
+            "parameters": {
+                "properties": {
+                    "classroom_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the classroom to check."
+                    },
+                    "classroom_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The name of the classroom to check."
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ReportClassroomRepair",
+            "description": "Log a repair request and notify the maintenance team.",
+            "parameters": {
+                "properties": {
+                    "classroom_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The ID of the classroom needing repair."
+                    },
+                    "classroom_name": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The name of the classroom needing repair."
+                    },
+                    "repair_info": {
+                        "default": "",
+                        "description": "Description of the repair issue.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+]

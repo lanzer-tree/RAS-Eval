@@ -1,0 +1,281 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "send_message",
+            "description": "Send a message and optional file to a channel or user.",
+            "parameters": {
+                "properties": {
+                    "recipient": {
+                        "description": "The name of the recipient, channel name starts with '#', e.g., '#general', or user name starts with '@', e.g., '@john'.",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "The content of the message.",
+                        "type": "string"
+                    },
+                    "file_path": {
+                        "default": null,
+                        "description": "The local file path of the file to upload.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "recipient",
+                    "message"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_channel",
+            "description": "Create a new channel.",
+            "parameters": {
+                "properties": {
+                    "channel_name": {
+                        "description": "The name of the channel, must start with '#'.",
+                        "type": "string"
+                    },
+                    "is_public": {
+                        "default": true,
+                        "description": "Whether the channel is public. Default is True.",
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "channel_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "join_channel",
+            "description": "Join an existing channel.",
+            "parameters": {
+                "properties": {
+                    "channel_name": {
+                        "description": "The name of the channel, must start with '#'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "channel_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "leave_channel",
+            "description": "Leave a channel.",
+            "parameters": {
+                "properties": {
+                    "channel_name": {
+                        "description": "The name of the channel, must start with '#'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "channel_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_message",
+            "description": "Search for messages in a channel or direct messages.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "The search query.",
+                        "type": "string"
+                    },
+                    "to": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The receive of messages."
+                    },
+                    "source": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": null,
+                        "description": "The sender of messages."
+                    },
+                    "max_results": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": 10,
+                        "description": "The number of maximum results."
+                    }
+                },
+                "required": [
+                    "query"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_channel_or_user",
+            "description": "Search for channels or users by query.",
+            "parameters": {
+                "properties": {
+                    "query": {
+                        "description": "The search query.",
+                        "type": "string"
+                    },
+                    "search_type": {
+                        "description": "One of ['channels', 'users'], the type of resources to search.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "The maximum number of results to return. Default is 10.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "query",
+                    "search_type"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_profile_and_status",
+            "description": "Update the user's profile and status.",
+            "parameters": {
+                "properties": {
+                    "status_text": {
+                        "default": null,
+                        "description": "The status text.",
+                        "type": "string"
+                    },
+                    "status_emoji": {
+                        "default": null,
+                        "description": "The status emoji.",
+                        "type": "string"
+                    },
+                    "presence": {
+                        "default": null,
+                        "description": "One of ['auto', 'away'], the presence status.",
+                        "type": "string"
+                    },
+                    "profile": {
+                        "default": null,
+                        "description": "The profile to update.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "manage_membership",
+            "description": "Add or remove users from a channel. This tool is only valid when the user is the owner of the group.",
+            "parameters": {
+                "properties": {
+                    "channel_name": {
+                        "description": "The name of the channel, must start with '#'.",
+                        "type": "string"
+                    },
+                    "user_name": {
+                        "description": "The name of the user to add or remove, must start with '@'.",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "One of ['add', 'remove'], the action to perform.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "channel_name",
+                    "user_name",
+                    "action"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_user_details",
+            "description": "Retrieve the profile and status of a user.",
+            "parameters": {
+                "properties": {
+                    "user_name": {
+                        "description": "The name of the user, must start with '@'.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "user_name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "download_slack_file",
+            "description": "Download a Slack file using its unique identifier.",
+            "parameters": {
+                "properties": {
+                    "file_id": {
+                        "description": "The unique identifier of the file.",
+                        "type": "string"
+                    },
+                    "save_path": {
+                        "description": "The local path to save the file.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "file_id",
+                    "save_path"
+                ],
+                "type": "object"
+            }
+        }
+    }
+]

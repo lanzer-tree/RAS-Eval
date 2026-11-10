@@ -1,0 +1,40 @@
+{
+  "resources": [
+    {
+      "resource_id": "RES001",
+      "resource_type": "Fire",
+      "resource_location": "Central Station",
+      "resource_status": "Available",
+      "incident_id": null
+    },
+    {
+      "resource_id": "RES002",
+      "resource_type": "Medical",
+      "resource_location": "Hospital A",
+      "resource_status": "Available",
+      "incident_id": null
+    },
+    {
+      "resource_id": "RES003",
+      "resource_type": "Police",
+      "resource_location": "Precinct 1",
+      "resource_status": "Available",
+      "incident_id": null
+    },
+    {
+      "resource_id": "Truck-A",
+      "resource_type": "Fire",
+      "resource_location": "Station 5",
+      "resource_status": "Available",
+      "incident_id": null
+    },
+    {
+      "resource_id": "Truck-B",
+      "resource_type": "Fire",
+      "resource_location": "Station 12",
+      "resource_status": "Available",
+      "incident_id": null
+    }
+  ],
+  "incidents": []
+}

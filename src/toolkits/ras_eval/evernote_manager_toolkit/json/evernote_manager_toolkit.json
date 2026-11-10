@@ -1,0 +1,303 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateNote",
+            "description": "Create a new note with title, content, attachments, and optional notebook.",
+            "parameters": {
+                "properties": {
+                    "title": {
+                        "description": "The title of the note.",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "The content of the note.",
+                        "type": "string"
+                    },
+                    "attachments": {
+                        "default": null,
+                        "description": "List of file paths to attach to the note.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "notebook_id": {
+                        "default": null,
+                        "description": "Optional notebook ID to associate the note with.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "title",
+                    "content"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ReadNote",
+            "description": "Read a note by its ID.",
+            "parameters": {
+                "properties": {
+                    "note_id": {
+                        "description": "The ID of the note to read.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "note_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdateNote",
+            "description": "Update an existing note with new title, content, or attachments.",
+            "parameters": {
+                "properties": {
+                    "note_id": {
+                        "description": "The ID of the note to update.",
+                        "type": "string"
+                    },
+                    "title": {
+                        "default": null,
+                        "description": "Optional new title for the note.",
+                        "type": "string"
+                    },
+                    "content": {
+                        "default": null,
+                        "description": "Optional new content for the note.",
+                        "type": "string"
+                    },
+                    "attachments": {
+                        "default": null,
+                        "description": "Optional new list of attachments for the note.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "note_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteNote",
+            "description": "Delete a note by its ID.",
+            "parameters": {
+                "properties": {
+                    "note_id": {
+                        "description": "The ID of the note to delete.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "note_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "CreateNotebook",
+            "description": "Create a new notebook with the specified name.",
+            "parameters": {
+                "properties": {
+                    "name": {
+                        "description": "The name of the notebook to create.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ReadNotebook",
+            "description": "Read a notebook and all its notes by notebook ID.",
+            "parameters": {
+                "properties": {
+                    "notebook_id": {
+                        "description": "The ID of the notebook to read.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "notebook_id"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "UpdateNotebook",
+            "description": "Update a notebook name by ID or name.",
+            "parameters": {
+                "properties": {
+                    "notebook_id": {
+                        "default": null,
+                        "description": "Optional notebook ID to identify the notebook.",
+                        "type": "string"
+                    },
+                    "notebook_name": {
+                        "default": null,
+                        "description": "Optional notebook name to identify the notebook.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "default": null,
+                        "description": "The new name for the notebook.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "DeleteNotebook",
+            "description": "Delete a notebook by ID or name.",
+            "parameters": {
+                "properties": {
+                    "notebook_id": {
+                        "default": null,
+                        "description": "Optional notebook ID to identify the notebook.",
+                        "type": "string"
+                    },
+                    "notebook_name": {
+                        "default": null,
+                        "description": "Optional notebook name to identify the notebook.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchNotes",
+            "description": "Search for notes by keywords, tags, and notebook.",
+            "parameters": {
+                "properties": {
+                    "keywords": {
+                        "default": null,
+                        "description": "Optional list of keywords to search for.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "tags": {
+                        "default": null,
+                        "description": "Optional list of tags to filter by.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "notebook_id": {
+                        "default": null,
+                        "description": "Optional notebook ID to filter notes.",
+                        "type": "string"
+                    },
+                    "notebook_name": {
+                        "default": null,
+                        "description": "Optional notebook name to filter notes.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 3,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "ManageNoteSharingLevel",
+            "description": "Manage the sharing level of a note for a specific email.",
+            "parameters": {
+                "properties": {
+                    "note_id": {
+                        "description": "The ID of the note to manage sharing for.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The email address to share with.",
+                        "type": "string"
+                    },
+                    "level": {
+                        "description": "The sharing level (not_accessible, read_only, or can_edit).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "note_id",
+                    "email",
+                    "level"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "SearchNotebooks",
+            "description": "Search for notebooks by keywords and name.",
+            "parameters": {
+                "properties": {
+                    "keywords": {
+                        "default": null,
+                        "description": "Optional list of keywords to search for.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "name": {
+                        "default": null,
+                        "description": "Optional name to filter notebooks.",
+                        "type": "string"
+                    },
+                    "max_results": {
+                        "default": 10,
+                        "description": "Maximum number of results to return.",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+]
