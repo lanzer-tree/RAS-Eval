@@ -1,5 +1,20 @@
 # Specification-based Security Evaluation of Real-World Agents Tool-Calling under Long-Horizon Context Tasks
 
+<p align="center">
+  <a href="https://github.com/lanzer-tree/RAS-Eval">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?logo=github&logoColor=white" alt="GitHub">
+  </a>
+  <a href="https://huggingface.co/datasets/lanzertree/RAS-Eval">
+    <img src="https://img.shields.io/badge/HuggingFace-Dataset-yellow?logo=huggingface&logoColor=white" alt="Hugging Face">
+  </a>
+  <a href="https://www.modelscope.cn/datasets/Lanzer/RAS-Eval">
+    <img src="https://img.shields.io/badge/ModelScope-Dataset-blue?logo=modelscope&logoColor=white" alt="ModelScope">
+  </a>
+  <a href="https://arxiv.org/abs/2506.15253">
+    <img src="https://img.shields.io/badge/arXiv-2506.15253-b31b1b?logo=arxiv&logoColor=white" alt="arXiv">
+  </a>
+</p>
+
 ## Prerequisites
 
 - [uv](https://docs.astral.sh/uv/) — Python environment and dependency management.
@@ -217,3 +232,19 @@ uv run entries/flywheel_infer.py \
 ```
 
 `--attack_type`: `toma` | `tpa` | `cia` | `cia-tool`. `--model` is the attack optimizer fallback when `--attack_model` is omitted. Security specs are drafted by the attack pipeline itself. Output: `data/output/flywheel-attack/dataset/attack_generated.jsonl` — this is the final dataset, ready to be fed to `entries/runtime_verification.py` as `--input_path` (see Run Evaluation).
+
+# Citation
+
+If you found RAS-Eval useful, please cite:
+
+```
+@misc{ras_eval,
+    title={Specification-based Security Evaluation of Real-World Agents Tool-Calling under Long-Horizon Context Tasks}, 
+    author={Yuchuan Fu and Minghe Wang and Xiaohan Yuan and Chenlin Zou and Kaitong Jia and Jinfeng Li and Dongxia Wang},
+    year={2026},
+    eprint={2506.15253},
+    archivePrefix={arXiv},
+    primaryClass={cs.CR},
+    url={https://arxiv.org/abs/2506.15253}, 
+}
+```
