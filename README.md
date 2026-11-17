@@ -247,4 +247,14 @@ If you found RAS-Eval useful, please cite:
     primaryClass={cs.CR},
     url={https://arxiv.org/abs/2506.15253}, 
 }
+
+@misc{skill_inject,
+      title={Skill-Inject: Measuring Agent Vulnerability to Skill File Attacks}, 
+      author={David Schmotz and Luca Beurer-Kellner and Sahar Abdelnabi and Maksym Andriushchenko},
+      year={2026},
+      eprint={2602.20156},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2602.20156}, 
+}
 ```
