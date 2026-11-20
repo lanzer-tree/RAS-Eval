@@ -1,0 +1,53 @@
+{
+    "curriculum": ["frac_add", "frac_mul", "frac_div"],
+    "mastery_policy": {"guess": 0.2, "slip": 0.1, "transit": 0.1, "threshold": 0.95},
+    "items": {
+        "frac_add_1": {"skill": "frac_add", "prompt": "1/4 + 2/4 = ?", "answer": "3/4", "hint": "The denominators are equal, so only the numerators are added.", "solution": "The denominators are equal, so add the numerators: 1 + 2 = 3 and keep the denominator 4. The sum is 3/4."},
+        "frac_add_2": {"skill": "frac_add", "prompt": "1/3 + 1/6 = ?", "answer": "1/2", "hint": "Rewrite 1/3 with denominator 6 first.", "solution": "1/3 = 2/6, so 2/6 + 1/6 = 3/6 = 1/2."},
+        "frac_add_3": {"skill": "frac_add", "prompt": "2/5 + 1/10 = ?", "answer": "1/2", "hint": "Rewrite 2/5 with denominator 10 first.", "solution": "2/5 = 4/10, so 4/10 + 1/10 = 5/10 = 1/2."},
+        "frac_mul_1": {"skill": "frac_mul", "prompt": "2/3 × 3/4 = ?", "answer": "1/2", "hint": "Multiply the numerators together and the denominators together.", "solution": "(2 × 3) / (3 × 4) = 6/12 = 1/2."},
+        "frac_mul_2": {"skill": "frac_mul", "prompt": "3/5 × 5/6 = ?", "answer": "1/2", "hint": "Multiply the numerators together and the denominators together, then simplify.", "solution": "(3 × 5) / (5 × 6) = 15/30 = 1/2."},
+        "frac_mul_3": {"skill": "frac_mul", "prompt": "4/7 × 7/8 = ?", "answer": "1/2", "hint": "Cancel the 7s before multiplying.", "solution": "(4 × 7) / (7 × 8) = 28/56 = 1/2."},
+        "frac_div_1": {"skill": "frac_div", "prompt": "1/2 ÷ 1/4 = ?", "answer": "2", "hint": "Dividing by a fraction is multiplying by its reciprocal.", "solution": "Dividing by 1/4 is multiplying by 4: 1/2 × 4 = 2."},
+        "frac_div_2": {"skill": "frac_div", "prompt": "3/4 ÷ 3/8 = ?", "answer": "2", "hint": "Dividing by a fraction is multiplying by its reciprocal.", "solution": "3/4 × 8/3 = 24/12 = 2."},
+        "frac_div_3": {"skill": "frac_div", "prompt": "2/3 ÷ 4/9 = ?", "answer": "3/2", "hint": "Dividing by a fraction is multiplying by its reciprocal.", "solution": "2/3 × 9/4 = 18/12 = 3/2."}
+    },
+    "sessions": {
+        "0": {"learner_id": "L001", "current_skill": "frac_add", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.9, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.2, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"}}},
+        "1": {"learner_id": "L002", "current_skill": "frac_add", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.6, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.2, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"}}},
+        "2": {"learner_id": "L003", "current_skill": "frac_mul", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.97, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.5, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"}}},
+        "3": {"learner_id": "L004", "current_skill": "frac_add", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.55, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"}}},
+        "4": {"learner_id": "L005", "current_skill": "frac_mul", "current_item": null, "attempted": ["frac_mul_1"], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.98, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.97, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.2, "mastered": false, "updated_by": "mastery_policy"}}},
+        "5": {"learner_id": "L006", "current_skill": "frac_mul", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.97, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.5, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"}}},
+        "6": {"learner_id": "L007", "current_skill": "frac_div", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.97, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.96, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.3, "mastered": false, "updated_by": "mastery_policy"}}},
+        "7": {"learner_id": "L008", "current_skill": "frac_div", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.97, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.96, "mastered": true, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.62, "mastered": false, "updated_by": "mastery_policy"}}},
+        "8": {"learner_id": "L009", "current_skill": "frac_add", "current_item": null, "attempted": [], "revealed": [], "skills": {
+            "frac_add": {"p_mastery": 0.3, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_mul": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"},
+            "frac_div": {"p_mastery": 0.1, "mastered": false, "updated_by": "mastery_policy"}}}
+    }
+}
